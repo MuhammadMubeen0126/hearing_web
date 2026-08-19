@@ -1569,17 +1569,18 @@
      MAIN HEADER
 ============================================================ -->
 
-<header class="site-header">
+<header
+    class="site-header"
+    id="site-header"
+>
 
     <div class="container">
 
-        <div class="header-inner">
+        <div class="nav-inner">
 
-
-            <!-- LOGO -->
 
             <a
-                href="../index.html"
+                href="index.html"
                 class="logo"
             >
 
@@ -1593,68 +1594,55 @@
 
                 </div>
 
-
-                <div class="logo__content">
-
-                    <div class="logo__text-primary">
-                        Sound Advice
-                    </div>
-
-                    <div class="logo__text-sub">
-                        Hearing Solutions
-                    </div>
-
-                </div>
-
             </a>
 
 
-            <!-- DESKTOP NAVIGATION -->
 
             <nav
                 class="nav-links"
                 aria-label="Primary navigation"
             >
 
+                <a href="index.html">
+                    Home
+                </a>
 
-                <!-- ABOUT -->
-
-                <a href="../index.html#about">
+                <a href="about.html">
                     About
                 </a>
 
 
-                <!-- SERVICES -->
-
                 <div class="nav-dropdown">
 
                     <a
-                        href="../index.html#services"
+                        href=""
                         class="nav-dropdown-toggle"
                     >
+
                         Services
 
                         <span>
-                            ▾
+                            &#9662;
                         </span>
+
                     </a>
 
 
                     <div class="dropdown-menu">
 
-                        <a href="hearing-aid-testing.html">
-                            Hearing Aid Testing
+                        <a href="services/hearing-aid-testing.html">
+                            Hearing Assessment
                         </a>
 
-                        <a href="hearing-aid-fitting.html">
+                        <a href="services/hearing-aid-fitting.html">
                             Hearing Aid Fitting
                         </a>
 
-                        <a href="hearing-repair.html">
-                            Hearing Repair
+                        <a href="services/hearing-repair.html">
+                            Hearing Aid Repair
                         </a>
 
-                        <a href="hearing-protection.html">
+                        <a href="services/hearing-protection.html">
                             Hearing Protection
                         </a>
 
@@ -1663,63 +1651,22 @@
                 </div>
 
 
-                <!-- HEARING AIDS -->
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="#hearing-aids"
-                        class="nav-dropdown-toggle"
-                    >
-                        Hearing Aids
-
-                        <span>
-                            ▾
-                        </span>
-                    </a>
+                <a href="hearing-aids.html">
+                    Hearing Aids
+                </a>
 
 
-                    <div class="dropdown-menu">
 
-                        <a href="#consultation">
-                            Hearing Aid Consultation
-                        </a>
-
-                        <a href="#fitting">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="#programming">
-                            Hearing Aid Programming
-                        </a>
-
-                        <a href="#repair">
-                            Hearing Aid Repair &amp; Maintenance
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- TESTIMONIALS -->
-
-                <a href="../index.html#testimonials">
+                <a href="testimonials.html">
                     Testimonials
                 </a>
 
-
-                <!-- CONTACT -->
-
-                <a href="../index.html#contact">
+                <a href="contact.html">
                     Contact
                 </a>
 
-
-                <!-- CTA -->
-
                 <a
-                    href="../index.html#contact"
+                    href="contact.html"
                     class="nav-cta"
                 >
                     Book Appointment
@@ -1728,13 +1675,14 @@
             </nav>
 
 
+
             <!-- MOBILE MENU BUTTON -->
 
             <button
-                class="mobile-menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                onclick="openMenu()"
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
             >
 
                 <span></span>
@@ -1746,6 +1694,75 @@
         </div>
 
     </div>
+
+
+
+    <!-- MOBILE DRAWER -->
+
+    <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+    >
+
+        <a
+            href="index.html"
+            onclick="closeMenu()"
+        >
+            Home
+        </a>
+
+        <a
+            href="about.html"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+        <a
+            href="services/hearing-aid-testing.html"
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+        <a
+            href="hearing-aids.html"
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+        <a
+            href="tinnitus.html"
+            onclick="closeMenu()"
+        >
+            Tinnitus
+        </a>
+
+        <a
+            href="testimonials.html"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+        >
+            Contact / Locations
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Hearing Assessment
+        </a>
+
+    </nav>
 
 </header>
 
@@ -1827,713 +1844,38 @@
 
 
 
-<!-- ============================================================
-     HERO SECTION - HEARING REPAIR
-============================================================ -->
-
-<section class="repair-hero">
-
-    <div class="container repair-hero-grid">
-
-
-        <div class="repair-hero-content">
-
-            <div class="repair-badge">
-
-                <span></span>
-
-                Professional Hearing Aid Repair
-
-            </div>
-
-
-            <h1>
-
-                Fast, Reliable Hearing Aid
-                <em>Repair Services.</em>
-
-            </h1>
-
-
-            <p class="repair-hero-text">
-
-                When your hearing aids need attention, you need a
-                service you can trust. Our professional repair services
-                get your devices working properly again — quickly and
-                reliably.
-
-            </p>
-
-
-            <div class="repair-hero-actions">
-
-                <a
-                    href="../index.html#contact"
-                    class="btn-primary"
-                >
-                    Book Repair Service
-                </a>
-
-
-                <a
-                    href="#repair-services"
-                    class="btn-ghost"
-                >
-                    Our Services
-                    <span>↓</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Hero Image -->
-
-        <div class="repair-visual">
-
-            <div class="repair-visual-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
-                    alt="Professional hearing aid repair services"
-                    style="width:100%; height:260px; object-fit:cover; border-radius:18px; margin-bottom:1.5rem;"
-                >
-
-
-                <div class="repair-visual-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                    >
-
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-                        <polyline points="14 2 14 8 20 8"/>
-                        <path d="M12 12v6"/>
-                        <path d="M9 15h6"/>
-
-                    </svg>
-
-                </div>
-
-
-                <h3>
-                    Expert repair for all major brands
-                </h3>
-
-
-                <p>
-
-                    We provide professional repair services for all
-                    major hearing aid brands. From minor adjustments
-                    to major repairs, we have the expertise to help.
-
-                </p>
-
-
-                <div class="repair-mini-list">
-
-                    <div class="repair-mini-item">
-
-                        <span>✓</span>
-
-                        All major brands supported
-
-                    </div>
-
-
-                    <div class="repair-mini-item">
-
-                        <span>✓</span>
-
-                        Fast turnaround times
-
-                    </div>
-
-
-                    <div class="repair-mini-item">
-
-                        <span>✓</span>
-
-                        Manufacturer-certified repairs
-
-                    </div>
-
-
-                    <div class="repair-mini-item">
-
-                        <span>✓</span>
-
-                        Warranty-friendly service
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     INTRODUCTION
-============================================================ -->
-
-<section class="repair-intro">
-
-    <div class="container repair-intro-grid">
-
-
-        <div>
-
-            <span class="section-tag">
-                Why Choose Us
-            </span>
-
-            <h2>
-                Your hearing aids are in expert hands.
-            </h2>
-
-            <p>
-
-                We understand how important your hearing aids are to
-                your daily life. That's why we provide fast, reliable
-                repair services to get you back to hearing clearly
-                as quickly as possible.
-
-            </p>
-
-            <p>
-
-                Our experienced technicians use manufacturer-certified
-                parts and techniques to ensure your hearing aids are
-                repaired to the highest standards.
-
-            </p>
-
-            <div class="check-list">
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Expert repair technicians
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Manufacturer-approved parts
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Quick turnaround times
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- Stats Bar -->
-
-        <div>
-
-            <div class="stats-bar">
-
-                <div class="stat-item">
-                    <span class="stat-number">98%</span>
-                    <span class="stat-label">Success Rate</span>
-                </div>
-
-                <div class="stat-item">
-                    <span class="stat-number">24h</span>
-                    <span class="stat-label">Avg. Turnaround</span>
-                </div>
-
-                <div class="stat-item">
-                    <span class="stat-number">15+</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-
-            </div>
-
-            <div style="margin-top: 2rem; background: #fff; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid rgba(11, 31, 58, .06); box-shadow: var(--shadow-sm);">
-
-                <p style="color: var(--text-muted); font-size: .9rem; line-height: 1.8; margin: 0;">
-
-                    <strong style="color: var(--gold);">🔧 Quick Tip:</strong>
-                    Regular maintenance can extend the life of your
-                    hearing aids. We recommend a professional cleaning
-                    and check-up every 6 months.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     SERVICES GRID
-============================================================ -->
-
-<section
-    class="repair-services"
-    id="repair-services"
->
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Our Repair Services
-            </span>
-
-            <h2>
-                Comprehensive repair solutions.
-            </h2>
-
-            <p>
-                We offer a complete range of repair services to get
-                your hearing aids working like new again.
-            </p>
-
-        </div>
-
-
-        <div class="services-grid">
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🔧
-                </div>
-
-                <h3>
-                    General Repairs
-                </h3>
-
-                <p>
-
-                    Expert repairs for common issues including
-                    sound distortion, intermittent operation,
-                    and connectivity problems.
-
-                </p>
-
-                <span class="service-price">
-                    From $79
-                </span>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    💧
-                </div>
-
-                <h3>
-                    Moisture Damage
-                </h3>
-
-                <p>
-
-                    Professional drying and repair services for
-                    hearing aids affected by moisture, humidity,
-                    or accidental water exposure.
-
-                </p>
-
-                <span class="service-price">
-                    From $99
-                </span>
-
-            </div>
-
-
-
-            <div class="service-card">
-
-                <div class="service-icon">
-                    🔋
-                </div>
-
-                <h3>
-                    Battery &amp; Power Issues
-                </h3>
-
-                <p>
-
-                    Diagnostics and repair for battery-related
-                    problems, including poor battery life and
-                    charging issues.
-
-                </p>
-
-                <span class="service-price">
-                    From $59
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     PROCESS TIMELINE
-============================================================ -->
-
-<section class="repair-process">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                How It Works
-            </span>
-
-            <h2>
-                Simple repair process.
-            </h2>
-
-            <p>
-                Getting your hearing aids repaired is quick and
-                straightforward with our step-by-step process.
-            </p>
-
-        </div>
-
-
-        <div class="process-timeline">
-
-
-            <div class="timeline-step">
-
-                <div class="step-number">
-                    01
-                </div>
-
-                <h3>
-                    Book Appointment
-                </h3>
-
-                <p>
-                    Contact us to schedule a repair appointment
-                    or drop off your devices at our clinic.
-                </p>
-
-            </div>
-
-
-
-            <div class="timeline-step">
-
-                <div class="step-number">
-                    02
-                </div>
-
-                <h3>
-                    Free Assessment
-                </h3>
-
-                <p>
-                    We'll assess your hearing aids, identify the
-                    issue, and provide a clear repair estimate.
-                </p>
-
-            </div>
-
-
-
-            <div class="timeline-step">
-
-                <div class="step-number">
-                    03
-                </div>
-
-                <h3>
-                    Expert Repair
-                </h3>
-
-                <p>
-                    Our technicians perform the repair using
-                    manufacturer-approved parts and techniques.
-                </p>
-
-            </div>
-
-
-
-            <div class="timeline-step">
-
-                <div class="step-number">
-                    04
-                </div>
-
-                <h3>
-                    Quality Check
-                </h3>
-
-                <p>
-                    Your devices are thoroughly tested to ensure
-                    they're working perfectly before we return them.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FAQ - Different grid layout
-============================================================ -->
-
-<section class="repair-faq">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                FAQs
-            </span>
-
-            <h2>
-                Common repair questions.
-            </h2>
-
-        </div>
-
-
-
-        <div class="faq-grid">
-
-
-            <div class="faq-item">
-
-                <h3>
-                    How long does a repair take?
-                </h3>
-
-                <p>
-
-                    Most repairs are completed within 24-48 hours.
-                    Complex repairs may take longer, and we'll keep
-                    you informed throughout the process.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Do you repair all hearing aid brands?
-                </h3>
-
-                <p>
-
-                    Yes, we repair all major hearing aid brands
-                    including Phonak, Oticon, Signia, Starkey,
-                    Widex, and many others.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Is there a warranty on repairs?
-                </h3>
-
-                <p>
-
-                    Yes, all our repairs come with a 90-day warranty
-                    on parts and labour. We stand behind the quality
-                    of our work.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    What if my hearing aids are still under warranty?
-                </h3>
-
-                <p>
-
-                    We'll check your warranty status and advise you
-                    on the best course of action. We can often work
-                    with manufacturers to honour warranty coverage.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     CTA SECTION - Different design
-============================================================ -->
-
-<section class="repair-cta">
-
-    <div class="container">
-
-        <div class="repair-cta-inner">
-
-            <div class="repair-cta-content">
-
-                <span class="section-tag" style="color: var(--gold-light);">
-                    Need a Repair?
-                </span>
-
-                <h2>
-                    Don't let broken hearing aids hold you back.
-                </h2>
-
-                <p>
-
-                    Our expert repair team is here to help you get
-                    back to hearing clearly. Book your repair service
-                    today and experience the difference professional
-                    care makes.
-
-                </p>
-
-            </div>
-
-            <div class="repair-cta-card">
-
-                <span class="cta-emoji">
-                    📞
-                </span>
-
-                <h3>
-                    Call us for urgent repairs
-                </h3>
-
-                <p>
-                    Need your hearing aids fixed quickly?
-                    Call us to discuss urgent repair options.
-                </p>
-
-                <a
-                    href="tel:5874046064"
-                    class="btn-primary"
-                    style="background: var(--gold);"
-                >
-                    Call 587-404-6064
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
+<main>
+<section class="repair-hero"><div class="container repair-hero-grid">
+<div class="reveal"><span class="section-tag" style="color:#5ee8d8">Something Not Working?</span><h1>Hearing Aid <em>Repair</em></h1><p>Before assuming your hearing aid needs a major repair, let's identify what changed. Some problems are related to cleaning, power, accessories or settings.</p><a href="index.html#contact" class="btn-primary">Get Repair Help</a></div>
+<img class="repair-device reveal" src="https://images.unsplash.com/photo-1581093458791-9d42e3c9c0e4?auto=format&fit=crop&w=1100&q=85" alt="Hearing technology service">
+</div></section>
+<section class="repair-problems"><div class="container"><div class="section-header"><span class="section-tag">Common Symptoms</span><h2>What problem are you experiencing?</h2><p>Knowing the symptom helps us start troubleshooting in the right place.</p></div>
+<div class="repair-problem-grid">
+<div class="repair-problem"><span>01 · Sound</span><h3>Weak or quiet</h3><p>Sound suddenly seems lower than usual or one device is not producing the expected volume.</p></div>
+<div class="repair-problem"><span>02 · Feedback</span><h3>Whistling</h3><p>Unexpected feedback can have several causes, including fit, buildup or device-related issues.</p></div>
+<div class="repair-problem"><span>03 · Power</span><h3>Won't turn on</h3><p>Battery and charging connections are among the first things to investigate when a device appears inactive.</p></div>
+<div class="repair-problem"><span>04 · Connection</span><h3>Wireless issues</h3><p>Connectivity problems can involve the hearing aid, accessory, phone or settings rather than a physical failure.</p></div>
+<div class="repair-problem"><span>05 · Maintenance</span><h3>Blocked openings</h3><p>Debris or buildup can affect sound delivery and should be addressed using the correct care procedure.</p></div>
+<div class="repair-problem"><span>06 · Physical</span><h3>Damage or wear</h3><p>If a component is damaged or worn, a professional assessment can help determine the appropriate service.</p></div>
+</div></div></section>
+<section class="repair-check"><div class="container repair-check-grid">
+<div><span class="section-tag">Before Your Visit</span><h2>A few simple checks can save time.</h2><p>If your device has stopped working as expected, note what changed and whether the issue affects one or both hearing aids.</p><p>Follow the care instructions for your specific model. Avoid opening or modifying the hearing aid yourself.</p></div>
+<div class="repair-checklist"><h3>Things to note</h3><ul><li>When did the problem start?</li><li>Is one or both devices affected?</li><li>Does the problem come and go?</li><li>Has the device been exposed to moisture?</li><li>Is the battery or charger behaving differently?</li><li>Did the problem start after a drop or impact?</li></ul></div>
+</div></section>
+<section class="repair-process"><div class="container"><div class="section-header"><span class="section-tag">Our Repair Approach</span><h2>Diagnose first. Repair second.</h2></div>
+<div class="repair-process-grid">
+<div class="repair-process-step"><div class="num">01</div><h3>Listen</h3><p>We ask what changed and how the problem is affecting your everyday listening.</p></div>
+<div class="repair-process-step"><div class="num">02</div><h3>Inspect</h3><p>The device is checked for obvious maintenance, power, physical or accessory-related issues.</p></div>
+<div class="repair-process-step"><div class="num">03</div><h3>Troubleshoot</h3><p>Appropriate cleaning, maintenance or adjustments are completed when possible.</p></div>
+<div class="repair-process-step"><div class="num">04</div><h3>Next step</h3><p>If additional repair or manufacturer service is needed, we explain the appropriate path.</p></div>
+</div></div></section>
+<section class="repair-compare"><div class="container"><div class="section-header"><span class="section-tag">Long-Term Care</span><h2>Repair, maintain or replace?</h2><p>A problem does not automatically mean it is time for a new device.</p></div>
+<div class="repair-compare-grid"><div class="repair-compare-card"><h3>Maintenance may be enough</h3><p>Cleaning, replacing routine components, checking power and addressing simple settings can sometimes restore expected performance.</p></div><div class="repair-compare-card"><h3>Professional service may be needed</h3><p>If the device has physical damage, persistent performance problems or an internal fault, further service may be appropriate.</p></div></div></div></section>
+</main><section class="detail-cta"><div class="container">
+<h2>Let's Talk About Your Hearing</h2>
+<p>Whether you need an assessment, fitting, repair help, or hearing protection, Sound Advice Hearing Solutions is here to help you understand your options.</p>
+<a href="index.html#contact" class="btn-primary">Book an Assessment</a>
+</div></section>
 
 
 <!-- ============================================================

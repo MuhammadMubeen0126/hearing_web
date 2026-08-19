@@ -1744,18 +1744,18 @@
 <!-- ============================================================
      MAIN HEADER
 ============================================================ -->
-
-<header class="site-header">
+<header
+    class="site-header"
+    id="site-header"
+>
 
     <div class="container">
 
-        <div class="header-inner">
+        <div class="nav-inner">
 
-
-            <!-- LOGO -->
 
             <a
-                href="../index.html"
+                href="index.html"
                 class="logo"
             >
 
@@ -1769,68 +1769,55 @@
 
                 </div>
 
-
-                <div class="logo__content">
-
-                    <div class="logo__text-primary">
-                        Sound Advice
-                    </div>
-
-                    <div class="logo__text-sub">
-                        Hearing Solutions
-                    </div>
-
-                </div>
-
             </a>
 
 
-            <!-- DESKTOP NAVIGATION -->
 
             <nav
                 class="nav-links"
                 aria-label="Primary navigation"
             >
 
+                <a href="index.html">
+                    Home
+                </a>
 
-                <!-- ABOUT -->
-
-                <a href="../index.html#about">
+                <a href="about.html">
                     About
                 </a>
 
 
-                <!-- SERVICES -->
-
                 <div class="nav-dropdown">
 
                     <a
-                        href="../index.html#services"
+                        href=""
                         class="nav-dropdown-toggle"
                     >
+
                         Services
 
                         <span>
-                            ▾
+                            &#9662;
                         </span>
+
                     </a>
 
 
                     <div class="dropdown-menu">
 
-                        <a href="hearing-aid-testing.html">
-                            Hearing Aid Testing
+                        <a href="services/hearing-aid-testing.html">
+                            Hearing Assessment
                         </a>
 
-                        <a href="hearing-aid-fitting.html">
+                        <a href="services/hearing-aid-fitting.html">
                             Hearing Aid Fitting
                         </a>
 
-                        <a href="hearing-repair.html">
-                            Hearing Repair
+                        <a href="services/hearing-repair.html">
+                            Hearing Aid Repair
                         </a>
 
-                        <a href="hearing-protection.html">
+                        <a href="services/hearing-protection.html">
                             Hearing Protection
                         </a>
 
@@ -1839,63 +1826,22 @@
                 </div>
 
 
-                <!-- HEARING AIDS -->
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="#hearing-aids"
-                        class="nav-dropdown-toggle"
-                    >
-                        Hearing Aids
-
-                        <span>
-                            ▾
-                        </span>
-                    </a>
+                <a href="hearing-aids.html">
+                    Hearing Aids
+                </a>
 
 
-                    <div class="dropdown-menu">
 
-                        <a href="#consultation">
-                            Hearing Aid Consultation
-                        </a>
-
-                        <a href="#fitting">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="#programming">
-                            Hearing Aid Programming
-                        </a>
-
-                        <a href="#repair">
-                            Hearing Aid Repair &amp; Maintenance
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- TESTIMONIALS -->
-
-                <a href="../index.html#testimonials">
+                <a href="testimonials.html">
                     Testimonials
                 </a>
 
-
-                <!-- CONTACT -->
-
-                <a href="../index.html#contact">
+                <a href="contact.html">
                     Contact
                 </a>
 
-
-                <!-- CTA -->
-
                 <a
-                    href="../index.html#contact"
+                    href="contact.html"
                     class="nav-cta"
                 >
                     Book Appointment
@@ -1904,13 +1850,14 @@
             </nav>
 
 
+
             <!-- MOBILE MENU BUTTON -->
 
             <button
-                class="mobile-menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                onclick="openMenu()"
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
             >
 
                 <span></span>
@@ -1923,8 +1870,76 @@
 
     </div>
 
-</header>
 
+
+    <!-- MOBILE DRAWER -->
+
+    <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+    >
+
+        <a
+            href="index.html"
+            onclick="closeMenu()"
+        >
+            Home
+        </a>
+
+        <a
+            href="about.html"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+        <a
+            href="services/hearing-aid-testing.html"
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+        <a
+            href="hearing-aids.html"
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+        <a
+            href="tinnitus.html"
+            onclick="closeMenu()"
+        >
+            Tinnitus
+        </a>
+
+        <a
+            href="testimonials.html"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+        >
+            Contact / Locations
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Hearing Assessment
+        </a>
+
+    </nav>
+
+</header>
 
 <!-- ============================================================
      MOBILE NAVIGATION
@@ -2160,1075 +2175,45 @@
 
 
 
-<!-- ============================================================
-     INTRODUCTION
-============================================================ -->
 
-<section class="protection-intro">
 
-    <div class="container protection-intro-grid">
 
-
-        <div class="protection-intro-content">
-
-            <span class="section-tag">
-                Why Protection Matters
-            </span>
-
-
-            <h2>
-                Protect what matters most — your hearing.
-            </h2>
-
-
-            <p>
-
-                Noise-induced hearing loss is one of the most common
-                yet preventable health conditions. Whether you're
-                exposed to loud noise at work, enjoy live music, or
-                participate in recreational activities, proper hearing
-                protection is essential for preserving your hearing
-                health.
-
-            </p>
-
-
-            <p>
-
-                We offer professional hearing protection solutions
-                that go beyond generic earplugs. Our custom-moulded
-                options provide superior comfort, fit, and protection
-                so you can enjoy life's moments without worrying about
-                your hearing.
-
-            </p>
-
-
-            <div class="check-list">
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Prevent noise-induced hearing loss
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Custom solutions for your lifestyle
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Comfortable and effective protection
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="protection-info-card">
-
-            <h3>
-                Protection Options We Offer
-            </h3>
-
-
-            <div class="protection-info-item">
-
-                <div class="protection-info-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M20 7h-4.5A2.5 2.5 0 0 0 13 9.5v5A2.5 2.5 0 0 0 15.5 17H20v-2h-4.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5H20V7z"/>
-                        <path d="M4 7h4.5A2.5 2.5 0 0 1 11 9.5v5A2.5 2.5 0 0 1 8.5 17H4v-2h4.5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H4V7z"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Custom Earplugs
-                    </strong>
-
-                    <p>
-                        Made from impressions of your ears for a
-                        perfect fit. Ideal for work, sleep, swimming,
-                        and noise-sensitive environments.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="protection-info-item">
-
-                <div class="protection-info-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v8"/>
-                        <path d="M8 12h8"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Musician Plugs
-                    </strong>
-
-                    <p>
-
-                        Designed for musicians and concert-goers
-                        who need protection while maintaining sound
-                        clarity and musical quality.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="protection-info-item">
-
-                <div class="protection-info-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v4l3 3"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Industrial Protection
-                    </strong>
-
-                    <p>
-
-                        Heavy-duty noise protection for workplace
-                        environments with high-decibel exposure,
-                        meeting safety standards and regulations.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     PROTECTION TYPES
-============================================================ -->
-
-<section
-    class="protection-types"
-    id="protection-types"
->
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Our Solutions
-            </span>
-
-            <h2>
-                Hearing protection for every situation.
-            </h2>
-
-            <p>
-                We offer a variety of protection options to match
-                your lifestyle, environment, and personal needs.
-            </p>
-
-        </div>
-
-
-        <div class="protection-types-grid">
-
-
-            <!-- Type 1 -->
-
-            <div class="protection-type-card">
-
-                <div class="protection-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
-                        <path d="M2 17l10 5 10-5"/>
-                        <path d="M2 12l10 5 10-5"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>
-                    Custom Sleep Plugs
-                </h3>
-
-                <p>
-
-                    Soft, comfortable custom-moulded earplugs designed
-                    for all-night wear. Block out snoring, traffic,
-                    and other environmental noises for restful sleep.
-
-                </p>
-
-                <span class="protection-type-tag">
-                    Comfort &amp; Quiet
-                </span>
-
-            </div>
-
-
-            <!-- Type 2 -->
-
-            <div class="protection-type-card">
-
-                <div class="protection-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <path d="M9 18V5l12-2v13"/>
-                        <circle cx="6" cy="18" r="3"/>
-                        <circle cx="18" cy="16" r="3"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>
-                    Musician Plugs
-                </h3>
-
-                <p>
-
-                    Protect your hearing while maintaining natural
-                    sound quality. Perfect for musicians, sound
-                    engineers, and concert enthusiasts who need
-                    clarity with protection.
-
-                </p>
-
-                <span class="protection-type-tag">
-                    Sound Clarity
-                </span>
-
-            </div>
-
-
-            <!-- Type 3 -->
-
-            <div class="protection-type-card">
-
-                <div class="protection-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
-                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
-
-                    </svg>
-
-                </div>
-
-                <h3>
-                    Industrial Plugs
-                </h3>
-
-                <p>
-
-                    Heavy-duty protection for loud work environments.
-                    Meets safety standards and provides reliable
-                    noise reduction for industrial and construction
-                    settings.
-
-                </p>
-
-                <span class="protection-type-tag">
-                    Maximum Protection
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FEATURES SECTION
-============================================================ -->
-
-<section class="protection-features">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Key Features
-            </span>
-
-            <h2>
-                Why choose custom hearing protection.
-            </h2>
-
-            <p>
-                Custom hearing protection offers significant advantages
-                over generic options. Here's why professional solutions
-                make a difference.
-            </p>
-
-        </div>
-
-
-
-        <div class="features-grid">
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-                        <path d="M9 12l2 2 4-4"/>
-
-                    </svg>
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Perfect Fit
-                    </h3>
-
-                    <p>
-
-                        Custom-moulded to the unique shape of your
-                        ears for superior comfort and a secure seal
-                        that stays in place during any activity.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v8"/>
-                        <path d="M8 12h8"/>
-
-                    </svg>
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Superior Protection
-                    </h3>
-
-                    <p>
-
-                        Provide consistent, reliable noise reduction
-                        that meets or exceeds safety standards,
-                        protecting your hearing in any environment.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M20 7h-4.5A2.5 2.5 0 0 0 13 9.5v5A2.5 2.5 0 0 0 15.5 17H20v-2h-4.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5H20V7z"/>
-                        <path d="M4 7h4.5A2.5 2.5 0 0 1 11 9.5v5A2.5 2.5 0 0 1 8.5 17H4v-2h4.5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H4V7z"/>
-
-                    </svg>
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        All-Day Comfort
-                    </h3>
-
-                    <p>
-
-                        Made from soft, hypoallergenic materials that
-                        are comfortable for extended wear — no more
-                        discomfort or irritation from ill-fitting plugs.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="feature-card">
-
-                <div class="feature-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M12 8v4l3 3"/>
-
-                    </svg>
-
-                </div>
-
-                <div>
-
-                    <h3>
-                        Long-Lasting Durability
-                    </h3>
-
-                    <p>
-
-                        High-quality materials that withstand regular
-                        use and cleaning. Custom protection is a
-                        long-term investment in your hearing health.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     WHO NEEDS PROTECTION
-============================================================ -->
-
-<section class="protection-who">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Who Should Consider Protection
-            </span>
-
-            <h2>
-                Hearing protection is for everyone.
-            </h2>
-
-            <p>
-                If you're exposed to loud environments, protect your
-                hearing. These are just a few examples of who can
-                benefit from professional hearing protection.
-            </p>
-
-        </div>
-
-
-
-        <div class="who-grid">
-
-
-            <div class="who-card">
-
-                <span class="emoji">🏗️</span>
-
-                <h4>
-                    Construction Workers
-                </h4>
-
-                <p>
-                    Daily exposure to heavy machinery and tools at
-                    high decibels requires reliable protection.
-                </p>
-
-            </div>
-
-
-
-            <div class="who-card">
-
-                <span class="emoji">🎵</span>
-
-                <h4>
-                    Musicians &amp; DJs
-                </h4>
-
-                <p>
-                    Protect your hearing while preserving sound
-                    clarity and musical quality during performances
-                    and practice.
-                </p>
-
-            </div>
-
-
-
-            <div class="who-card">
-
-                <span class="emoji">🏊</span>
-
-                <h4>
-                    Swimmers
-                </h4>
-
-                <p>
-                    Custom swim plugs prevent water from entering
-                    the ear canal, helping prevent swimmer's ear
-                    and infections.
-                </p>
-
-            </div>
-
-
-
-            <div class="who-card">
-
-                <span class="emoji">🎯</span>
-
-                <h4>
-                    Sports Enthusiasts
-                </h4>
-
-                <p>
-                    Protect your hearing during shooting, racing,
-                    and other loud sports with custom-fit protection.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     IMAGE SECTION
-============================================================ -->
-
-<section class="protection-image-section">
-
-    <div class="container protection-image-grid">
-
-        <div>
-
-            <img
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=85"
-                alt="Custom hearing protection consultation"
-            >
-
-        </div>
-
-
-        <div>
-
-            <span class="section-tag">
-                Personalised Protection
-            </span>
-
-
-            <h2>
-                Protection that fits your life perfectly.
-            </h2>
-
-
-            <p>
-
-                Hearing protection shouldn't be a one-size-fits-all
-                solution. We work with you to understand your specific
-                needs, whether you're protecting your hearing at work,
-                at play, or while sleeping.
-
-            </p>
-
-
-            <p>
-
-                Our custom hearing protection is made from impressions
-                of your ears, ensuring a perfect fit that stays in
-                place and provides consistent protection in any situation.
-
-            </p>
-
-
-            <div class="check-list">
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Personalised to your ears
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Designed for your lifestyle
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Professional guidance and care
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     CTA SECTION
-============================================================ -->
-
-<section class="protection-cta">
-
-    <div class="container protection-cta-grid">
-
-
-        <div class="protection-cta-content">
-
-            <span class="section-tag">
-                Protect Your Hearing
-            </span>
-
-            <h2>
-                Don't wait — protect your hearing today.
-            </h2>
-
-            <p>
-
-                Noise-induced hearing loss is permanent, but it's
-                also preventable. Our custom hearing protection
-                solutions give you the confidence to enjoy life's
-                moments without risking your hearing health.
-
-            </p>
-
-            <p>
-
-                Whether you need protection for work, music, swimming,
-                or everyday comfort, we have a solution that fits
-                your needs and your budget.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="protection-cta-card">
-
-            <h3>
-                Ready to protect your hearing?
-            </h3>
-
-            <p>
-
-                Our hearing professionals will assess your needs
-                and create a custom protection solution that gives
-                you peace of mind.
-
-            </p>
-
-            <a
-                href="../index.html#contact"
-                class="btn-primary"
-            >
-                Get Hearing Protection
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FAQ
-============================================================ -->
-
-<section class="protection-faq">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Frequently Asked Questions
-            </span>
-
-            <h2>
-                Hearing protection questions.
-            </h2>
-
-        </div>
-
-
-
-        <div class="faq-list">
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Why do I need custom hearing protection?
-                </h3>
-
-                <p>
-
-                    Custom hearing protection provides a perfect seal
-                    and comfort that generic earplugs can't match.
-                    They're designed specifically for your ears,
-                    offering superior protection and comfort for
-                    all-day wear.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    How are custom earplugs made?
-                </h3>
-
-                <p>
-
-                    We take impressions of your ears using a soft,
-                    safe material. These impressions are then used
-                    to create custom-moulded plugs that fit your
-                    ears perfectly for maximum comfort and protection.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    How long do custom earplugs last?
-                </h3>
-
-                <p>
-
-                    With proper care, custom earplugs can last 3-5
-                    years or more. We recommend regular check-ups to
-                    ensure they continue to fit well and provide
-                    optimal protection.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Can I use custom earplugs for swimming?
-                </h3>
-
-                <p>
-
-                    Yes, we offer specialised swim plugs that create
-                    a watertight seal to prevent water from entering
-                    the ear canal, helping prevent swimmer's ear and
-                    other water-related ear conditions.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    How much does custom hearing protection cost?
-                </h3>
-
-                <p>
-
-                    The cost varies depending on the type of protection
-                    you need and the features you choose. We offer
-                    competitive pricing and can discuss your options
-                    during a consultation.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FINAL CTA
-============================================================ -->
-
-<section class="protection-final-cta">
-
-    <div class="container">
-
-        <div class="protection-final-card">
-
-            <h2>
-                Protect your hearing for a lifetime.
-            </h2>
-
-            <p>
-
-                Your hearing is one of your most valuable senses.
-                Don't leave it to chance. Book a consultation for
-                custom hearing protection and take the first step
-                toward preserving your hearing health.
-
-            </p>
-
-            <a
-                href="../index.html#contact"
-                class="btn-primary"
-            >
-                Book Hearing Protection Consultation
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
+<main>
+<section class="protection-hero"><img class="protection-hero-bg" src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1800&q=85" alt="People in a noisy environment">
+<div class="container protection-hero-content reveal"><span class="hero__badge"><span class="hero__badge-dot"></span> Protect Your Hearing</span><h1>Hearing <em>Protection</em></h1><p>From workplaces and workshops to concerts and recreation, thoughtful hearing protection can help reduce unnecessary exposure to loud sound.</p></div></section>
+<section class="protection-risk"><div class="container"><div class="section-header"><span class="section-tag">Know Your Exposure</span><h2>Where does loud sound show up?</h2><p>Hearing protection starts with recognizing the environments where your ears are doing too much work.</p></div>
+<div class="protection-risk-grid">
+<div class="protection-risk-card"><div class="risk-number">01</div><h3>At work</h3><p>Machinery, tools and industrial environments can create sustained noise exposure that calls for appropriate workplace protection.</p></div>
+<div class="protection-risk-card"><div class="risk-number">02</div><h3>At events</h3><p>Concerts, sporting events and entertainment venues can create intense sound levels, especially when you are close to speakers.</p></div>
+<div class="protection-risk-card"><div class="risk-number">03</div><h3>At play</h3><p>Power tools, recreational equipment and other hobbies can produce loud or sudden sounds that deserve attention.</p></div>
+</div></div></section>
+<section class="protection-work"><div class="container protection-work-grid">
+<div class="reveal"><img class="protection-work-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85" alt="Workplace noise environment"></div>
+<div class="reveal"><span class="section-tag">Everyday Protection</span><h2>Protection should fit the activity.</h2><p>The best approach depends on the environment, the intensity of the sound and how long you are exposed. In some situations, you also need to hear speech, alarms or other important sounds.</p>
+<div class="protection-activities"><div class="protection-activity"><strong>Workshops</strong><span>Reduce exposure around tools and machinery.</span></div><div class="protection-activity"><strong>Live music</strong><span>Plan ahead for high-volume events.</span></div><div class="protection-activity"><strong>Recreation</strong><span>Consider protection around loud equipment.</span></div><div class="protection-activity"><strong>Daily habits</strong><span>Lower volume and take breaks when possible.</span></div></div></div>
+</div></section>
+<section class="protection-options"><div class="container"><div class="section-header"><span class="section-tag">Protection Options</span><h2>Think beyond simply blocking sound.</h2><p>Comfort, fit and communication needs can all influence which protection approach is practical for you.</p></div>
+<div class="protection-options-grid">
+<div class="protection-option"><h3>Everyday noise</h3><p>For situations where sound is elevated and you want a practical way to reduce exposure while remaining comfortable.</p><span style="margin-top:auto;opacity:.7">Practical • Comfortable • Repeatable</span></div>
+<div class="protection-option"><h3>High-noise activities</h3><p>For environments where sound can become intense, planning protection before exposure is especially important.</p><span style="margin-top:auto;opacity:.85">Work • Events • Recreation</span></div>
+<div class="protection-option"><h3>Communication matters</h3><p>In some settings you need to hear speech and important environmental sounds. Discuss your environment before choosing protection.</p><span style="margin-top:auto;opacity:.7">Fit • Awareness • Function</span></div>
+</div></div></section>
+<section class="protection-tips"><div class="container protection-tips-grid">
+<div><span class="section-tag">Safe Listening Habits</span><h2>Small choices can reduce exposure.</h2><p>Hearing protection is one part of healthy hearing habits. When possible, combine protection with lower volume, shorter exposure and greater distance from loud sources.</p></div>
+<div class="protection-tip-list">
+<div class="protection-tip"><strong>Turn it down</strong><span>Lower volume when you control the sound.</span></div>
+<div class="protection-tip"><strong>Take breaks</strong><span>Give your ears time away from loud environments.</span></div>
+<div class="protection-tip"><strong>Move away</strong><span>Distance from a loud source can reduce exposure.</span></div>
+<div class="protection-tip"><strong>Plan ahead</strong><span>Bring suitable protection before entering a noisy environment.</span></div>
+<div class="protection-tip"><strong>Protect consistently</strong><span>Protection is most useful when used correctly whenever it is needed.</span></div>
+<div class="protection-tip"><strong>Ask questions</strong><span>Discuss your specific environment if you are unsure what approach is suitable.</span></div>
+</div></div></section>
+<section class="protection-cta"><div class="container"><span class="section-tag" style="color:#5ee8d8">Personalized Advice</span><h2>Not sure what protection you need?</h2><p>Tell us about your workplace, hobby or environment and we can help you understand your hearing-protection options.</p><a href="index.html#contact" class="btn-primary" style="margin-top:1.5rem">Talk to Sound Advice</a></div></section>
+</main><section class="detail-cta"><div class="container">
+<h2>Let's Talk About Your Hearing</h2>
+<p>Whether you need an assessment, fitting, repair help, or hearing protection, Sound Advice Hearing Solutions is here to help you understand your options.</p>
+<a href="index.html#contact" class="btn-primary">Book an Assessment</a>
+</div></section>
 
 
 

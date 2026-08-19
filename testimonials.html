@@ -422,6 +422,31 @@
 
 
         /* =====================================================
+           ACTIVE NAV LINK
+           (set at runtime by initActiveNav() — see bottom script)
+        ====================================================== */
+
+        .nav-links a.active,
+        .mobile-menu a.active {
+
+            color:
+                var(--primary);
+
+            font-weight:
+                700;
+
+        }
+
+
+        .nav-links > a.active:not(.nav-cta)::after {
+
+            transform:
+                scaleX(1);
+
+        }
+
+
+        /* =====================================================
            DROPDOWN
         ====================================================== */
 
@@ -2346,12 +2371,9 @@
         <div class="nav-inner">
 
 
-            <!-- LOGO -->
-
             <a
                 href="index.html"
                 class="logo"
-                aria-label="Sound Advice Hearing Solutions Home"
             >
 
                 <div class="logo__mark">
@@ -2367,7 +2389,6 @@
             </a>
 
 
-            <!-- DESKTOP NAVIGATION -->
 
             <nav
                 class="nav-links"
@@ -2402,7 +2423,7 @@
                     <div class="dropdown-menu">
 
                         <a href="services/hearing-aid-testing.html">
-                            Hearing Aid Testing
+                            Hearing Assessment
                         </a>
 
                         <a href="services/hearing-aid-fitting.html">
@@ -2410,7 +2431,7 @@
                         </a>
 
                         <a href="services/hearing-repair.html">
-                            Hearing Repair
+                            Hearing Aid Repair
                         </a>
 
                         <a href="services/hearing-protection.html">
@@ -2426,9 +2447,7 @@
                     Hearing Aids
                 </a>
 
-                <a href="tinnitus.html">
-                    Tinnitus
-                </a>
+
 
                 <a href="testimonials.html">
                     Testimonials
@@ -2448,14 +2467,14 @@
             </nav>
 
 
-            <!-- MOBILE BUTTON -->
+
+            <!-- MOBILE MENU BUTTON -->
 
             <button
                 class="hamburger"
                 id="hamburger"
                 aria-label="Toggle navigation"
                 aria-expanded="false"
-                type="button"
             >
 
                 <span></span>
@@ -2469,7 +2488,8 @@
     </div>
 
 
-    <!-- MOBILE MENU -->
+
+    <!-- MOBILE DRAWER -->
 
     <nav
         class="mobile-menu"
@@ -2537,7 +2557,6 @@
     </nav>
 
 </header>
-
 
 <!-- =========================================================
      PAGE HERO
@@ -3129,6 +3148,18 @@
 
 <script>
 
+
+    function initActiveNav() {
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+            const href = link.getAttribute('href').split('/').pop();
+            if (href === current) {
+                link.classList.add('active');
+            }
+        });
+    }
+
+
     /* ========================================================
        MOBILE MENU
     ========================================================= */
@@ -3297,6 +3328,16 @@
 
         }
     );
+
+
+    /* ========================================================
+       SET ACTIVE NAV LINK
+       (runs immediately — this script tag sits at the very
+       end of the page body, so the nav elements above it
+       already exist in the DOM by the time this runs)
+    ========================================================= */
+
+    initActiveNav();
 
 
     /* ========================================================

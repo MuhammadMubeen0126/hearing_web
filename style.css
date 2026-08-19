@@ -324,6 +324,13 @@ ul {
     font-weight: 600;
 }
 
+
+    .nav-links a.active,
+    .mobile-menu a.active {
+        color: #0F9D8A;
+        font-weight: 600;
+    }
+
 .nav-links > a:not(.nav-cta),
 .nav-dropdown-toggle {
     position: relative;
@@ -356,6 +363,8 @@ ul {
 
     width: 0;
     height: 2px;
+
+    transform: scaleX(1);
 
     background:
         linear-gradient(

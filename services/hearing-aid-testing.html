@@ -1673,17 +1673,18 @@
      MAIN HEADER
 ============================================================ -->
 
-<header class="site-header">
+<header
+    class="site-header"
+    id="site-header"
+>
 
     <div class="container">
 
-        <div class="header-inner">
+        <div class="nav-inner">
 
-
-            <!-- LOGO -->
 
             <a
-                href="../index.html"
+                href="index.html"
                 class="logo"
             >
 
@@ -1697,68 +1698,55 @@
 
                 </div>
 
-
-                <div class="logo__content">
-
-                    <div class="logo__text-primary">
-                        Sound Advice
-                    </div>
-
-                    <div class="logo__text-sub">
-                        Hearing Solutions
-                    </div>
-
-                </div>
-
             </a>
 
 
-            <!-- DESKTOP NAVIGATION -->
 
             <nav
                 class="nav-links"
                 aria-label="Primary navigation"
             >
 
+                <a href="index.html">
+                    Home
+                </a>
 
-                <!-- ABOUT -->
-
-                <a href="../index.html#about">
+                <a href="about.html">
                     About
                 </a>
 
 
-                <!-- SERVICES -->
-
                 <div class="nav-dropdown">
 
                     <a
-                        href="../index.html#services"
+                        href=""
                         class="nav-dropdown-toggle"
                     >
+
                         Services
 
                         <span>
-                            ▾
+                            &#9662;
                         </span>
+
                     </a>
 
 
                     <div class="dropdown-menu">
 
-                        <a href="hearing-aid-testing.html">
-                            Hearing Aid Testing
+                        <a href="services/hearing-aid-testing.html">
+                            Hearing Assessment
                         </a>
 
-                        <a href="hearing-aid-fitting.html">
+                        <a href="services/hearing-aid-fitting.html">
                             Hearing Aid Fitting
                         </a>
 
-                        <a href="hearing-repair.html">
-                            Hearing Repair
+                        <a href="services/hearing-repair.html">
+                            Hearing Aid Repair
                         </a>
 
-                        <a href="hearing-protection.html">
+                        <a href="services/hearing-protection.html">
                             Hearing Protection
                         </a>
 
@@ -1767,63 +1755,22 @@
                 </div>
 
 
-                <!-- HEARING AIDS -->
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="#hearing-aids"
-                        class="nav-dropdown-toggle"
-                    >
-                        Hearing Aids
-
-                        <span>
-                            ▾
-                        </span>
-                    </a>
+                <a href="hearing-aids.html">
+                    Hearing Aids
+                </a>
 
 
-                    <div class="dropdown-menu">
 
-                        <a href="#consultation">
-                            Hearing Aid Consultation
-                        </a>
-
-                        <a href="#fitting">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="#programming">
-                            Hearing Aid Programming
-                        </a>
-
-                        <a href="#repair">
-                            Hearing Aid Repair &amp; Maintenance
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <!-- TESTIMONIALS -->
-
-                <a href="../index.html#testimonials">
+                <a href="testimonials.html">
                     Testimonials
                 </a>
 
-
-                <!-- CONTACT -->
-
-                <a href="../index.html#contact">
+                <a href="contact.html">
                     Contact
                 </a>
 
-
-                <!-- CTA -->
-
                 <a
-                    href="../index.html#contact"
+                    href="contact.html"
                     class="nav-cta"
                 >
                     Book Appointment
@@ -1832,13 +1779,14 @@
             </nav>
 
 
+
             <!-- MOBILE MENU BUTTON -->
 
             <button
-                class="mobile-menu-toggle"
-                type="button"
-                aria-label="Open navigation menu"
-                onclick="openMenu()"
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
             >
 
                 <span></span>
@@ -1851,8 +1799,76 @@
 
     </div>
 
-</header>
 
+
+    <!-- MOBILE DRAWER -->
+
+    <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+    >
+
+        <a
+            href="index.html"
+            onclick="closeMenu()"
+        >
+            Home
+        </a>
+
+        <a
+            href="about.html"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+        <a
+            href="services/hearing-aid-testing.html"
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+        <a
+            href="hearing-aids.html"
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+        <a
+            href="tinnitus.html"
+            onclick="closeMenu()"
+        >
+            Tinnitus
+        </a>
+
+        <a
+            href="testimonials.html"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+        >
+            Contact / Locations
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Hearing Assessment
+        </a>
+
+    </nav>
+
+</header>
 
 <!-- ============================================================
      MOBILE NAVIGATION
@@ -1931,1188 +1947,42 @@
 
 
 
-<!-- ============================================================
-     HERO SECTION
-============================================================ -->
-
-<section class="assessment-hero">
-
-    <div class="container assessment-hero-grid">
-
-
-        <div class="assessment-hero-content">
-
-            <div class="assessment-badge">
-
-                <span></span>
-
-                Professional Hearing Aid Testing
-
-            </div>
-
-
-            <h1>
-
-                Find the Right Hearing Aid,
-                <em>With Confidence.</em>
-
-            </h1>
-
-
-            <p class="assessment-hero-text">
-
-                Choosing a hearing aid starts with understanding
-                your hearing needs. Our professional hearing aid
-                testing helps determine the level and type of
-                support that may be right for you, your lifestyle
-                and your communication needs.
-
-            </p>
-
-
-            <div class="assessment-hero-actions">
-
-                <a
-                    href="../index.html#contact"
-                    class="btn-primary"
-                >
-                    Book Hearing Aid Testing
-                </a>
-
-
-                <a
-                    href="#what-to-expect"
-                    class="btn-ghost"
-                >
-                    What To Expect
-                    <span>↓</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Hero Image -->
-
-        <div class="assessment-visual">
-
-            <div class="assessment-visual-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
-                    alt="Professional hearing care and hearing aid consultation"
-                    style="width:100%; height:260px; object-fit:cover; border-radius:18px; margin-bottom:1.5rem;"
-                >
-
-
-                <div class="assessment-visual-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                    >
-
-                        <path d="M4 14a8 8 0 0 1 16 0"/>
-
-                        <path d="M6 14v3a2 2 0 0 0 2 2h1"/>
-
-                        <path d="M18 14v3a2 2 0 0 1-2 2h-1"/>
-
-                        <path d="M9 19v1a2 2 0 0 0 2 2h2"/>
-
-                        <circle cx="12" cy="14" r="1"/>
-
-                    </svg>
-
-                </div>
-
-
-                <h3>
-                    Personalised hearing aid guidance
-                </h3>
-
-
-                <p>
-
-                    We take the time to understand your hearing,
-                    your communication needs and the environments
-                    where you want to hear more comfortably.
-
-                </p>
-
-
-                <div class="assessment-mini-list">
-
-                    <div class="assessment-mini-item">
-
-                        <span>✓</span>
-
-                        Hearing needs review
-
-                    </div>
-
-
-                    <div class="assessment-mini-item">
-
-                        <span>✓</span>
-
-                        Hearing aid suitability testing
-
-                    </div>
-
-
-                    <div class="assessment-mini-item">
-
-                        <span>✓</span>
-
-                        Clear results and explanations
-
-                    </div>
-
-
-                    <div class="assessment-mini-item">
-
-                        <span>✓</span>
-
-                        Personalised recommendations
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     INTRODUCTION
-============================================================ -->
-
-<section class="assessment-intro">
-
-    <div class="container assessment-intro-grid">
-
-
-        <div class="assessment-intro-content">
-
-            <span class="section-tag">
-                Why Hearing Aid Testing Matters
-            </span>
-
-
-            <h2>
-                Better hearing starts with the right support.
-            </h2>
-
-
-            <p>
-
-                Hearing aids are not one-size-fits-all. Different
-                hearing levels, communication needs and lifestyles
-                can require different levels of technology and
-                hearing aid support.
-
-            </p>
-
-
-            <p>
-
-                Our hearing aid testing process helps us understand
-                how you hear and what you may need from a hearing
-                device. We focus on practical solutions that can
-                support clearer communication in the situations
-                that matter most to you.
-
-            </p>
-
-
-            <div class="check-list">
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Understand your hearing needs
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Explore suitable hearing aid options
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Receive professional guidance
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <div class="assessment-info-card">
-
-            <h3>
-                Hearing Aid Testing Includes
-            </h3>
-
-
-            <div class="assessment-info-item">
-
-                <div class="assessment-info-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M9 12h6"/>
-
-                        <path d="M12 9v6"/>
-
-                        <rect
-                            x="4"
-                            y="4"
-                            width="16"
-                            height="16"
-                            rx="2"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Hearing Needs Review
-                    </strong>
-
-                    <p>
-                        We discuss your hearing concerns,
-                        lifestyle and everyday listening needs.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="assessment-info-item">
-
-                <div class="assessment-info-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M4 12h16"/>
-
-                        <path d="M7 8v8"/>
-
-                        <path d="M17 8v8"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Hearing Evaluation
-                    </strong>
-
-                    <p>
-                        Your hearing ability is evaluated to
-                        understand the type and degree of hearing loss.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="assessment-info-item">
-
-                <div class="assessment-info-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M4 19V5"/>
-
-                        <path d="M4 19h16"/>
-
-                        <path d="m7 15 3-4 3 2 4-6"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <strong>
-                        Hearing Aid Recommendations
-                    </strong>
-
-                    <p>
-                        We explain suitable options based on
-                        your hearing and personal requirements.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     WHAT TO EXPECT
-============================================================ -->
-
-<section
-    class="assessment-process"
-    id="what-to-expect"
->
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                What To Expect
-            </span>
-
-            <h2>
-                Your hearing aid testing, step by step.
-            </h2>
-
-            <p>
-                We make the process comfortable, professional
-                and easy to understand.
-            </p>
-
-        </div>
-
-
-        <div class="assessment-process-grid">
-
-
-            <div class="assessment-process-card">
-
-                <div class="process-number">
-                    01
-                </div>
-
-                <h3>
-                    Discuss Your Hearing
-                </h3>
-
-                <p>
-
-                    We begin by talking about your hearing,
-                    communication challenges, lifestyle and
-                    the situations where you would like to hear
-                    more comfortably.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="assessment-process-card">
-
-                <div class="process-number">
-                    02
-                </div>
-
-                <h3>
-                    Test Your Hearing
-                </h3>
-
-                <p>
-
-                    Appropriate hearing tests are performed
-                    to understand your hearing levels and
-                    determine the type of support you may need.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="assessment-process-card">
-
-                <div class="process-number">
-                    03
-                </div>
-
-                <h3>
-                    Explore Your Options
-                </h3>
-
-                <p>
-
-                    Your results are explained clearly and we
-                    discuss hearing aid options that may suit
-                    your hearing needs and lifestyle.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     HEARING AID TESTING TYPES
-============================================================ -->
-
-<section class="test-types">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Comprehensive Testing
-            </span>
-
-            <h2>
-                Testing focused on your hearing needs.
-            </h2>
-
-            <p>
-
-                Your hearing professional may recommend different
-                tests depending on your age, hearing concerns and
-                individual requirements.
-
-            </p>
-
-        </div>
-
-
-
-        <div class="test-types-grid">
-
-
-            <!-- Card 1 -->
-
-            <div class="test-type-card">
-
-                <div class="test-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <path d="M4 12h16"/>
-
-                        <path d="M7 8v8"/>
-
-                        <path d="M10 10v4"/>
-
-                        <path d="M14 7v10"/>
-
-                        <path d="M17 9v6"/>
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Pure Tone Hearing Test
-                    </h3>
-
-                    <p>
-
-                        Measures how softly you can hear different
-                        tones and frequencies. The results help
-                        establish your hearing levels and identify
-                        areas where hearing support may be beneficial.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Card 2 -->
-
-            <div class="test-type-card">
-
-                <div class="test-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <path d="M5 12h14"/>
-
-                        <path d="M8 8v8"/>
-
-                        <path d="M16 8v8"/>
-
-                        <circle
-                            cx="12"
-                            cy="12"
-                            r="8"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Speech Understanding
-                    </h3>
-
-                    <p>
-
-                        Helps determine how well you understand
-                        spoken words and conversations. This can
-                        provide useful information when considering
-                        hearing aid technology.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Card 3 -->
-
-            <div class="test-type-card">
-
-                <div class="test-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <path d="M4 12h16"/>
-
-                        <path d="M12 4v16"/>
-
-                        <circle
-                            cx="12"
-                            cy="12"
-                            r="8"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Middle Ear Testing
-                    </h3>
-
-                    <p>
-
-                        Where appropriate, additional testing can
-                        help assess middle ear function and provide
-                        further information about your hearing health.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- Card 4 -->
-
-            <div class="test-type-card">
-
-                <div class="test-type-icon">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                    >
-
-                        <path d="M12 3v18"/>
-
-                        <path d="M5 8h14"/>
-
-                        <path d="M5 16h14"/>
-
-                        <circle
-                            cx="12"
-                            cy="12"
-                            r="9"
-                        />
-
-                    </svg>
-
-                </div>
-
-
-                <div>
-
-                    <h3>
-                        Hearing Aid Suitability
-                    </h3>
-
-                    <p>
-
-                        Your hearing results and communication
-                        needs are considered when identifying
-                        hearing aid features and solutions that
-                        may be appropriate for you.
-
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     HEARING AID IMAGE SECTION
-============================================================ -->
-
-<section class="assessment-intro">
-
-    <div class="container assessment-intro-grid">
-
-
-        <div>
-
-            <img
-                src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=85"
-                alt="Hearing care professional speaking with a patient"
-                style="width:100%; height:430px; object-fit:cover; border-radius:24px;"
-            >
-
-        </div>
-
-
-        <div class="assessment-intro-content">
-
-            <span class="section-tag">
-                Personalised Hearing Care
-            </span>
-
-
-            <h2>
-                Hearing technology should fit your life.
-            </h2>
-
-
-            <p>
-
-                The right hearing aid is about more than technology.
-                It should complement your daily routine, communication
-                needs and the environments where you spend your time.
-
-            </p>
-
-
-            <p>
-
-                Whether you need help following conversations,
-                hearing in restaurants, enjoying television or
-                staying connected with family, we can help you
-                understand the available options.
-
-            </p>
-
-
-            <div class="check-list">
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Solutions for different lifestyles
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Modern hearing technology options
-
-                </div>
-
-
-                <div class="check-item">
-
-                    <div class="check-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path d="m5 12 4 4L19 6"/>
-
-                        </svg>
-
-                    </div>
-
-                    Professional guidance at every step
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     SIGNS SECTION
-============================================================ -->
-
-<section class="assessment-signs">
-
-    <div class="container assessment-signs-grid">
-
-
-        <div class="assessment-signs-content">
-
-            <span class="section-tag">
-                Could Hearing Aids Help?
-            </span>
-
-
-            <h2>
-                Small changes can make a big difference.
-            </h2>
-
-
-            <p>
-
-                If hearing difficulties are affecting your everyday
-                communication, hearing aid testing can help you
-                understand whether hearing technology may be useful.
-
-            </p>
-
-
-            <div class="signs-list">
-
-
-                <div class="sign-item">
-
-                    <span>✓</span>
-
-                    You regularly ask people to repeat themselves.
-
-                </div>
-
-
-                <div class="sign-item">
-
-                    <span>✓</span>
-
-                    Conversations are difficult in noisy environments.
-
-                </div>
-
-
-                <div class="sign-item">
-
-                    <span>✓</span>
-
-                    You turn the television or phone volume up.
-
-                </div>
-
-
-                <div class="sign-item">
-
-                    <span>✓</span>
-
-                    You struggle to follow group conversations.
-
-                </div>
-
-
-                <div class="sign-item">
-
-                    <span>✓</span>
-
-                    You find certain voices difficult to understand.
-
-                </div>
-
-
-                <div class="sign-item">
-
-                    <span>✓</span>
-
-                    Family or friends have commented on your hearing.
-
-                </div>
-
-
-            </div>
-
-        </div>
-
-
-
-        <div class="assessment-cta-card">
-
-            <h3>
-                Not sure which hearing aid is right for you?
-            </h3>
-
-
-            <p>
-
-                You don't need to know which hearing aid you need
-                before making an appointment. Our hearing professionals
-                can assess your hearing, explain your options and
-                help you understand what may work best for your needs.
-
-            </p>
-
-
-            <a
-                href="../index.html#contact"
-                class="btn-primary"
-            >
-                Book Hearing Aid Testing
-            </a>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FAQ
-============================================================ -->
-
-<section class="assessment-faq">
-
-    <div class="container">
-
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Frequently Asked Questions
-            </span>
-
-            <h2>
-                Hearing aid testing questions.
-            </h2>
-
-        </div>
-
-
-
-        <div class="faq-list">
-
-
-            <div class="faq-item">
-
-                <h3>
-                    What is hearing aid testing?
-                </h3>
-
-                <p>
-
-                    Hearing aid testing involves evaluating your
-                    hearing and communication needs to help determine
-                    whether hearing aids may be appropriate and which
-                    features may best support you.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Do I need a hearing test before choosing hearing aids?
-                </h3>
-
-                <p>
-
-                    A hearing evaluation is an important part of
-                    understanding your hearing needs. Your results
-                    can help guide the selection and programming of
-                    suitable hearing technology.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Are hearing aids suitable for everyone?
-                </h3>
-
-                <p>
-
-                    Hearing needs vary from person to person.
-                    A professional assessment can help determine
-                    whether hearing aids may be appropriate for
-                    your individual situation.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Can hearing aids help in noisy environments?
-                </h3>
-
-                <p>
-
-                    Modern hearing aids can include features designed
-                    to support speech understanding and listening
-                    comfort in different environments. Your hearing
-                    professional can explain which features may be
-                    appropriate for you.
-
-                </p>
-
-            </div>
-
-
-
-            <div class="faq-item">
-
-                <h3>
-                    Can I bring someone with me?
-                </h3>
-
-                <p>
-
-                    Absolutely. A family member or friend is welcome
-                    to attend if you would find their support helpful,
-                    particularly when discussing your communication
-                    needs and hearing goals.
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ============================================================
-     FINAL CTA
-============================================================ -->
-
-<section class="assessment-final-cta">
-
-    <div class="container">
-
-        <div class="assessment-final-card">
-
-            <h2>
-                Take the next step toward better hearing.
-            </h2>
-
-
-            <p>
-
-                Understanding your hearing is the first step toward
-                finding the right support. Book a professional hearing
-                aid testing appointment and let our team guide you
-                through your options.
-
-            </p>
-
-
-            <a
-                href="../index.html#contact"
-                class="btn-primary"
-            >
-                Book Hearing Aid Testing
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
+</header>
+<main>
+<section class="testing-hero"><div class="container testing-hero-grid">
+<div class="reveal"><span class="section-tag">Start With Answers</span><h1>Hearing Aid <em>Testing</em></h1>
+<p class="testing-lead">A hearing assessment gives you a clearer picture of what you hear, where you struggle, and what support may make everyday communication easier.</p>
+<a class="btn-primary" href="index.html#contact">Book a Hearing Assessment</a>
+<div class="testing-statbar"><div class="testing-stat"><strong>01</strong><span>Discuss your concerns</span></div><div class="testing-stat"><strong>02</strong><span>Complete appropriate testing</span></div><div class="testing-stat"><strong>03</strong><span>Understand your results</span></div></div>
+</div>
+<img class="testing-photo reveal" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1100&q=85" alt="Hearing assessment consultation">
+</div></section>
+<section class="testing-section"><div class="container testing-intro">
+<div><span class="section-tag">The Assessment</span><h2>It starts with listening to you.</h2></div>
+<div><p>Hearing difficulties can be gradual. You may notice that people mumble, the television needs to be louder, or restaurants become exhausting long before you describe yourself as having hearing loss.</p><p>A professional assessment puts those experiences into context. We discuss your hearing concerns, communication goals and the environments that matter most to you before explaining the testing process.</p>
+<div class="testing-number-list">
+<div class="testing-number-item"><div class="testing-number">01</div><div><h3>Your hearing history</h3><p>We talk about changes you have noticed, previous hearing care and situations where communication feels difficult.</p></div></div>
+<div class="testing-number-item"><div class="testing-number">02</div><div><h3>Listening measurements</h3><p>Appropriate hearing measurements help establish a clearer picture of your hearing ability.</p></div></div>
+<div class="testing-number-item"><div class="testing-number">03</div><div><h3>A conversation about results</h3><p>Your results are explained in practical language so you understand what they mean for everyday life.</p></div></div>
+</div></div></div></section>
+<section class="testing-results"><div class="container testing-results-grid">
+<div><span class="section-tag" style="color:#5ee8d8">After Testing</span><h2>What do the results actually mean?</h2><p style="color:rgba(255,255,255,.65);margin-top:1rem">The value of an assessment is not just the test itself. It is having someone explain the findings and help you understand your options.</p></div>
+<div><div class="testing-result-card"><h3>Understanding your hearing</h3><p>We discuss the pattern and degree of hearing difficulty identified during your assessment and how it may relate to your communication experiences.</p></div>
+<div class="testing-result-card"><h3>Deciding what comes next</h3><p>Depending on your needs, next steps may include monitoring, further assessment, communication strategies or a discussion about hearing technology.</p></div>
+<div class="testing-result-card"><h3>No pressure</h3><p>An assessment is an opportunity to get information. You can take time to consider what you have learned and what feels right for you.</p></div></div>
+</div></section>
+<section class="testing-faq"><div class="container"><div class="section-header"><span class="section-tag">Questions</span><h2>Before Your Appointment</h2></div>
+<div class="testing-faq-grid">
+<div class="testing-faq-item"><h3>How long does testing take?</h3><p>Appointment length depends on the type of assessment and your individual needs. The clinic can provide an estimated appointment time when you book.</p></div>
+<div class="testing-faq-item"><h3>Do I need to wait until hearing is very poor?</h3><p>No. If communication is becoming harder, testing can give you useful information before difficulties become more disruptive.</p></div>
+<div class="testing-faq-item"><h3>Will testing mean I need hearing aids?</h3><p>No. Testing provides information. Recommendations depend on your results, communication needs and preferences.</p></div>
+<div class="testing-faq-item"><h3>What should I bring?</h3><p>Bring relevant hearing history information and think about the situations where you have the most difficulty hearing.</p></div>
+</div></div></section>
+</main><section class="detail-cta"><div class="container">
+<h2>Let's Talk About Your Hearing</h2>
+<p>Whether you need an assessment, fitting, repair help, or hearing protection, Sound Advice Hearing Solutions is here to help you understand your options.</p>
+<a href="index.html#contact" class="btn-primary">Book an Assessment</a>
+</div></section>
 
 
 

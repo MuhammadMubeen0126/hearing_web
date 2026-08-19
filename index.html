@@ -57,6 +57,19 @@
         href="style.css"
     >
 
+    <!--
+        Additive only: a rule for the .active class that initActiveNav()
+        applies at runtime. Doesn't touch/override anything in style.css.
+        If you already have an .active rule in style.css, delete this block.
+    -->
+    <style>
+        .nav-links a.active,
+        .mobile-menu a.active {
+            color: #0F9D8A;
+            font-weight: 600;
+        }
+    </style>
+
 </head>
 
 
@@ -172,7 +185,7 @@
                 <div class="nav-dropdown">
 
                     <a
-                        href="services/hearing-aid-testing.html"
+                        href=""
                         class="nav-dropdown-toggle"
                     >
 
@@ -212,9 +225,7 @@
                     Hearing Aids
                 </a>
 
-                <a href="tinnitus.html">
-                    Tinnitus
-                </a>
+
 
                 <a href="testimonials.html">
                     Testimonials
@@ -2070,6 +2081,17 @@
 <script>
 
 
+function initActiveNav() {
+  const current = location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === current) {
+      link.classList.add('active');
+    }
+  });
+}
+
+
 /* =========================================================
    MOBILE MENU
 ========================================================= */
@@ -2387,6 +2409,8 @@ document.addEventListener(
         initFAQ();
 
         initSmoothScroll();
+
+        initActiveNav();
 
     }
 );

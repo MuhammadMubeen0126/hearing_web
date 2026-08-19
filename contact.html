@@ -1,251 +1,527 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Contact Us | Sound Advice Hearing Solutions</title>
+  <meta name="description" content="Contact Sound Advice Hearing Solutions or book a hearing assessment at our Sherwood Park or St. Paul, Alberta clinic locations.">
 
-  <meta name="description" content="Contact Sound Advice Hearing Solutions or book a hearing assessment at our Sherwood Park or St. Paul, Alberta clinic locations." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --primary:#0d7a6c;
+      --primary-dark:#075b51;
+      --accent:#dff3ef;
+      --ink:#173b38;
+      --text:#50635f;
+      --muted:#78908b;
+      --white:#fff;
+      --light:#f5faf9;
+      --border:#dce9e6;
+      --shadow:0 18px 50px rgba(16,72,65,.10);
+      --radius:22px;
+    }
 
-  <!-- Stylesheet -->
-  <link rel="stylesheet" href="style.css" />
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"DM Sans",sans-serif;
+      color:var(--text);
+      background:#fff;
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    button,input,select,textarea{font:inherit}
+    .container{width:min(1180px,92%);margin:auto}
+
+    /* TOP BAR */
+    .topbar{
+      background:var(--ink);
+      color:#dceae7;
+      font-size:13px;
+    }
+    .topbar__inner{
+      min-height:42px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .topbar__loc,.topbar__phones{
+      display:flex;
+      align-items:center;
+      gap:9px;
+    }
+    .topbar svg{color:#8ed6cb;flex:none}
+    .topbar a{color:#fff;font-weight:600}
+    .topbar a:hover{color:#9ce1d7}
+    .topbar__sep{opacity:.35}
+
+    /* HEADER */
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid transparent;
+      transition:.3s ease;
+    }
+    .site-header.scrolled{
+      box-shadow:0 8px 30px rgba(12,64,58,.08);
+      border-color:var(--border);
+    }
+    .nav-inner{
+      min-height:88px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:30px;
+    }
+    .logo{display:flex;align-items:center;flex-shrink:0}
+    .logo__mark{width:190px}
+    .logo__img{width:100%;height:auto;object-fit:contain}
+    .nav-links{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:24px;
+      font-size:14px;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .nav-links>a,.nav-dropdown-toggle{
+      position:relative;
+      padding:10px 0;
+      white-space:nowrap;
+    }
+    .nav-links>a:not(.nav-cta)::after,
+    .nav-dropdown-toggle::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:3px;
+      width:0;
+      height:2px;
+      background:var(--primary);
+      transition:.25s;
+    }
+    .nav-links>a:hover::after,
+    .nav-dropdown:hover .nav-dropdown-toggle::after{width:100%}
+    .nav-dropdown{position:relative}
+    .nav-dropdown-toggle span{font-size:10px;margin-left:3px}
+    .dropdown-menu{
+      position:absolute;
+      top:calc(100% + 14px);
+      left:50%;
+      transform:translate(-50%,8px);
+      width:220px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:15px;
+      padding:9px;
+      box-shadow:var(--shadow);
+      opacity:0;
+      visibility:hidden;
+      transition:.25s ease;
+    }
+    .nav-dropdown:hover .dropdown-menu{
+      opacity:1;
+      visibility:visible;
+      transform:translate(-50%,0);
+    }
+    .dropdown-menu a{
+      display:block;
+      padding:10px 12px;
+      border-radius:9px;
+      font-size:13px;
+    }
+    .dropdown-menu a:hover{background:var(--light);color:var(--primary)}
+    .nav-cta,.mob-cta{
+      background:var(--primary)!important;
+      color:#fff!important;
+      padding:12px 18px!important;
+      border-radius:999px;
+      box-shadow:0 8px 20px rgba(13,122,108,.18);
+    }
+    .nav-cta:hover{background:var(--primary-dark)!important}
+    .nav-cta::after{display:none!important}
+
+    .hamburger{
+      display:none;
+      border:0;
+      background:transparent;
+      width:44px;
+      height:44px;
+      cursor:pointer;
+      padding:9px;
+    }
+    .hamburger span{
+      display:block;
+      width:25px;
+      height:2px;
+      background:var(--ink);
+      margin:5px auto;
+      transition:.25s;
+    }
+    .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+    .hamburger.open span:nth-child(2){opacity:0}
+    .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+    .mobile-menu{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      right:0;
+      background:#fff;
+      border-top:1px solid var(--border);
+      padding:15px 4%;
+      box-shadow:0 20px 30px rgba(0,0,0,.08);
+    }
+    .mobile-menu a{
+      display:block;
+      padding:13px 4px;
+      border-bottom:1px solid #edf3f1;
+      font-weight:600;
+      color:var(--ink);
+    }
+    .mobile-menu.open{display:block}
+
+    /* HERO */
+    .page-hero{
+      padding:88px 0 82px;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(136,211,199,.30), transparent 35%),
+        linear-gradient(135deg,#eaf7f4,#f8fcfb);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .page-hero:before{
+      content:"";
+      position:absolute;
+      width:260px;height:260px;
+      border-radius:50%;
+      border:1px solid rgba(13,122,108,.10);
+      left:-90px;bottom:-120px;
+    }
+    .section-tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      color:var(--primary);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:13px;
+    }
+    .section-tag:before{
+      content:"";
+      width:24px;height:2px;
+      background:var(--primary);
+    }
+    .hero__h1{
+      font-family:"DM Serif Display",serif;
+      color:var(--ink);
+      font-weight:400;
+      font-size:clamp(2.3rem,5vw,4rem);
+      line-height:1.1;
+    }
+
+    /* CONTACT */
+    .contact-section{padding:90px 0 105px}
+    .contact-grid{
+      display:grid;
+      grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);
+      gap:45px;
+      align-items:start;
+    }
+    .contact-form-wrap,.locations-wrap{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:38px;
+      box-shadow:var(--shadow);
+    }
+    .contact-form-wrap h2,.locations-wrap h2{
+      font-family:"DM Serif Display",serif;
+      color:var(--ink);
+      font-size:34px;
+      font-weight:400;
+      line-height:1.2;
+      margin-bottom:27px;
+    }
+    .form-group{margin-bottom:18px}
+    label{
+      display:block;
+      margin-bottom:7px;
+      color:var(--ink);
+      font-size:14px;
+      font-weight:700;
+    }
+    .form-control{
+      width:100%;
+      border:1px solid var(--border);
+      background:#fbfdfd;
+      color:var(--ink);
+      border-radius:12px;
+      padding:13px 15px;
+      outline:none;
+      transition:.2s;
+    }
+    .form-control:focus{
+      border-color:var(--primary);
+      background:#fff;
+      box-shadow:0 0 0 4px rgba(13,122,108,.08);
+    }
+    textarea.form-control{min-height:135px;resize:vertical}
+    select.form-control{cursor:pointer}
+    .btn-primary{
+      border:0;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      cursor:pointer;
+      background:var(--primary);
+      color:#fff;
+      padding:14px 23px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.25s;
+      box-shadow:0 10px 24px rgba(13,122,108,.18);
+    }
+    .btn-primary:hover{
+      background:var(--primary-dark);
+      transform:translateY(-2px);
+    }
+    .btn-primary:disabled{opacity:.7;cursor:not-allowed;transform:none}
+
+    /* LOCATIONS */
+    .locations-grid{display:grid;gap:18px}
+    .location-card{
+      padding:24px;
+      background:var(--light);
+      border:1px solid var(--border);
+      border-radius:17px;
+      transition:.25s;
+    }
+    .location-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 12px 25px rgba(12,72,65,.08);
+    }
+    .location-card__header{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      margin-bottom:12px;
+    }
+    .location-icon{
+      width:40px;height:40px;
+      display:grid;place-items:center;
+      background:var(--accent);
+      border-radius:12px;
+      font-size:19px;
+    }
+    .location-card h3{color:var(--ink);font-size:20px}
+    .location-card__addr{margin-bottom:15px;color:var(--text)}
+    .location-info{
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
+      padding:12px 0;
+      margin-bottom:14px;
+    }
+    .location-info p{font-size:14px;margin:4px 0}
+    .location-info a{color:var(--primary);font-weight:600}
+    .hours h4{color:var(--ink);font-size:15px;margin-bottom:5px}
+    .hours p{font-size:14px;margin:2px 0}
+    .hours strong{color:var(--primary);font-size:14px}
+
+    /* FOOTER */
+    .site-footer{
+      background:#102f2c;
+      color:#bcd0cc;
+      padding:70px 0 0;
+    }
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+      gap:45px;
+      padding-bottom:50px;
+    }
+    .footer-brand .logo__mark{width:190px}
+    .footer-brand>p{
+      max-width:340px;
+      margin-top:18px;
+      font-size:14px;
+      line-height:1.8;
+    }
+    .footer-col h4{
+      color:#fff;
+      font-size:15px;
+      margin-bottom:15px;
+    }
+    .footer-col ul{list-style:none}
+    .footer-col li{margin:8px 0;font-size:14px}
+    .footer-col a:hover{color:#fff}
+    .footer-contact-item{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin:12px 0;
+      font-size:14px;
+    }
+    .footer-contact-item svg{width:17px;height:17px;flex:none;color:#83d0c4}
+    .footer-contact-item a:hover{color:#fff}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.1);
+      padding:22px 0;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+      font-size:12px;
+    }
+    .footer-bottom-links{display:flex;gap:20px}
+    .footer-bottom a:hover{color:#fff}
+
+    /* REVEAL */
+    .reveal{
+      opacity:0;
+      transform:translateY(25px);
+      transition:.7s ease;
+    }
+    .reveal.visible{opacity:1;transform:none}
+
+    /* STATUS */
+    .form-status{
+      display:none;
+      margin-bottom:20px;
+      padding:13px 15px;
+      border-radius:11px;
+      font-size:14px;
+      font-weight:600;
+    }
+    .form-status.error{display:block;background:#fff0f0;color:#a33;border:1px solid #f2caca}
+    .form-status.success{display:block;background:#eaf8f4;color:#096b5e;border:1px solid #bfe5dd}
+
+    /* RESPONSIVE */
+    @media(max-width:1050px){
+      .nav-links{gap:15px}
+      .footer-grid{grid-template-columns:1.5fr 1fr 1fr}
+      .footer-col:last-child{grid-column:2 / -1}
+    }
+    @media(max-width:850px){
+      .topbar__loc{font-size:11px}
+      .topbar__phones{font-size:12px}
+      .nav-links{display:none}
+      .hamburger{display:block}
+      .contact-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
+      .footer-col:last-child{grid-column:auto}
+    }
+    @media(max-width:600px){
+      .topbar__inner{justify-content:center;padding:8px 0}
+      .topbar__loc{display:none}
+      .topbar__phones{font-size:12px}
+      .nav-inner{min-height:75px}
+      .logo__mark,.footer-brand .logo__mark{width:160px}
+      .page-hero{padding:65px 0}
+      .contact-section{padding:55px 0 70px}
+      .contact-form-wrap,.locations-wrap{padding:24px 20px}
+      .contact-form-wrap h2,.locations-wrap h2{font-size:29px}
+      .footer-grid{grid-template-columns:1fr;gap:30px}
+      .footer-col:last-child{grid-column:auto}
+      .footer-bottom{flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
+      .reveal{opacity:1;transform:none}
+    }
+  </style>
 </head>
 
 <body>
 
-   <div class="topbar">
+  <div class="topbar">
     <div class="topbar__inner container">
-
       <div class="topbar__loc">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+          <circle cx="12" cy="10" r="3"/>
         </svg>
         Independent Hearing Clinic Serving Sherwood Park &amp; St. Paul Alberta
       </div>
-
       <div class="topbar__phones">
         <a href="tel:5874046064">587-404-6064</a>
         <span class="topbar__sep">|</span>
         <a href="tel:18664046064">1-866-404-6064</a>
       </div>
-
     </div>
   </div>
 
-<!-- =========================================================
-     HEADER / NAVIGATION
-========================================================== -->
-
-<header
-    class="site-header"
-    id="site-header"
->
-
+  <header class="site-header" id="site-header">
     <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="logo" aria-label="Sound Advice Hearing Solutions Home">
+          <div class="logo__mark">
+            <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                 alt="Sound Advice Hearing Solutions Logo" class="logo__img">
+          </div>
+        </a>
 
-        <div class="nav-inner">
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
 
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-
-                <div class="logo__mark">
-
-                    <img
-                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-                        alt="Sound Advice Hearing Solutions Logo"
-                        class="logo__img"
-                    >
-
-                </div>
-
+          <div class="nav-dropdown">
+            <a href="services/hearing-aid-testing.html" class="nav-dropdown-toggle">
+              Services <span>▼</span>
             </a>
+            <div class="dropdown-menu">
+              <a href="services/hearing-aid-testing.html">Hearing Assessment</a>
+              <a href="services/hearing-aid-fitting.html">Hearing Aid Fitting</a>
+              <a href="services/hearing-repair.html">Hearing Aid Repair</a>
+              <a href="services/hearing-protection.html">Hearing Protection</a>
+            </div>
+          </div>
 
+          <a href="hearing-aids.html">Hearing Aids</a>
+          
+          <a href="testimonials.html">Testimonials</a>
+          <a href="contact.html">Contact</a>
+          <a href="contact.html" class="nav-cta">Book Appointment</a>
+        </nav>
 
-
-            <nav
-                class="nav-links"
-                aria-label="Primary navigation"
-            >
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="services/hearing-aid-testing.html"
-                        class="nav-dropdown-toggle"
-                    >
-
-                        Services
-
-                        <span>
-                            &#9662;
-                        </span>
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="services/hearing-aid-testing.html">
-                            Hearing Assessment
-                        </a>
-
-                        <a href="services/hearing-aid-fitting.html">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="services/hearing-repair.html">
-                            Hearing Aid Repair
-                        </a>
-
-                        <a href="services/hearing-protection.html">
-                            Hearing Protection
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <a href="hearing-aids.html">
-                    Hearing Aids
-                </a>
-
-                <a href="tinnitus.html">
-                    Tinnitus
-                </a>
-
-                <a href="testimonials.html">
-                    Testimonials
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-                <a
-                    href="contact.html"
-                    class="nav-cta"
-                >
-                    Book Appointment
-                </a>
-
-            </nav>
-
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
-
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
 
-
-
-    <!-- MOBILE DRAWER -->
-
-    <nav
-        class="mobile-menu"
-        id="mobile-menu"
-        aria-label="Mobile navigation"
-    >
-
-        <a
-            href="index.html"
-            onclick="closeMenu()"
-        >
-            Home
-        </a>
-
-        <a
-            href="about.html"
-            onclick="closeMenu()"
-        >
-            About
-        </a>
-
-        <a
-            href="services/hearing-aid-testing.html"
-            onclick="closeMenu()"
-        >
-            Services
-        </a>
-
-        <a
-            href="hearing-aids.html"
-            onclick="closeMenu()"
-        >
-            Hearing Aids
-        </a>
-
-        <a
-            href="tinnitus.html"
-            onclick="closeMenu()"
-        >
-            Tinnitus
-        </a>
-
-        <a
-            href="testimonials.html"
-            onclick="closeMenu()"
-        >
-            Testimonials
-        </a>
-
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-        >
-            Contact / Locations
-        </a>
-
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-            class="mob-cta"
-        >
-            Book Hearing Assessment
-        </a>
-
+    <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+      <a href="index.html" onclick="closeMenu()">Home</a>
+      <a href="about.html" onclick="closeMenu()">About</a>
+      <a href="services/hearing-aid-testing.html" onclick="closeMenu()">Services</a>
+      <a href="hearing-aids.html" onclick="closeMenu()">Hearing Aids</a>
+      
+      <a href="testimonials.html" onclick="closeMenu()">Testimonials</a>
+      <a href="contact.html" onclick="closeMenu()">Contact / Locations</a>
+      <a href="contact.html" onclick="closeMenu()" class="mob-cta">Book Hearing Assessment</a>
     </nav>
-
-</header>
-
+  </header>
 
   <section class="page-hero">
     <div class="container">
       <span class="section-tag">Get In Touch</span>
-      <h1 class="hero__h1" style="font-size:2.4rem;">Book Your Hearing Assessment</h1>
+      <h1 class="hero__h1">Book Your Hearing Assessment</h1>
     </div>
   </section>
 
@@ -253,153 +529,141 @@
     <div class="container">
       <div class="contact-grid">
 
-        <!-- Form -->
         <div class="contact-form-wrap reveal">
-          <h2>Book Your Hearing Assessment</h2>
+          <h2>Let's Talk About Your Hearing</h2>
 
-          <form>
+          <div id="form-status" class="form-status" role="alert"></div>
 
-            <div class="form-group">
-              <label for="name">Full Name</label>
-              <input type="text" id="name" class="form-control" placeholder="Jane Smith" />
+          <form id="appointment-form" action="send-mail.php" method="POST" novalidate>
+            <!-- Honeypot spam field -->
+            <div style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" class="form-control" placeholder="587-XXX-XXXX" />
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" class="form-control"
+                     placeholder="Jane Smith" autocomplete="name" required>
             </div>
 
             <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" class="form-control" placeholder="jane@example.com" />
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="form-control"
+                     placeholder="587-XXX-XXXX" autocomplete="tel" required>
             </div>
 
             <div class="form-group">
-              <label for="location">Preferred Location</label>
-              <select id="location" class="form-control">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" class="form-control"
+                     placeholder="jane@example.com" autocomplete="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="location">Preferred Location *</label>
+              <select id="location" name="location" class="form-control" required>
                 <option value="">-- Select a Clinic --</option>
-                <option>Sherwood Park</option>
-                <option>St. Paul</option>
+                <option value="Sherwood Park">Sherwood Park</option>
+                <option value="St. Paul">St. Paul</option>
               </select>
             </div>
 
             <div class="form-group">
               <label for="message">How Can We Help?</label>
-              <textarea id="message" class="form-control" placeholder="Tell us about your hearing concerns..."></textarea>
+              <textarea id="message" name="message" class="form-control"
+                        placeholder="Tell us about your hearing concerns..."></textarea>
             </div>
 
-            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;">
+            <button id="submit-button" type="submit" class="btn-primary" style="width:100%;">
               Request Appointment
             </button>
-
           </form>
         </div>
 
-      <!-- Locations -->
-<div class="locations-wrap reveal">
-    <h2>Our Locations</h2>
+        <div class="locations-wrap reveal">
+          <h2>Our Locations</h2>
 
-    <div class="locations-grid">
-
-        <!-- Sherwood Park -->
-        <div class="location-card">
-            <div class="location-card__header">
-                <div class="location-icon">&#128205;</div>
+          <div class="locations-grid">
+            <div class="location-card">
+              <div class="location-card__header">
+                <div class="location-icon">📍</div>
                 <h3>Sherwood Park, AB</h3>
-            </div>
-
-            <p class="location-card__addr">
+              </div>
+              <p class="location-card__addr">
                 134-80 Chippewa Road<br>
                 Sherwood Park, AB T8A 4W6
-            </p>
+              </p>
 
-            <div class="location-info">
-                <p><strong>&#128222; Call:</strong> <a href="tel:5874046064">587-404-6064</a></p>
-                <p><strong>&#9742; Toll Free:</strong> <a href="tel:18664046064">1-866-404-6064</a></p>
-                <p><strong>&#128224; Fax:</strong> 587-404-6063</p>
-            </div>
+              <div class="location-info">
+                <p><strong>☎ Call:</strong> <a href="tel:5874046064">587-404-6064</a></p>
+                <p><strong>☎ Toll Free:</strong> <a href="tel:18664046064">1-866-404-6064</a></p>
+                <p><strong>Fax:</strong> 587-404-6063</p>
+              </div>
 
-            <div class="hours">
+              <div class="hours">
                 <h4>Hours</h4>
-                <p>Monday, Wednesday, Thursday & Friday</p>
-                <strong>9:00 AM &ndash; 4:30 PM</strong>
-
-                <p style="margin-top:15px;">Tuesday</p>
-                <strong>9:00 AM &ndash; 3:00 PM</strong>
+                <p>Monday, Wednesday, Thursday &amp; Friday</p>
+                <strong>9:00 AM – 4:30 PM</strong>
+                <p style="margin-top:12px;">Tuesday</p>
+                <strong>9:00 AM – 3:00 PM</strong>
+              </div>
             </div>
-        </div>
 
-        <!-- St. Paul -->
-        <div class="location-card">
-            <div class="location-card__header">
-                <div class="location-icon">&#128205;</div>
+            <div class="location-card">
+              <div class="location-card__header">
+                <div class="location-icon">📍</div>
                 <h3>St. Paul, AB</h3>
-            </div>
-
-            <p class="location-card__addr">
+              </div>
+              <p class="location-card__addr">
                 Unit #223, 5102-50th Ave<br>
                 St. Paul, AB T0A 3A4
-            </p>
+              </p>
 
-            <div class="location-info">
-                <p><strong>&#128222; Call:</strong> <a href="tel:5874046064">587-404-6064</a></p>
-                <p><strong>&#9742; Toll Free:</strong> <a href="tel:18664046064">1-866-404-6064</a></p>
-                <p><strong>&#128224; Fax:</strong> 587-404-6063</p>
-            </div>
+              <div class="location-info">
+                <p><strong>☎ Call:</strong> <a href="tel:5874046064">587-404-6064</a></p>
+                <p><strong>☎ Toll Free:</strong> <a href="tel:18664046064">1-866-404-6064</a></p>
+                <p><strong>Fax:</strong> 587-404-6063</p>
+              </div>
 
-            <div class="hours">
+              <div class="hours">
                 <h4>Hours</h4>
                 <p>Tuesday</p>
-                <strong>10:00 AM &ndash; 3:00 PM</strong>
-
-                <p style="margin-top:15px;">
-                    <strong>By Appointment Only</strong>
-                </p>
+                <strong>10:00 AM – 3:00 PM</strong>
+                <p style="margin-top:12px;"><strong>By Appointment Only</strong></p>
+              </div>
             </div>
+          </div>
         </div>
 
-    </div>
-</div>
       </div>
     </div>
   </section>
 
-  <!-- ============================================================
-       FOOTER
-       ============================================================ -->
   <footer class="site-footer">
-    <div class="container footer-main">
+    <div class="container">
       <div class="footer-grid">
-<!-- Brand -->
-<div class="footer-brand">
-  <div class="logo">
-    <div class="logo__mark">
-      <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-           alt="Sound Advice Hearing Solutions Logo"
-           class="logo__img">
-    </div>
 
-    
-  </div>
+        <div class="footer-brand">
+          <div class="logo">
+            <div class="logo__mark">
+              <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                   alt="Sound Advice Hearing Solutions Logo" class="logo__img">
+            </div>
+          </div>
+          <p>Professional, compassionate hearing care for communities across Alberta. Independent and locally owned since 2000.</p>
+        </div>
 
-  <p>
-    Professional, compassionate hearing care for communities across Alberta.
-    Independent and locally owned since 2000.
-  </p>
-</div>
-        <!-- Services -->
         <div class="footer-col">
           <h4>Services</h4>
           <ul>
-            <li><a href="index.html#services">Hearing Tests</a></li>
+            <li><a href="services/hearing-aid-testing.html">Hearing Tests</a></li>
             <li><a href="hearing-aids.html">Hearing Aids</a></li>
             <li><a href="tinnitus.html">Tinnitus Support</a></li>
-            <li>Hearing Aid Repairs</li>
-            <li>Hearing Aid Cleaning</li>
+            <li><a href="services/hearing-repair.html">Hearing Aid Repairs</a></li>
+            <li><a href="services/hearing-protection.html">Hearing Protection</a></li>
           </ul>
         </div>
 
-        <!-- Locations -->
         <div class="footer-col">
           <h4>Locations</h4>
           <ul>
@@ -408,113 +672,97 @@
           </ul>
         </div>
 
-        <!-- Contact -->
         <div class="footer-col">
           <h4>Contact Us</h4>
-
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <a href="tel:5874046064">587-404-6064</a>
+            <span>☎</span><a href="tel:5874046064">587-404-6064</a>
           </div>
-
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <a href="tel:18664046064">1-866-404-6064</a>
+            <span>☎</span><a href="tel:18664046064">1-866-404-6064</a>
           </div>
-
           <div class="footer-contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <a href="mailto:info@soundadvicehearing.ca">info@soundadvicehearing.ca</a>
+            <span>✉</span><a href="mailto:info@soundadvicehearing.ca">info@soundadvicehearing.ca</a>
           </div>
         </div>
 
       </div>
 
-      <!-- Bottom bar -->
       <div class="footer-bottom">
-        <span>&#169; 2026 Sound Advice Hearing Solutions. All Rights Reserved.</span>
+        <span>© 2026 Sound Advice Hearing Solutions. All Rights Reserved.</span>
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
           <a href="#">Accessibility</a>
         </div>
       </div>
-
     </div>
   </footer>
 
-  <!-- ============================================================
-       JAVASCRIPT
-       ============================================================ -->
   <script>
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
+    const form = document.getElementById("appointment-form");
+    const statusBox = document.getElementById("form-status");
+    const submitButton = document.getElementById("submit-button");
+
     function closeMenu() {
-      const hamburger  = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
       if (!hamburger || !mobileMenu) return;
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('open');
-      hamburger.setAttribute('aria-expanded', false);
+      mobileMenu.classList.remove("open");
+      hamburger.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
     }
 
-    function initMobileMenu() {
-      const hamburger  = document.getElementById('hamburger');
-      const mobileMenu = document.getElementById('mobile-menu');
-      if (!hamburger || !mobileMenu) return;
-
-      hamburger.addEventListener('click', () => {
-        const isOpen = mobileMenu.classList.toggle('open');
-        hamburger.classList.toggle('open', isOpen);
-        hamburger.setAttribute('aria-expanded', isOpen);
-      });
-    }
-
-    function initHeaderScroll() {
-      const header = document.getElementById('site-header');
-      if (!header) return;
-      window.addEventListener('scroll', () => {
-        header.classList.toggle('scrolled', window.scrollY > 40);
-      });
-    }
-
-    function initScrollReveal() {
-      const revealEls = document.querySelectorAll('.reveal, .stagger-children');
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-      revealEls.forEach(el => observer.observe(el));
-    }
-
-    function initContactForm() {
-      const form = document.querySelector('form');
-      if (!form) return;
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const btn = form.querySelector('button[type="submit"]');
-        btn.textContent = 'Request Sent — We will be in touch!';
-        btn.style.background = '#0d7a6c';
-        btn.disabled = true;
-      });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      initMobileMenu();
-      initHeaderScroll();
-      initScrollReveal();
-      initContactForm();
+    hamburger.addEventListener("click", function () {
+      const open = mobileMenu.classList.toggle("open");
+      hamburger.classList.toggle("open", open);
+      hamburger.setAttribute("aria-expanded", String(open));
     });
+
+    window.addEventListener("scroll", function () {
+      document.getElementById("site-header").classList.toggle("scrolled", window.scrollY > 30);
+    });
+
+    const reveals = document.querySelectorAll(".reveal");
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    reveals.forEach(function(el) { observer.observe(el); });
+
+    form.addEventListener("submit", function(event) {
+      const name = document.getElementById("name").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const location = document.getElementById("location").value;
+
+      if (!name || !phone || !email || !location) {
+        event.preventDefault();
+        statusBox.className = "form-status error";
+        statusBox.textContent = "Please complete all required fields before submitting.";
+        statusBox.scrollIntoView({ behavior: "smooth", block: "center" });
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = "Sending Request...";
+    });
+
+    // Show PHP response message if redirected back with ?status=
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("status") === "success") {
+      statusBox.className = "form-status success";
+      statusBox.textContent = "Thank you! Your appointment request has been sent successfully.";
+      history.replaceState({}, document.title, window.location.pathname);
+    } else if (params.get("status") === "error") {
+      statusBox.className = "form-status error";
+      statusBox.textContent = "Sorry, your request could not be sent. Please call us directly at 587-404-6064.";
+      history.replaceState({}, document.title, window.location.pathname);
+    }
   </script>
 
 </body>
