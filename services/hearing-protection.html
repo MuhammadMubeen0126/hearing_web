@@ -1,0 +1,3527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Professional hearing protection at Sound Advice Hearing Solutions. Custom earplugs and hearing protection for work, sports, and everyday life."
+    >
+
+    <title>Hearing Protection | Sound Advice Hearing Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* ============================================================
+           COMPLETE CSS - HEARING PROTECTION PAGE
+        ============================================================ */
+
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #0b1f3a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================================
+           ROOT VARIABLES
+        ============================================================ */
+
+        :root {
+            --navy: #0b1f3a;
+            --teal: #0f9d8a;
+            --slate-bg: #f5f8fa;
+            --text-muted: #4a5b6e;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 2px 12px rgba(11, 31, 58, .06);
+            --shadow-md: 0 8px 30px rgba(11, 31, 58, .08);
+            --shadow-lg: 0 20px 60px rgba(11, 31, 58, .12);
+            --transition: .25s ease;
+        }
+
+        /* ============================================================
+           CONTAINER
+        ============================================================ */
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================================
+           TOP BAR
+        ============================================================ */
+
+        .topbar {
+            background: var(--navy);
+            color: rgba(255, 255, 255, .6);
+            font-size: .78rem;
+            padding: .5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .topbar__loc {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .topbar__loc svg {
+            color: var(--teal);
+            flex-shrink: 0;
+        }
+
+        .topbar__phones {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .topbar__phones a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .topbar__phones a:hover {
+            color: var(--teal);
+        }
+
+        .topbar__sep {
+            color: rgba(255, 255, 255, .2);
+        }
+
+        /* ============================================================
+           SITE HEADER
+        ============================================================ */
+
+        .site-header {
+            background: #fff;
+            padding: .75rem 0;
+            border-bottom: 1px solid rgba(11, 31, 58, .06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        /* ============================================================
+           LOGO
+        ============================================================ */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo__mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo__img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo__text-primary {
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .logo__text-sub {
+            color: var(--teal);
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-top: .25rem;
+        }
+
+        /* ============================================================
+           NAVIGATION
+        ============================================================ */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links > a,
+        .nav-dropdown-toggle {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .nav-links > a:hover,
+        .nav-dropdown-toggle:hover {
+            color: var(--teal);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-toggle span {
+            font-size: .7rem;
+            transition: transform var(--transition);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle span {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            min-width: 235px;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: .6rem;
+            box-shadow: 0 18px 45px rgba(11, 31, 58, .14);
+            border: 1px solid rgba(11, 31, 58, .08);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            z-index: 200;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: .75rem .85rem;
+            border-radius: 8px;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .84rem;
+            font-weight: 500;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(15, 157, 138, .08);
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .7rem 1.1rem;
+            border-radius: 100px;
+            background: var(--teal);
+            color: #fff !important;
+            font-size: .82rem !important;
+            font-weight: 700 !important;
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 157, 138, .25);
+        }
+
+        /* ============================================================
+           MOBILE MENU TOGGLE
+        ============================================================ */
+
+        .mobile-menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 23px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all .25s ease;
+        }
+
+        /* ============================================================
+           MOBILE MENU
+        ============================================================ */
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 31, 58, .45);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .25s ease, visibility .25s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-inner {
+            width: min(340px, 88%);
+            min-height: 100%;
+            margin-left: auto;
+            background: #fff;
+            padding: 5rem 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+            transform: translateX(100%);
+            transition: transform .3s ease;
+            position: relative;
+        }
+
+        .mobile-menu.active .mobile-menu-inner {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-inner > a {
+            display: block;
+            padding: .9rem 1rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .95rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .mobile-menu-inner > a:hover {
+            background: rgba(15, 157, 138, .08);
+            color: var(--teal);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(11, 31, 58, .06);
+            color: var(--navy);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(11, 31, 58, .12);
+        }
+
+        .mob-cta {
+            margin-top: 1rem;
+            text-align: center;
+            background: var(--teal) !important;
+            color: #fff !important;
+            border-radius: 100px !important;
+        }
+
+        .mob-cta:hover {
+            background: var(--teal) !important;
+            color: #fff !important;
+            opacity: .9;
+        }
+
+        /* ============================================================
+           BUTTONS
+        ============================================================ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .85rem 2rem;
+            border-radius: 100px;
+            background: var(--teal);
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(15, 157, 138, .3);
+            background: #0d8a7a;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .85rem 1.5rem;
+            border-radius: 100px;
+            background: transparent;
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid rgba(255, 255, 255, .25);
+            transition: all var(--transition);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(255, 255, 255, .4);
+            transform: translateY(-3px);
+        }
+
+        .btn-ghost span {
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           SECTION TAGS
+        ============================================================ */
+
+        .section-tag {
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: .5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        /* ============================================================
+           PROTECTION HERO
+        ============================================================ */
+
+        .protection-hero {
+            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
+            color: #fff;
+            padding: 5.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .protection-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            right: -200px;
+            bottom: -250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 157, 138, .22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .protection-hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .protection-hero-content {
+            max-width: 680px;
+        }
+
+        .protection-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            padding: .45rem 1rem;
+            border-radius: 100px;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            color: #a8f0e8;
+            margin-bottom: 1.5rem;
+        }
+
+        .protection-badge span {
+            width: 7px;
+            height: 7px;
+            background: #5ee8d8;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #5ee8d8;
+            flex-shrink: 0;
+        }
+
+        .protection-hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.08;
+            margin: 0 0 1.25rem;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .protection-hero-content h1 em {
+            color: #5ee8d8;
+            font-style: italic;
+        }
+
+        .protection-hero-text {
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0;
+        }
+
+        .protection-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* ============================================================
+           PROTECTION VISUAL
+        ============================================================ */
+
+        .protection-visual {
+            position: relative;
+            width: 100%;
+        }
+
+        .protection-visual-card {
+            position: relative;
+            background: #fff;
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, .15);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .3);
+            color: var(--navy);
+        }
+
+        .protection-visual-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+            margin-bottom: 1.5rem;
+        }
+
+        .protection-visual-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .protection-visual-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .protection-visual-card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin: 0 0 .65rem;
+        }
+
+        .protection-visual-card > p {
+            color: var(--text-muted);
+            font-size: .9rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .protection-mini-list {
+            display: grid;
+            gap: .7rem;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(11, 31, 58, .08);
+        }
+
+        .protection-mini-item {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            color: var(--navy);
+            font-size: .84rem;
+            font-weight: 500;
+        }
+
+        .protection-mini-item span {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            font-size: .75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           PROTECTION INTRO
+        ============================================================ */
+
+        .protection-intro {
+            padding: 5.5rem 0;
+        }
+
+        .protection-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .protection-intro-content {
+            width: 100%;
+        }
+
+        .protection-intro-content h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .protection-intro-content p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.85;
+            margin-top: 1rem;
+        }
+
+        /* ============================================================
+           CHECK LIST
+        ============================================================ */
+
+        .check-list {
+            display: flex;
+            flex-direction: column;
+            gap: .9rem;
+            margin-top: 1.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            color: var(--navy);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        /* ============================================================
+           PROTECTION INFO CARD
+        ============================================================ */
+
+        .protection-info-card {
+            background: var(--slate-bg);
+            border-radius: var(--radius-xl);
+            padding: 2.25rem;
+            border: 1px solid rgba(11, 31, 58, .07);
+            box-shadow: var(--shadow-md);
+        }
+
+        .protection-info-card h3 {
+            color: var(--navy);
+            font-size: 1.35rem;
+            margin: 0 0 1.5rem;
+        }
+
+        .protection-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.15rem 0;
+            border-bottom: 1px solid rgba(11, 31, 58, .08);
+        }
+
+        .protection-info-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .protection-info-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .protection-info-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            border-radius: var(--radius-sm);
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .protection-info-icon svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        .protection-info-item strong {
+            display: block;
+            color: var(--navy);
+            font-size: .95rem;
+            margin-bottom: .35rem;
+        }
+
+        .protection-info-item p {
+            color: var(--text-muted);
+            font-size: .82rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================================================
+           PROTECTION TYPES
+        ============================================================ */
+
+        .protection-types {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .protection-types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .protection-type-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2.25rem 1.75rem;
+            border: 1px solid rgba(11, 31, 58, .06);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .protection-type-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(15, 157, 138, .2);
+        }
+
+        .protection-type-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .protection-type-icon svg {
+            width: 32px;
+            height: 32px;
+        }
+
+        .protection-type-card h3 {
+            color: var(--navy);
+            font-size: 1.2rem;
+            margin: 0 0 .6rem;
+        }
+
+        .protection-type-card p {
+            color: var(--text-muted);
+            font-size: .88rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .protection-type-tag {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: .3rem .9rem;
+            border-radius: 100px;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================================
+           PROTECTION FEATURES
+        ============================================================ */
+
+        .protection-features {
+            padding: 5.5rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            background: var(--slate-bg);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            border: 1px solid rgba(11, 31, 58, .06);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            min-width: 50px;
+            border-radius: var(--radius-sm);
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-card h3 {
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin: 0 0 .4rem;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: .85rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           IMAGE SECTION
+        ============================================================ */
+
+        .protection-image-section {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .protection-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .protection-image-grid img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            display: block;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ============================================================
+           WHO NEEDS PROTECTION
+        ============================================================ */
+
+        .protection-who {
+            padding: 5.5rem 0;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        .who-card {
+            background: var(--slate-bg);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            text-align: center;
+            border: 1px solid rgba(11, 31, 58, .06);
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .who-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .who-card .emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: .8rem;
+        }
+
+        .who-card h4 {
+            color: var(--navy);
+            font-size: 1rem;
+            margin: 0 0 .4rem;
+        }
+
+        .who-card p {
+            color: var(--text-muted);
+            font-size: .82rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ============================================================
+           CTA SECTION
+        ============================================================ */
+
+        .protection-cta {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .protection-cta-grid {
+            display: grid;
+            grid-template-columns: 1fr .85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .protection-cta-content h2 {
+            color: var(--navy);
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .protection-cta-content > p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        .protection-cta-card {
+            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 60%, #0a3d38 100%);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .protection-cta-card::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -130px;
+            top: -130px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 157, 138, .2), transparent 70%);
+        }
+
+        .protection-cta-card h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1.25;
+            margin: 0 0 .8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .protection-cta-card p {
+            color: rgba(255, 255, 255, .68);
+            font-size: .9rem;
+            line-height: 1.8;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .protection-cta-card .btn-primary {
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+           FAQ
+        ============================================================ */
+
+        .protection-faq {
+            padding: 5.5rem 0;
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid rgba(11, 31, 58, .07);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(15, 157, 138, .18);
+        }
+
+        .faq-item h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: .98rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 .45rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: .87rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           FINAL CTA
+        ============================================================ */
+
+        .protection-final-cta {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .protection-final-card {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d2b52 60%, #0a3d38 100%);
+            border-radius: var(--radius-xl);
+            padding: 4rem;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .protection-final-card::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -200px;
+            top: -250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 157, 138, .18), transparent 70%);
+        }
+
+        .protection-final-card h2 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin: 0 0 .8rem;
+            position: relative;
+            z-index: 1;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .protection-final-card p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, .65);
+            font-size: .95rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .protection-final-card .btn-primary {
+            margin-top: 1.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+
+        .site-footer {
+            background: var(--navy);
+            color: #fff;
+            padding: 4rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr 1fr 1.2fr;
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: .95rem;
+            margin: 0 0 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, .6);
+            font-size: .85rem;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 1rem;
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            text-decoration: none;
+        }
+
+        .footer-logo .logo__text-primary {
+            color: #fff;
+        }
+
+        .footer-logo .logo__text-sub {
+            color: #5ee8d8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+
+        .footer-col li {
+            color: rgba(255, 255, 255, .6);
+            font-size: .83rem;
+        }
+
+        .footer-col li a {
+            color: rgba(255, 255, 255, .6);
+            text-decoration: none;
+            font-size: .83rem;
+            transition: color var(--transition);
+        }
+
+        .footer-col li a:hover {
+            color: #5ee8d8;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .65rem;
+            margin-bottom: .8rem;
+        }
+
+        .footer-contact-item svg {
+            width: 17px;
+            height: 17px;
+            min-width: 17px;
+            color: #5ee8d8;
+            margin-top: 2px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, .65);
+            text-decoration: none;
+            font-size: .83rem;
+            word-break: break-word;
+            transition: color var(--transition);
+        }
+
+        .footer-contact-item a:hover {
+            color: #5ee8d8;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            color: rgba(255, 255, 255, .45);
+            font-size: .75rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: #5ee8d8;
+        }
+
+        /* ============================================================
+           RESPONSIVE - 1024px
+        ============================================================ */
+
+        @media (max-width: 1024px) {
+
+            .protection-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .protection-hero-content {
+                max-width: 750px;
+            }
+
+            .protection-visual {
+                max-width: 700px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .protection-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .protection-image-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .protection-image-grid img {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .protection-cta-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .protection-cta-card {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links > a,
+            .nav-dropdown-toggle {
+                font-size: .82rem;
+            }
+
+            .protection-types-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .who-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 768px
+        ============================================================ */
+
+        @media (max-width: 768px) {
+
+            .protection-hero {
+                padding: 4rem 0;
+            }
+
+            .protection-hero-grid {
+                gap: 2.5rem;
+            }
+
+            .protection-hero-content h1 {
+                font-size: clamp(2.4rem, 9vw, 3.4rem);
+            }
+
+            .protection-hero-text {
+                font-size: .95rem;
+            }
+
+            .protection-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .protection-hero-actions .btn-primary,
+            .protection-hero-actions .btn-ghost {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .protection-visual-card {
+                padding: 1.25rem;
+            }
+
+            .protection-types-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .protection-info-card {
+                padding: 1.75rem;
+            }
+
+            .protection-final-card {
+                padding: 3rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .header-inner {
+                min-height: 65px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topbar-inner {
+                flex-direction: column;
+                align-items: center;
+                gap: .35rem;
+                text-align: center;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 600px
+        ============================================================ */
+
+        @media (max-width: 600px) {
+
+            .protection-visual-card img {
+                height: 230px;
+            }
+
+            .protection-image-grid img {
+                height: 350px;
+            }
+
+            .protection-info-item {
+                gap: .8rem;
+            }
+
+            .protection-info-icon {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+            }
+
+            .protection-cta-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .protection-final-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                gap: .8rem 1rem;
+            }
+
+            .protection-type-card {
+                padding: 1.75rem 1.5rem;
+            }
+
+            .feature-card {
+                flex-direction: column;
+                gap: .9rem;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 480px
+        ============================================================ */
+
+        @media (max-width: 480px) {
+
+            .protection-hero {
+                padding: 3.25rem 0;
+            }
+
+            .protection-badge {
+                font-size: .7rem;
+                padding: .4rem .8rem;
+            }
+
+            .protection-hero-content h1 {
+                font-size: 2.35rem;
+            }
+
+            .protection-hero-text {
+                font-size: .9rem;
+                line-height: 1.7;
+            }
+
+            .protection-visual-card {
+                padding: 1rem;
+            }
+
+            .protection-visual-card img {
+                height: 200px;
+                margin-bottom: 1.2rem;
+            }
+
+            .protection-visual-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .protection-visual-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .protection-visual-card > p {
+                font-size: .84rem;
+            }
+
+            .protection-mini-item {
+                font-size: .78rem;
+            }
+
+            .protection-intro-grid {
+                gap: 2rem;
+            }
+
+            .protection-image-grid img {
+                height: 300px;
+                border-radius: 18px;
+            }
+
+            .protection-info-card {
+                padding: 1.4rem;
+            }
+
+            .protection-info-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .protection-type-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .protection-cta-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .protection-final-card h2 {
+                font-size: 2rem;
+            }
+
+            .protection-final-card p {
+                font-size: .88rem;
+            }
+
+            .footer-bottom {
+                font-size: .7rem;
+            }
+
+            .logo__img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .logo__text-primary {
+                font-size: 1.05rem;
+            }
+
+            .logo__text-sub {
+                font-size: .55rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .who-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ============================================================
+           ACCESSIBILITY
+        ============================================================ */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #5ee8d8;
+            outline-offset: 3px;
+        }
+
+        /* ============================================================
+           REDUCE MOTION
+        ============================================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- ============================================================
+     TOP BAR
+============================================================ -->
+
+<div class="topbar">
+
+    <div class="container">
+
+        <div class="topbar-inner">
+
+            <div class="topbar__loc">
+
+                <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+
+                <span>
+                    Professional Hearing Care
+                </span>
+
+            </div>
+
+
+            <div class="topbar__phones">
+
+                <a href="tel:5874046064">
+                    587-404-6064
+                </a>
+
+                <span class="topbar__sep">
+                    |
+                </span>
+
+                <span>
+                    Appointments Available
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     MAIN HEADER
+============================================================ -->
+
+<header class="site-header">
+
+    <div class="container">
+
+        <div class="header-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="logo"
+            >
+
+                <div class="logo__mark">
+
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                        alt="Sound Advice Hearing Solutions Logo"
+                        class="logo__img"
+                    >
+
+                </div>
+
+
+                <div class="logo__content">
+
+                    <div class="logo__text-primary">
+                        Sound Advice
+                    </div>
+
+                    <div class="logo__text-sub">
+                        Hearing Solutions
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="nav-links"
+                aria-label="Primary navigation"
+            >
+
+
+                <!-- ABOUT -->
+
+                <a href="../index.html#about">
+                    About
+                </a>
+
+
+                <!-- SERVICES -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="../index.html#services"
+                        class="nav-dropdown-toggle"
+                    >
+                        Services
+
+                        <span>
+                            ▾
+                        </span>
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="hearing-aid-testing.html">
+                            Hearing Aid Testing
+                        </a>
+
+                        <a href="hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="hearing-repair.html">
+                            Hearing Repair
+                        </a>
+
+                        <a href="hearing-protection.html">
+                            Hearing Protection
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEARING AIDS -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#hearing-aids"
+                        class="nav-dropdown-toggle"
+                    >
+                        Hearing Aids
+
+                        <span>
+                            ▾
+                        </span>
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="#consultation">
+                            Hearing Aid Consultation
+                        </a>
+
+                        <a href="#fitting">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="#programming">
+                            Hearing Aid Programming
+                        </a>
+
+                        <a href="#repair">
+                            Hearing Aid Repair &amp; Maintenance
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TESTIMONIALS -->
+
+                <a href="../index.html#testimonials">
+                    Testimonials
+                </a>
+
+
+                <!-- CONTACT -->
+
+                <a href="../index.html#contact">
+                    Contact
+                </a>
+
+
+                <!-- CTA -->
+
+                <a
+                    href="../index.html#contact"
+                    class="nav-cta"
+                >
+                    Book Appointment
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="mobile-menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                onclick="openMenu()"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE NAVIGATION
+============================================================ -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-inner">
+
+
+        <button
+            class="mobile-menu-close"
+            type="button"
+            aria-label="Close navigation menu"
+            onclick="closeMenu()"
+        >
+            &times;
+        </button>
+
+
+        <a
+            href="../index.html#about"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+
+        <a
+            href="../index.html#services"
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+
+        <a
+            href="#hearing-aids"
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+
+        <a
+            href="../index.html#testimonials"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+
+        <a
+            href="../index.html#contact"
+            onclick="closeMenu()"
+        >
+            Contact
+        </a>
+
+
+        <a
+            href="../index.html#contact"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Appointment
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- ============================================================
+     HERO SECTION - HEARING PROTECTION
+============================================================ -->
+
+<section class="protection-hero">
+
+    <div class="container protection-hero-grid">
+
+
+        <div class="protection-hero-content">
+
+            <div class="protection-badge">
+
+                <span></span>
+
+                Professional Hearing Protection
+
+            </div>
+
+
+            <h1>
+
+                Protect Your Hearing,
+                <em>For Life.</em>
+
+            </h1>
+
+
+            <p class="protection-hero-text">
+
+                Your hearing is irreplaceable. Our professional
+                hearing protection services provide custom solutions
+                for work, sports, concerts, and everyday life —
+                helping you preserve your hearing for years to come.
+
+            </p>
+
+
+            <div class="protection-hero-actions">
+
+                <a
+                    href="../index.html#contact"
+                    class="btn-primary"
+                >
+                    Get Hearing Protection
+                </a>
+
+
+                <a
+                    href="#protection-types"
+                    class="btn-ghost"
+                >
+                    Explore Options
+                    <span>↓</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Hero Image -->
+
+        <div class="protection-visual">
+
+            <div class="protection-visual-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
+                    alt="Professional hearing protection solutions"
+                    style="width:100%; height:260px; object-fit:cover; border-radius:18px; margin-bottom:1.5rem;"
+                >
+
+
+                <div class="protection-visual-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M8 12h8"/>
+                        <path d="M12 8v8"/>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Custom hearing protection solutions
+                </h3>
+
+
+                <p>
+
+                    From custom-moulded earplugs to specialised
+                    hearing protection for musicians and industrial
+                    use, we create personalised solutions for your
+                    specific needs.
+
+                </p>
+
+
+                <div class="protection-mini-list">
+
+                    <div class="protection-mini-item">
+
+                        <span>✓</span>
+
+                        Custom-moulded earplugs
+
+                    </div>
+
+
+                    <div class="protection-mini-item">
+
+                        <span>✓</span>
+
+                        Musician hearing protection
+
+                    </div>
+
+
+                    <div class="protection-mini-item">
+
+                        <span>✓</span>
+
+                        Industrial noise protection
+
+                    </div>
+
+
+                    <div class="protection-mini-item">
+
+                        <span>✓</span>
+
+                        Swim and water protection
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     INTRODUCTION
+============================================================ -->
+
+<section class="protection-intro">
+
+    <div class="container protection-intro-grid">
+
+
+        <div class="protection-intro-content">
+
+            <span class="section-tag">
+                Why Protection Matters
+            </span>
+
+
+            <h2>
+                Protect what matters most — your hearing.
+            </h2>
+
+
+            <p>
+
+                Noise-induced hearing loss is one of the most common
+                yet preventable health conditions. Whether you're
+                exposed to loud noise at work, enjoy live music, or
+                participate in recreational activities, proper hearing
+                protection is essential for preserving your hearing
+                health.
+
+            </p>
+
+
+            <p>
+
+                We offer professional hearing protection solutions
+                that go beyond generic earplugs. Our custom-moulded
+                options provide superior comfort, fit, and protection
+                so you can enjoy life's moments without worrying about
+                your hearing.
+
+            </p>
+
+
+            <div class="check-list">
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Prevent noise-induced hearing loss
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Custom solutions for your lifestyle
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Comfortable and effective protection
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="protection-info-card">
+
+            <h3>
+                Protection Options We Offer
+            </h3>
+
+
+            <div class="protection-info-item">
+
+                <div class="protection-info-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M20 7h-4.5A2.5 2.5 0 0 0 13 9.5v5A2.5 2.5 0 0 0 15.5 17H20v-2h-4.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5H20V7z"/>
+                        <path d="M4 7h4.5A2.5 2.5 0 0 1 11 9.5v5A2.5 2.5 0 0 1 8.5 17H4v-2h4.5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H4V7z"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Custom Earplugs
+                    </strong>
+
+                    <p>
+                        Made from impressions of your ears for a
+                        perfect fit. Ideal for work, sleep, swimming,
+                        and noise-sensitive environments.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="protection-info-item">
+
+                <div class="protection-info-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Musician Plugs
+                    </strong>
+
+                    <p>
+
+                        Designed for musicians and concert-goers
+                        who need protection while maintaining sound
+                        clarity and musical quality.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="protection-info-item">
+
+                <div class="protection-info-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v4l3 3"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Industrial Protection
+                    </strong>
+
+                    <p>
+
+                        Heavy-duty noise protection for workplace
+                        environments with high-decibel exposure,
+                        meeting safety standards and regulations.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PROTECTION TYPES
+============================================================ -->
+
+<section
+    class="protection-types"
+    id="protection-types"
+>
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Our Solutions
+            </span>
+
+            <h2>
+                Hearing protection for every situation.
+            </h2>
+
+            <p>
+                We offer a variety of protection options to match
+                your lifestyle, environment, and personal needs.
+            </p>
+
+        </div>
+
+
+        <div class="protection-types-grid">
+
+
+            <!-- Type 1 -->
+
+            <div class="protection-type-card">
+
+                <div class="protection-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Custom Sleep Plugs
+                </h3>
+
+                <p>
+
+                    Soft, comfortable custom-moulded earplugs designed
+                    for all-night wear. Block out snoring, traffic,
+                    and other environmental noises for restful sleep.
+
+                </p>
+
+                <span class="protection-type-tag">
+                    Comfort &amp; Quiet
+                </span>
+
+            </div>
+
+
+            <!-- Type 2 -->
+
+            <div class="protection-type-card">
+
+                <div class="protection-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <path d="M9 18V5l12-2v13"/>
+                        <circle cx="6" cy="18" r="3"/>
+                        <circle cx="18" cy="16" r="3"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Musician Plugs
+                </h3>
+
+                <p>
+
+                    Protect your hearing while maintaining natural
+                    sound quality. Perfect for musicians, sound
+                    engineers, and concert enthusiasts who need
+                    clarity with protection.
+
+                </p>
+
+                <span class="protection-type-tag">
+                    Sound Clarity
+                </span>
+
+            </div>
+
+
+            <!-- Type 3 -->
+
+            <div class="protection-type-card">
+
+                <div class="protection-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Industrial Plugs
+                </h3>
+
+                <p>
+
+                    Heavy-duty protection for loud work environments.
+                    Meets safety standards and provides reliable
+                    noise reduction for industrial and construction
+                    settings.
+
+                </p>
+
+                <span class="protection-type-tag">
+                    Maximum Protection
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FEATURES SECTION
+============================================================ -->
+
+<section class="protection-features">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Key Features
+            </span>
+
+            <h2>
+                Why choose custom hearing protection.
+            </h2>
+
+            <p>
+                Custom hearing protection offers significant advantages
+                over generic options. Here's why professional solutions
+                make a difference.
+            </p>
+
+        </div>
+
+
+
+        <div class="features-grid">
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Perfect Fit
+                    </h3>
+
+                    <p>
+
+                        Custom-moulded to the unique shape of your
+                        ears for superior comfort and a secure seal
+                        that stays in place during any activity.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Superior Protection
+                    </h3>
+
+                    <p>
+
+                        Provide consistent, reliable noise reduction
+                        that meets or exceeds safety standards,
+                        protecting your hearing in any environment.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M20 7h-4.5A2.5 2.5 0 0 0 13 9.5v5A2.5 2.5 0 0 0 15.5 17H20v-2h-4.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5H20V7z"/>
+                        <path d="M4 7h4.5A2.5 2.5 0 0 1 11 9.5v5A2.5 2.5 0 0 1 8.5 17H4v-2h4.5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H4V7z"/>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        All-Day Comfort
+                    </h3>
+
+                    <p>
+
+                        Made from soft, hypoallergenic materials that
+                        are comfortable for extended wear — no more
+                        discomfort or irritation from ill-fitting plugs.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v4l3 3"/>
+
+                    </svg>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Long-Lasting Durability
+                    </h3>
+
+                    <p>
+
+                        High-quality materials that withstand regular
+                        use and cleaning. Custom protection is a
+                        long-term investment in your hearing health.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     WHO NEEDS PROTECTION
+============================================================ -->
+
+<section class="protection-who">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Who Should Consider Protection
+            </span>
+
+            <h2>
+                Hearing protection is for everyone.
+            </h2>
+
+            <p>
+                If you're exposed to loud environments, protect your
+                hearing. These are just a few examples of who can
+                benefit from professional hearing protection.
+            </p>
+
+        </div>
+
+
+
+        <div class="who-grid">
+
+
+            <div class="who-card">
+
+                <span class="emoji">🏗️</span>
+
+                <h4>
+                    Construction Workers
+                </h4>
+
+                <p>
+                    Daily exposure to heavy machinery and tools at
+                    high decibels requires reliable protection.
+                </p>
+
+            </div>
+
+
+
+            <div class="who-card">
+
+                <span class="emoji">🎵</span>
+
+                <h4>
+                    Musicians &amp; DJs
+                </h4>
+
+                <p>
+                    Protect your hearing while preserving sound
+                    clarity and musical quality during performances
+                    and practice.
+                </p>
+
+            </div>
+
+
+
+            <div class="who-card">
+
+                <span class="emoji">🏊</span>
+
+                <h4>
+                    Swimmers
+                </h4>
+
+                <p>
+                    Custom swim plugs prevent water from entering
+                    the ear canal, helping prevent swimmer's ear
+                    and infections.
+                </p>
+
+            </div>
+
+
+
+            <div class="who-card">
+
+                <span class="emoji">🎯</span>
+
+                <h4>
+                    Sports Enthusiasts
+                </h4>
+
+                <p>
+                    Protect your hearing during shooting, racing,
+                    and other loud sports with custom-fit protection.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     IMAGE SECTION
+============================================================ -->
+
+<section class="protection-image-section">
+
+    <div class="container protection-image-grid">
+
+        <div>
+
+            <img
+                src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1000&q=85"
+                alt="Custom hearing protection consultation"
+            >
+
+        </div>
+
+
+        <div>
+
+            <span class="section-tag">
+                Personalised Protection
+            </span>
+
+
+            <h2>
+                Protection that fits your life perfectly.
+            </h2>
+
+
+            <p>
+
+                Hearing protection shouldn't be a one-size-fits-all
+                solution. We work with you to understand your specific
+                needs, whether you're protecting your hearing at work,
+                at play, or while sleeping.
+
+            </p>
+
+
+            <p>
+
+                Our custom hearing protection is made from impressions
+                of your ears, ensuring a perfect fit that stays in
+                place and provides consistent protection in any situation.
+
+            </p>
+
+
+            <div class="check-list">
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Personalised to your ears
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Designed for your lifestyle
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Professional guidance and care
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     CTA SECTION
+============================================================ -->
+
+<section class="protection-cta">
+
+    <div class="container protection-cta-grid">
+
+
+        <div class="protection-cta-content">
+
+            <span class="section-tag">
+                Protect Your Hearing
+            </span>
+
+            <h2>
+                Don't wait — protect your hearing today.
+            </h2>
+
+            <p>
+
+                Noise-induced hearing loss is permanent, but it's
+                also preventable. Our custom hearing protection
+                solutions give you the confidence to enjoy life's
+                moments without risking your hearing health.
+
+            </p>
+
+            <p>
+
+                Whether you need protection for work, music, swimming,
+                or everyday comfort, we have a solution that fits
+                your needs and your budget.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="protection-cta-card">
+
+            <h3>
+                Ready to protect your hearing?
+            </h3>
+
+            <p>
+
+                Our hearing professionals will assess your needs
+                and create a custom protection solution that gives
+                you peace of mind.
+
+            </p>
+
+            <a
+                href="../index.html#contact"
+                class="btn-primary"
+            >
+                Get Hearing Protection
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+
+<section class="protection-faq">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Frequently Asked Questions
+            </span>
+
+            <h2>
+                Hearing protection questions.
+            </h2>
+
+        </div>
+
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Why do I need custom hearing protection?
+                </h3>
+
+                <p>
+
+                    Custom hearing protection provides a perfect seal
+                    and comfort that generic earplugs can't match.
+                    They're designed specifically for your ears,
+                    offering superior protection and comfort for
+                    all-day wear.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    How are custom earplugs made?
+                </h3>
+
+                <p>
+
+                    We take impressions of your ears using a soft,
+                    safe material. These impressions are then used
+                    to create custom-moulded plugs that fit your
+                    ears perfectly for maximum comfort and protection.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    How long do custom earplugs last?
+                </h3>
+
+                <p>
+
+                    With proper care, custom earplugs can last 3-5
+                    years or more. We recommend regular check-ups to
+                    ensure they continue to fit well and provide
+                    optimal protection.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Can I use custom earplugs for swimming?
+                </h3>
+
+                <p>
+
+                    Yes, we offer specialised swim plugs that create
+                    a watertight seal to prevent water from entering
+                    the ear canal, helping prevent swimmer's ear and
+                    other water-related ear conditions.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    How much does custom hearing protection cost?
+                </h3>
+
+                <p>
+
+                    The cost varies depending on the type of protection
+                    you need and the features you choose. We offer
+                    competitive pricing and can discuss your options
+                    during a consultation.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+
+<section class="protection-final-cta">
+
+    <div class="container">
+
+        <div class="protection-final-card">
+
+            <h2>
+                Protect your hearing for a lifetime.
+            </h2>
+
+            <p>
+
+                Your hearing is one of your most valuable senses.
+                Don't leave it to chance. Book a consultation for
+                custom hearing protection and take the first step
+                toward preserving your hearing health.
+
+            </p>
+
+            <a
+                href="../index.html#contact"
+                class="btn-primary"
+            >
+                Book Hearing Protection Consultation
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-col footer-brand">
+
+                <a
+                    href="../index.html"
+                    class="footer-logo"
+                >
+
+                    <div>
+
+                        <div class="logo__text-primary">
+                            Sound Advice
+                        </div>
+
+                        <div class="logo__text-sub">
+                            Hearing Solutions
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <p>
+                    Professional hearing care and personalised
+                    hearing solutions for individuals and families
+                    of all ages.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOCATIONS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Locations
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Sherwood Park, AB
+                    </li>
+
+                    <li>
+                        St. Paul, AB
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Services
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        <a href="hearing-aid-testing.html">
+                            Hearing Aid Testing
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-repair.html">
+                            Hearing Repair
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-protection.html">
+                            Hearing Protection
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Contact Us
+                </h4>
+
+
+                <!-- PHONE -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+
+                    <a href="tel:5874046064">
+                        587-404-6064
+                    </a>
+
+                </div>
+
+
+
+                <!-- TOLL FREE -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+
+                    <a href="tel:18664046064">
+                        1-866-404-6064
+                    </a>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
+                        <polyline points="22,6 12,13 2,6"/>
+
+                    </svg>
+
+
+                    <a href="mailto:info@soundadvicehearing.ca">
+                        info@soundadvicehearing.ca
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <span>
+                &#169; 2026 Sound Advice Hearing Solutions.
+                All Rights Reserved.
+            </span>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+    function openMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+    }
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('mobileMenu');
+        if (menu && menu.classList.contains('active')) {
+            if (e.target === menu) {
+                closeMenu();
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+
+</html>

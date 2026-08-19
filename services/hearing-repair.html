@@ -1,0 +1,2830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Professional hearing aid repair at Sound Advice Hearing Solutions. Fast, reliable repair services for all major hearing aid brands."
+    >
+
+    <title>Hearing Aid Repair | Sound Advice Hearing Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* ============================================================
+           COMPLETE CSS - HEARING REPAIR PAGE
+           Different design with unique styling
+        ============================================================ */
+
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #0b1f3a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================================
+           ROOT VARIABLES - Slightly different color palette
+        ============================================================ */
+
+        :root {
+            --navy: #0b1f3a;
+            --teal: #0f9d8a;
+            --gold: #c4956a;
+            --gold-light: #e8d5b8;
+            --slate-bg: #f5f8fa;
+            --text-muted: #4a5b6e;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 2px 12px rgba(11, 31, 58, .06);
+            --shadow-md: 0 8px 30px rgba(11, 31, 58, .08);
+            --shadow-lg: 0 20px 60px rgba(11, 31, 58, .12);
+            --transition: .3s ease;
+        }
+
+        /* ============================================================
+           CONTAINER
+        ============================================================ */
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================================
+           TOP BAR
+        ============================================================ */
+
+        .topbar {
+            background: var(--navy);
+            color: rgba(255, 255, 255, .6);
+            font-size: .78rem;
+            padding: .5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .topbar__loc {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .topbar__loc svg {
+            color: var(--gold);
+            flex-shrink: 0;
+        }
+
+        .topbar__phones a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .topbar__phones a:hover {
+            color: var(--gold);
+        }
+
+        .topbar__sep {
+            color: rgba(255, 255, 255, .2);
+        }
+
+        .topbar__phones {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        /* ============================================================
+           SITE HEADER
+        ============================================================ */
+
+        .site-header {
+            background: #fff;
+            padding: .75rem 0;
+            border-bottom: 1px solid rgba(11, 31, 58, .06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        /* ============================================================
+           LOGO
+        ============================================================ */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo__mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo__img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo__text-primary {
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .logo__text-sub {
+            color: var(--gold);
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-top: .25rem;
+        }
+
+        /* ============================================================
+           NAVIGATION
+        ============================================================ */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links > a,
+        .nav-dropdown-toggle {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .nav-links > a:hover,
+        .nav-dropdown-toggle:hover {
+            color: var(--gold);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-toggle span {
+            font-size: .7rem;
+            transition: transform var(--transition);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle span {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            min-width: 235px;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: .6rem;
+            box-shadow: 0 18px 45px rgba(11, 31, 58, .14);
+            border: 1px solid rgba(11, 31, 58, .08);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            z-index: 200;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: .75rem .85rem;
+            border-radius: 8px;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .84rem;
+            font-weight: 500;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(196, 149, 106, .1);
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .7rem 1.1rem;
+            border-radius: 100px;
+            background: var(--gold);
+            color: #fff !important;
+            font-size: .82rem !important;
+            font-weight: 700 !important;
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(196, 149, 106, .35);
+        }
+
+        /* ============================================================
+           MOBILE MENU TOGGLE
+        ============================================================ */
+
+        .mobile-menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 23px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all .25s ease;
+        }
+
+        /* ============================================================
+           MOBILE MENU
+        ============================================================ */
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 31, 58, .45);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .25s ease, visibility .25s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-inner {
+            width: min(340px, 88%);
+            min-height: 100%;
+            margin-left: auto;
+            background: #fff;
+            padding: 5rem 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+            transform: translateX(100%);
+            transition: transform .3s ease;
+            position: relative;
+        }
+
+        .mobile-menu.active .mobile-menu-inner {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-inner > a {
+            display: block;
+            padding: .9rem 1rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .95rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .mobile-menu-inner > a:hover {
+            background: rgba(196, 149, 106, .1);
+            color: var(--gold);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(11, 31, 58, .06);
+            color: var(--navy);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(11, 31, 58, .12);
+        }
+
+        .mob-cta {
+            margin-top: 1rem;
+            text-align: center;
+            background: var(--gold) !important;
+            color: #fff !important;
+            border-radius: 100px !important;
+        }
+
+        .mob-cta:hover {
+            background: var(--gold) !important;
+            color: #fff !important;
+            opacity: .9;
+        }
+
+        /* ============================================================
+           BUTTONS - Gold accent
+        ============================================================ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .85rem 2rem;
+            border-radius: 100px;
+            background: var(--gold);
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(196, 149, 106, .35);
+            background: #b08156;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .85rem 1.5rem;
+            border-radius: 100px;
+            background: transparent;
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid rgba(255, 255, 255, .25);
+            transition: all var(--transition);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(255, 255, 255, .4);
+            transform: translateY(-3px);
+        }
+
+        .btn-ghost span {
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           SECTION TAGS - Gold accent
+        ============================================================ */
+
+        .section-tag {
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: .5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        /* ============================================================
+           REPAIR HERO - Different gradient
+        ============================================================ */
+
+        .repair-hero {
+            background: linear-gradient(145deg, var(--navy) 0%, #1a2a4a 55%, #2a1a0a 100%);
+            color: #fff;
+            padding: 5.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .repair-hero::before {
+            content: '🔧';
+            position: absolute;
+            font-size: 25rem;
+            right: -50px;
+            bottom: -80px;
+            opacity: .04;
+            pointer-events: none;
+        }
+
+        .repair-hero::after {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            left: -200px;
+            top: -200px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(196, 149, 106, .12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .repair-hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .repair-hero-content {
+            max-width: 680px;
+        }
+
+        .repair-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            padding: .45rem 1rem;
+            border-radius: 100px;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            color: var(--gold-light);
+            margin-bottom: 1.5rem;
+        }
+
+        .repair-badge span {
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--gold);
+            flex-shrink: 0;
+        }
+
+        .repair-hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.08;
+            margin: 0 0 1.25rem;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .repair-hero-content h1 em {
+            color: var(--gold);
+            font-style: italic;
+        }
+
+        .repair-hero-text {
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0;
+        }
+
+        .repair-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* ============================================================
+           REPAIR VISUAL - Different card style
+        ============================================================ */
+
+        .repair-visual {
+            position: relative;
+            width: 100%;
+        }
+
+        .repair-visual-card {
+            position: relative;
+            background: rgba(255, 255, 255, .05);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, .1);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .3);
+            color: #fff;
+        }
+
+        .repair-visual-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+            margin-bottom: 1.5rem;
+        }
+
+        .repair-visual-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(196, 149, 106, .2);
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        .repair-visual-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .repair-visual-card h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin: 0 0 .65rem;
+        }
+
+        .repair-visual-card > p {
+            color: rgba(255, 255, 255, .6);
+            font-size: .9rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .repair-mini-list {
+            display: grid;
+            gap: .7rem;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .repair-mini-item {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            color: rgba(255, 255, 255, .8);
+            font-size: .84rem;
+            font-weight: 500;
+        }
+
+        .repair-mini-item span {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(196, 149, 106, .2);
+            color: var(--gold);
+            font-size: .75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           REPAIR INTRO - Different layout
+        ============================================================ */
+
+        .repair-intro {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .repair-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .repair-intro-content {
+            width: 100%;
+        }
+
+        .repair-intro-content h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .repair-intro-content p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.85;
+            margin-top: 1rem;
+        }
+
+        /* ============================================================
+           STATS BAR - Unique element
+        ============================================================ */
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(11, 31, 58, .06);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            display: block;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: .8rem;
+            color: var(--text-muted);
+            margin-top: .3rem;
+            display: block;
+        }
+
+        /* ============================================================
+           CHECK LIST
+        ============================================================ */
+
+        .check-list {
+            display: flex;
+            flex-direction: column;
+            gap: .9rem;
+            margin-top: 1.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            color: var(--navy);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: rgba(196, 149, 106, .1);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        /* ============================================================
+           SERVICES GRID - Different card style
+        ============================================================ */
+
+        .repair-services {
+            padding: 5.5rem 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem 2rem;
+            border: 1px solid rgba(11, 31, 58, .06);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transition: transform var(--transition);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(196, 149, 106, .2);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background: rgba(196, 149, 106, .1);
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            color: var(--navy);
+            font-size: 1.15rem;
+            margin: 0 0 .6rem;
+        }
+
+        .service-card p {
+            color: var(--text-muted);
+            font-size: .88rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .service-price {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: .3rem 1rem;
+            border-radius: 100px;
+            background: rgba(196, 149, 106, .1);
+            color: var(--gold);
+            font-size: .8rem;
+            font-weight: 700;
+        }
+
+        /* ============================================================
+           PROCESS - Different timeline style
+        ============================================================ */
+
+        .repair-process {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: var(--gold);
+            opacity: .2;
+        }
+
+        .timeline-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--gold);
+            color: #fff;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.3rem;
+            box-shadow: 0 5px 18px rgba(196, 149, 106, .3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .timeline-step h3 {
+            color: var(--navy);
+            font-size: 1.05rem;
+            margin: 0 0 .5rem;
+        }
+
+        .timeline-step p {
+            color: var(--text-muted);
+            font-size: .85rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           FAQ - Different style
+        ============================================================ */
+
+        .repair-faq {
+            padding: 5.5rem 0;
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            max-width: 1050px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--slate-bg);
+            border-radius: var(--radius-md);
+            padding: 1.5rem 1.75rem;
+            border-left: 4px solid var(--gold);
+            transition: all var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .faq-item h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 .4rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: .85rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           CTA SECTION - Different design
+        ============================================================ */
+
+        .repair-cta {
+            padding: 5.5rem 0;
+            background: var(--navy);
+            color: #fff;
+        }
+
+        .repair-cta-inner {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .repair-cta-content h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            margin: 0 0 1rem;
+            color: #fff;
+        }
+
+        .repair-cta-content p {
+            color: rgba(255, 255, 255, .7);
+            font-size: .95rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .repair-cta-card {
+            background: rgba(255, 255, 255, .05);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            border: 1px solid rgba(255, 255, 255, .1);
+            backdrop-filter: blur(5px);
+            text-align: center;
+        }
+
+        .repair-cta-card .cta-emoji {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: .5rem;
+        }
+
+        .repair-cta-card h3 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin: 0 0 .6rem;
+        }
+
+        .repair-cta-card p {
+            color: rgba(255, 255, 255, .6);
+            font-size: .88rem;
+            line-height: 1.7;
+            margin: 0 0 1.5rem;
+        }
+
+        .repair-cta-card .btn-primary {
+            background: var(--gold);
+        }
+
+        .repair-cta-card .btn-primary:hover {
+            background: #b08156;
+        }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+
+        .site-footer {
+            background: #0a1628;
+            color: #fff;
+            padding: 4rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr 1fr 1.2fr;
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: .95rem;
+            margin: 0 0 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, .6);
+            font-size: .85rem;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 1rem;
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            text-decoration: none;
+        }
+
+        .footer-logo .logo__text-primary {
+            color: #fff;
+        }
+
+        .footer-logo .logo__text-sub {
+            color: var(--gold);
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+
+        .footer-col li {
+            color: rgba(255, 255, 255, .6);
+            font-size: .83rem;
+        }
+
+        .footer-col li a {
+            color: rgba(255, 255, 255, .6);
+            text-decoration: none;
+            font-size: .83rem;
+            transition: color var(--transition);
+        }
+
+        .footer-col li a:hover {
+            color: var(--gold);
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .65rem;
+            margin-bottom: .8rem;
+        }
+
+        .footer-contact-item svg {
+            width: 17px;
+            height: 17px;
+            min-width: 17px;
+            color: var(--gold);
+            margin-top: 2px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, .65);
+            text-decoration: none;
+            font-size: .83rem;
+            word-break: break-word;
+            transition: color var(--transition);
+        }
+
+        .footer-contact-item a:hover {
+            color: var(--gold);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            color: rgba(255, 255, 255, .45);
+            font-size: .75rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--gold);
+        }
+
+        /* ============================================================
+           RESPONSIVE - 1024px
+        ============================================================ */
+
+        @media (max-width: 1024px) {
+
+            .repair-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .repair-hero-content {
+                max-width: 750px;
+            }
+
+            .repair-visual {
+                max-width: 700px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .repair-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .repair-cta-inner {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .repair-cta-card {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links > a,
+            .nav-dropdown-toggle {
+                font-size: .82rem;
+            }
+
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-timeline {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-bar {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 768px
+        ============================================================ */
+
+        @media (max-width: 768px) {
+
+            .repair-hero {
+                padding: 4rem 0;
+            }
+
+            .repair-hero-grid {
+                gap: 2.5rem;
+            }
+
+            .repair-hero-content h1 {
+                font-size: clamp(2.4rem, 9vw, 3.4rem);
+            }
+
+            .repair-hero-text {
+                font-size: .95rem;
+            }
+
+            .repair-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .repair-hero-actions .btn-primary,
+            .repair-hero-actions .btn-ghost {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .repair-visual-card {
+                padding: 1.25rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .stats-bar {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .repair-cta-card {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .header-inner {
+                min-height: 65px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topbar-inner {
+                flex-direction: column;
+                align-items: center;
+                gap: .35rem;
+                text-align: center;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 600px
+        ============================================================ */
+
+        @media (max-width: 600px) {
+
+            .repair-visual-card img {
+                height: 230px;
+            }
+
+            .repair-cta-card {
+                padding: 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                gap: .8rem 1rem;
+            }
+
+            .service-card {
+                padding: 1.75rem 1.5rem;
+            }
+
+            .repair-hero::before {
+                font-size: 15rem;
+                right: -30px;
+                bottom: -50px;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 480px
+        ============================================================ */
+
+        @media (max-width: 480px) {
+
+            .repair-hero {
+                padding: 3.25rem 0;
+            }
+
+            .repair-badge {
+                font-size: .7rem;
+                padding: .4rem .8rem;
+            }
+
+            .repair-hero-content h1 {
+                font-size: 2.35rem;
+            }
+
+            .repair-hero-text {
+                font-size: .9rem;
+                line-height: 1.7;
+            }
+
+            .repair-visual-card {
+                padding: 1rem;
+            }
+
+            .repair-visual-card img {
+                height: 200px;
+                margin-bottom: 1.2rem;
+            }
+
+            .repair-visual-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .repair-visual-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .repair-visual-card > p {
+                font-size: .84rem;
+            }
+
+            .repair-mini-item {
+                font-size: .78rem;
+            }
+
+            .repair-intro-grid {
+                gap: 2rem;
+            }
+
+            .service-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .repair-cta-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .footer-bottom {
+                font-size: .7rem;
+            }
+
+            .logo__img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .logo__text-primary {
+                font-size: 1.05rem;
+            }
+
+            .logo__text-sub {
+                font-size: .55rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .stats-bar {
+                padding: 1rem;
+            }
+
+            .stat-number {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* ============================================================
+           ACCESSIBILITY
+        ============================================================ */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--gold);
+            outline-offset: 3px;
+        }
+
+        /* ============================================================
+           REDUCE MOTION
+        ============================================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- ============================================================
+     TOP BAR
+============================================================ -->
+
+<div class="topbar">
+
+    <div class="container">
+
+        <div class="topbar-inner">
+
+            <div class="topbar__loc">
+
+                <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+
+                <span>
+                    Professional Hearing Care
+                </span>
+
+            </div>
+
+
+            <div class="topbar__phones">
+
+                <a href="tel:5874046064">
+                    587-404-6064
+                </a>
+
+                <span class="topbar__sep">
+                    |
+                </span>
+
+                <span>
+                    Appointments Available
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     MAIN HEADER
+============================================================ -->
+
+<header class="site-header">
+
+    <div class="container">
+
+        <div class="header-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="logo"
+            >
+
+                <div class="logo__mark">
+
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                        alt="Sound Advice Hearing Solutions Logo"
+                        class="logo__img"
+                    >
+
+                </div>
+
+
+                <div class="logo__content">
+
+                    <div class="logo__text-primary">
+                        Sound Advice
+                    </div>
+
+                    <div class="logo__text-sub">
+                        Hearing Solutions
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="nav-links"
+                aria-label="Primary navigation"
+            >
+
+
+                <!-- ABOUT -->
+
+                <a href="../index.html#about">
+                    About
+                </a>
+
+
+                <!-- SERVICES -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="../index.html#services"
+                        class="nav-dropdown-toggle"
+                    >
+                        Services
+
+                        <span>
+                            ▾
+                        </span>
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="hearing-aid-testing.html">
+                            Hearing Aid Testing
+                        </a>
+
+                        <a href="hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="hearing-repair.html">
+                            Hearing Repair
+                        </a>
+
+                        <a href="hearing-protection.html">
+                            Hearing Protection
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEARING AIDS -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#hearing-aids"
+                        class="nav-dropdown-toggle"
+                    >
+                        Hearing Aids
+
+                        <span>
+                            ▾
+                        </span>
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="#consultation">
+                            Hearing Aid Consultation
+                        </a>
+
+                        <a href="#fitting">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="#programming">
+                            Hearing Aid Programming
+                        </a>
+
+                        <a href="#repair">
+                            Hearing Aid Repair &amp; Maintenance
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TESTIMONIALS -->
+
+                <a href="../index.html#testimonials">
+                    Testimonials
+                </a>
+
+
+                <!-- CONTACT -->
+
+                <a href="../index.html#contact">
+                    Contact
+                </a>
+
+
+                <!-- CTA -->
+
+                <a
+                    href="../index.html#contact"
+                    class="nav-cta"
+                >
+                    Book Appointment
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="mobile-menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                onclick="openMenu()"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE NAVIGATION
+============================================================ -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-inner">
+
+
+        <button
+            class="mobile-menu-close"
+            type="button"
+            aria-label="Close navigation menu"
+            onclick="closeMenu()"
+        >
+            &times;
+        </button>
+
+
+        <a
+            href="../index.html#about"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+
+        <a
+            href="../index.html#services"
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+
+        <a
+            href="#hearing-aids"
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+
+        <a
+            href="../index.html#testimonials"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+
+        <a
+            href="../index.html#contact"
+            onclick="closeMenu()"
+        >
+            Contact
+        </a>
+
+
+        <a
+            href="../index.html#contact"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Appointment
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- ============================================================
+     HERO SECTION - HEARING REPAIR
+============================================================ -->
+
+<section class="repair-hero">
+
+    <div class="container repair-hero-grid">
+
+
+        <div class="repair-hero-content">
+
+            <div class="repair-badge">
+
+                <span></span>
+
+                Professional Hearing Aid Repair
+
+            </div>
+
+
+            <h1>
+
+                Fast, Reliable Hearing Aid
+                <em>Repair Services.</em>
+
+            </h1>
+
+
+            <p class="repair-hero-text">
+
+                When your hearing aids need attention, you need a
+                service you can trust. Our professional repair services
+                get your devices working properly again — quickly and
+                reliably.
+
+            </p>
+
+
+            <div class="repair-hero-actions">
+
+                <a
+                    href="../index.html#contact"
+                    class="btn-primary"
+                >
+                    Book Repair Service
+                </a>
+
+
+                <a
+                    href="#repair-services"
+                    class="btn-ghost"
+                >
+                    Our Services
+                    <span>↓</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Hero Image -->
+
+        <div class="repair-visual">
+
+            <div class="repair-visual-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
+                    alt="Professional hearing aid repair services"
+                    style="width:100%; height:260px; object-fit:cover; border-radius:18px; margin-bottom:1.5rem;"
+                >
+
+
+                <div class="repair-visual-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
+
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                        <polyline points="14 2 14 8 20 8"/>
+                        <path d="M12 12v6"/>
+                        <path d="M9 15h6"/>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Expert repair for all major brands
+                </h3>
+
+
+                <p>
+
+                    We provide professional repair services for all
+                    major hearing aid brands. From minor adjustments
+                    to major repairs, we have the expertise to help.
+
+                </p>
+
+
+                <div class="repair-mini-list">
+
+                    <div class="repair-mini-item">
+
+                        <span>✓</span>
+
+                        All major brands supported
+
+                    </div>
+
+
+                    <div class="repair-mini-item">
+
+                        <span>✓</span>
+
+                        Fast turnaround times
+
+                    </div>
+
+
+                    <div class="repair-mini-item">
+
+                        <span>✓</span>
+
+                        Manufacturer-certified repairs
+
+                    </div>
+
+
+                    <div class="repair-mini-item">
+
+                        <span>✓</span>
+
+                        Warranty-friendly service
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     INTRODUCTION
+============================================================ -->
+
+<section class="repair-intro">
+
+    <div class="container repair-intro-grid">
+
+
+        <div>
+
+            <span class="section-tag">
+                Why Choose Us
+            </span>
+
+            <h2>
+                Your hearing aids are in expert hands.
+            </h2>
+
+            <p>
+
+                We understand how important your hearing aids are to
+                your daily life. That's why we provide fast, reliable
+                repair services to get you back to hearing clearly
+                as quickly as possible.
+
+            </p>
+
+            <p>
+
+                Our experienced technicians use manufacturer-certified
+                parts and techniques to ensure your hearing aids are
+                repaired to the highest standards.
+
+            </p>
+
+            <div class="check-list">
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Expert repair technicians
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Manufacturer-approved parts
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Quick turnaround times
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Stats Bar -->
+
+        <div>
+
+            <div class="stats-bar">
+
+                <div class="stat-item">
+                    <span class="stat-number">98%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">24h</span>
+                    <span class="stat-label">Avg. Turnaround</span>
+                </div>
+
+                <div class="stat-item">
+                    <span class="stat-number">15+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+
+            </div>
+
+            <div style="margin-top: 2rem; background: #fff; border-radius: var(--radius-lg); padding: 2rem; border: 1px solid rgba(11, 31, 58, .06); box-shadow: var(--shadow-sm);">
+
+                <p style="color: var(--text-muted); font-size: .9rem; line-height: 1.8; margin: 0;">
+
+                    <strong style="color: var(--gold);">🔧 Quick Tip:</strong>
+                    Regular maintenance can extend the life of your
+                    hearing aids. We recommend a professional cleaning
+                    and check-up every 6 months.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     SERVICES GRID
+============================================================ -->
+
+<section
+    class="repair-services"
+    id="repair-services"
+>
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Our Repair Services
+            </span>
+
+            <h2>
+                Comprehensive repair solutions.
+            </h2>
+
+            <p>
+                We offer a complete range of repair services to get
+                your hearing aids working like new again.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔧
+                </div>
+
+                <h3>
+                    General Repairs
+                </h3>
+
+                <p>
+
+                    Expert repairs for common issues including
+                    sound distortion, intermittent operation,
+                    and connectivity problems.
+
+                </p>
+
+                <span class="service-price">
+                    From $79
+                </span>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    💧
+                </div>
+
+                <h3>
+                    Moisture Damage
+                </h3>
+
+                <p>
+
+                    Professional drying and repair services for
+                    hearing aids affected by moisture, humidity,
+                    or accidental water exposure.
+
+                </p>
+
+                <span class="service-price">
+                    From $99
+                </span>
+
+            </div>
+
+
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    🔋
+                </div>
+
+                <h3>
+                    Battery &amp; Power Issues
+                </h3>
+
+                <p>
+
+                    Diagnostics and repair for battery-related
+                    problems, including poor battery life and
+                    charging issues.
+
+                </p>
+
+                <span class="service-price">
+                    From $59
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     PROCESS TIMELINE
+============================================================ -->
+
+<section class="repair-process">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                How It Works
+            </span>
+
+            <h2>
+                Simple repair process.
+            </h2>
+
+            <p>
+                Getting your hearing aids repaired is quick and
+                straightforward with our step-by-step process.
+            </p>
+
+        </div>
+
+
+        <div class="process-timeline">
+
+
+            <div class="timeline-step">
+
+                <div class="step-number">
+                    01
+                </div>
+
+                <h3>
+                    Book Appointment
+                </h3>
+
+                <p>
+                    Contact us to schedule a repair appointment
+                    or drop off your devices at our clinic.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-step">
+
+                <div class="step-number">
+                    02
+                </div>
+
+                <h3>
+                    Free Assessment
+                </h3>
+
+                <p>
+                    We'll assess your hearing aids, identify the
+                    issue, and provide a clear repair estimate.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-step">
+
+                <div class="step-number">
+                    03
+                </div>
+
+                <h3>
+                    Expert Repair
+                </h3>
+
+                <p>
+                    Our technicians perform the repair using
+                    manufacturer-approved parts and techniques.
+                </p>
+
+            </div>
+
+
+
+            <div class="timeline-step">
+
+                <div class="step-number">
+                    04
+                </div>
+
+                <h3>
+                    Quality Check
+                </h3>
+
+                <p>
+                    Your devices are thoroughly tested to ensure
+                    they're working perfectly before we return them.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FAQ - Different grid layout
+============================================================ -->
+
+<section class="repair-faq">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                FAQs
+            </span>
+
+            <h2>
+                Common repair questions.
+            </h2>
+
+        </div>
+
+
+
+        <div class="faq-grid">
+
+
+            <div class="faq-item">
+
+                <h3>
+                    How long does a repair take?
+                </h3>
+
+                <p>
+
+                    Most repairs are completed within 24-48 hours.
+                    Complex repairs may take longer, and we'll keep
+                    you informed throughout the process.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Do you repair all hearing aid brands?
+                </h3>
+
+                <p>
+
+                    Yes, we repair all major hearing aid brands
+                    including Phonak, Oticon, Signia, Starkey,
+                    Widex, and many others.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Is there a warranty on repairs?
+                </h3>
+
+                <p>
+
+                    Yes, all our repairs come with a 90-day warranty
+                    on parts and labour. We stand behind the quality
+                    of our work.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    What if my hearing aids are still under warranty?
+                </h3>
+
+                <p>
+
+                    We'll check your warranty status and advise you
+                    on the best course of action. We can often work
+                    with manufacturers to honour warranty coverage.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     CTA SECTION - Different design
+============================================================ -->
+
+<section class="repair-cta">
+
+    <div class="container">
+
+        <div class="repair-cta-inner">
+
+            <div class="repair-cta-content">
+
+                <span class="section-tag" style="color: var(--gold-light);">
+                    Need a Repair?
+                </span>
+
+                <h2>
+                    Don't let broken hearing aids hold you back.
+                </h2>
+
+                <p>
+
+                    Our expert repair team is here to help you get
+                    back to hearing clearly. Book your repair service
+                    today and experience the difference professional
+                    care makes.
+
+                </p>
+
+            </div>
+
+            <div class="repair-cta-card">
+
+                <span class="cta-emoji">
+                    📞
+                </span>
+
+                <h3>
+                    Call us for urgent repairs
+                </h3>
+
+                <p>
+                    Need your hearing aids fixed quickly?
+                    Call us to discuss urgent repair options.
+                </p>
+
+                <a
+                    href="tel:5874046064"
+                    class="btn-primary"
+                    style="background: var(--gold);"
+                >
+                    Call 587-404-6064
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-col footer-brand">
+
+                <a
+                    href="../index.html"
+                    class="footer-logo"
+                >
+
+                    <div>
+
+                        <div class="logo__text-primary">
+                            Sound Advice
+                        </div>
+
+                        <div class="logo__text-sub">
+                            Hearing Solutions
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <p>
+                    Professional hearing care and personalised
+                    hearing solutions for individuals and families
+                    of all ages.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOCATIONS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Locations
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Sherwood Park, AB
+                    </li>
+
+                    <li>
+                        St. Paul, AB
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Services
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        <a href="hearing-aid-testing.html">
+                            Hearing Aid Testing
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-repair.html">
+                            Hearing Repair
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-protection.html">
+                            Hearing Protection
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Contact Us
+                </h4>
+
+
+                <!-- PHONE -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+
+                    <a href="tel:5874046064">
+                        587-404-6064
+                    </a>
+
+                </div>
+
+
+
+                <!-- TOLL FREE -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+
+                    <a href="tel:18664046064">
+                        1-866-404-6064
+                    </a>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
+                        <polyline points="22,6 12,13 2,6"/>
+
+                    </svg>
+
+
+                    <a href="mailto:info@soundadvicehearing.ca">
+                        info@soundadvicehearing.ca
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <span>
+                &#169; 2026 Sound Advice Hearing Solutions.
+                All Rights Reserved.
+            </span>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+    function openMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+    }
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('mobileMenu');
+        if (menu && menu.classList.contains('active')) {
+            if (e.target === menu) {
+                closeMenu();
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+
+</html>

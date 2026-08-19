@@ -1,0 +1,3614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Professional hearing aid fitting at Sound Advice Hearing Solutions. Personalised fitting and adjustment for optimal hearing comfort."
+    >
+
+    <title>Hearing Aid Fitting | Sound Advice Hearing Solutions</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <style>
+        /* ============================================================
+           COMPLETE CSS - HEARING AID FITTING PAGE
+        ============================================================ */
+
+        /* ============================================================
+           RESET & BASE
+        ============================================================ */
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: #ffffff;
+            color: #0b1f3a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ============================================================
+           ROOT VARIABLES
+        ============================================================ */
+
+        :root {
+            --navy: #0b1f3a;
+            --teal: #0f9d8a;
+            --slate-bg: #f5f8fa;
+            --text-muted: #4a5b6e;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --radius-xl: 24px;
+            --shadow-sm: 0 2px 12px rgba(11, 31, 58, .06);
+            --shadow-md: 0 8px 30px rgba(11, 31, 58, .08);
+            --shadow-lg: 0 20px 60px rgba(11, 31, 58, .12);
+            --transition: .25s ease;
+        }
+
+        /* ============================================================
+           CONTAINER
+        ============================================================ */
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* ============================================================
+           TOP BAR
+        ============================================================ */
+
+        .topbar {
+            background: var(--navy);
+            color: rgba(255, 255, 255, .6);
+            font-size: .78rem;
+            padding: .5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, .06);
+        }
+
+        .topbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: .5rem;
+        }
+
+        .topbar__loc {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+        }
+
+        .topbar__loc svg {
+            color: var(--teal);
+            flex-shrink: 0;
+        }
+
+        .topbar__phones {
+            display: flex;
+            align-items: center;
+            gap: .75rem;
+        }
+
+        .topbar__phones a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .topbar__phones a:hover {
+            color: var(--teal);
+        }
+
+        .topbar__sep {
+            color: rgba(255, 255, 255, .2);
+        }
+
+        /* ============================================================
+           SITE HEADER
+        ============================================================ */
+
+        .site-header {
+            background: #fff;
+            padding: .75rem 0;
+            border-bottom: 1px solid rgba(11, 31, 58, .06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        /* ============================================================
+           LOGO
+        ============================================================ */
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .logo__mark {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo__img {
+            width: 55px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .logo__content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo__text-primary {
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .logo__text-sub {
+            color: var(--teal);
+            font-size: .65rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            margin-top: .25rem;
+        }
+
+        /* ============================================================
+           NAVIGATION
+        ============================================================ */
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .nav-links > a,
+        .nav-dropdown-toggle {
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .88rem;
+            font-weight: 600;
+            transition: color var(--transition);
+        }
+
+        .nav-links > a:hover,
+        .nav-dropdown-toggle:hover {
+            color: var(--teal);
+        }
+
+        .nav-dropdown {
+            position: relative;
+        }
+
+        .nav-dropdown-toggle {
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            cursor: pointer;
+        }
+
+        .nav-dropdown-toggle span {
+            font-size: .7rem;
+            transition: transform var(--transition);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-toggle span {
+            transform: rotate(180deg);
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 50%;
+            transform: translateX(-50%) translateY(8px);
+            min-width: 235px;
+            background: #fff;
+            border-radius: var(--radius-md);
+            padding: .6rem;
+            box-shadow: 0 18px 45px rgba(11, 31, 58, .14);
+            border: 1px solid rgba(11, 31, 58, .08);
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+            z-index: 200;
+        }
+
+        .nav-dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: .75rem .85rem;
+            border-radius: 8px;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .84rem;
+            font-weight: 500;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: rgba(15, 157, 138, .08);
+            color: var(--teal);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .7rem 1.1rem;
+            border-radius: 100px;
+            background: var(--teal);
+            color: #fff !important;
+            font-size: .82rem !important;
+            font-weight: 700 !important;
+            text-decoration: none;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(15, 157, 138, .25);
+        }
+
+        /* ============================================================
+           MOBILE MENU TOGGLE
+        ============================================================ */
+
+        .mobile-menu-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            padding: 0;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 23px;
+            height: 2px;
+            background: var(--navy);
+            border-radius: 2px;
+            transition: all .25s ease;
+        }
+
+        /* ============================================================
+           MOBILE MENU
+        ============================================================ */
+
+        .mobile-menu {
+            position: fixed;
+            inset: 0;
+            background: rgba(11, 31, 58, .45);
+            backdrop-filter: blur(5px);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity .25s ease, visibility .25s ease;
+        }
+
+        .mobile-menu.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .mobile-menu-inner {
+            width: min(340px, 88%);
+            min-height: 100%;
+            margin-left: auto;
+            background: #fff;
+            padding: 5rem 1.5rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: .25rem;
+            transform: translateX(100%);
+            transition: transform .3s ease;
+            position: relative;
+        }
+
+        .mobile-menu.active .mobile-menu-inner {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-inner > a {
+            display: block;
+            padding: .9rem 1rem;
+            color: var(--navy);
+            text-decoration: none;
+            font-size: .95rem;
+            font-weight: 600;
+            border-radius: 10px;
+            transition: background .2s ease, color .2s ease;
+        }
+
+        .mobile-menu-inner > a:hover {
+            background: rgba(15, 157, 138, .08);
+            color: var(--teal);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(11, 31, 58, .06);
+            color: var(--navy);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: background var(--transition);
+        }
+
+        .mobile-menu-close:hover {
+            background: rgba(11, 31, 58, .12);
+        }
+
+        .mob-cta {
+            margin-top: 1rem;
+            text-align: center;
+            background: var(--teal) !important;
+            color: #fff !important;
+            border-radius: 100px !important;
+        }
+
+        .mob-cta:hover {
+            background: var(--teal) !important;
+            color: #fff !important;
+            opacity: .9;
+        }
+
+        /* ============================================================
+           BUTTONS
+        ============================================================ */
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: .85rem 2rem;
+            border-radius: 100px;
+            background: var(--teal);
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(15, 157, 138, .3);
+            background: #0d8a7a;
+        }
+
+        .btn-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .85rem 1.5rem;
+            border-radius: 100px;
+            background: transparent;
+            color: #fff;
+            font-size: .9rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1.5px solid rgba(255, 255, 255, .25);
+            transition: all var(--transition);
+        }
+
+        .btn-ghost:hover {
+            background: rgba(255, 255, 255, .08);
+            border-color: rgba(255, 255, 255, .4);
+            transform: translateY(-3px);
+        }
+
+        .btn-ghost span {
+            font-size: 1.1rem;
+        }
+
+        /* ============================================================
+           SECTION TAGS
+        ============================================================ */
+
+        .section-tag {
+            display: inline-block;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: .5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        /* ============================================================
+           FITTING HERO
+        ============================================================ */
+
+        .fitting-hero {
+            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
+            color: #fff;
+            padding: 5.5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fitting-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            left: -200px;
+            bottom: -250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 157, 138, .22) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .fitting-hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fitting-hero-content {
+            max-width: 680px;
+        }
+
+        .fitting-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .15);
+            padding: .45rem 1rem;
+            border-radius: 100px;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .05em;
+            color: #a8f0e8;
+            margin-bottom: 1.5rem;
+        }
+
+        .fitting-badge span {
+            width: 7px;
+            height: 7px;
+            background: #5ee8d8;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #5ee8d8;
+            flex-shrink: 0;
+        }
+
+        .fitting-hero-content h1 {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.08;
+            margin: 0 0 1.25rem;
+            font-family: 'DM Serif Display', serif;
+        }
+
+        .fitting-hero-content h1 em {
+            color: #5ee8d8;
+            font-style: italic;
+        }
+
+        .fitting-hero-text {
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            max-width: 600px;
+            margin: 0;
+        }
+
+        .fitting-hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        /* ============================================================
+           FITTING VISUAL
+        ============================================================ */
+
+        .fitting-visual {
+            position: relative;
+            width: 100%;
+        }
+
+        .fitting-visual-card {
+            position: relative;
+            background: #fff;
+            border-radius: var(--radius-xl);
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, .15);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, .3);
+            color: var(--navy);
+        }
+
+        .fitting-visual-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            border-radius: 18px;
+            margin-bottom: 1.5rem;
+        }
+
+        .fitting-visual-icon {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            margin-bottom: 1rem;
+        }
+
+        .fitting-visual-icon svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .fitting-visual-card h3 {
+            color: var(--navy);
+            font-size: 1.25rem;
+            margin: 0 0 .65rem;
+        }
+
+        .fitting-visual-card > p {
+            color: var(--text-muted);
+            font-size: .9rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .fitting-mini-list {
+            display: grid;
+            gap: .7rem;
+            margin-top: 1.5rem;
+            padding-top: 1.25rem;
+            border-top: 1px solid rgba(11, 31, 58, .08);
+        }
+
+        .fitting-mini-item {
+            display: flex;
+            align-items: center;
+            gap: .65rem;
+            color: var(--navy);
+            font-size: .84rem;
+            font-weight: 500;
+        }
+
+        .fitting-mini-item span {
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            font-size: .75rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        /* ============================================================
+           FITTING INTRO
+        ============================================================ */
+
+        .fitting-intro {
+            padding: 5.5rem 0;
+        }
+
+        .fitting-intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .fitting-intro-content {
+            width: 100%;
+        }
+
+        .fitting-intro-content h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .fitting-intro-content p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.85;
+            margin-top: 1rem;
+        }
+
+        /* ============================================================
+           CHECK LIST
+        ============================================================ */
+
+        .check-list {
+            display: flex;
+            flex-direction: column;
+            gap: .9rem;
+            margin-top: 1.5rem;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: center;
+            gap: .8rem;
+            color: var(--navy);
+            font-size: .9rem;
+            font-weight: 600;
+        }
+
+        .check-icon {
+            width: 32px;
+            height: 32px;
+            min-width: 32px;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .check-icon svg {
+            width: 17px;
+            height: 17px;
+        }
+
+        /* ============================================================
+           FITTING INFO CARD
+        ============================================================ */
+
+        .fitting-info-card {
+            background: var(--slate-bg);
+            border-radius: var(--radius-xl);
+            padding: 2.25rem;
+            border: 1px solid rgba(11, 31, 58, .07);
+            box-shadow: var(--shadow-md);
+        }
+
+        .fitting-info-card h3 {
+            color: var(--navy);
+            font-size: 1.35rem;
+            margin: 0 0 1.5rem;
+        }
+
+        .fitting-info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.15rem 0;
+            border-bottom: 1px solid rgba(11, 31, 58, .08);
+        }
+
+        .fitting-info-item:first-of-type {
+            padding-top: 0;
+        }
+
+        .fitting-info-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .fitting-info-icon {
+            width: 45px;
+            height: 45px;
+            min-width: 45px;
+            border-radius: var(--radius-sm);
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fitting-info-icon svg {
+            width: 23px;
+            height: 23px;
+        }
+
+        .fitting-info-item strong {
+            display: block;
+            color: var(--navy);
+            font-size: .95rem;
+            margin-bottom: .35rem;
+        }
+
+        .fitting-info-item p {
+            color: var(--text-muted);
+            font-size: .82rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================================================
+           FITTING PROCESS
+        ============================================================ */
+
+        .fitting-process {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .fitting-process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.75rem;
+        }
+
+        .fitting-process-card {
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 2.25rem 1.75rem;
+            border: 1px solid rgba(11, 31, 58, .07);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition), box-shadow var(--transition);
+            text-align: center;
+        }
+
+        .fitting-process-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .process-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--teal);
+            color: #fff;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.3rem;
+            box-shadow: 0 5px 18px rgba(15, 157, 138, .3);
+        }
+
+        .fitting-process-card h3 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin: 0 0 .65rem;
+        }
+
+        .fitting-process-card p {
+            color: var(--text-muted);
+            font-size: .85rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ============================================================
+           FITTING BENEFITS
+        ============================================================ */
+
+        .fitting-benefits {
+            padding: 5.5rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--slate-bg);
+            border-radius: var(--radius-lg);
+            padding: 2.25rem;
+            border: 1px solid rgba(11, 31, 58, .06);
+            text-align: center;
+            transition: transform var(--transition), box-shadow var(--transition);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .benefit-icon {
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.25rem;
+        }
+
+        .benefit-icon svg {
+            width: 30px;
+            height: 30px;
+        }
+
+        .benefit-card h3 {
+            color: var(--navy);
+            font-size: 1.15rem;
+            margin: 0 0 .6rem;
+        }
+
+        .benefit-card p {
+            color: var(--text-muted);
+            font-size: .88rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        /* ============================================================
+           FITTING TYPES
+        ============================================================ */
+
+        .fitting-types {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .fitting-types-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .fitting-type-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            background: #fff;
+            border-radius: var(--radius-lg);
+            padding: 1.75rem;
+            border: 1px solid rgba(11, 31, 58, .06);
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .fitting-type-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(15, 157, 138, .2);
+        }
+
+        .fitting-type-icon {
+            width: 52px;
+            height: 52px;
+            min-width: 52px;
+            border-radius: var(--radius-sm);
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fitting-type-icon svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        .fitting-type-card h3 {
+            color: var(--navy);
+            font-size: 1.1rem;
+            margin: 0 0 .45rem;
+        }
+
+        .fitting-type-card p {
+            color: var(--text-muted);
+            font-size: .85rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           IMAGE SECTION
+        ============================================================ */
+
+        .fitting-image-section {
+            padding: 5.5rem 0;
+        }
+
+        .fitting-image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .fitting-image-grid img {
+            width: 100%;
+            height: 430px;
+            object-fit: cover;
+            display: block;
+            border-radius: 24px;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* ============================================================
+           SIGNS / CTA SECTION
+        ============================================================ */
+
+        .fitting-signs {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .fitting-signs-grid {
+            display: grid;
+            grid-template-columns: 1fr .85fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .fitting-signs-content h2 {
+            color: var(--navy);
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            margin-top: .5rem;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .fitting-signs-content > p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+            margin-top: 1rem;
+        }
+
+        .signs-list {
+            display: grid;
+            gap: .8rem;
+            margin-top: 1.5rem;
+        }
+
+        .sign-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .7rem;
+            color: var(--navy);
+            font-size: .9rem;
+            line-height: 1.6;
+        }
+
+        .sign-item > span {
+            width: 24px;
+            height: 24px;
+            min-width: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(15, 157, 138, .1);
+            color: var(--teal);
+            font-size: .75rem;
+            font-weight: 700;
+        }
+
+        /* ============================================================
+           CTA CARD
+        ============================================================ */
+
+        .fitting-cta-card {
+            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 60%, #0a3d38 100%);
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .fitting-cta-card::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            right: -130px;
+            top: -130px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 157, 138, .2), transparent 70%);
+        }
+
+        .fitting-cta-card h3 {
+            color: #fff;
+            font-size: 1.5rem;
+            line-height: 1.25;
+            margin: 0 0 .8rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fitting-cta-card p {
+            color: rgba(255, 255, 255, .68);
+            font-size: .9rem;
+            line-height: 1.8;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fitting-cta-card .btn-primary {
+            margin-top: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+           FAQ
+        ============================================================ */
+
+        .fitting-faq {
+            padding: 5.5rem 0;
+        }
+
+        .faq-list {
+            max-width: 850px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid rgba(11, 31, 58, .07);
+            border-radius: var(--radius-md);
+            padding: 1.4rem 1.5rem;
+            box-shadow: var(--shadow-sm);
+            transition: box-shadow var(--transition), border-color var(--transition);
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-md);
+            border-color: rgba(15, 157, 138, .18);
+        }
+
+        .faq-item h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: .98rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin: 0 0 .45rem;
+        }
+
+        .faq-item p {
+            color: var(--text-muted);
+            font-size: .87rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ============================================================
+           FINAL CTA
+        ============================================================ */
+
+        .fitting-final-cta {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .fitting-final-card {
+            background: linear-gradient(135deg, var(--navy) 0%, #0d2b52 60%, #0a3d38 100%);
+            border-radius: var(--radius-xl);
+            padding: 4rem;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .fitting-final-card::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            right: -200px;
+            top: -250px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(15, 157, 138, .18), transparent 70%);
+        }
+
+        .fitting-final-card h2 {
+            color: #fff;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            margin: 0 0 .8rem;
+            position: relative;
+            z-index: 1;
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+        }
+
+        .fitting-final-card p {
+            max-width: 650px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, .65);
+            font-size: .95rem;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .fitting-final-card .btn-primary {
+            margin-top: 1.75rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ============================================================
+           FOOTER
+        ============================================================ */
+
+        .site-footer {
+            background: var(--navy);
+            color: #fff;
+            padding: 4rem 0 1.5rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.4fr .8fr 1fr 1.2fr;
+            gap: 3rem;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: .95rem;
+            margin: 0 0 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, .6);
+            font-size: .85rem;
+            line-height: 1.8;
+            max-width: 320px;
+            margin-top: 1rem;
+        }
+
+        .footer-logo {
+            display: inline-flex;
+            text-decoration: none;
+        }
+
+        .footer-logo .logo__text-primary {
+            color: #fff;
+        }
+
+        .footer-logo .logo__text-sub {
+            color: #5ee8d8;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: .6rem;
+        }
+
+        .footer-col li {
+            color: rgba(255, 255, 255, .6);
+            font-size: .83rem;
+        }
+
+        .footer-col li a {
+            color: rgba(255, 255, 255, .6);
+            text-decoration: none;
+            font-size: .83rem;
+            transition: color var(--transition);
+        }
+
+        .footer-col li a:hover {
+            color: #5ee8d8;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: .65rem;
+            margin-bottom: .8rem;
+        }
+
+        .footer-contact-item svg {
+            width: 17px;
+            height: 17px;
+            min-width: 17px;
+            color: #5ee8d8;
+            margin-top: 2px;
+        }
+
+        .footer-contact-item a {
+            color: rgba(255, 255, 255, .65);
+            text-decoration: none;
+            font-size: .83rem;
+            word-break: break-word;
+            transition: color var(--transition);
+        }
+
+        .footer-contact-item a:hover {
+            color: #5ee8d8;
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, .1);
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            color: rgba(255, 255, 255, .45);
+            font-size: .75rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: rgba(255, 255, 255, .45);
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+            color: #5ee8d8;
+        }
+
+        /* ============================================================
+           RESPONSIVE - 1024px
+        ============================================================ */
+
+        @media (max-width: 1024px) {
+
+            .fitting-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .fitting-hero-content {
+                max-width: 750px;
+            }
+
+            .fitting-visual {
+                max-width: 700px;
+                width: 100%;
+                margin: 0 auto;
+            }
+
+            .fitting-intro-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .fitting-image-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .fitting-image-grid img {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .fitting-signs-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .fitting-cta-card {
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 2.5rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .nav-links > a,
+            .nav-dropdown-toggle {
+                font-size: .82rem;
+            }
+
+            .fitting-process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 768px
+        ============================================================ */
+
+        @media (max-width: 768px) {
+
+            .fitting-hero {
+                padding: 4rem 0;
+            }
+
+            .fitting-hero-grid {
+                gap: 2.5rem;
+            }
+
+            .fitting-hero-content h1 {
+                font-size: clamp(2.4rem, 9vw, 3.4rem);
+            }
+
+            .fitting-hero-text {
+                font-size: .95rem;
+            }
+
+            .fitting-hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .fitting-hero-actions .btn-primary,
+            .fitting-hero-actions .btn-ghost {
+                width: 100%;
+                justify-content: center;
+                text-align: center;
+            }
+
+            .fitting-visual-card {
+                padding: 1.25rem;
+            }
+
+            .fitting-process-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fitting-types-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fitting-info-card {
+                padding: 1.75rem;
+            }
+
+            .fitting-final-card {
+                padding: 3rem 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .header-inner {
+                min-height: 65px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .topbar-inner {
+                flex-direction: column;
+                align-items: center;
+                gap: .35rem;
+                text-align: center;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 600px
+        ============================================================ */
+
+        @media (max-width: 600px) {
+
+            .fitting-visual-card img {
+                height: 230px;
+            }
+
+            .fitting-image-grid img {
+                height: 350px;
+            }
+
+            .fitting-info-item {
+                gap: .8rem;
+            }
+
+            .fitting-info-icon {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+            }
+
+            .fitting-type-card {
+                flex-direction: column;
+                gap: .9rem;
+            }
+
+            .fitting-cta-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .fitting-final-card {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-bottom-links {
+                flex-wrap: wrap;
+                gap: .8rem 1rem;
+            }
+
+            .fitting-process-card {
+                padding: 1.75rem 1.5rem;
+            }
+
+            .benefit-card {
+                padding: 1.75rem;
+            }
+        }
+
+        /* ============================================================
+           RESPONSIVE - 480px
+        ============================================================ */
+
+        @media (max-width: 480px) {
+
+            .fitting-hero {
+                padding: 3.25rem 0;
+            }
+
+            .fitting-badge {
+                font-size: .7rem;
+                padding: .4rem .8rem;
+            }
+
+            .fitting-hero-content h1 {
+                font-size: 2.35rem;
+            }
+
+            .fitting-hero-text {
+                font-size: .9rem;
+                line-height: 1.7;
+            }
+
+            .fitting-visual-card {
+                padding: 1rem;
+            }
+
+            .fitting-visual-card img {
+                height: 200px;
+                margin-bottom: 1.2rem;
+            }
+
+            .fitting-visual-icon {
+                width: 48px;
+                height: 48px;
+            }
+
+            .fitting-visual-card h3 {
+                font-size: 1.1rem;
+            }
+
+            .fitting-visual-card > p {
+                font-size: .84rem;
+            }
+
+            .fitting-mini-item {
+                font-size: .78rem;
+            }
+
+            .fitting-intro-grid {
+                gap: 2rem;
+            }
+
+            .fitting-image-grid img {
+                height: 300px;
+                border-radius: 18px;
+            }
+
+            .fitting-info-card {
+                padding: 1.4rem;
+            }
+
+            .fitting-info-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .fitting-process-card {
+                padding: 1.5rem 1.25rem;
+            }
+
+            .fitting-type-card {
+                padding: 1.4rem;
+            }
+
+            .fitting-cta-card h3 {
+                font-size: 1.25rem;
+            }
+
+            .fitting-final-card h2 {
+                font-size: 2rem;
+            }
+
+            .fitting-final-card p {
+                font-size: .88rem;
+            }
+
+            .footer-bottom {
+                font-size: .7rem;
+            }
+
+            .logo__img {
+                width: 48px;
+                height: 48px;
+            }
+
+            .logo__text-primary {
+                font-size: 1.05rem;
+            }
+
+            .logo__text-sub {
+                font-size: .55rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+            }
+
+            .benefit-card {
+                padding: 1.5rem;
+            }
+        }
+
+        /* ============================================================
+           ACCESSIBILITY
+        ============================================================ */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid #5ee8d8;
+            outline-offset: 3px;
+        }
+
+        /* ============================================================
+           REDUCE MOTION
+        ============================================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+<!-- ============================================================
+     TOP BAR
+============================================================ -->
+
+<div class="topbar">
+
+    <div class="container">
+
+        <div class="topbar-inner">
+
+            <div class="topbar__loc">
+
+                <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+
+                <span>
+                    Professional Hearing Care
+                </span>
+
+            </div>
+
+
+            <div class="topbar__phones">
+
+                <a href="tel:5874046064">
+                    587-404-6064
+                </a>
+
+                <span class="topbar__sep">
+                    |
+                </span>
+
+                <span>
+                    Appointments Available
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ============================================================
+     MAIN HEADER
+============================================================ -->
+
+<header class="site-header">
+
+    <div class="container">
+
+        <div class="header-inner">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="../index.html"
+                class="logo"
+            >
+
+                <div class="logo__mark">
+
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                        alt="Sound Advice Hearing Solutions Logo"
+                        class="logo__img"
+                    >
+
+                </div>
+
+
+                <div class="logo__content">
+
+                    <div class="logo__text-primary">
+                        Sound Advice
+                    </div>
+
+                    <div class="logo__text-sub">
+                        Hearing Solutions
+                    </div>
+
+                </div>
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav
+                class="nav-links"
+                aria-label="Primary navigation"
+            >
+
+
+                <!-- ABOUT -->
+
+                <a href="../index.html#about">
+                    About
+                </a>
+
+
+                <!-- SERVICES -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="../index.html#services"
+                        class="nav-dropdown-toggle"
+                    >
+                        Services
+
+                        <span>
+                            ▾
+                        </span>
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="hearing-aid-testing.html">
+                            Hearing Aid Testing
+                        </a>
+
+                        <a href="hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="hearing-repair.html">
+                            Hearing Repair
+                        </a>
+
+                        <a href="hearing-protection.html">
+                            Hearing Protection
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- HEARING AIDS -->
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#hearing-aids"
+                        class="nav-dropdown-toggle"
+                    >
+                        Hearing Aids
+
+                        <span>
+                            ▾
+                        </span>
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="#consultation">
+                            Hearing Aid Consultation
+                        </a>
+
+                        <a href="#fitting">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="#programming">
+                            Hearing Aid Programming
+                        </a>
+
+                        <a href="#repair">
+                            Hearing Aid Repair &amp; Maintenance
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TESTIMONIALS -->
+
+                <a href="../index.html#testimonials">
+                    Testimonials
+                </a>
+
+
+                <!-- CONTACT -->
+
+                <a href="../index.html#contact">
+                    Contact
+                </a>
+
+
+                <!-- CTA -->
+
+                <a
+                    href="../index.html#contact"
+                    class="nav-cta"
+                >
+                    Book Appointment
+                </a>
+
+            </nav>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="mobile-menu-toggle"
+                type="button"
+                aria-label="Open navigation menu"
+                onclick="openMenu()"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ============================================================
+     MOBILE NAVIGATION
+============================================================ -->
+
+<div
+    class="mobile-menu"
+    id="mobileMenu"
+>
+
+    <div class="mobile-menu-inner">
+
+
+        <button
+            class="mobile-menu-close"
+            type="button"
+            aria-label="Close navigation menu"
+            onclick="closeMenu()"
+        >
+            &times;
+        </button>
+
+
+        <a
+            href="../index.html#about"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+
+        <a
+            href="../index.html#services"
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+
+        <a
+            href="#hearing-aids"
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+
+        <a
+            href="../index.html#testimonials"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+
+        <a
+            href="../index.html#contact"
+            onclick="closeMenu()"
+        >
+            Contact
+        </a>
+
+
+        <a
+            href="../index.html#contact"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Appointment
+        </a>
+
+    </div>
+
+</div>
+
+
+
+
+<!-- ============================================================
+     HERO SECTION - HEARING AID FITTING
+============================================================ -->
+
+<section class="fitting-hero">
+
+    <div class="container fitting-hero-grid">
+
+
+        <div class="fitting-hero-content">
+
+            <div class="fitting-badge">
+
+                <span></span>
+
+                Professional Hearing Aid Fitting
+
+            </div>
+
+
+            <h1>
+
+                Personalised Hearing Aid Fitting,
+                <em>For Your Comfort.</em>
+
+            </h1>
+
+
+            <p class="fitting-hero-text">
+
+                A hearing aid is only as effective as its fitting.
+                Our professional hearing aid fitting service ensures
+                your devices are comfortable, properly adjusted and
+                programmed to match your unique hearing needs and
+                lifestyle.
+
+            </p>
+
+
+            <div class="fitting-hero-actions">
+
+                <a
+                    href="../index.html#contact"
+                    class="btn-primary"
+                >
+                    Book Hearing Aid Fitting
+                </a>
+
+
+                <a
+                    href="#fitting-process"
+                    class="btn-ghost"
+                >
+                    How It Works
+                    <span>↓</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Hero Image -->
+
+        <div class="fitting-visual">
+
+            <div class="fitting-visual-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=85"
+                    alt="Professional hearing aid fitting and adjustment"
+                    style="width:100%; height:260px; object-fit:cover; border-radius:18px; margin-bottom:1.5rem;"
+                >
+
+
+                <div class="fitting-visual-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.7"
+                    >
+
+                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                        <path d="M2 17l10 5 10-5"/>
+                        <path d="M2 12l10 5 10-5"/>
+
+                    </svg>
+
+                </div>
+
+
+                <h3>
+                    Precision fitting for optimal hearing
+                </h3>
+
+
+                <p>
+
+                    Our hearing professionals take the time to ensure
+                    your hearing aids fit comfortably and are programmed
+                    precisely for your hearing levels and lifestyle needs.
+
+                </p>
+
+
+                <div class="fitting-mini-list">
+
+                    <div class="fitting-mini-item">
+
+                        <span>✓</span>
+
+                        Comfort and fit assessment
+
+                    </div>
+
+
+                    <div class="fitting-mini-item">
+
+                        <span>✓</span>
+
+                        Personalised programming
+
+                    </div>
+
+
+                    <div class="fitting-mini-item">
+
+                        <span>✓</span>
+
+                        Real-world listening tests
+
+                    </div>
+
+
+                    <div class="fitting-mini-item">
+
+                        <span>✓</span>
+
+                        Follow-up adjustments
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     INTRODUCTION
+============================================================ -->
+
+<section class="fitting-intro">
+
+    <div class="container fitting-intro-grid">
+
+
+        <div class="fitting-intro-content">
+
+            <span class="section-tag">
+                Why Fitting Matters
+            </span>
+
+
+            <h2>
+                Proper fitting transforms hearing aid performance.
+            </h2>
+
+
+            <p>
+
+                Even the most advanced hearing aids won't provide
+                optimal benefit if they're not properly fitted and
+                programmed. Our fitting process ensures your hearing
+                aids are calibrated specifically for your hearing
+                needs and comfortable for all-day wear.
+
+            </p>
+
+
+            <p>
+
+                We go beyond basic fitting to ensure your devices
+                are fine-tuned for the environments where you spend
+                your time - whether that's quiet conversations,
+                busy restaurants, or outdoor activities.
+
+            </p>
+
+
+            <div class="check-list">
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Comfortable and secure fit
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Optimised sound quality
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Personalised programming
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="fitting-info-card">
+
+            <h3>
+                Our Fitting Process Includes
+            </h3>
+
+
+            <div class="fitting-info-item">
+
+                <div class="fitting-info-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M20 7h-4.5A2.5 2.5 0 0 0 13 9.5v5A2.5 2.5 0 0 0 15.5 17H20v-2h-4.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5H20V7z"/>
+                        <path d="M4 7h4.5A2.5 2.5 0 0 1 11 9.5v5A2.5 2.5 0 0 1 8.5 17H4v-2h4.5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H4V7z"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Physical Fitting & Comfort
+                    </strong>
+
+                    <p>
+                        We ensure your hearing aids fit comfortably
+                        and securely, making adjustments to ear molds
+                        or domes as needed for all-day wear.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fitting-info-item">
+
+                <div class="fitting-info-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Personalised Programming
+                    </strong>
+
+                    <p>
+                        Your hearing aids are programmed based on
+                        your hearing test results and your specific
+                        communication needs and preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fitting-info-item">
+
+                <div class="fitting-info-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Real-World Testing
+                    </strong>
+
+                    <p>
+                        We test your hearing aids in real-world
+                        listening scenarios to ensure optimal
+                        performance in different environments.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FITTING PROCESS
+============================================================ -->
+
+<section
+    class="fitting-process"
+    id="fitting-process"
+>
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                The Fitting Journey
+            </span>
+
+            <h2>
+                Your hearing aid fitting, step by step.
+            </h2>
+
+            <p>
+                Our comprehensive fitting process ensures optimal
+                performance and comfort every step of the way.
+            </p>
+
+        </div>
+
+
+        <div class="fitting-process-grid">
+
+
+            <div class="fitting-process-card">
+
+                <div class="process-number">
+                    01
+                </div>
+
+                <h3>
+                    Initial Assessment
+                </h3>
+
+                <p>
+
+                    We review your hearing test results and discuss
+                    your listening needs, preferences and lifestyle
+                    to create a personalised fitting plan.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="fitting-process-card">
+
+                <div class="process-number">
+                    02
+                </div>
+
+                <h3>
+                    Physical Fitting
+                </h3>
+
+                <p>
+
+                    Your hearing aids are carefully placed and
+                    adjusted for optimal comfort and security.
+                    Ear molds or domes are checked for proper fit.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="fitting-process-card">
+
+                <div class="process-number">
+                    03
+                </div>
+
+                <h3>
+                    Programming
+                </h3>
+
+                <p>
+
+                    Your devices are programmed using your hearing
+                    test data to ensure precise sound amplification
+                    that matches your hearing needs.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="fitting-process-card">
+
+                <div class="process-number">
+                    04
+                </div>
+
+                <h3>
+                    Follow-up Care
+                </h3>
+
+                <p>
+
+                    We schedule follow-up appointments to make any
+                    necessary adjustments and ensure your hearing
+                    aids continue to meet your needs.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     BENEFITS SECTION
+============================================================ -->
+
+<section class="fitting-benefits">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Benefits
+            </span>
+
+            <h2>
+                Why professional fitting makes a difference.
+            </h2>
+
+            <p>
+                A properly fitted hearing aid provides comfort,
+                clarity and confidence in every listening situation.
+            </p>
+
+        </div>
+
+
+
+        <div class="benefits-grid">
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Optimal Comfort
+                </h3>
+
+                <p>
+                    A proper fit ensures your hearing aids are
+                    comfortable for all-day wear without irritation
+                    or discomfort.
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Clearer Sound
+                </h3>
+
+                <p>
+                    Professional programming ensures your hearing
+                    aids deliver the precise amplification needed
+                    for your hearing levels.
+                </p>
+
+            </div>
+
+
+
+            <div class="benefit-card">
+
+                <div class="benefit-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M20 7h-4.5A2.5 2.5 0 0 0 13 9.5v5A2.5 2.5 0 0 0 15.5 17H20v-2h-4.5a.5.5 0 0 1-.5-.5v-5a.5.5 0 0 1 .5-.5H20V7z"/>
+                        <path d="M4 7h4.5A2.5 2.5 0 0 1 11 9.5v5A2.5 2.5 0 0 1 8.5 17H4v-2h4.5a.5.5 0 0 0 .5-.5v-5a.5.5 0 0 0-.5-.5H4V7z"/>
+
+                    </svg>
+
+                </div>
+
+                <h3>
+                    Confidence
+                </h3>
+
+                <p>
+                    Knowing your hearing aids are properly fitted
+                    gives you confidence to engage in conversations
+                    and activities with ease.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FITTING TYPES
+============================================================ -->
+
+<section class="fitting-types">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Fitting Services
+            </span>
+
+            <h2>
+                Comprehensive fitting for every need.
+            </h2>
+
+            <p>
+
+                We offer a complete range of fitting services to
+                ensure your hearing aids provide optimal performance.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="fitting-types-grid">
+
+
+            <div class="fitting-type-card">
+
+                <div class="fitting-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 8v8"/>
+                        <path d="M8 12h8"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Initial Fitting
+                    </h3>
+
+                    <p>
+
+                        Comprehensive fitting for new hearing aids
+                        including physical adjustment, programming
+                        and real-world testing to ensure optimal
+                        performance and comfort.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fitting-type-card">
+
+                <div class="fitting-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <path d="M4 4v16h16"/>
+                        <path d="M4 12h16"/>
+                        <path d="M4 8h16"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Adjustment & Refinement
+                    </h3>
+
+                    <p>
+
+                        Fine-tuning your existing hearing aids to
+                        address changes in hearing levels or to
+                        improve comfort and performance in specific
+                        listening situations.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fitting-type-card">
+
+                <div class="fitting-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="M9 12l2 2 4-4"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Re-Fitting
+                    </h3>
+
+                    <p>
+
+                        Professional re-fitting when replacing old
+                        hearing aids with new technology, ensuring
+                        a smooth transition with optimal comfort
+                        and sound quality.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="fitting-type-card">
+
+                <div class="fitting-type-icon">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.8"
+                    >
+
+                        <circle cx="12" cy="12" r="10"/>
+                        <path d="M12 6v6l4 2"/>
+
+                    </svg>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Follow-Up Fitting
+                    </h3>
+
+                    <p>
+
+                        Regular follow-up appointments to ensure
+                        your hearing aids continue to meet your
+                        needs and to make any necessary adjustments
+                        as your hearing changes.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     IMAGE SECTION
+============================================================ -->
+
+<section class="fitting-image-section">
+
+    <div class="container fitting-image-grid">
+
+        <div>
+
+            <img
+                src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1000&q=85"
+                alt="Hearing professional fitting a hearing aid"
+            >
+
+        </div>
+
+
+        <div>
+
+            <span class="section-tag">
+                Personalised Care
+            </span>
+
+
+            <h2>
+                Every fitting is unique to you.
+            </h2>
+
+
+            <p>
+
+                We understand that every person's hearing needs and
+                preferences are different. Our fitting process is
+                tailored to your individual requirements, ensuring
+                your hearing aids are optimised for your specific
+                listening environments.
+
+            </p>
+
+
+            <p>
+
+                We take the time to understand how you live, where
+                you struggle to hear, and what you want from your
+                hearing technology. This information guides our
+                fitting and programming decisions.
+
+            </p>
+
+
+            <div class="check-list">
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Individualised fitting approach
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Lifestyle-based programming
+
+                </div>
+
+
+                <div class="check-item">
+
+                    <div class="check-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path d="m5 12 4 4L19 6"/>
+
+                        </svg>
+
+                    </div>
+
+                    Ongoing support and care
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     SIGNS / CTA SECTION
+============================================================ -->
+
+<section class="fitting-signs">
+
+    <div class="container fitting-signs-grid">
+
+
+        <div class="fitting-signs-content">
+
+            <span class="section-tag">
+                Need a Hearing Aid Fitting?
+            </span>
+
+
+            <h2>
+                Professional fitting for better hearing.
+            </h2>
+
+
+            <p>
+
+                Whether you're getting new hearing aids or need
+                adjustments to your current devices, our professional
+                fitting service ensures optimal comfort, performance
+                and satisfaction.
+
+            </p>
+
+
+            <div class="signs-list">
+
+
+                <div class="sign-item">
+
+                    <span>✓</span>
+
+                    New hearing aid users
+
+                </div>
+
+
+                <div class="sign-item">
+
+                    <span>✓</span>
+
+                    Existing users needing adjustments
+
+                </div>
+
+
+                <div class="sign-item">
+
+                    <span>✓</span>
+
+                    Upgrading to new technology
+
+                </div>
+
+
+                <div class="sign-item">
+
+                    <span>✓</span>
+
+                    Hearing changes requiring re-fitting
+
+                </div>
+
+
+                <div class="sign-item">
+
+                    <span>✓</span>
+
+                    Comfort or performance concerns
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <div class="fitting-cta-card">
+
+            <h3>
+                Ready for a professional hearing aid fitting?
+            </h3>
+
+
+            <p>
+
+                Our hearing professionals are here to ensure your
+                hearing aids fit comfortably and perform optimally.
+                Schedule your fitting appointment today.
+
+            </p>
+
+
+            <a
+                href="../index.html#contact"
+                class="btn-primary"
+            >
+                Book Hearing Aid Fitting
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+
+<section class="fitting-faq">
+
+    <div class="container">
+
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Frequently Asked Questions
+            </span>
+
+            <h2>
+                Hearing aid fitting questions.
+            </h2>
+
+        </div>
+
+
+
+        <div class="faq-list">
+
+
+            <div class="faq-item">
+
+                <h3>
+                    What happens during a hearing aid fitting?
+                </h3>
+
+                <p>
+
+                    During a fitting, your hearing professional will
+                    place and adjust your hearing aids for comfort,
+                    program them based on your hearing test results,
+                    and test them in real-world listening scenarios
+                    to ensure optimal performance.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    How long does a hearing aid fitting take?
+                </h3>
+
+                <p>
+
+                    A comprehensive hearing aid fitting typically
+                    takes 60-90 minutes. This allows time for physical
+                    fitting, programming, real-world testing, and
+                    answering any questions you may have.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    How often should I have my hearing aids re-fitted?
+                </h3>
+
+                <p>
+
+                    We recommend annual check-ups to ensure your
+                    hearing aids continue to perform optimally.
+                    You may also need a re-fitting if your hearing
+                    changes, you get new devices, or if you experience
+                    comfort issues.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Will I need follow-up appointments?
+                </h3>
+
+                <p>
+
+                    Yes, we typically schedule a follow-up appointment
+                    2-4 weeks after your initial fitting. This allows
+                    time to adjust to your hearing aids and make any
+                    necessary refinements.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="faq-item">
+
+                <h3>
+                    Can my existing hearing aids be re-fitted?
+                </h3>
+
+                <p>
+
+                    Absolutely. We can re-fit and reprogram your
+                    existing hearing aids to improve comfort and
+                    performance, especially if your hearing levels
+                    have changed or you're experiencing new
+                    listening challenges.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ============================================================
+     FINAL CTA
+============================================================ -->
+
+<section class="fitting-final-cta">
+
+    <div class="container">
+
+        <div class="fitting-final-card">
+
+            <h2>
+                Experience the difference of a professional fitting.
+            </h2>
+
+
+            <p>
+
+                A properly fitted hearing aid can transform your
+                listening experience. Book your professional hearing
+                aid fitting appointment and discover the difference
+                personalised care makes.
+
+            </p>
+
+
+            <a
+                href="../index.html#contact"
+                class="btn-primary"
+            >
+                Book Hearing Aid Fitting
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+
+<footer class="site-footer">
+
+    <div class="container">
+
+
+        <div class="footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-col footer-brand">
+
+                <a
+                    href="../index.html"
+                    class="footer-logo"
+                >
+
+                    <div>
+
+                        <div class="logo__text-primary">
+                            Sound Advice
+                        </div>
+
+                        <div class="logo__text-sub">
+                            Hearing Solutions
+                        </div>
+
+                    </div>
+
+                </a>
+
+
+                <p>
+                    Professional hearing care and personalised
+                    hearing solutions for individuals and families
+                    of all ages.
+                </p>
+
+            </div>
+
+
+
+            <!-- LOCATIONS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Locations
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        Sherwood Park, AB
+                    </li>
+
+                    <li>
+                        St. Paul, AB
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Services
+                </h4>
+
+
+                <ul>
+
+                    <li>
+                        <a href="hearing-aid-testing.html">
+                            Hearing Aid Testing
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-repair.html">
+                            Hearing Repair
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="hearing-protection.html">
+                            Hearing Protection
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Contact Us
+                </h4>
+
+
+                <!-- PHONE -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+
+                    <a href="tel:5874046064">
+                        587-404-6064
+                    </a>
+
+                </div>
+
+
+
+                <!-- TOLL FREE -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+
+                    <a href="tel:18664046064">
+                        1-866-404-6064
+                    </a>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
+                        <polyline points="22,6 12,13 2,6"/>
+
+                    </svg>
+
+
+                    <a href="mailto:info@soundadvicehearing.ca">
+                        info@soundadvicehearing.ca
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+
+            <span>
+                &#169; 2026 Sound Advice Hearing Solutions.
+                All Rights Reserved.
+            </span>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+
+<script>
+
+    function openMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.add('active');
+        }
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        const menu = document.getElementById('mobileMenu');
+        if (menu) {
+            menu.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+    }
+
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', function(e) {
+        const menu = document.getElementById('mobileMenu');
+        if (menu && menu.classList.contains('active')) {
+            if (e.target === menu) {
+                closeMenu();
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+
+</html>

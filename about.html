@@ -1,0 +1,3229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        About Us | Sound Advice Hearing Solutions
+    </title>
+
+    <meta
+        name="description"
+        content="Learn about Sound Advice Hearing Solutions, an independent, locally owned hearing clinic serving Sherwood Park and St. Paul, Alberta since 2000."
+    >
+
+    <!-- Google Fonts -->
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         COMPLETE PAGE CSS
+    ========================================================== -->
+
+    <style>
+
+        /* =========================================================
+           ROOT
+        ========================================================== */
+
+        :root {
+
+            --primary: #0b7068;
+            --primary-dark: #07544f;
+            --primary-light: #e9f6f4;
+
+            --gold: #d3a44c;
+            --gold-light: #f7eedc;
+
+            --dark: #173b3a;
+            --text: #405655;
+            --muted: #71817f;
+
+            --white: #ffffff;
+            --off-white: #f8fbfa;
+            --light: #f1f7f6;
+
+            --border: #dce8e6;
+
+            --shadow-sm:
+                0 6px 20px rgba(16, 61, 58, 0.07);
+
+            --shadow-md:
+                0 15px 45px rgba(16, 61, 58, 0.11);
+
+            --shadow-lg:
+                0 25px 70px rgba(16, 61, 58, 0.15);
+
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 28px;
+
+            --container: 1180px;
+
+            --transition: 0.3s ease;
+        }
+
+
+        /* =========================================================
+           RESET
+        ========================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+
+            margin: 0;
+
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
+
+            color: var(--text);
+
+            background: var(--white);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font-family: inherit;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+
+        /* =========================================================
+           CONTAINER
+        ========================================================== */
+
+        .container {
+
+            width:
+                min(
+                    calc(100% - 40px),
+                    var(--container)
+                );
+
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* =========================================================
+           TOP BAR
+        ========================================================== */
+
+        .topbar {
+
+            position: relative;
+
+            z-index: 1001;
+
+            background: var(--dark);
+
+            color: rgba(255,255,255,0.94);
+
+            font-size: 13px;
+        }
+
+        .topbar__inner {
+
+            min-height: 43px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .topbar__loc {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            font-weight: 400;
+        }
+
+        .topbar__loc svg {
+
+            flex-shrink: 0;
+
+            color: var(--gold);
+        }
+
+        .topbar__phones {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            white-space: nowrap;
+        }
+
+        .topbar__phones a {
+
+            transition:
+                color var(--transition);
+        }
+
+        .topbar__phones a:hover {
+
+            color: var(--gold);
+        }
+
+        .topbar__sep {
+
+            opacity: .35;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================== */
+
+        .site-header {
+
+            position: sticky;
+
+            top: 0;
+
+            z-index: 1000;
+
+            background:
+                rgba(255,255,255,.97);
+
+            border-bottom:
+                1px solid transparent;
+
+            transition:
+                box-shadow var(--transition),
+                border-color var(--transition),
+                background var(--transition);
+        }
+
+        .site-header.scrolled {
+
+            background:
+                rgba(255,255,255,.99);
+
+            border-color: var(--border);
+
+            box-shadow:
+                0 8px 30px rgba(20,63,60,.08);
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================== */
+
+        .nav-inner {
+
+            min-height: 88px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+
+        /* =========================================================
+           LOGO
+        ========================================================== */
+
+        .logo {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            flex-shrink: 0;
+        }
+
+        .logo__mark {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .logo__img {
+
+            width: 178px;
+
+            height: auto;
+
+            object-fit: contain;
+
+            transition:
+                transform var(--transition);
+        }
+
+        .logo:hover .logo__img {
+
+            transform: scale(1.02);
+        }
+
+
+        .logo__text-primary {
+
+            color: var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                serif;
+
+            font-size: 25px;
+
+            line-height: 1;
+        }
+
+        .logo__text-sub {
+
+            margin-top: 4px;
+
+            color: var(--primary);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           DESKTOP NAV
+        ========================================================== */
+
+        .nav-links {
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: flex-end;
+
+            gap: 3px;
+        }
+
+        .nav-links > a,
+        .nav-dropdown-toggle {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding:
+                10px 12px;
+
+            color: var(--dark);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            border-radius: 7px;
+
+            transition:
+                color var(--transition),
+                background var(--transition);
+        }
+
+        .nav-links > a:hover,
+        .nav-dropdown-toggle:hover {
+
+            color: var(--primary);
+
+            background:
+                var(--primary-light);
+        }
+
+
+        /* =========================================================
+           DROPDOWN
+        ========================================================== */
+
+        .nav-dropdown {
+
+            position: relative;
+        }
+
+        .nav-dropdown-toggle span {
+
+            font-size: 10px;
+
+            transition:
+                transform var(--transition);
+        }
+
+        .nav-dropdown:hover
+        .nav-dropdown-toggle span {
+
+            transform:
+                rotate(180deg);
+        }
+
+        .dropdown-menu {
+
+            position: absolute;
+
+            top: calc(100% + 8px);
+
+            left: 0;
+
+            min-width: 245px;
+
+            padding: 9px;
+
+            background: var(--white);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                13px;
+
+            box-shadow:
+                var(--shadow-md);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform:
+                translateY(8px);
+
+            transition:
+                opacity var(--transition),
+                visibility var(--transition),
+                transform var(--transition);
+        }
+
+        .nav-dropdown:hover
+        .dropdown-menu {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform:
+                translateY(0);
+        }
+
+        .dropdown-menu a {
+
+            display: block;
+
+            padding:
+                11px 14px;
+
+            color: var(--text);
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            border-radius: 7px;
+
+            transition:
+                color var(--transition),
+                background var(--transition),
+                padding-left var(--transition);
+        }
+
+        .dropdown-menu a:hover {
+
+            color: var(--primary);
+
+            background:
+                var(--primary-light);
+
+            padding-left: 19px;
+        }
+
+
+        /* =========================================================
+           NAV CTA
+        ========================================================== */
+
+        .nav-links .nav-cta {
+
+            margin-left: 7px;
+
+            padding:
+                12px 18px;
+
+            color: var(--white);
+
+            background:
+                var(--primary);
+
+            border-radius: 8px;
+
+            box-shadow:
+                0 7px 20px rgba(11,111,104,.18);
+
+            transition:
+                transform var(--transition),
+                background var(--transition);
+        }
+
+        .nav-links .nav-cta:hover {
+
+            color: var(--white);
+
+            background:
+                var(--primary-dark);
+
+            transform:
+                translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HAMBURGER
+        ========================================================== */
+
+        .hamburger {
+
+            display: none;
+
+            width: 46px;
+
+            height: 46px;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            gap: 5px;
+
+            cursor: pointer;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 9px;
+        }
+
+        .hamburger span {
+
+            display: block;
+
+            width: 21px;
+
+            height: 2px;
+
+            background:
+                var(--dark);
+
+            border-radius: 10px;
+
+            transition:
+                transform .3s ease,
+                opacity .3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+
+            transform:
+                translateY(7px)
+                rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+
+            transform:
+                translateY(-7px)
+                rotate(-45deg);
+        }
+
+
+        /* =========================================================
+           MOBILE MENU
+        ========================================================== */
+
+        .mobile-menu {
+
+            display: none;
+
+            position: absolute;
+
+            left: 0;
+
+            right: 0;
+
+            top: 100%;
+
+            padding:
+                15px 20px 22px;
+
+            background:
+                rgba(255,255,255,.99);
+
+            border-top:
+                1px solid var(--border);
+
+            box-shadow:
+                0 18px 35px rgba(0,0,0,.10);
+        }
+
+        .mobile-menu a {
+
+            display: block;
+
+            padding:
+                13px 14px;
+
+            color: var(--dark);
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            border-radius: 8px;
+
+            transition:
+                background var(--transition),
+                color var(--transition);
+        }
+
+        .mobile-menu a:hover {
+
+            color: var(--primary);
+
+            background:
+                var(--primary-light);
+        }
+
+        .mobile-menu .mob-cta {
+
+            margin-top: 10px;
+
+            color: var(--white);
+
+            text-align: center;
+
+            background:
+                var(--primary);
+        }
+
+        .mobile-menu .mob-cta:hover {
+
+            color: var(--white);
+
+            background:
+                var(--primary-dark);
+        }
+
+        .mobile-menu.open {
+
+            display: block;
+
+            animation:
+                mobileMenu .25s ease;
+        }
+
+        @keyframes mobileMenu {
+
+            from {
+                opacity: 0;
+                transform: translateY(-8px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+
+        /* =========================================================
+           PAGE HERO
+        ========================================================== */
+
+        .page-hero {
+
+            position: relative;
+
+            min-height: 285px;
+
+            display: flex;
+
+            align-items: center;
+
+            padding:
+                70px 0;
+
+            overflow: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    rgba(211,164,76,.14),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #edf8f6,
+                    #fbfdfc 55%,
+                    #eef7f5
+                );
+        }
+
+        .page-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 430px;
+
+            height: 430px;
+
+            right: -220px;
+
+            bottom: -270px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(11,111,104,.06);
+        }
+
+        .page-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+
+            height: 180px;
+
+            left: -95px;
+
+            top: -90px;
+
+            border-radius: 50%;
+
+            border:
+                30px solid rgba(211,164,76,.08);
+        }
+
+        .page-hero .container {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        /* =========================================================
+           SECTION TAGS
+        ========================================================== */
+
+        .section-tag {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            margin-bottom: 13px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.6px;
+
+            text-transform: uppercase;
+        }
+
+        .section-tag::before {
+
+            content: "";
+
+            width: 27px;
+
+            height: 2px;
+
+            background:
+                var(--gold);
+
+            border-radius: 10px;
+        }
+
+        .section-subtitle {
+
+            display: block;
+
+            margin-bottom: 12px;
+
+            color: var(--primary);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1.5px;
+
+            text-transform: uppercase;
+        }
+
+
+        /* =========================================================
+           HERO HEADING
+        ========================================================== */
+
+        .hero__h1 {
+
+            position: relative;
+
+            margin: 0;
+
+            color: var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-weight: 400;
+
+            line-height: 1.15;
+
+            letter-spacing: -.4px;
+        }
+
+
+        /* =========================================================
+           TEAM SECTION
+        ========================================================== */
+
+        .team-section {
+
+            padding:
+                100px 0;
+
+            background:
+                var(--white);
+        }
+
+        .team-section .container {
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px, .85fr)
+                minmax(0, 1.15fr);
+
+            align-items: center;
+
+            gap: 80px;
+        }
+
+
+        /* =========================================================
+           TEAM IMAGE
+        ========================================================== */
+
+        .team-image {
+
+            position: relative;
+
+            padding: 13px;
+
+            border-radius:
+                var(--radius-lg);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    var(--primary-light),
+                    #f8f2e4
+                );
+
+            box-shadow:
+                var(--shadow-md);
+        }
+
+        .team-image::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 75px;
+
+            height: 75px;
+
+            left: -18px;
+
+            bottom: -18px;
+
+            border-radius: 50%;
+
+            border:
+                8px solid var(--white);
+
+            background:
+                var(--gold);
+
+            opacity: .85;
+
+            z-index: 0;
+        }
+
+        .team-image img {
+
+            position: relative;
+
+            z-index: 1;
+
+            width: 100%;
+
+            height: 510px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius:
+                calc(var(--radius-lg) - 8px);
+        }
+
+
+        /* =========================================================
+           TEAM CONTENT
+        ========================================================== */
+
+        .team-content {
+
+            position: relative;
+        }
+
+        .team-content h2 {
+
+            margin-bottom: 24px;
+
+            color: var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2rem, 4vw, 3rem);
+
+            font-weight: 400;
+
+            line-height: 1.15;
+        }
+
+        .team-content p {
+
+            margin-bottom: 18px;
+
+            color: var(--text);
+
+            font-size: 16px;
+
+            line-height: 1.85;
+        }
+
+        .team-content strong {
+
+            color: var(--dark);
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           BLOCKQUOTE
+        ========================================================== */
+
+        .team-content blockquote {
+
+            position: relative;
+
+            margin-top: 30px;
+
+            padding:
+                22px 25px 22px 29px;
+
+            color: var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size: 21px;
+
+            font-style: italic;
+
+            line-height: 1.5;
+
+            background:
+                var(--primary-light);
+
+            border-left:
+                4px solid var(--gold);
+
+            border-radius:
+                0 12px 12px 0;
+        }
+
+
+        /* =========================================================
+           ABOUT SECTION
+        ========================================================== */
+
+        .about-section {
+
+            position: relative;
+
+            padding:
+                105px 0;
+
+            background:
+                var(--off-white);
+
+            overflow: hidden;
+        }
+
+        .about-section::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            right: -250px;
+
+            top: -230px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(11,111,104,.045);
+        }
+
+        .about-grid {
+
+            position: relative;
+
+            z-index: 1;
+
+            display: grid;
+
+            grid-template-columns:
+                minmax(300px, .9fr)
+                minmax(0, 1.1fr);
+
+            align-items: center;
+
+            gap: 85px;
+        }
+
+
+        /* =========================================================
+           ABOUT IMAGE
+        ========================================================== */
+
+        .about-img-wrap {
+
+            position: relative;
+
+            padding: 12px;
+
+            background:
+                var(--white);
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius-lg);
+
+            box-shadow:
+                var(--shadow-md);
+        }
+
+        .about-img {
+
+            width: 100%;
+
+            height: 480px;
+
+            object-fit: cover;
+
+            object-position: center;
+
+            border-radius:
+                19px;
+        }
+
+
+        /* =========================================================
+           YEARS BADGE
+        ========================================================== */
+
+        .about-badge {
+
+            position: absolute;
+
+            right: -28px;
+
+            bottom: 35px;
+
+            width: 135px;
+
+            min-height: 135px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            flex-direction: column;
+
+            padding: 15px;
+
+            color: var(--white);
+
+            text-align: center;
+
+            background:
+                var(--primary);
+
+            border:
+                7px solid var(--white);
+
+            border-radius: 50%;
+
+            box-shadow:
+                var(--shadow-md);
+        }
+
+        .about-badge__num {
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size: 34px;
+
+            line-height: 1;
+        }
+
+        .about-badge__label {
+
+            margin-top: 6px;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            text-transform: uppercase;
+
+            line-height: 1.3;
+        }
+
+
+        /* =========================================================
+           ABOUT CONTENT
+        ========================================================== */
+
+        .about-content h2 {
+
+            max-width: 650px;
+
+            margin-bottom: 24px;
+
+            color: var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2rem, 4vw, 3.1rem);
+
+            font-weight: 400;
+
+            line-height: 1.15;
+        }
+
+        .about-content p {
+
+            max-width: 680px;
+
+            margin-bottom: 18px;
+
+            color: var(--text);
+
+            font-size: 16px;
+
+            line-height: 1.85;
+        }
+
+
+        /* =========================================================
+           CHECK LIST
+        ========================================================== */
+
+        .check-list {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, minmax(0, 1fr));
+
+            gap:
+                17px 25px;
+
+            margin-top: 28px;
+        }
+
+        .check-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 11px;
+
+            color: var(--dark);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            line-height: 1.5;
+        }
+
+        .check-icon {
+
+            flex:
+                0 0 24px;
+
+            width: 24px;
+
+            height: 24px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            color: var(--primary);
+
+            background:
+                var(--primary-light);
+
+            border-radius: 50%;
+        }
+
+        .check-icon svg {
+
+            width: 13px;
+
+            height: 13px;
+        }
+
+
+        /* =========================================================
+           BUTTON
+        ========================================================== */
+
+        .hero__actions {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+        .btn-primary {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 50px;
+
+            padding:
+                13px 23px;
+
+            color: var(--white);
+
+            background:
+                var(--primary);
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            box-shadow:
+                0 8px 24px rgba(11,111,104,.18);
+
+            transition:
+                background var(--transition),
+                transform var(--transition),
+                box-shadow var(--transition);
+        }
+
+        .btn-primary:hover {
+
+            color: var(--white);
+
+            background:
+                var(--primary-dark);
+
+            transform:
+                translateY(-2px);
+
+            box-shadow:
+                0 12px 30px rgba(11,111,104,.25);
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================== */
+
+        .site-footer {
+
+            color:
+                rgba(255,255,255,.76);
+
+            background:
+                #123534;
+        }
+
+        .footer-main {
+
+            padding:
+                75px 0 0;
+        }
+
+        .footer-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1.45fr
+                1fr
+                .8fr
+                1.2fr;
+
+            gap: 55px;
+
+            padding-bottom:
+                55px;
+        }
+
+
+        /* =========================================================
+           FOOTER BRAND
+        ========================================================== */
+
+        .footer-brand .logo {
+
+            margin-bottom: 22px;
+        }
+
+        .footer-brand .logo__img {
+
+            width: 165px;
+        }
+
+        .footer-brand p {
+
+            max-width: 350px;
+
+            color:
+                rgba(255,255,255,.58);
+
+            font-size: 14px;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================================================
+           FOOTER COLUMNS
+        ========================================================== */
+
+        .footer-col h4 {
+
+            margin-bottom: 21px;
+
+            color: var(--white);
+
+            font-size: 15px;
+
+            font-weight: 700;
+        }
+
+        .footer-col ul {
+
+            display: grid;
+
+            gap: 11px;
+        }
+
+        .footer-col li {
+
+            color:
+                rgba(255,255,255,.58);
+
+            font-size: 14px;
+
+            line-height: 1.5;
+        }
+
+        .footer-col a {
+
+            transition:
+                color var(--transition);
+        }
+
+        .footer-col a:hover {
+
+            color:
+                var(--gold);
+        }
+
+
+        /* =========================================================
+           FOOTER CONTACT
+        ========================================================== */
+
+        .footer-contact-item {
+
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 11px;
+
+            margin-bottom: 15px;
+
+            color:
+                rgba(255,255,255,.64);
+
+            font-size: 14px;
+        }
+
+        .footer-contact-item svg {
+
+            width: 18px;
+
+            height: 18px;
+
+            flex-shrink: 0;
+
+            margin-top: 3px;
+
+            color: var(--gold);
+        }
+
+        .footer-contact-item a {
+
+            word-break: break-word;
+
+            transition:
+                color var(--transition);
+        }
+
+        .footer-contact-item a:hover {
+
+            color:
+                var(--gold);
+        }
+
+
+        /* =========================================================
+           FOOTER BOTTOM
+        ========================================================== */
+
+        .footer-bottom {
+
+            min-height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+
+            border-top:
+                1px solid rgba(255,255,255,.09);
+
+            color:
+                rgba(255,255,255,.43);
+
+            font-size: 12px;
+        }
+
+        .footer-bottom-links {
+
+            display: flex;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 22px;
+        }
+
+        .footer-bottom-links a {
+
+            transition:
+                color var(--transition);
+        }
+
+        .footer-bottom-links a:hover {
+
+            color:
+                var(--gold);
+        }
+
+
+        /* =========================================================
+           REVEAL ANIMATION
+        ========================================================== */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform:
+                translateY(25px);
+
+            transition:
+                opacity .7s ease,
+                transform .7s ease;
+        }
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform:
+                translateY(0);
+        }
+
+
+        /* =========================================================
+           ACCESSIBILITY
+        ========================================================== */
+
+        :focus-visible {
+
+            outline:
+                3px solid rgba(11,111,104,.35);
+
+            outline-offset:
+                3px;
+        }
+
+
+        /* =========================================================
+           TABLET
+        ========================================================== */
+
+        @media (max-width: 1100px) {
+
+            .nav-links > a,
+            .nav-dropdown-toggle {
+
+                padding:
+                    9px 8px;
+
+                font-size: 13px;
+            }
+
+            .nav-links .nav-cta {
+
+                padding:
+                    11px 14px;
+            }
+
+            .logo__img {
+
+                width: 155px;
+            }
+
+            .team-section .container,
+            .about-grid {
+
+                gap: 55px;
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+                gap: 45px;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .container {
+
+                width:
+                    min(
+                        calc(100% - 32px),
+                        var(--container)
+                    );
+            }
+
+            .topbar__inner {
+
+                min-height: 40px;
+            }
+
+            .topbar__loc {
+
+                font-size: 11px;
+            }
+
+            .topbar__phones {
+
+                font-size: 11px;
+
+                gap: 7px;
+            }
+
+            .nav-links {
+
+                display: none;
+            }
+
+            .hamburger {
+
+                display: flex;
+            }
+
+            .nav-inner {
+
+                min-height: 78px;
+            }
+
+            .page-hero {
+
+                min-height: 235px;
+
+                padding:
+                    55px 0;
+            }
+
+            .team-section {
+
+                padding:
+                    70px 0;
+            }
+
+            .team-section .container {
+
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .team-image {
+
+                max-width: 600px;
+
+                width: 100%;
+
+                margin:
+                    0 auto;
+            }
+
+            .team-image img {
+
+                height: 500px;
+            }
+
+            .about-section {
+
+                padding:
+                    75px 0;
+            }
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 55px;
+            }
+
+            .about-img-wrap {
+
+                max-width: 600px;
+
+                width: 100%;
+
+                margin:
+                    0 auto;
+            }
+
+            .about-img {
+
+                height: 470px;
+            }
+
+            .about-content {
+
+                max-width: 700px;
+
+                margin:
+                    0 auto;
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        /* =========================================================
+           SMALL MOBILE
+        ========================================================== */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                width:
+                    calc(100% - 28px);
+            }
+
+            .topbar__inner {
+
+                min-height: auto;
+
+                padding:
+                    9px 0;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 5px;
+            }
+
+            .topbar__loc {
+
+                width: 100%;
+
+                line-height: 1.4;
+            }
+
+            .topbar__phones {
+
+                width: 100%;
+
+                justify-content: flex-start;
+
+                font-size: 12px;
+            }
+
+            .nav-inner {
+
+                min-height: 72px;
+            }
+
+            .logo__img {
+
+                width: 145px;
+            }
+
+            .hamburger {
+
+                width: 43px;
+
+                height: 43px;
+            }
+
+            .page-hero {
+
+                min-height: 205px;
+
+                padding:
+                    45px 0;
+            }
+
+            .hero__h1 {
+
+                font-size:
+                    2rem !important;
+            }
+
+            .section-tag {
+
+                font-size: 11px;
+
+                letter-spacing: 1.3px;
+            }
+
+            .team-section {
+
+                padding:
+                    60px 0;
+            }
+
+            .team-section .container {
+
+                gap: 38px;
+            }
+
+            .team-image {
+
+                padding: 8px;
+
+                border-radius:
+                    20px;
+            }
+
+            .team-image img {
+
+                height: 390px;
+
+                border-radius:
+                    15px;
+            }
+
+            .team-image::before {
+
+                width: 55px;
+
+                height: 55px;
+
+                left: -12px;
+
+                bottom: -12px;
+
+                border-width: 6px;
+            }
+
+            .team-content h2 {
+
+                font-size:
+                    2rem;
+            }
+
+            .team-content p {
+
+                font-size: 15px;
+
+                line-height: 1.75;
+            }
+
+            .team-content blockquote {
+
+                margin-top: 25px;
+
+                padding:
+                    18px 18px 18px 21px;
+
+                font-size: 18px;
+            }
+
+            .about-section {
+
+                padding:
+                    65px 0;
+            }
+
+            .about-grid {
+
+                gap: 45px;
+            }
+
+            .about-img-wrap {
+
+                padding: 8px;
+
+                border-radius:
+                    20px;
+            }
+
+            .about-img {
+
+                height: 380px;
+
+                border-radius:
+                    15px;
+            }
+
+            .about-badge {
+
+                right: -7px;
+
+                bottom: 20px;
+
+                width: 105px;
+
+                min-height: 105px;
+
+                border-width: 5px;
+            }
+
+            .about-badge__num {
+
+                font-size: 28px;
+            }
+
+            .about-badge__label {
+
+                font-size: 8px;
+            }
+
+            .about-content h2 {
+
+                font-size:
+                    2rem;
+            }
+
+            .about-content p {
+
+                font-size: 15px;
+
+                line-height: 1.75;
+            }
+
+            .check-list {
+
+                grid-template-columns: 1fr;
+
+                gap: 14px;
+
+                margin-top: 25px;
+            }
+
+            .check-item {
+
+                font-size: 14px;
+            }
+
+            .hero__actions {
+
+                width: 100%;
+            }
+
+            .btn-primary {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
+            .footer-main {
+
+                padding-top:
+                    55px;
+            }
+
+            .footer-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 35px;
+
+                padding-bottom:
+                    40px;
+            }
+
+            .footer-brand p {
+
+                max-width:
+                    100%;
+            }
+
+            .footer-bottom {
+
+                padding:
+                    20px 0;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 14px;
+            }
+
+            .footer-bottom-links {
+
+                gap: 15px;
+            }
+        }
+
+
+        /* =========================================================
+           EXTRA SMALL
+        ========================================================== */
+
+        @media (max-width: 380px) {
+
+            .logo__img {
+
+                width: 130px;
+            }
+
+            .topbar__phones {
+
+                flex-wrap: wrap;
+            }
+
+            .team-image img {
+
+                height: 340px;
+            }
+
+            .about-img {
+
+                height: 330px;
+            }
+
+            .footer-bottom-links {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 8px;
+            }
+        }
+
+
+        /* =========================================================
+           REDUCED MOTION
+        ========================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+
+                animation-duration: .01ms !important;
+
+                animation-iteration-count: 1 !important;
+
+                transition-duration: .01ms !important;
+            }
+
+            .reveal {
+
+                opacity: 1;
+
+                transform: none;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         TOP BAR
+    ========================================================== -->
+
+    <div class="topbar">
+
+        <div class="topbar__inner container">
+
+            <div class="topbar__loc">
+
+                <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+
+                    <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="10"
+                        r="3"
+                    />
+
+                </svg>
+
+                Independent Hearing Clinic Serving
+                Sherwood Park &amp; St. Paul Alberta
+
+            </div>
+
+
+            <div class="topbar__phones">
+
+                <a href="tel:5874046064">
+                    587-404-6064
+                </a>
+
+                <span class="topbar__sep">
+                    |
+                </span>
+
+                <a href="tel:18664046064">
+                    1-866-404-6064
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         HEADER
+    ========================================================== -->
+
+    <header
+        class="site-header"
+        id="site-header"
+    >
+
+        <div class="container">
+
+            <div class="nav-inner">
+
+
+                <!-- LOGO -->
+
+                <a
+                    href="index.html"
+                    class="logo"
+                >
+
+                    <div class="logo__mark">
+
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                            alt="Sound Advice Hearing Solutions Logo"
+                            class="logo__img"
+                        >
+
+                    </div>
+
+                </a>
+
+
+
+                <!-- DESKTOP NAV -->
+
+                <nav
+                    class="nav-links"
+                    aria-label="Primary navigation"
+                >
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+
+                    <div class="nav-dropdown">
+
+                        <a
+                            href="services/hearing-aid-testing.html"
+                            class="nav-dropdown-toggle"
+                        >
+
+                            Services
+
+                            <span>
+                                &#9662;
+                            </span>
+
+                        </a>
+
+
+                        <div class="dropdown-menu">
+
+                            <a href="services/hearing-aid-testing.html">
+                                Hearing Assessment
+                            </a>
+
+                            <a href="services/hearing-aid-fitting.html">
+                                Hearing Aid Fitting
+                            </a>
+
+                            <a href="services/hearing-repair.html">
+                                Hearing Aid Repair
+                            </a>
+
+                            <a href="services/hearing-protection.html">
+                                Hearing Protection
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="hearing-aids.html">
+                        Hearing Aids
+                    </a>
+
+                    <a href="tinnitus.html">
+                        Tinnitus
+                    </a>
+
+                    <a href="testimonials.html">
+                        Testimonials
+                    </a>
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="nav-cta"
+                    >
+                        Book Appointment
+                    </a>
+
+                </nav>
+
+
+
+                <!-- MOBILE BUTTON -->
+
+                <button
+                    class="hamburger"
+                    id="hamburger"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    type="button"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             MOBILE MENU
+        ====================================================== -->
+
+        <nav
+            class="mobile-menu"
+            id="mobile-menu"
+            aria-label="Mobile navigation"
+        >
+
+            <a
+                href="index.html"
+                onclick="closeMenu()"
+            >
+                Home
+            </a>
+
+            <a
+                href="about.html"
+                onclick="closeMenu()"
+            >
+                About
+            </a>
+
+            <a
+                href="services/hearing-aid-testing.html"
+                onclick="closeMenu()"
+            >
+                Services
+            </a>
+
+            <a
+                href="hearing-aids.html"
+                onclick="closeMenu()"
+            >
+                Hearing Aids
+            </a>
+
+            <a
+                href="tinnitus.html"
+                onclick="closeMenu()"
+            >
+                Tinnitus
+            </a>
+
+            <a
+                href="testimonials.html"
+                onclick="closeMenu()"
+            >
+                Testimonials
+            </a>
+
+            <a
+                href="contact.html"
+                onclick="closeMenu()"
+            >
+                Contact / Locations
+            </a>
+
+            <a
+                href="contact.html"
+                onclick="closeMenu()"
+                class="mob-cta"
+            >
+                Book Hearing Assessment
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================================================
+         PAGE HERO
+    ========================================================== -->
+
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span class="section-tag">
+                About Us
+            </span>
+
+            <h1
+                class="hero__h1"
+                style="font-size:2.4rem;"
+            >
+                About Sound Advice Hearing Solutions
+            </h1>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         TEAM / PATTY SECTION
+    ========================================================== -->
+
+    <section class="team-section">
+
+        <div class="container">
+
+
+            <div class="team-image reveal">
+
+                <img
+                    src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/d215d4eb-8916-4a2b-b604-0221e75a6996/IMG_6712.jpeg?format=500w"
+                    alt="Patty Larouche, RHAP, BC-HIS"
+                    loading="lazy"
+                >
+
+            </div>
+
+
+            <div class="team-content reveal">
+
+                <span class="section-subtitle">
+                    Meet Our Hearing Professional
+                </span>
+
+                <h2>
+                    Patty Larouche, RHAP, BC-HIS
+                </h2>
+
+
+                <p>
+
+                    Patty graduated from the Hearing Aid Practitioners
+                    program at
+                    <strong>MacEwan University</strong>
+                    in 2000. She also completed her Audiometric Technician
+                    course, allowing her to perform hearing screenings for
+                    government employees.
+
+                </p>
+
+
+                <p>
+
+                    Patty first entered the hearing care industry after
+                    witnessing the struggles her grandmother experienced
+                    with hearing loss. Seeing how hearing difficulties
+                    affected her grandmother inspired Patty to dedicate
+                    her career to helping others reconnect with the people
+                    and sounds that matter most.
+
+                </p>
+
+
+                <p>
+
+                    She understands firsthand how hearing loss can lead
+                    to frustration and isolation. Her passion is helping
+                    individuals manage their hearing loss through
+                    compassionate care and personalized hearing solutions.
+
+                </p>
+
+
+                <blockquote>
+
+                    "Helping people capture the moments and hear the voices
+                    they may have been missing."
+
+                </blockquote>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         ABOUT SECTION
+    ========================================================== -->
+
+    <section
+        id="about"
+        class="about-section"
+    >
+
+        <div class="container">
+
+            <div class="about-grid">
+
+
+                <!-- IMAGE -->
+
+                <div class="about-img-wrap reveal">
+
+                    <img
+                        src="https://tse1.mm.bing.net/th/id/OIP.-6TkGHMpMnjgsk9XkB1TFgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                        alt="Hearing care professional"
+                        class="about-img"
+                        loading="lazy"
+                    >
+
+
+                    <div class="about-badge">
+
+                        <div class="about-badge__num">
+                            20+
+                        </div>
+
+                        <div class="about-badge__label">
+                            Years of Care
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- CONTENT -->
+
+                <div class="about-content reveal">
+
+                    <span class="section-tag">
+                        About Sound Advice
+                    </span>
+
+
+                    <h2>
+                        Compassionate Hearing Care From Experienced Professionals
+                    </h2>
+
+
+                    <p>
+
+                        At Sound Advice Hearing Solutions, we believe
+                        hearing care is about more than technology —
+                        it is about helping people reconnect with family,
+                        friends, and everyday conversations.
+
+                    </p>
+
+
+                    <p>
+
+                        Our team provides personalized assessments,
+                        hearing aid solutions, tinnitus support, and
+                        ongoing care designed around each patient's
+                        individual lifestyle and communication goals.
+
+                    </p>
+
+
+
+                    <!-- CHECK LIST -->
+
+                    <div class="check-list">
+
+
+                        <div class="check-item">
+
+                            <div class="check-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <polyline
+                                        points="20 6 9 17 4 12"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            Independent locally owned hearing clinic
+
+                        </div>
+
+
+
+                        <div class="check-item">
+
+                            <div class="check-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <polyline
+                                        points="20 6 9 17 4 12"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            Personalized recommendations without sales pressure
+
+                        </div>
+
+
+
+                        <div class="check-item">
+
+                            <div class="check-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <polyline
+                                        points="20 6 9 17 4 12"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            Long-term patient support and follow-up care
+
+                        </div>
+
+
+
+                        <div class="check-item">
+
+                            <div class="check-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+
+                                    <polyline
+                                        points="20 6 9 17 4 12"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            RHAP registered and BC-HIS certified practitioners
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <!-- BUTTON -->
+
+                    <div
+                        class="hero__actions"
+                        style="margin-top:24px;"
+                    >
+
+                        <a
+                            href="contact.html"
+                            class="btn-primary"
+                        >
+                            Schedule Hearing Assessment
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <div class="footer-grid">
+
+
+                <!-- BRAND -->
+
+                <div class="footer-brand">
+
+                    <div class="logo">
+
+                        <div class="logo__mark">
+
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                                alt="Sound Advice Hearing Solutions Logo"
+                                class="logo__img"
+                                loading="lazy"
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="logo__text-primary">
+                                Sound Advice
+                            </div>
+
+                            <div class="logo__text-sub">
+                                Hearing Solutions
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+
+                        Professional, compassionate hearing care for
+                        communities across Alberta. Independent and
+                        locally owned since 2000.
+
+                    </p>
+
+                </div>
+
+
+
+                <!-- SERVICES -->
+
+                <div class="footer-col">
+
+                    <h4>
+                        Services
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html#services">
+                                Hearing Tests
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="hearing-aids.html">
+                                Hearing Aids
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="tinnitus.html">
+                                Tinnitus Support
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services/hearing-repair.html">
+                                Hearing Aid Repairs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services/hearing-repair.html">
+                                Hearing Aid Cleaning
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- LOCATIONS -->
+
+                <div class="footer-col">
+
+                    <h4>
+                        Locations
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Sherwood Park, AB
+                        </li>
+
+                        <li>
+                            St. Paul, AB
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-col">
+
+                    <h4>
+                        Contact Us
+                    </h4>
+
+
+                    <div class="footer-contact-item">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                            />
+
+                        </svg>
+
+
+                        <a href="tel:5874046064">
+                            587-404-6064
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="footer-contact-item">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"
+                            />
+
+                        </svg>
+
+
+                        <a href="tel:18664046064">
+                            1-866-404-6064
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="footer-contact-item">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+
+                            <path
+                                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                            />
+
+                            <polyline
+                                points="22,6 12,13 2,6"
+                            />
+
+                        </svg>
+
+
+                        <a href="mailto:info@soundadvicehearing.ca">
+                            info@soundadvicehearing.ca
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    &#169; 2026 Sound Advice Hearing Solutions.
+                    All Rights Reserved.
+                </span>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#">
+                        Terms of Use
+                    </a>
+
+                    <a href="#">
+                        Accessibility
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================================================
+         JAVASCRIPT
+    ========================================================== -->
+
+    <script>
+
+        /* =====================================================
+           CLOSE MOBILE MENU
+        ====================================================== */
+
+        function closeMenu() {
+
+            const hamburger =
+                document.getElementById("hamburger");
+
+            const mobileMenu =
+                document.getElementById("mobile-menu");
+
+            if (!hamburger || !mobileMenu) {
+                return;
+            }
+
+            mobileMenu.classList.remove("open");
+
+            hamburger.classList.remove("open");
+
+            hamburger.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+        }
+
+
+
+        /* =====================================================
+           MOBILE MENU
+        ====================================================== */
+
+        function initMobileMenu() {
+
+            const hamburger =
+                document.getElementById("hamburger");
+
+            const mobileMenu =
+                document.getElementById("mobile-menu");
+
+            if (!hamburger || !mobileMenu) {
+                return;
+            }
+
+
+            hamburger.addEventListener(
+                "click",
+                function () {
+
+                    const isOpen =
+                        mobileMenu.classList.toggle("open");
+
+                    hamburger.classList.toggle(
+                        "open",
+                        isOpen
+                    );
+
+                    hamburger.setAttribute(
+                        "aria-expanded",
+                        String(isOpen)
+                    );
+
+                }
+            );
+
+
+            document.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        !mobileMenu.contains(event.target) &&
+                        !hamburger.contains(event.target)
+                    ) {
+
+                        closeMenu();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           HEADER SCROLL
+        ====================================================== */
+
+        function initHeaderScroll() {
+
+            const header =
+                document.getElementById("site-header");
+
+            if (!header) {
+                return;
+            }
+
+
+            function updateHeader() {
+
+                header.classList.toggle(
+                    "scrolled",
+                    window.scrollY > 40
+                );
+
+            }
+
+
+            updateHeader();
+
+            window.addEventListener(
+                "scroll",
+                updateHeader,
+                {
+                    passive: true
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           SCROLL REVEAL
+        ====================================================== */
+
+        function initScrollReveal() {
+
+            const revealEls =
+                document.querySelectorAll(
+                    ".reveal"
+                );
+
+
+            if (!("IntersectionObserver" in window)) {
+
+                revealEls.forEach(
+                    function (element) {
+
+                        element.classList.add(
+                            "visible"
+                        );
+
+                    }
+                );
+
+                return;
+            }
+
+
+            const observer =
+                new IntersectionObserver(
+                    function (entries) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (
+                                    entry.isIntersecting
+                                ) {
+
+                                    entry.target.classList.add(
+                                        "visible"
+                                    );
+
+                                    observer.unobserve(
+                                        entry.target
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+                    {
+                        threshold: 0.12,
+
+                        rootMargin:
+                            "0px 0px -40px 0px"
+                    }
+                );
+
+
+            revealEls.forEach(
+                function (element) {
+
+                    observer.observe(element);
+
+                }
+            );
+
+        }
+
+
+
+        /* =====================================================
+           INITIALIZE
+        ====================================================== */
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                initMobileMenu();
+
+                initHeaderScroll();
+
+                initScrollReveal();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
