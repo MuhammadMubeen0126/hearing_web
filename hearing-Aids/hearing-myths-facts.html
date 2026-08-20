@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearing Myths & Facts | Sound Advice Hearing Solutions</title>
+    <meta name="description" content="Common hearing myths and practical facts.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main Website CSS (contains header & footer styles) -->
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        /* ============================================================
+           PAGE-SPECIFIC CSS - HEARING MYTHS & FACTS
+           (Header & Footer styles removed - imported from style.css)
+        ============================================================ */
+
+        /* ---------- CSS Custom Properties ---------- */
+        :root {
+            --navy: #0B1F3A;
+            --navy-mid: #122a4e;
+            --teal: #0F9D8A;
+            --teal-light: #13bfa9;
+            --teal-dim: #0c7d6d;
+            --slate-bg: #F4F7FA;
+            --slate-card: #EEF2F7;
+            --text-body: #3d4e63;
+            --text-muted: #6b7c93;
+            --white: #ffffff;
+
+            --radius-sm: 10px;
+            --radius-md: 18px;
+            --radius-lg: 28px;
+            --radius-xl: 36px;
+
+            --shadow-sm: 0 2px 10px rgba(11, 31, 58, .07);
+            --shadow-md: 0 8px 32px rgba(11, 31, 58, .12);
+            --shadow-lg: 0 20px 60px rgba(11, 31, 58, .18);
+
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ---------- Reset & Base ---------- */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--slate-bg);
+            color: var(--navy);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        ul {
+            list-style: none;
+        }
+
+        /* ---------- Typography ---------- */
+        .serif {
+            font-family: 'DM Serif Display', serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'DM Serif Display', serif;
+            line-height: 1.15;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-family: 'DM Sans', sans-serif;
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: .75rem;
+        }
+
+        /* ---------- Layout ---------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* ---------- Section Header ---------- */
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(1.9rem, 3.5vw, 2.75rem);
+            color: var(--navy);
+        }
+
+        .section-header p {
+            margin-top: .75rem;
+            color: var(--text-muted);
+            font-size: 1rem;
+        }
+
+        /* ---------- Buttons ---------- */
+        .btn-primary {
+            background: var(--teal);
+            color: #fff;
+            padding: .9rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: .95rem;
+            box-shadow: 0 6px 24px rgba(15, 157, 138, .4);
+            transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+            border: none;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .btn-primary:hover {
+            background: var(--teal-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 36px rgba(15, 157, 138, .5);
+            color: #fff;
+        }
+
+        /* ============================================================
+           RESOURCE HERO
+        ============================================================ */
+
+        .resource-hero {
+            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
+            color: #fff;
+            padding: 5.5rem 0 4.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-hero::before,
+        .resource-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .resource-hero::before {
+            width: 560px;
+            height: 560px;
+            right: -170px;
+            top: -220px;
+            background: radial-gradient(circle, rgba(15, 157, 138, .22), transparent 70%);
+        }
+
+        .resource-hero::after {
+            width: 380px;
+            height: 380px;
+            left: -170px;
+            bottom: -230px;
+            background: radial-gradient(circle, rgba(15, 157, 138, .12), transparent 70%);
+        }
+
+        .resource-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .resource-hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 3.5rem;
+            align-items: center;
+        }
+
+        .resource-hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.4rem);
+            font-weight: 400;
+            line-height: 1.08;
+        }
+
+        .resource-hero h1 em {
+            color: #5ee8d8;
+            font-style: italic;
+        }
+
+        .resource-hero p {
+            max-width: 650px;
+            margin-top: 1.25rem;
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .resource-hero-image {
+            width: 100%;
+            height: 390px;
+            object-fit: cover;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
+        }
+
+        .resource-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            margin-bottom: 1.25rem;
+            padding: .45rem 1rem;
+            border: 1px solid rgba(255, 255, 255, .15);
+            border-radius: 100px;
+            background: rgba(255, 255, 255, .08);
+            color: #a8f0e8;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        /* ============================================================
+           RESOURCE SECTIONS
+        ============================================================ */
+
+        .resource-section {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .resource-section.white {
+            background: #fff;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .resource-card {
+            background: #fff;
+            border: 1px solid rgba(11, 31, 58, .07);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition), box-shadow var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .resource-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--teal), var(--teal-light));
+        }
+
+        .resource-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: var(--radius-sm);
+            background: rgba(15, 157, 138, .1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.1rem;
+            color: var(--teal);
+        }
+
+        .resource-icon svg {
+            width: 25px;
+            height: 25px;
+        }
+
+        .resource-card h3 {
+            font-size: 1.25rem;
+            color: var(--navy);
+            margin-bottom: .7rem;
+        }
+
+        .resource-card p {
+            font-size: .92rem;
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+
+        /* ============================================================
+           MYTH & FACT
+        ============================================================ */
+
+        .myth-fact {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 1.2rem;
+        }
+
+        .myth,
+        .fact {
+            padding: 1.15rem;
+            border-radius: var(--radius-md);
+        }
+
+        .myth {
+            background: #fff3f1;
+            border: 1px solid #f4d7d2;
+        }
+
+        .fact {
+            background: #edf9f6;
+            border: 1px solid #ccefe8;
+        }
+
+        .myth strong,
+        .fact strong {
+            display: block;
+            font-size: .72rem;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            margin-bottom: .35rem;
+        }
+
+        .myth strong {
+            color: #b04b3f;
+        }
+        .fact strong {
+            color: var(--teal);
+        }
+
+        .myth p,
+        .fact p {
+            margin: 0;
+            font-size: .86rem;
+            line-height: 1.65;
+        }
+
+        /* ============================================================
+           RESOURCE CTA
+        ============================================================ */
+
+        .resource-cta {
+            padding: 4.5rem 0;
+            background: var(--navy);
+            color: #fff;
+            text-align: center;
+        }
+
+        .resource-cta h2 {
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+        }
+
+        .resource-cta p {
+            max-width: 650px;
+            margin: .9rem auto 1.6rem;
+            color: rgba(255, 255, 255, .65);
+        }
+
+        /* ============================================================
+           RESOURCE NAV
+        ============================================================ */
+
+        .resource-nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: .65rem;
+            margin-top: 2rem;
+        }
+
+        .resource-nav a {
+            padding: .7rem 1rem;
+            border-radius: 100px;
+            background: rgba(255, 255, 255, .08);
+            border: 1px solid rgba(255, 255, 255, .12);
+            color: #fff;
+            font-size: .8rem;
+            font-weight: 700;
+            transition: background var(--transition);
+        }
+
+        .resource-nav a:hover {
+            background: rgba(15, 157, 138, .25);
+            color: #fff;
+        }
+
+        /* ============================================================
+           RESOURCE PROSE
+        ============================================================ */
+
+        .resource-prose {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resource-prose h2 {
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: var(--navy);
+            margin: 0 0 .8rem;
+        }
+
+        .resource-prose h3 {
+            font-size: 1.2rem;
+            color: var(--navy);
+            margin: 1.7rem 0 .55rem;
+        }
+
+        .resource-prose p {
+            color: var(--text-muted);
+            line-height: 1.85;
+            margin: .75rem 0;
+        }
+
+        .resource-prose ul {
+            margin: 1rem 0 1.2rem 1.2rem;
+            color: var(--text-muted);
+            line-height: 1.9;
+        }
+
+        .resource-prose li {
+            margin: .35rem 0;
+        }
+
+        .resource-callout {
+            padding: 1.5rem 1.7rem;
+            border-radius: var(--radius-lg);
+            background: #fff;
+            border: 1px solid rgba(11, 31, 58, .07);
+            box-shadow: var(--shadow-sm);
+            margin-top: 1.8rem;
+        }
+
+        .resource-callout strong {
+            color: var(--navy);
+        }
+
+        /* ============================================================
+           RESOURCE FAQ
+        ============================================================ */
+
+        .resource-faq {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            background: #fff;
+            border: 1px solid rgba(11, 31, 58, .07);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 .55rem;
+            font-size: 1rem;
+            color: var(--navy);
+        }
+
+        .faq-item p {
+            font-size: .9rem;
+            line-height: 1.75;
+            color: var(--text-muted);
+            margin: 0;
+        }
+
+        /* ============================================================
+           ARTICLE SECTION
+        ============================================================ */
+
+        .article-section {
+            padding: 4.5rem 0;
+        }
+
+        .article-section.alt {
+            background: var(--slate-bg);
+        }
+
+        .article-section.white {
+            background: #fff;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+        ============================================================ */
+
+        @media (max-width: 1024px) {
+            .resource-hero-grid {
+                grid-template-columns: 1fr;
+            }
+            .resource-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .resource-hero-image {
+                height: 340px;
+            }
+            .resource-faq {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .resource-hero {
+                padding: 4.5rem 0 3.5rem;
+            }
+            .resource-hero-image {
+                height: 280px;
+            }
+            .myth-fact {
+                grid-template-columns: 1fr;
+            }
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+            .resource-cta {
+                padding: 3.5rem 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resource-hero {
+                padding: 3.5rem 0 2.5rem;
+            }
+            .resource-hero h1 {
+                font-size: 2.2rem;
+            }
+            .resource-hero p {
+                font-size: .9rem;
+            }
+            .resource-hero-image {
+                height: 220px;
+            }
+            .resource-card {
+                padding: 1.5rem;
+            }
+            .container {
+                padding: 0 1rem;
+            }
+            .resource-nav {
+                gap: .4rem;
+            }
+            .resource-nav a {
+                font-size: .7rem;
+                padding: .5rem .8rem;
+            }
+            .faq-item {
+                padding: 1.2rem;
+            }
+            .myth,
+            .fact {
+                padding: .9rem;
+            }
+        }
+
+        /* ============================================================
+           ACCESSIBILITY
+        ============================================================ */
+
+        a:focus-visible,
+        button:focus-visible {
+            outline: 3px solid var(--teal);
+            outline-offset: 3px;
+        }
+
+        /* ============================================================
+           REDUCE MOTION
+        ============================================================ */
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+        /* ============================================================
+   FOOTER SPACING FIX
+============================================================ */
+
+.site-footer {
+    margin-top: 3rem;
+    padding-top: 4rem !important;
+}
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ============================================================
+         TOP BAR
+    ============================================================ -->
+
+    <div class="topbar">
+        <div class="container">
+            <div class="topbar-inner">
+                <div class="topbar__loc">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    <span>Professional Hearing Care</span>
+                </div>
+                <div class="topbar__phones">
+                    <a href="tel:5874046064">587-404-6064</a>
+                    <span class="topbar__sep">|</span>
+                    <span>Appointments Available</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+         HEADER / NAVIGATION
+    ============================================================ -->
+
+    <header class="site-header" id="site-header">
+        <div class="container">
+            <div class="nav-inner">
+                <a href="../index.html" class="logo">
+                    <div class="logo__mark">
+                        <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w" alt="Sound Advice Hearing Solutions Logo" class="logo__img">
+                    </div>
+                </a>
+
+                <nav class="nav-links" aria-label="Primary navigation">
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">
+                            Services
+                            <span>&#9662;</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../services/hearing-aid-testing.html">Hearing Assessment</a>
+                            <a href="../services/hearing-aid-fitting.html">Hearing Aid Fitting</a>
+                            <a href="../services/hearing-repair.html">Hearing Aid Repair</a>
+                            <a href="../services/hearing-protection.html">Hearing Protection</a>
+                        </div>
+                    </div>
+
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle">
+                            Hearing Aids
+                            <span>&#9662;</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../hearing-Aids/hearing-blogs.html">Hearing Blogs</a>
+                            <a href="../hearing-Aids/hearing-fun-facts.html">Hearing Fun Facts</a>
+                            <a href="../hearing-Aids/hearing-loss-dementia.html">Hearing Loss & Dementia</a>
+                            <a href="../hearing-Aids/hearing-myths-facts.html">Hearing Myths & Facts</a>
+                        </div>
+                    </div>
+
+                    <a href="../testimonials.html">Testimonials</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../contact.html" class="nav-cta">Book Appointment</a>
+                </nav>
+
+                <!-- MOBILE MENU BUTTON -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- MOBILE DRAWER -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-inner">
+                <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Close navigation menu">
+                    &times;
+                </button>
+                <a href="../index.html">Home</a>
+                <a href="../about.html">About</a>
+                <a href="../services/hearing-aid-testing.html">Hearing Assessment</a>
+                <a href="../services/hearing-aid-fitting.html">Hearing Aid Fitting</a>
+                <a href="../services/hearing-repair.html">Hearing Aid Repair</a>
+                <a href="../services/hearing-protection.html">Hearing Protection</a>
+                <a href="../hearing-Aids/hearing-blogs.html">Hearing Blogs</a>
+                <a href="../hearing-Aids/hearing-fun-facts.html">Hearing Fun Facts</a>
+                <a href="../hearing-Aids/hearing-loss-dementia.html">Hearing Loss & Dementia</a>
+                <a href="../hearing-Aids/hearing-myths-facts.html">Hearing Myths & Facts</a>
+                <a href="../testimonials.html">Testimonials</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../contact.html" class="mob-cta">Book Appointment</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ============================================================
+         RESOURCE HERO
+    ============================================================ -->
+
+    <section class="resource-hero">
+        <div class="container">
+            <div class="resource-hero-grid">
+                <div>
+                    <span class="resource-badge">Sound Advice Hearing Education</span>
+                    <h1><em> Hearing Myths. Real Facts.</em></h1>
+                    <p>Clear up common misconceptions about hearing loss, hearing tests and hearing aids.</p>
+                    <div class="resource-nav">
+                        <a href="#myths">Myths &amp; Facts</a>
+                        <a href="#why-myths">Why Myths Can Be Misleading</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                </div>
+                <img class="resource-hero-image" src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=1100&auto=format&fit=crop" alt="Hearing Myths & Facts">
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         MYTHS & FACTS SECTION
+    ============================================================ -->
+
+    <section id="myths" class="resource-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Myth vs Fact</span>
+                <h2>Common Hearing Myths, Explained</h2>
+                <p>Understanding hearing health starts with separating common assumptions from practical facts.</p>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card">
+                    <div class="resource-icon">✓</div>
+                    <h3>Hearing loss only affects older adults.</h3>
+                    <div class="myth-fact">
+                        <div class="myth">
+                            <strong>Myth</strong>
+                            <p>Hearing loss can affect only seniors.</p>
+                        </div>
+                        <div class="fact">
+                            <strong>Fact</strong>
+                            <p>People of many ages can experience hearing difficulties from noise exposure, illness, injury or other causes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">✓</div>
+                    <h3>If I can hear, my hearing is fine.</h3>
+                    <div class="myth-fact">
+                        <div class="myth">
+                            <strong>Myth</strong>
+                            <p>Being able to hear sounds means hearing is normal.</p>
+                        </div>
+                        <div class="fact">
+                            <strong>Fact</strong>
+                            <p>Difficulty understanding speech, especially in noise, can be an early sign of hearing difficulty.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">✓</div>
+                    <h3>Hearing loss is just a minor inconvenience.</h3>
+                    <div class="myth-fact">
+                        <div class="myth">
+                            <strong>Myth</strong>
+                            <p>It is something you can simply ignore.</p>
+                        </div>
+                        <div class="fact">
+                            <strong>Fact</strong>
+                            <p>Untreated hearing difficulty can affect communication, social participation and quality of life.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">✓</div>
+                    <h3>Turning the TV up solves the problem.</h3>
+                    <div class="myth-fact">
+                        <div class="myth">
+                            <strong>Myth</strong>
+                            <p>Louder sound is always the answer.</p>
+                        </div>
+                        <div class="fact">
+                            <strong>Fact</strong>
+                            <p>When speech clarity is reduced, simply increasing volume may not make conversations easier to understand.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">✓</div>
+                    <h3>You should wait until hearing gets much worse.</h3>
+                    <div class="myth-fact">
+                        <div class="myth">
+                            <strong>Myth</strong>
+                            <p>There is no benefit to checking hearing early.</p>
+                        </div>
+                        <div class="fact">
+                            <strong>Fact</strong>
+                            <p>A hearing assessment can establish a baseline and help identify changes before they become more disruptive.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <div class="resource-icon">✓</div>
+                    <h3>Hearing aids make everything sound unnatural.</h3>
+                    <div class="myth-fact">
+                        <div class="myth">
+                            <strong>Myth</strong>
+                            <p>Hearing aids are one-size-fits-all and sound the same for everyone.</p>
+                        </div>
+                        <div class="fact">
+                            <strong>Fact</strong>
+                            <p>Professional fitting and ongoing adjustments are important for comfort, clarity and natural sound.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         CTA SECTION
+    ============================================================ -->
+
+    <section class="resource-cta">
+        <div class="container">
+            <h2>Not sure about your hearing?</h2>
+            <p>A professional hearing assessment can help you understand what you are hearing and what support may be appropriate.</p>
+            <a href="../contact.html" class="btn-primary">Schedule an Assessment</a>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         WHY MYTHS CAN BE MISLEADING
+    ============================================================ -->
+
+    <section id="why-myths" class="article-section alt">
+        <div class="container">
+            <div class="resource-prose">
+                <span class="section-tag">Understanding the Difference</span>
+                <h2>Why Hearing Myths Can Be Misleading</h2>
+                <p>Hearing changes do not always happen in an obvious way. Some people notice that sounds seem quieter, while others mainly notice that conversations are harder to understand. This is one reason hearing concerns can be easy to dismiss at first.</p>
+                <p>A hearing assessment provides more useful information than simply asking whether someone can hear. It can help identify patterns in hearing ability and give a clearer starting point for discussing communication needs.</p>
+                <div class="resource-callout">
+                    <strong>A useful rule of thumb:</strong> if hearing difficulty is repeatedly affecting conversations, the television volume, phone calls, meetings or social activities, it is reasonable to discuss those changes with a hearing professional.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FAQ SECTION
+    ============================================================ -->
+
+    <section id="faq" class="article-section white">
+        <div class="container">
+            <div class="resource-prose">
+                <span class="section-tag">More Questions</span>
+                <h2>Hearing Myth &amp; Fact FAQ</h2>
+                <div class="resource-faq">
+                    <div class="faq-item">
+                        <h3>Can a hearing test be useful even if I am not sure I have hearing loss?</h3>
+                        <p>Yes. A hearing assessment can provide a baseline and help clarify whether the difficulties you notice are consistent with a hearing change.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Why do I hear people but struggle to understand them?</h3>
+                        <p>Hearing involves more than detecting sound. Speech understanding can become more difficult when there is background noise or when certain sounds are harder to hear clearly.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Should family members encourage someone to get their hearing checked?</h3>
+                        <p>Family members often notice communication changes first. A supportive conversation focused on everyday experiences can be more helpful than criticism or pressure.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>Does everyone with hearing difficulty need hearing aids?</h3>
+                        <p>Not necessarily. The appropriate next step depends on the person's hearing results, communication needs, preferences and professional recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+
+    <footer class="site-footer">
+        <div class="container footer-main">
+            <div class="footer-grid">
+
+                <!-- BRAND -->
+                <div class="footer-brand">
+                    <div class="logo">
+                        <div class="logo__mark">
+                            <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w" alt="Sound Advice Hearing Solutions Logo" class="logo__img">
+                        </div>
+                    </div>
+                    <p>Professional, compassionate hearing care for communities across Alberta. Independent and locally owned since 2000.</p>
+                    <div class="footer-tagline">Hear Better. Live Better.</div>
+                </div>
+
+                <!-- SERVICES -->
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="../services/hearing-aid-testing.html">Hearing Testing</a></li>
+                        <li><a href="../services/hearing-aid-fitting.html">Hearing Aid Fitting</a></li>
+                        <li><a href="../services/hearing-repair.html">Hearing Aid Repairs</a></li>
+                        <li><a href="../services/hearing-protection.html">Hearing Protection</a></li>
+                    </ul>
+                </div>
+
+                <!-- LOCATIONS -->
+                <div class="footer-col">
+                    <h4>Locations</h4>
+                    <ul>
+                        <li>Sherwood Park, AB</li>
+                        <li>St. Paul, AB</li>
+                        <li>Serving Surrounding Communities</li>
+                    </ul>
+                </div>
+
+                <!-- CONTACT -->
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <a href="tel:5874046064">587-404-6064</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        <a href="tel:18664046064">1-866-404-6064</a>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                        <a href="mailto:info@soundadvicehearing.ca">info@soundadvicehearing.ca</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER BOTTOM -->
+            <div class="footer-bottom">
+                <span>© 2000 Sound Advice Hearing Solutions. All Rights Reserved.</span>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================
+         JAVASCRIPT
+    ============================================================ -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+
+            const hamburger = document.getElementById("hamburger");
+            const mobileMenu = document.getElementById("mobileMenu");
+            const mobileMenuClose = document.getElementById("mobileMenuClose");
+
+            function openMenu() {
+                if (!mobileMenu) return;
+                mobileMenu.classList.add("active");
+                if (hamburger) {
+                    hamburger.classList.add("active");
+                    hamburger.setAttribute("aria-expanded", "true");
+                }
+                mobileMenu.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
+            }
+
+            function closeMenu() {
+                if (!mobileMenu) return;
+                mobileMenu.classList.remove("active");
+                if (hamburger) {
+                    hamburger.classList.remove("active");
+                    hamburger.setAttribute("aria-expanded", "false");
+                }
+                mobileMenu.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+            }
+
+            if (hamburger) {
+                hamburger.addEventListener("click", function() {
+                    if (mobileMenu && mobileMenu.classList.contains("active")) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+            }
+
+            if (mobileMenuClose) {
+                mobileMenuClose.addEventListener("click", closeMenu);
+            }
+
+            if (mobileMenu) {
+                mobileMenu.addEventListener("click", function(event) {
+                    if (event.target === mobileMenu) {
+                        closeMenu();
+                    }
+                });
+
+                const mobileLinks = mobileMenu.querySelectorAll("a");
+                mobileLinks.forEach(function(link) {
+                    link.addEventListener("click", closeMenu);
+                });
+            }
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+                    closeMenu();
+                }
+            });
+
+            window.addEventListener("resize", function() {
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+            });
+
+        });
+    </script>
+
+</body>
+
+</html>

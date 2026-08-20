@@ -19,6 +19,12 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Main Website CSS (contains header & footer styles) -->
+    <link
+        rel="stylesheet"
+        href="../style.css"
+    >
+
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet"
@@ -26,32 +32,9 @@
 
     <style>
         /* ============================================================
-           COMPLETE CSS - HEARING PROTECTION PAGE
+           PAGE-SPECIFIC CSS - HEARING PROTECTION PAGE
+           (Header & Footer styles removed - imported from style.css)
         ============================================================ */
-
-        /* ============================================================
-           RESET & BASE
-        ============================================================ */
-
-        *,
-        *::before,
-        *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            background: #ffffff;
-            color: #0b1f3a;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-        }
 
         /* ============================================================
            ROOT VARIABLES
@@ -83,344 +66,6 @@
         }
 
         /* ============================================================
-           TOP BAR
-        ============================================================ */
-
-        .topbar {
-            background: var(--navy);
-            color: rgba(255, 255, 255, .6);
-            font-size: .78rem;
-            padding: .5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, .06);
-        }
-
-        .topbar-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: .5rem;
-        }
-
-        .topbar__loc {
-            display: flex;
-            align-items: center;
-            gap: .5rem;
-        }
-
-        .topbar__loc svg {
-            color: var(--teal);
-            flex-shrink: 0;
-        }
-
-        .topbar__phones {
-            display: flex;
-            align-items: center;
-            gap: .75rem;
-        }
-
-        .topbar__phones a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color var(--transition);
-        }
-
-        .topbar__phones a:hover {
-            color: var(--teal);
-        }
-
-        .topbar__sep {
-            color: rgba(255, 255, 255, .2);
-        }
-
-        /* ============================================================
-           SITE HEADER
-        ============================================================ */
-
-        .site-header {
-            background: #fff;
-            padding: .75rem 0;
-            border-bottom: 1px solid rgba(11, 31, 58, .06);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-inner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 2rem;
-        }
-
-        /* ============================================================
-           LOGO
-        ============================================================ */
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: .8rem;
-            text-decoration: none;
-            flex-shrink: 0;
-        }
-
-        .logo__mark {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .logo__img {
-            width: 55px;
-            height: 55px;
-            object-fit: contain;
-            display: block;
-        }
-
-        .logo__content {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo__text-primary {
-            color: var(--navy);
-            font-family: 'DM Serif Display', serif;
-            font-size: 1.25rem;
-            line-height: 1;
-        }
-
-        .logo__text-sub {
-            color: var(--teal);
-            font-size: .65rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-            margin-top: .25rem;
-        }
-
-        /* ============================================================
-           NAVIGATION
-        ============================================================ */
-
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-
-        .nav-links > a,
-        .nav-dropdown-toggle {
-            color: var(--navy);
-            text-decoration: none;
-            font-size: .88rem;
-            font-weight: 600;
-            transition: color var(--transition);
-        }
-
-        .nav-links > a:hover,
-        .nav-dropdown-toggle:hover {
-            color: var(--teal);
-        }
-
-        .nav-dropdown {
-            position: relative;
-        }
-
-        .nav-dropdown-toggle {
-            display: flex;
-            align-items: center;
-            gap: .35rem;
-            cursor: pointer;
-        }
-
-        .nav-dropdown-toggle span {
-            font-size: .7rem;
-            transition: transform var(--transition);
-        }
-
-        .nav-dropdown:hover .nav-dropdown-toggle span {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: calc(100% + 15px);
-            left: 50%;
-            transform: translateX(-50%) translateY(8px);
-            min-width: 235px;
-            background: #fff;
-            border-radius: var(--radius-md);
-            padding: .6rem;
-            box-shadow: 0 18px 45px rgba(11, 31, 58, .14);
-            border: 1px solid rgba(11, 31, 58, .08);
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
-            z-index: 200;
-        }
-
-        .nav-dropdown:hover .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-            transform: translateX(-50%) translateY(0);
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: .75rem .85rem;
-            border-radius: 8px;
-            color: var(--navy);
-            text-decoration: none;
-            font-size: .84rem;
-            font-weight: 500;
-            transition: background .2s ease, color .2s ease;
-        }
-
-        .dropdown-menu a:hover {
-            background: rgba(15, 157, 138, .08);
-            color: var(--teal);
-        }
-
-        .nav-cta {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: .7rem 1.1rem;
-            border-radius: 100px;
-            background: var(--teal);
-            color: #fff !important;
-            font-size: .82rem !important;
-            font-weight: 700 !important;
-            text-decoration: none;
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-
-        .nav-cta:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(15, 157, 138, .25);
-        }
-
-        /* ============================================================
-           MOBILE MENU TOGGLE
-        ============================================================ */
-
-        .mobile-menu-toggle {
-            display: none;
-            width: 42px;
-            height: 42px;
-            padding: 0;
-            border: none;
-            background: transparent;
-            cursor: pointer;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .mobile-menu-toggle span {
-            display: block;
-            width: 23px;
-            height: 2px;
-            background: var(--navy);
-            border-radius: 2px;
-            transition: all .25s ease;
-        }
-
-        /* ============================================================
-           MOBILE MENU
-        ============================================================ */
-
-        .mobile-menu {
-            position: fixed;
-            inset: 0;
-            background: rgba(11, 31, 58, .45);
-            backdrop-filter: blur(5px);
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-            transition: opacity .25s ease, visibility .25s ease;
-        }
-
-        .mobile-menu.active {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
-
-        .mobile-menu-inner {
-            width: min(340px, 88%);
-            min-height: 100%;
-            margin-left: auto;
-            background: #fff;
-            padding: 5rem 1.5rem 2rem;
-            display: flex;
-            flex-direction: column;
-            gap: .25rem;
-            transform: translateX(100%);
-            transition: transform .3s ease;
-            position: relative;
-        }
-
-        .mobile-menu.active .mobile-menu-inner {
-            transform: translateX(0);
-        }
-
-        .mobile-menu-inner > a {
-            display: block;
-            padding: .9rem 1rem;
-            color: var(--navy);
-            text-decoration: none;
-            font-size: .95rem;
-            font-weight: 600;
-            border-radius: 10px;
-            transition: background .2s ease, color .2s ease;
-        }
-
-        .mobile-menu-inner > a:hover {
-            background: rgba(15, 157, 138, .08);
-            color: var(--teal);
-        }
-
-        .mobile-menu-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            width: 40px;
-            height: 40px;
-            border: none;
-            background: rgba(11, 31, 58, .06);
-            color: var(--navy);
-            border-radius: 50%;
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background var(--transition);
-        }
-
-        .mobile-menu-close:hover {
-            background: rgba(11, 31, 58, .12);
-        }
-
-        .mob-cta {
-            margin-top: 1rem;
-            text-align: center;
-            background: var(--teal) !important;
-            color: #fff !important;
-            border-radius: 100px !important;
-        }
-
-        .mob-cta:hover {
-            background: var(--teal) !important;
-            color: #fff !important;
-            opacity: .9;
-        }
-
-        /* ============================================================
            BUTTONS
         ============================================================ */
 
@@ -444,6 +89,7 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(15, 157, 138, .3);
             background: #0d8a7a;
+            color: #fff;
         }
 
         .btn-ghost {
@@ -465,6 +111,7 @@
             background: rgba(255, 255, 255, .08);
             border-color: rgba(255, 255, 255, .4);
             transform: translateY(-3px);
+            color: #fff;
         }
 
         .btn-ghost span {
@@ -685,348 +332,223 @@
         }
 
         /* ============================================================
-           PROTECTION INTRO
+           RISK SECTION
         ============================================================ */
 
-        .protection-intro {
+        .protection-risk {
             padding: 5.5rem 0;
         }
 
-        .protection-intro-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .protection-intro-content {
-            width: 100%;
-        }
-
-        .protection-intro-content h2 {
-            font-size: clamp(2rem, 3vw, 2.8rem);
-            color: var(--navy);
-            margin-top: .5rem;
-            margin-bottom: 1rem;
-            line-height: 1.15;
-            font-family: 'DM Serif Display', serif;
-            font-weight: 400;
-        }
-
-        .protection-intro-content p {
-            color: var(--text-muted);
-            font-size: .95rem;
-            line-height: 1.85;
-            margin-top: 1rem;
-        }
-
-        /* ============================================================
-           CHECK LIST
-        ============================================================ */
-
-        .check-list {
-            display: flex;
-            flex-direction: column;
-            gap: .9rem;
-            margin-top: 1.5rem;
-        }
-
-        .check-item {
-            display: flex;
-            align-items: center;
-            gap: .8rem;
-            color: var(--navy);
-            font-size: .9rem;
-            font-weight: 600;
-        }
-
-        .check-icon {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            border-radius: 50%;
-            background: rgba(15, 157, 138, .1);
-            color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .check-icon svg {
-            width: 17px;
-            height: 17px;
-        }
-
-        /* ============================================================
-           PROTECTION INFO CARD
-        ============================================================ */
-
-        .protection-info-card {
-            background: var(--slate-bg);
-            border-radius: var(--radius-xl);
-            padding: 2.25rem;
-            border: 1px solid rgba(11, 31, 58, .07);
-            box-shadow: var(--shadow-md);
-        }
-
-        .protection-info-card h3 {
-            color: var(--navy);
-            font-size: 1.35rem;
-            margin: 0 0 1.5rem;
-        }
-
-        .protection-info-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            padding: 1.15rem 0;
-            border-bottom: 1px solid rgba(11, 31, 58, .08);
-        }
-
-        .protection-info-item:first-of-type {
-            padding-top: 0;
-        }
-
-        .protection-info-item:last-child {
-            border-bottom: none;
-            padding-bottom: 0;
-        }
-
-        .protection-info-icon {
-            width: 45px;
-            height: 45px;
-            min-width: 45px;
-            border-radius: var(--radius-sm);
-            background: rgba(15, 157, 138, .1);
-            color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .protection-info-icon svg {
-            width: 23px;
-            height: 23px;
-        }
-
-        .protection-info-item strong {
-            display: block;
-            color: var(--navy);
-            font-size: .95rem;
-            margin-bottom: .35rem;
-        }
-
-        .protection-info-item p {
-            color: var(--text-muted);
-            font-size: .82rem;
-            line-height: 1.65;
-            margin: 0;
-        }
-
-        /* ============================================================
-           PROTECTION TYPES
-        ============================================================ */
-
-        .protection-types {
-            padding: 5.5rem 0;
-            background: var(--slate-bg);
-        }
-
-        .protection-types-grid {
+        .protection-risk-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
         }
 
-        .protection-type-card {
-            background: #fff;
-            border-radius: var(--radius-lg);
-            padding: 2.25rem 1.75rem;
-            border: 1px solid rgba(11, 31, 58, .06);
-            box-shadow: var(--shadow-sm);
-            text-align: center;
-            transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-        }
-
-        .protection-type-card:hover {
-            transform: translateY(-6px);
-            box-shadow: var(--shadow-md);
-            border-color: rgba(15, 157, 138, .2);
-        }
-
-        .protection-type-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: rgba(15, 157, 138, .1);
-            color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.25rem;
-        }
-
-        .protection-type-icon svg {
-            width: 32px;
-            height: 32px;
-        }
-
-        .protection-type-card h3 {
-            color: var(--navy);
-            font-size: 1.2rem;
-            margin: 0 0 .6rem;
-        }
-
-        .protection-type-card p {
-            color: var(--text-muted);
-            font-size: .88rem;
-            line-height: 1.75;
-            margin: 0;
-        }
-
-        .protection-type-tag {
-            display: inline-block;
-            margin-top: 1rem;
-            padding: .3rem .9rem;
-            border-radius: 100px;
-            background: rgba(15, 157, 138, .1);
-            color: var(--teal);
-            font-size: .7rem;
-            font-weight: 700;
-            letter-spacing: .05em;
-            text-transform: uppercase;
-        }
-
-        /* ============================================================
-           PROTECTION FEATURES
-        ============================================================ */
-
-        .protection-features {
-            padding: 5.5rem 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-        }
-
-        .feature-card {
-            display: flex;
-            align-items: flex-start;
-            gap: 1.25rem;
+        .protection-risk-card {
             background: var(--slate-bg);
             border-radius: var(--radius-lg);
-            padding: 1.75rem;
+            padding: 2rem;
             border: 1px solid rgba(11, 31, 58, .06);
             transition: transform var(--transition), box-shadow var(--transition);
         }
 
-        .feature-card:hover {
+        .protection-risk-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
         }
 
-        .feature-icon {
-            width: 50px;
-            height: 50px;
-            min-width: 50px;
-            border-radius: var(--radius-sm);
-            background: rgba(15, 157, 138, .1);
+        .risk-number {
+            font-size: 2rem;
+            font-weight: 700;
             color: var(--teal);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            margin-bottom: .5rem;
         }
 
-        .feature-icon svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .feature-card h3 {
+        .protection-risk-card h3 {
+            font-size: 1.1rem;
             color: var(--navy);
-            font-size: 1.05rem;
-            margin: 0 0 .4rem;
+            margin: 0 0 .5rem;
         }
 
-        .feature-card p {
+        .protection-risk-card p {
             color: var(--text-muted);
-            font-size: .85rem;
+            font-size: .88rem;
             line-height: 1.7;
             margin: 0;
         }
 
         /* ============================================================
-           IMAGE SECTION
+           WORK SECTION
         ============================================================ */
 
-        .protection-image-section {
+        .protection-work {
             padding: 5.5rem 0;
             background: var(--slate-bg);
         }
 
-        .protection-image-grid {
+        .protection-work-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
 
-        .protection-image-grid img {
+        .protection-work-img {
             width: 100%;
             height: 430px;
             object-fit: cover;
-            display: block;
-            border-radius: 24px;
+            border-radius: var(--radius-xl);
             box-shadow: var(--shadow-md);
         }
 
+        .protection-work-grid h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
+        }
+
+        .protection-work-grid > div > p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        .protection-activities {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .protection-activity {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .75rem 1rem;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(11, 31, 58, .06);
+        }
+
+        .protection-activity strong {
+            color: var(--navy);
+            font-size: .9rem;
+        }
+
+        .protection-activity span {
+            color: var(--text-muted);
+            font-size: .82rem;
+        }
+
         /* ============================================================
-           WHO NEEDS PROTECTION
+           OPTIONS SECTION
         ============================================================ */
 
-        .protection-who {
+        .protection-options {
             padding: 5.5rem 0;
         }
 
-        .who-grid {
+        .protection-options-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
 
-        .who-card {
+        .protection-option {
             background: var(--slate-bg);
             border-radius: var(--radius-lg);
             padding: 2rem;
-            text-align: center;
             border: 1px solid rgba(11, 31, 58, .06);
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
             transition: transform var(--transition), box-shadow var(--transition);
         }
 
-        .who-card:hover {
+        .protection-option:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-md);
         }
 
-        .who-card .emoji {
-            font-size: 2.5rem;
-            display: block;
-            margin-bottom: .8rem;
-        }
-
-        .who-card h4 {
+        .protection-option h3 {
+            font-size: 1.1rem;
             color: var(--navy);
-            font-size: 1rem;
-            margin: 0 0 .4rem;
+            margin: 0;
         }
 
-        .who-card p {
+        .protection-option p {
+            color: var(--text-muted);
+            font-size: .88rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .protection-option > span {
+            font-size: .78rem;
+            color: var(--text-muted);
+            margin-top: .5rem;
+        }
+
+        /* ============================================================
+           TIPS SECTION
+        ============================================================ */
+
+        .protection-tips {
+            padding: 5.5rem 0;
+            background: var(--slate-bg);
+        }
+
+        .protection-tips-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .protection-tips-grid h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
+        }
+
+        .protection-tips-grid > div > p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
+
+        .protection-tip-list {
+            display: grid;
+            gap: .8rem;
+        }
+
+        .protection-tip {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: .85rem 1.25rem;
+            background: #fff;
+            border-radius: var(--radius-sm);
+            border: 1px solid rgba(11, 31, 58, .06);
+        }
+
+        .protection-tip strong {
+            color: var(--navy);
+            font-size: .9rem;
+        }
+
+        .protection-tip span {
             color: var(--text-muted);
             font-size: .82rem;
-            line-height: 1.6;
-            margin: 0;
+            text-align: right;
+            max-width: 60%;
         }
 
         /* ============================================================
@@ -1035,144 +557,14 @@
 
         .protection-cta {
             padding: 5.5rem 0;
-            background: var(--slate-bg);
-        }
-
-        .protection-cta-grid {
-            display: grid;
-            grid-template-columns: 1fr .85fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .protection-cta-content h2 {
-            color: var(--navy);
-            font-size: clamp(2rem, 3vw, 2.8rem);
-            margin-top: .5rem;
-            margin-bottom: 1rem;
-            line-height: 1.15;
-            font-family: 'DM Serif Display', serif;
-            font-weight: 400;
-        }
-
-        .protection-cta-content > p {
-            color: var(--text-muted);
-            font-size: .95rem;
-            line-height: 1.8;
-            margin-top: 1rem;
-        }
-
-        .protection-cta-card {
-            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 60%, #0a3d38 100%);
-            border-radius: var(--radius-xl);
-            padding: 3rem;
+            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
             color: #fff;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .protection-cta-card::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            right: -130px;
-            top: -130px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(15, 157, 138, .2), transparent 70%);
-        }
-
-        .protection-cta-card h3 {
-            color: #fff;
-            font-size: 1.5rem;
-            line-height: 1.25;
-            margin: 0 0 .8rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .protection-cta-card p {
-            color: rgba(255, 255, 255, .68);
-            font-size: .9rem;
-            line-height: 1.8;
-            margin: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .protection-cta-card .btn-primary {
-            margin-top: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* ============================================================
-           FAQ
-        ============================================================ */
-
-        .protection-faq {
-            padding: 5.5rem 0;
-        }
-
-        .faq-list {
-            max-width: 850px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .faq-item {
-            background: #fff;
-            border: 1px solid rgba(11, 31, 58, .07);
-            border-radius: var(--radius-md);
-            padding: 1.4rem 1.5rem;
-            box-shadow: var(--shadow-sm);
-            transition: box-shadow var(--transition), border-color var(--transition);
-        }
-
-        .faq-item:hover {
-            box-shadow: var(--shadow-md);
-            border-color: rgba(15, 157, 138, .18);
-        }
-
-        .faq-item h3 {
-            font-family: 'DM Sans', sans-serif;
-            font-size: .98rem;
-            font-weight: 700;
-            color: var(--navy);
-            margin: 0 0 .45rem;
-        }
-
-        .faq-item p {
-            color: var(--text-muted);
-            font-size: .87rem;
-            line-height: 1.7;
-            margin: 0;
-        }
-
-        /* ============================================================
-           FINAL CTA
-        ============================================================ */
-
-        .protection-final-cta {
-            padding: 5.5rem 0;
-            background: var(--slate-bg);
-        }
-
-        .protection-final-card {
-            background: linear-gradient(135deg, var(--navy) 0%, #0d2b52 60%, #0a3d38 100%);
-            border-radius: var(--radius-xl);
-            padding: 4rem;
             text-align: center;
-            color: #fff;
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-lg);
         }
 
-        .protection-final-card::before {
+        .protection-cta::before {
             content: '';
             position: absolute;
             width: 500px;
@@ -1180,159 +572,83 @@
             right: -200px;
             top: -250px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(15, 157, 138, .18), transparent 70%);
+            background: radial-gradient(circle, rgba(15, 157, 138, .15), transparent 70%);
+            pointer-events: none;
         }
 
-        .protection-final-card h2 {
-            color: #fff;
-            font-size: clamp(2rem, 4vw, 3rem);
-            line-height: 1.15;
-            margin: 0 0 .8rem;
+        .protection-cta .container {
             position: relative;
             z-index: 1;
+        }
+
+        .protection-cta h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: #fff;
             font-family: 'DM Serif Display', serif;
             font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
         }
 
-        .protection-final-card p {
-            max-width: 650px;
-            margin: 0 auto;
-            color: rgba(255, 255, 255, .65);
-            font-size: .95rem;
+        .protection-cta p {
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
             line-height: 1.8;
-            position: relative;
-            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .protection-final-card .btn-primary {
-            margin-top: 1.75rem;
-            position: relative;
-            z-index: 1;
+        .protection-cta .btn-primary {
+            margin-top: 1.5rem;
         }
 
         /* ============================================================
-           FOOTER
+           DETAIL CTA
         ============================================================ */
 
-        .site-footer {
-            background: var(--navy);
-            color: #fff;
-            padding: 4rem 0 1.5rem;
-        }
+/* ============================================================
+   DETAIL CTA - FIXED SPACING
+============================================================ */
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.4fr .8fr 1fr 1.2fr;
-            gap: 3rem;
-        }
+.detail-cta {
+    padding: 5.5rem 0 6rem 0;  /* Increased bottom padding */
+    background: var(--slate-bg);
+}
 
-        .footer-col h4 {
-            color: #fff;
-            font-size: .95rem;
-            margin: 0 0 1rem;
-        }
+.detail-cta .container {
+    text-align: center;
+    max-width: 800px;
+}
 
-        .footer-brand p {
-            color: rgba(255, 255, 255, .6);
-            font-size: .85rem;
-            line-height: 1.8;
-            max-width: 320px;
-            margin-top: 1rem;
-        }
+.detail-cta h2 {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    color: var(--navy);
+    font-family: 'DM Serif Display', serif;
+    font-weight: 400;
+    line-height: 1.15;
+    margin: .5rem 0 1rem;
+}
 
-        .footer-logo {
-            display: inline-flex;
-            text-decoration: none;
-        }
+.detail-cta p {
+    color: var(--text-muted);
+    font-size: .95rem;
+    line-height: 1.8;
+}
 
-        .footer-logo .logo__text-primary {
-            color: #fff;
-        }
+.detail-cta .btn-primary {
+    margin-top: 1.5rem;
+}
 
-        .footer-logo .logo__text-sub {
-            color: #5ee8d8;
-        }
+/* ============================================================
+   FOOTER SPACING FIX
+=========================================================== */
 
-        .footer-col ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            gap: .6rem;
-        }
+.site-footer {
+    padding-top: 4rem;  /* Add space at top of footer */
+}
 
-        .footer-col li {
-            color: rgba(255, 255, 255, .6);
-            font-size: .83rem;
-        }
-
-        .footer-col li a {
-            color: rgba(255, 255, 255, .6);
-            text-decoration: none;
-            font-size: .83rem;
-            transition: color var(--transition);
-        }
-
-        .footer-col li a:hover {
-            color: #5ee8d8;
-        }
-
-        .footer-contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: .65rem;
-            margin-bottom: .8rem;
-        }
-
-        .footer-contact-item svg {
-            width: 17px;
-            height: 17px;
-            min-width: 17px;
-            color: #5ee8d8;
-            margin-top: 2px;
-        }
-
-        .footer-contact-item a {
-            color: rgba(255, 255, 255, .65);
-            text-decoration: none;
-            font-size: .83rem;
-            word-break: break-word;
-            transition: color var(--transition);
-        }
-
-        .footer-contact-item a:hover {
-            color: #5ee8d8;
-        }
-
-        .footer-bottom {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1.5rem;
-            border-top: 1px solid rgba(255, 255, 255, .1);
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            color: rgba(255, 255, 255, .45);
-            font-size: .75rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom-links {
-            display: flex;
-            align-items: center;
-            gap: 1.2rem;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, .45);
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-
-        .footer-bottom-links a:hover {
-            color: #5ee8d8;
+        .detail-cta .btn-primary {
+            margin-top: 1.5rem;
         }
 
         /* ============================================================
@@ -1340,7 +656,6 @@
         ============================================================ */
 
         @media (max-width: 1024px) {
-
             .protection-hero-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1356,50 +671,26 @@
                 margin: 0 auto;
             }
 
-            .protection-intro-grid {
+            .protection-work-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
-            .protection-image-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .protection-image-grid img {
+            .protection-work-img {
                 max-width: 700px;
                 margin: 0 auto;
             }
 
-            .protection-cta-grid {
+            .protection-tips-grid {
                 grid-template-columns: 1fr;
                 gap: 3rem;
             }
 
-            .protection-cta-card {
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 2.5rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .nav-links > a,
-            .nav-dropdown-toggle {
-                font-size: .82rem;
-            }
-
-            .protection-types-grid {
+            .protection-risk-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .who-grid {
+            .protection-options-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
@@ -1409,7 +700,6 @@
         ============================================================ */
 
         @media (max-width: 768px) {
-
             .protection-hero {
                 padding: 4rem 0;
             }
@@ -1442,53 +732,33 @@
                 padding: 1.25rem;
             }
 
-            .protection-types-grid {
+            .protection-risk-grid {
                 grid-template-columns: 1fr;
                 gap: 1.25rem;
             }
 
-            .features-grid {
+            .protection-options-grid {
                 grid-template-columns: 1fr;
+                gap: 1.25rem;
             }
 
-            .who-grid {
-                grid-template-columns: 1fr;
+            .protection-work-img {
+                height: 350px;
             }
 
-            .protection-info-card {
-                padding: 1.75rem;
-            }
-
-            .protection-final-card {
-                padding: 3rem 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .mobile-menu-toggle {
-                display: flex;
-            }
-
-            .header-inner {
-                min-height: 65px;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .footer-bottom {
+            .protection-tip {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: .25rem;
             }
 
-            .topbar-inner {
-                flex-direction: column;
-                align-items: center;
-                gap: .35rem;
-                text-align: center;
+            .protection-tip span {
+                text-align: left;
+                max-width: 100%;
+            }
+
+            .container {
+                padding: 0 1.5rem;
             }
         }
 
@@ -1497,50 +767,22 @@
         ============================================================ */
 
         @media (max-width: 600px) {
-
             .protection-visual-card img {
                 height: 230px;
             }
 
-            .protection-image-grid img {
-                height: 350px;
+            .protection-work-img {
+                height: 300px;
             }
 
-            .protection-info-item {
-                gap: .8rem;
-            }
-
-            .protection-info-icon {
-                width: 42px;
-                height: 42px;
-                min-width: 42px;
-            }
-
-            .protection-cta-card {
-                padding: 2rem 1.5rem;
-            }
-
-            .protection-final-card {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-bottom-links {
-                flex-wrap: wrap;
-                gap: .8rem 1rem;
-            }
-
-            .protection-type-card {
-                padding: 1.75rem 1.5rem;
-            }
-
-            .feature-card {
+            .protection-activity {
                 flex-direction: column;
-                gap: .9rem;
+                align-items: flex-start;
+                gap: .25rem;
+            }
+
+            .protection-hero {
+                padding: 3.5rem 0;
             }
         }
 
@@ -1549,9 +791,8 @@
         ============================================================ */
 
         @media (max-width: 480px) {
-
             .protection-hero {
-                padding: 3.25rem 0;
+                padding: 3rem 0;
             }
 
             .protection-badge {
@@ -1594,62 +835,29 @@
                 font-size: .78rem;
             }
 
-            .protection-intro-grid {
-                gap: 2rem;
+            .protection-risk-card {
+                padding: 1.5rem;
             }
 
-            .protection-image-grid img {
-                height: 300px;
+            .protection-option {
+                padding: 1.5rem;
+            }
+
+            .protection-work-img {
+                height: 250px;
                 border-radius: 18px;
             }
 
-            .protection-info-card {
-                padding: 1.4rem;
+            .protection-cta {
+                padding: 4rem 0;
             }
 
-            .protection-info-card h3 {
-                font-size: 1.15rem;
-            }
-
-            .protection-type-card {
-                padding: 1.5rem 1.25rem;
-            }
-
-            .protection-cta-card h3 {
-                font-size: 1.25rem;
-            }
-
-            .protection-final-card h2 {
-                font-size: 2rem;
-            }
-
-            .protection-final-card p {
-                font-size: .88rem;
-            }
-
-            .footer-bottom {
-                font-size: .7rem;
-            }
-
-            .logo__img {
-                width: 48px;
-                height: 48px;
-            }
-
-            .logo__text-primary {
-                font-size: 1.05rem;
-            }
-
-            .logo__text-sub {
-                font-size: .55rem;
+            .detail-cta {
+                padding: 4rem 0;
             }
 
             .container {
                 padding: 0 1rem;
-            }
-
-            .who-card {
-                padding: 1.5rem;
             }
         }
 
@@ -1668,7 +876,6 @@
         ============================================================ */
 
         @media (prefers-reduced-motion: reduce) {
-
             *,
             *::before,
             *::after {
@@ -1744,6 +951,7 @@
 <!-- ============================================================
      MAIN HEADER
 ============================================================ -->
+
 <header
     class="site-header"
     id="site-header"
@@ -1755,7 +963,7 @@
 
 
             <a
-                href="index.html"
+                href="../index.html"
                 class="logo"
             >
 
@@ -1778,11 +986,11 @@
                 aria-label="Primary navigation"
             >
 
-                <a href="index.html">
+                <a href="../index.html">
                     Home
                 </a>
 
-                <a href="about.html">
+                <a href="../about.html">
                     About
                 </a>
 
@@ -1790,7 +998,7 @@
                 <div class="nav-dropdown">
 
                     <a
-                        href=""
+                        href="#"
                         class="nav-dropdown-toggle"
                     >
 
@@ -1805,19 +1013,19 @@
 
                     <div class="dropdown-menu">
 
-                        <a href="services/hearing-aid-testing.html">
+                        <a href="../services/hearing-aid-testing.html">
                             Hearing Assessment
                         </a>
 
-                        <a href="services/hearing-aid-fitting.html">
+                        <a href="../services/hearing-aid-fitting.html">
                             Hearing Aid Fitting
                         </a>
 
-                        <a href="services/hearing-repair.html">
+                        <a href="../services/hearing-repair.html">
                             Hearing Aid Repair
                         </a>
 
-                        <a href="services/hearing-protection.html">
+                        <a href="../services/hearing-protection.html">
                             Hearing Protection
                         </a>
 
@@ -1826,22 +1034,54 @@
                 </div>
 
 
-                <a href="hearing-aids.html">
-                    Hearing Aids
-                </a>
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#"
+                        class="nav-dropdown-toggle"
+                    >
+
+                        Hearing Aids
+
+                        <span>
+                            &#9662;
+                        </span>
+
+                    </a>
 
 
+                    <div class="dropdown-menu">
 
-                <a href="testimonials.html">
+                        <a href="../hearing-Aids/hearing-blogs.html">
+                            Hearing Blogs
+                        </a>
+
+                        <a href="../hearing-Aids/hearing-fun-facts.html">
+                            Hearing Fun Facts
+                        </a>
+
+                        <a href="../hearing-Aids/hearing-loss-dementia.html">
+                            Hearing Loss & Dementia
+                        </a>
+
+                        <a href="../hearing-Aids/hearing-myths-facts.html">
+                            Hearing Myths & Facts
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="../testimonials.html">
                     Testimonials
                 </a>
 
-                <a href="contact.html">
+                <a href="../contact.html">
                     Contact
                 </a>
 
                 <a
-                    href="contact.html"
+                    href="../contact.html"
                     class="nav-cta"
                 >
                     Book Appointment
@@ -1874,148 +1114,74 @@
 
     <!-- MOBILE DRAWER -->
 
-    <nav
+    <div
         class="mobile-menu"
-        id="mobile-menu"
-        aria-label="Mobile navigation"
+        id="mobileMenu"
     >
 
-        <a
-            href="index.html"
-            onclick="closeMenu()"
-        >
-            Home
-        </a>
+        <div class="mobile-menu-inner">
 
-        <a
-            href="about.html"
-            onclick="closeMenu()"
-        >
-            About
-        </a>
+            <button
+                class="mobile-menu-close"
+                id="mobileMenuClose"
+                type="button"
+                aria-label="Close navigation menu"
+            >
+                &times;
+            </button>
 
-        <a
-            href="services/hearing-aid-testing.html"
-            onclick="closeMenu()"
-        >
-            Services
-        </a>
+            <a href="../index.html">
+                Home
+            </a>
 
-        <a
-            href="hearing-aids.html"
-            onclick="closeMenu()"
-        >
-            Hearing Aids
-        </a>
+            <a href="../about.html">
+                About
+            </a>
 
-        <a
-            href="tinnitus.html"
-            onclick="closeMenu()"
-        >
-            Tinnitus
-        </a>
+            <a href="../services/hearing-aid-testing.html">
+                Hearing Assessment
+            </a>
 
-        <a
-            href="testimonials.html"
-            onclick="closeMenu()"
-        >
-            Testimonials
-        </a>
+            <a href="../services/hearing-aid-fitting.html">
+                Hearing Aid Fitting
+            </a>
 
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-        >
-            Contact / Locations
-        </a>
+            <a href="../services/hearing-repair.html">
+                Hearing Aid Repair
+            </a>
 
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-            class="mob-cta"
-        >
-            Book Hearing Assessment
-        </a>
+            <a href="../services/hearing-protection.html">
+                Hearing Protection
+            </a>
 
-    </nav>
+            <a href="../hearing-Aids/hearing-blogs.html">
+                Hearing Blogs
+            </a>
 
-</header>
+            <a href="../hearing-Aids/hearing-fun-facts.html">
+                Hearing Fun Facts
+            </a>
 
-<!-- ============================================================
-     MOBILE NAVIGATION
-============================================================ -->
+            <a href="../testimonials.html">
+                Testimonials
+            </a>
 
-<div
-    class="mobile-menu"
-    id="mobileMenu"
->
+            <a href="../contact.html">
+                Contact
+            </a>
 
-    <div class="mobile-menu-inner">
+            <a
+                href="../contact.html"
+                class="mob-cta"
+            >
+                Book Appointment
+            </a>
 
-
-        <button
-            class="mobile-menu-close"
-            type="button"
-            aria-label="Close navigation menu"
-            onclick="closeMenu()"
-        >
-            &times;
-        </button>
-
-
-        <a
-            href="../index.html#about"
-            onclick="closeMenu()"
-        >
-            About
-        </a>
-
-
-        <a
-            href="../index.html#services"
-            onclick="closeMenu()"
-        >
-            Services
-        </a>
-
-
-        <a
-            href="#hearing-aids"
-            onclick="closeMenu()"
-        >
-            Hearing Aids
-        </a>
-
-
-        <a
-            href="../index.html#testimonials"
-            onclick="closeMenu()"
-        >
-            Testimonials
-        </a>
-
-
-        <a
-            href="../index.html#contact"
-            onclick="closeMenu()"
-        >
-            Contact
-        </a>
-
-
-        <a
-            href="../index.html#contact"
-            onclick="closeMenu()"
-            class="mob-cta"
-        >
-            Book Appointment
-        </a>
+        </div>
 
     </div>
 
-</div>
-
-
+</header>
 
 
 <!-- ============================================================
@@ -2040,8 +1206,8 @@
 
             <h1>
 
-                Protect Your Hearing,
-                <em>For Life.</em>
+                
+                <em>Protect Your Hearing, For Life.</em>
 
             </h1>
 
@@ -2059,7 +1225,7 @@
             <div class="protection-hero-actions">
 
                 <a
-                    href="../index.html#contact"
+                    href="../contact.html"
                     class="btn-primary"
                 >
                     Get Hearing Protection
@@ -2089,7 +1255,6 @@
                 <img
                     src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
                     alt="Professional hearing protection solutions"
-                    style="width:100%; height:260px; object-fit:cover; border-radius:18px; margin-bottom:1.5rem;"
                 >
 
 
@@ -2174,48 +1339,449 @@
 </section>
 
 
+<!-- ============================================================
+     RISK SECTION
+============================================================ -->
+
+<section class="protection-risk">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Know Your Exposure
+            </span>
+
+            <h2>
+                Where does loud sound show up?
+            </h2>
+
+            <p>
+                Hearing protection starts with recognizing the
+                environments where your ears are doing too much work.
+            </p>
+
+        </div>
 
 
+        <div class="protection-risk-grid">
+
+            <div class="protection-risk-card">
+
+                <div class="risk-number">
+                    01
+                </div>
+
+                <h3>
+                    At work
+                </h3>
+
+                <p>
+                    Machinery, tools and industrial environments can
+                    create sustained noise exposure that calls for
+                    appropriate workplace protection.
+                </p>
+
+            </div>
 
 
-<main>
-<section class="protection-hero"><img class="protection-hero-bg" src="https://images.unsplash.com/photo-1516321165247-4aa89a48be28?auto=format&fit=crop&w=1800&q=85" alt="People in a noisy environment">
-<div class="container protection-hero-content reveal"><span class="hero__badge"><span class="hero__badge-dot"></span> Protect Your Hearing</span><h1>Hearing <em>Protection</em></h1><p>From workplaces and workshops to concerts and recreation, thoughtful hearing protection can help reduce unnecessary exposure to loud sound.</p></div></section>
-<section class="protection-risk"><div class="container"><div class="section-header"><span class="section-tag">Know Your Exposure</span><h2>Where does loud sound show up?</h2><p>Hearing protection starts with recognizing the environments where your ears are doing too much work.</p></div>
-<div class="protection-risk-grid">
-<div class="protection-risk-card"><div class="risk-number">01</div><h3>At work</h3><p>Machinery, tools and industrial environments can create sustained noise exposure that calls for appropriate workplace protection.</p></div>
-<div class="protection-risk-card"><div class="risk-number">02</div><h3>At events</h3><p>Concerts, sporting events and entertainment venues can create intense sound levels, especially when you are close to speakers.</p></div>
-<div class="protection-risk-card"><div class="risk-number">03</div><h3>At play</h3><p>Power tools, recreational equipment and other hobbies can produce loud or sudden sounds that deserve attention.</p></div>
-</div></div></section>
-<section class="protection-work"><div class="container protection-work-grid">
-<div class="reveal"><img class="protection-work-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85" alt="Workplace noise environment"></div>
-<div class="reveal"><span class="section-tag">Everyday Protection</span><h2>Protection should fit the activity.</h2><p>The best approach depends on the environment, the intensity of the sound and how long you are exposed. In some situations, you also need to hear speech, alarms or other important sounds.</p>
-<div class="protection-activities"><div class="protection-activity"><strong>Workshops</strong><span>Reduce exposure around tools and machinery.</span></div><div class="protection-activity"><strong>Live music</strong><span>Plan ahead for high-volume events.</span></div><div class="protection-activity"><strong>Recreation</strong><span>Consider protection around loud equipment.</span></div><div class="protection-activity"><strong>Daily habits</strong><span>Lower volume and take breaks when possible.</span></div></div></div>
-</div></section>
-<section class="protection-options"><div class="container"><div class="section-header"><span class="section-tag">Protection Options</span><h2>Think beyond simply blocking sound.</h2><p>Comfort, fit and communication needs can all influence which protection approach is practical for you.</p></div>
-<div class="protection-options-grid">
-<div class="protection-option"><h3>Everyday noise</h3><p>For situations where sound is elevated and you want a practical way to reduce exposure while remaining comfortable.</p><span style="margin-top:auto;opacity:.7">Practical • Comfortable • Repeatable</span></div>
-<div class="protection-option"><h3>High-noise activities</h3><p>For environments where sound can become intense, planning protection before exposure is especially important.</p><span style="margin-top:auto;opacity:.85">Work • Events • Recreation</span></div>
-<div class="protection-option"><h3>Communication matters</h3><p>In some settings you need to hear speech and important environmental sounds. Discuss your environment before choosing protection.</p><span style="margin-top:auto;opacity:.7">Fit • Awareness • Function</span></div>
-</div></div></section>
-<section class="protection-tips"><div class="container protection-tips-grid">
-<div><span class="section-tag">Safe Listening Habits</span><h2>Small choices can reduce exposure.</h2><p>Hearing protection is one part of healthy hearing habits. When possible, combine protection with lower volume, shorter exposure and greater distance from loud sources.</p></div>
-<div class="protection-tip-list">
-<div class="protection-tip"><strong>Turn it down</strong><span>Lower volume when you control the sound.</span></div>
-<div class="protection-tip"><strong>Take breaks</strong><span>Give your ears time away from loud environments.</span></div>
-<div class="protection-tip"><strong>Move away</strong><span>Distance from a loud source can reduce exposure.</span></div>
-<div class="protection-tip"><strong>Plan ahead</strong><span>Bring suitable protection before entering a noisy environment.</span></div>
-<div class="protection-tip"><strong>Protect consistently</strong><span>Protection is most useful when used correctly whenever it is needed.</span></div>
-<div class="protection-tip"><strong>Ask questions</strong><span>Discuss your specific environment if you are unsure what approach is suitable.</span></div>
-</div></div></section>
-<section class="protection-cta"><div class="container"><span class="section-tag" style="color:#5ee8d8">Personalized Advice</span><h2>Not sure what protection you need?</h2><p>Tell us about your workplace, hobby or environment and we can help you understand your hearing-protection options.</p><a href="index.html#contact" class="btn-primary" style="margin-top:1.5rem">Talk to Sound Advice</a></div></section>
-</main><section class="detail-cta"><div class="container">
-<h2>Let's Talk About Your Hearing</h2>
-<p>Whether you need an assessment, fitting, repair help, or hearing protection, Sound Advice Hearing Solutions is here to help you understand your options.</p>
-<a href="index.html#contact" class="btn-primary">Book an Assessment</a>
-</div></section>
+            <div class="protection-risk-card">
+
+                <div class="risk-number">
+                    02
+                </div>
+
+                <h3>
+                    At events
+                </h3>
+
+                <p>
+                    Concerts, sporting events and entertainment venues
+                    can create intense sound levels, especially when
+                    you are close to speakers.
+                </p>
+
+            </div>
 
 
+            <div class="protection-risk-card">
+
+                <div class="risk-number">
+                    03
+                </div>
+
+                <h3>
+                    At play
+                </h3>
+
+                <p>
+                    Power tools, recreational equipment and other
+                    hobbies can produce loud or sudden sounds that
+                    deserve attention.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     WORK SECTION
+============================================================ -->
+
+<section class="protection-work">
+
+    <div class="container protection-work-grid">
+
+        <div>
+
+            <img
+                class="protection-work-img"
+                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85"
+                alt="Workplace noise environment"
+            >
+
+        </div>
+
+        <div>
+
+            <span class="section-tag">
+                Everyday Protection
+            </span>
+
+            <h2>
+                Protection should fit the activity.
+            </h2>
+
+            <p>
+                The best approach depends on the environment, the
+                intensity of the sound and how long you are exposed.
+                In some situations, you also need to hear speech,
+                alarms or other important sounds.
+            </p>
+
+
+            <div class="protection-activities">
+
+                <div class="protection-activity">
+
+                    <strong>
+                        Workshops
+                    </strong>
+
+                    <span>
+                        Reduce exposure around tools and machinery.
+                    </span>
+
+                </div>
+
+                <div class="protection-activity">
+
+                    <strong>
+                        Live music
+                    </strong>
+
+                    <span>
+                        Plan ahead for high-volume events.
+                    </span>
+
+                </div>
+
+                <div class="protection-activity">
+
+                    <strong>
+                        Recreation
+                    </strong>
+
+                    <span>
+                        Consider protection around loud equipment.
+                    </span>
+
+                </div>
+
+                <div class="protection-activity">
+
+                    <strong>
+                        Daily habits
+                    </strong>
+
+                    <span>
+                        Lower volume and take breaks when possible.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     OPTIONS SECTION
+============================================================ -->
+
+<section class="protection-options" id="protection-types">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <span class="section-tag">
+                Protection Options
+            </span>
+
+            <h2>
+                Think beyond simply blocking sound.
+            </h2>
+
+            <p>
+                Comfort, fit and communication needs can all influence                which protection approach is practical for you.
+            </p>
+
+        </div>
+
+
+        <div class="protection-options-grid">
+
+            <div class="protection-option">
+
+                <h3>
+                    Everyday noise
+                </h3>
+
+                <p>
+                    For situations where sound is elevated and you
+                    want a practical way to reduce exposure while
+                    remaining comfortable.
+                </p>
+
+                <span>
+                    Practical • Comfortable • Repeatable
+                </span>
+
+            </div>
+
+
+            <div class="protection-option">
+
+                <h3>
+                    High-noise activities
+                </h3>
+
+                <p>
+                    For environments where sound can become intense,
+                    planning protection before exposure is especially
+                    important.
+                </p>
+
+                <span>
+                    Work • Events • Recreation
+                </span>
+
+            </div>
+
+
+            <div class="protection-option">
+
+                <h3>
+                    Communication matters
+                </h3>
+
+                <p>
+                    In some settings you need to hear speech and
+                    important environmental sounds. Discuss your
+                    environment before choosing protection.
+                </p>
+
+                <span>
+                    Fit • Awareness • Function
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     TIPS SECTION
+============================================================ -->
+
+<section class="protection-tips">
+
+    <div class="container protection-tips-grid">
+
+        <div>
+
+            <span class="section-tag">
+                Safe Listening Habits
+            </span>
+
+            <h2>
+                Small choices can reduce exposure.
+            </h2>
+
+            <p>
+                Hearing protection is one part of healthy hearing
+                habits. When possible, combine protection with lower
+                volume, shorter exposure and greater distance from
+                loud sources.
+            </p>
+
+        </div>
+
+
+        <div class="protection-tip-list">
+
+            <div class="protection-tip">
+
+                <strong>
+                    Turn it down
+                </strong>
+
+                <span>
+                    Lower volume when you control the sound.
+                </span>
+
+            </div>
+
+            <div class="protection-tip">
+
+                <strong>
+                    Take breaks
+                </strong>
+
+                <span>
+                    Give your ears time away from loud environments.
+                </span>
+
+            </div>
+
+            <div class="protection-tip">
+
+                <strong>
+                    Move away
+                </strong>
+
+                <span>
+                    Distance from a loud source can reduce exposure.
+                </span>
+
+            </div>
+
+            <div class="protection-tip">
+
+                <strong>
+                    Plan ahead
+                </strong>
+
+                <span>
+                    Bring suitable protection before entering a noisy
+                    environment.
+                </span>
+
+            </div>
+
+            <div class="protection-tip">
+
+                <strong>
+                    Protect consistently
+                </strong>
+
+                <span>
+                    Protection is most useful when used correctly
+                    whenever it is needed.
+                </span>
+
+            </div>
+
+            <div class="protection-tip">
+
+                <strong>
+                    Ask questions
+                </strong>
+
+                <span>
+                    Discuss your specific environment if you are
+                    unsure what approach is suitable.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     CTA SECTION
+============================================================ -->
+
+<section class="protection-cta">
+
+    <div class="container">
+
+        <span class="section-tag" style="color:#5ee8d8;">
+            Personalized Advice
+        </span>
+
+        <h2>
+            Not sure what protection you need?
+        </h2>
+
+        <p>
+            Tell us about your workplace, hobby or environment and
+            we can help you understand your hearing-protection options.
+        </p>
+
+        <a href="../contact.html" class="btn-primary">
+            Talk to Sound Advice
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ============================================================
+     DETAIL CTA
+============================================================ -->
+
+<section class="detail-cta">
+
+    <div class="container">
+
+        <h2>
+            Let's Talk About Your Hearing
+        </h2>
+
+        <p>
+            Whether you need an assessment, fitting, repair help,
+            or hearing protection, Sound Advice Hearing Solutions
+            is here to help you understand your options.
+        </p>
+
+        <a href="../contact.html" class="btn-primary">
+            Book an Assessment
+        </a>
+
+    </div>
+
+</section>
 
 
 <!-- ============================================================
@@ -2224,66 +1790,40 @@
 
 <footer class="site-footer">
 
-    <div class="container">
-
+    <div class="container footer-main">
 
         <div class="footer-grid">
 
 
             <!-- BRAND -->
 
-            <div class="footer-col footer-brand">
+            <div class="footer-brand">
 
-                <a
-                    href="../index.html"
-                    class="footer-logo"
-                >
+                <div class="logo">
 
-                    <div>
+                    <div class="logo__mark">
 
-                        <div class="logo__text-primary">
-                            Sound Advice
-                        </div>
-
-                        <div class="logo__text-sub">
-                            Hearing Solutions
-                        </div>
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                            alt="Sound Advice Hearing Solutions Logo"
+                            class="logo__img"
+                        >
 
                     </div>
 
-                </a>
+                </div>
 
 
                 <p>
-                    Professional hearing care and personalised
-                    hearing solutions for individuals and families
-                    of all ages.
+                    Professional, compassionate hearing care
+                    for communities across Alberta.
+                    Independent and locally owned since 2000.
                 </p>
 
-            </div>
 
-
-
-            <!-- LOCATIONS -->
-
-            <div class="footer-col">
-
-                <h4>
-                    Locations
-                </h4>
-
-
-                <ul>
-
-                    <li>
-                        Sherwood Park, AB
-                    </li>
-
-                    <li>
-                        St. Paul, AB
-                    </li>
-
-                </ul>
+                <div class="footer-tagline">
+                    Hear Better. Live Better.
+                </div>
 
             </div>
 
@@ -2297,34 +1837,58 @@
                     Services
                 </h4>
 
-
                 <ul>
 
                     <li>
-                        <a href="hearing-aid-testing.html">
-                            Hearing Aid Testing
+                        <a href="../services/hearing-aid-testing.html">
+                            Hearing Testing
                         </a>
                     </li>
 
-
                     <li>
-                        <a href="hearing-aid-fitting.html">
+                        <a href="../services/hearing-aid-fitting.html">
                             Hearing Aid Fitting
                         </a>
                     </li>
 
-
                     <li>
-                        <a href="hearing-repair.html">
-                            Hearing Repair
+                        <a href="../services/hearing-repair.html">
+                            Hearing Aid Repairs
                         </a>
                     </li>
 
-
                     <li>
-                        <a href="hearing-protection.html">
+                        <a href="../services/hearing-protection.html">
                             Hearing Protection
                         </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- LOCATIONS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Locations
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Sherwood Park, AB
+                    </li>
+
+                    <li>
+                        St. Paul, AB
+                    </li>
+
+                    <li>
+                        Serving Surrounding Communities
                     </li>
 
                 </ul>
@@ -2342,8 +1906,6 @@
                 </h4>
 
 
-                <!-- PHONE -->
-
                 <div class="footer-contact-item">
 
                     <svg
@@ -2351,14 +1913,11 @@
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                     >
 
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
 
                     </svg>
-
 
                     <a href="tel:5874046064">
                         587-404-6064
@@ -2367,9 +1926,6 @@
                 </div>
 
 
-
-                <!-- TOLL FREE -->
-
                 <div class="footer-contact-item">
 
                     <svg
@@ -2377,14 +1933,11 @@
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                     >
 
                         <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
 
                     </svg>
-
 
                     <a href="tel:18664046064">
                         1-866-404-6064
@@ -2393,9 +1946,6 @@
                 </div>
 
 
-
-                <!-- EMAIL -->
-
                 <div class="footer-contact-item">
 
                     <svg
@@ -2403,8 +1953,6 @@
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
                     >
 
                         <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
@@ -2412,7 +1960,6 @@
                         <polyline points="22,6 12,13 2,6"/>
 
                     </svg>
-
 
                     <a href="mailto:info@soundadvicehearing.ca">
                         info@soundadvicehearing.ca
@@ -2430,9 +1977,8 @@
 
         <div class="footer-bottom">
 
-
             <span>
-                &#169; 2026 Sound Advice Hearing Solutions.
+                © 2000 Sound Advice Hearing Solutions.
                 All Rights Reserved.
             </span>
 
@@ -2443,11 +1989,9 @@
                     Privacy Policy
                 </a>
 
-
                 <a href="#">
                     Terms of Use
                 </a>
-
 
                 <a href="#">
                     Accessibility
@@ -2462,46 +2006,180 @@
 </footer>
 
 
-
-
-
 <!-- ============================================================
      JAVASCRIPT
 ============================================================ -->
 
 <script>
 
-    function openMenu() {
-        const menu = document.getElementById('mobileMenu');
-        if (menu) {
-            menu.classList.add('active');
-        }
-        document.body.style.overflow = 'hidden';
-    }
+    document.addEventListener("DOMContentLoaded", function () {
 
-    function closeMenu() {
-        const menu = document.getElementById('mobileMenu');
-        if (menu) {
-            menu.classList.remove('active');
-        }
-        document.body.style.overflow = '';
-    }
+        const hamburger =
+            document.getElementById("hamburger");
 
-    // Close menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-            closeMenu();
-        }
-    });
+        const mobileMenu =
+            document.getElementById("mobileMenu");
 
-    // Close menu on outside click
-    document.addEventListener('click', function(e) {
-        const menu = document.getElementById('mobileMenu');
-        if (menu && menu.classList.contains('active')) {
-            if (e.target === menu) {
-                closeMenu();
+        const mobileMenuClose =
+            document.getElementById("mobileMenuClose");
+
+
+        function openMenu() {
+
+            if (!mobileMenu) {
+                return;
             }
+
+            mobileMenu.classList.add("active");
+
+            if (hamburger) {
+                hamburger.classList.add("active");
+
+                hamburger.setAttribute(
+                    "aria-expanded",
+                    "true"
+                );
+            }
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+            document.body.style.overflow = "hidden";
         }
+
+
+        function closeMenu() {
+
+            if (!mobileMenu) {
+                return;
+            }
+
+            mobileMenu.classList.remove("active");
+
+            if (hamburger) {
+                hamburger.classList.remove("active");
+
+                hamburger.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+            }
+
+            mobileMenu.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+            document.body.style.overflow = "";
+        }
+
+
+        if (hamburger) {
+
+            hamburger.addEventListener(
+                "click",
+                function () {
+
+                    if (
+                        mobileMenu &&
+                        mobileMenu.classList.contains("active")
+                    ) {
+
+                        closeMenu();
+
+                    } else {
+
+                        openMenu();
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        if (mobileMenuClose) {
+
+            mobileMenuClose.addEventListener(
+                "click",
+                closeMenu
+            );
+
+        }
+
+
+        if (mobileMenu) {
+
+            mobileMenu.addEventListener(
+                "click",
+                function (event) {
+
+                    if (
+                        event.target === mobileMenu
+                    ) {
+
+                        closeMenu();
+
+                    }
+
+                }
+            );
+
+
+            const mobileLinks =
+                mobileMenu.querySelectorAll(
+                    "a"
+                );
+
+
+            mobileLinks.forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        closeMenu
+                    );
+
+                }
+            );
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+
+        window.addEventListener(
+            "resize",
+            function () {
+
+                if (
+                    window.innerWidth > 900
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
     });
 
 </script>

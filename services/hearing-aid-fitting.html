@@ -54,6 +54,20 @@
         href="../style.css"
     >
 
+    <!--
+        Additive only: a rule for the .active class that initActiveNav()
+        applies at runtime. Doesn't touch/override anything in style.css
+        or the page-specific <style> block below.
+        If you already have an .active rule in style.css, delete this block.
+    -->
+    <style>
+        .nav-links a.active,
+        .mobile-menu a.active {
+            color: #0f9d8a;
+            font-weight: 700;
+        }
+    </style>
+
     <!-- ============================================================
          PAGE-SPECIFIC STYLES
     ============================================================ -->
@@ -898,107 +912,231 @@
     ============================================================ -->
 
 
-    <header class="site-header" id="site-header">
+<!-- =========================================================
+     HEADER / NAVIGATION
+========================================================== -->
 
-        <div class="container">
+<header
+    class="site-header"
+    id="site-header"
+>
 
-            <div class="nav-inner">
+    <div class="container">
+
+        <div class="nav-inner">
 
 
-                <a href="index.html" class="logo">
+            <a
+                href="index.html"
+                class="logo"
+            >
 
-                    <div class="logo__mark">
+                <div class="logo__mark">
 
-                        <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w" alt="Sound Advice Hearing Solutions Logo" class="logo__img">
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                        alt="Sound Advice Hearing Solutions Logo"
+                        class="logo__img"
+                    >
 
-                    </div>
+                </div>
 
+            </a>
+
+
+
+            <nav
+                class="nav-links"
+                aria-label="Primary navigation"
+            >
+
+                <a href="../index.html">
+                    Home
+                </a>
+
+                <a href="../about.html">
+                    About
                 </a>
 
 
+                <div class="nav-dropdown">
 
-                <nav class="nav-links" aria-label="Primary navigation">
+                    <a
+                        href=""
+                        class="nav-dropdown-toggle"
+                    >
 
-                    <a href="index.html">
-                        Home
+                        Services
+
+                        <span>
+                            &#9662;
+                        </span>
+
                     </a>
 
-                    <a href="about.html">
-                        About
-                    </a>
 
+                    <div class="dropdown-menu">
 
-                    <div class="nav-dropdown">
-
-                        <a href="#" class="nav-dropdown-toggle">
-
-                            Services
-
-                            <span>
-                                &#9662;
-                            </span>
-
+                        <a href="../services/hearing-aid-testing.html">
+                            Hearing Assessment
                         </a>
 
+                        <a href="../services/hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
 
-                        <div class="dropdown-menu">
+                        <a href="../services/hearing-repair.html">
+                            Hearing Aid Repair
+                        </a>
 
-                            <a href="services/hearing-aid-testing.html">
-                                Hearing Assessment
-                            </a>
-
-                            <a href="services/hearing-aid-fitting.html">
-                                Hearing Aid Fitting
-                            </a>
-
-                            <a href="services/hearing-repair.html">
-                                Hearing Aid Repair
-                            </a>
-
-                            <a href="services/hearing-protection.html">
-                                Hearing Protection
-                            </a>
-
-                        </div>
+                        <a href="../services/hearing-protection.html">
+                            Hearing Protection
+                        </a>
 
                     </div>
 
+                </div>
 
-                    <a href="hearing-aids.html">
-                        Hearing Aids
+
+             <div class="nav-dropdown">
+
+                    <a
+                        href=""
+                        class="nav-dropdown-toggle"
+                    >
+
+                        Hearing Aid
+
+                        <span>
+                            &#9662;
+                        </span>
+
                     </a>
 
-                    <a href="testimonials.html">
-                        Testimonials
-                    </a>
 
-                    <a href="contact.html">
-                        Contact
-                    </a>
+                    <div class="dropdown-menu">
 
-                    <a href="contact.html" class="nav-cta">
-                        Book Appointment
-                    </a>
+                        <a href="../hearing-Aids/hearing-blogs.html">
+                            Hearing blogs
+                        </a>
 
-                </nav>
+                        <a href="../hearing-Aids/hearing-fun-facts.html">
+                            Hearing Fun Fact
+                        </a>
+
+                        <a href="../hearing-Aids/hearing-loss-dementia.html">
+                            Hearing loss dementia
+                        </a>
+
+                        <a href="../hearing-Aids/hearing-myths-facts.html">
+                            Hearing myths facts
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="../testimonials.html">
+                    Testimonials
+                </a>
+
+                <a href="../contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="../contact.html"
+                    class="nav-cta"
+                >
+                    Book Appointment
+                </a>
+
+            </nav>
 
 
 
-                <!-- HAMBURGER BUTTON -->
+            <!-- MOBILE MENU BUTTON -->
 
-                <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+            <button
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
 
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
 
-                </button>
-
-            </div>
+            </button>
 
         </div>
 
-    </header>
+    </div>
+
+
+
+    <!-- MOBILE DRAWER -->
+
+    <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
+    >
+
+        <a
+            href="../index.html"
+            onclick="closeMenu()"
+        >
+            Home
+        </a>
+
+        <a
+            href="../about.html"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+        <a
+            href=""
+            onclick="closeMenu()"
+        >
+            Services
+        </a>
+
+        <a
+            href=""
+            onclick="closeMenu()"
+        >
+            Hearing Aids
+        </a>
+
+        <a
+            href="../testimonials.html"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+        <a
+            href="../contact.html"
+            onclick="closeMenu()"
+        >
+            Contact / Locations
+        </a>
+
+        <a
+            href="../contact.html"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Hearing Assessment
+        </a>
+
+    </nav>
+
+</header>
 
 
     <!-- ============================================================
@@ -1013,35 +1151,35 @@
                 &times;
             </button>
 
-            <a href="index.html">
+            <a href="../index.html">
                 Home
             </a>
 
-            <a href="about.html">
+            <a href="../about.html">
                 About
             </a>
 
-            <a href="services/hearing-aid-testing.html">
+            <a href="hearing-aid-testing.html">
                 Services
             </a>
 
-            <a href="hearing-aids.html">
+            <a href="../hearing-aids.html">
                 Hearing Aids
             </a>
 
-            <a href="tinnitus.html">
+            <a href="../tinnitus.html">
                 Tinnitus
             </a>
 
-            <a href="testimonials.html">
+            <a href="../testimonials.html">
                 Testimonials
             </a>
 
-            <a href="contact.html">
+            <a href="../contact.html">
                 Contact / Locations
             </a>
 
-            <a href="contact.html" class="mob-cta">
+            <a href="../contact.html" class="mob-cta">
                 Book Hearing Assessment
             </a>
 
@@ -1096,7 +1234,7 @@
                         </p>
 
 
-                        <a href="index.html#contact" class="btn-primary">
+                        <a href="../contact.html" class="btn-primary">
                             Talk About Your Hearing Needs
                         </a>
 
@@ -1504,7 +1642,7 @@
                 </p>
 
 
-                <a href="index.html#contact" class="btn-primary">
+                <a href="../contact.html" class="btn-primary">
                     Book an Assessment
                 </a>
 
@@ -1514,215 +1652,190 @@
 
     </main>
 
+   
 
     <!-- ============================================================
          FOOTER
     ============================================================ -->
 
-    <footer class="site-footer">
+   <footer class="site-footer">
 
-        <div class="container">
+    <div class="container footer-main">
 
-            <div class="footer-grid">
-
-
-                <!-- BRAND -->
-
-                <div class="footer-col footer-brand">
-
-                    <a href="index.html" class="footer-logo">
-
-                        <div>
-
-                            <div class="logo__text-primary">
-                                Sound Advice
-                            </div>
-
-                            <div class="logo__text-sub">
-                                Hearing Solutions
-                            </div>
-
-                        </div>
-
-                    </a>
+        <div class="footer-grid">
 
 
-                    <p>
-                        Professional hearing care and personalised
-                        hearing solutions for individuals and families
-                        of all ages.
-                    </p>
+            <!-- BRAND -->
 
-                </div>
+            <div class="footer-brand">
 
+                <div class="logo">
 
-                <!-- LOCATIONS -->
+                    <div class="logo__mark">
 
-                <div class="footer-col">
-
-                    <h4>
-                        Locations
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Sherwood Park, AB
-                        </li>
-
-                        <li>
-                            St. Paul, AB
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- SERVICES -->
-
-                <div class="footer-col">
-
-                    <h4>
-                        Services
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            <a href="hearing-aid-testing.html">
-                                Hearing Aid Testing
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="hearing-aid-fitting.html">
-                                Hearing Aid Fitting
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="hearing-repair.html">
-                                Hearing Repair
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="hearing-protection.html">
-                                Hearing Protection
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-                <!-- CONTACT -->
-
-                <div class="footer-col">
-
-                    <h4>
-                        Contact Us
-                    </h4>
-
-
-                    <div class="footer-contact-item">
-
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-                            19.79 19.79 0 0 1-8.63-3.07
-                            A19.5 19.5 0 0 1 4.69 12
-                            19.79 19.79 0 0 1 1.61 3.4
-                            2 2 0 0 1 3.6 1.21h3a2 2 0 0 1
-                            2 1.72c.127.96.361 1.903.7 2.81
-                            a2 2 0 0 1-.45 2.11L7.91 8.85
-                            a16 16 0 0 0 6.29 6.29l.95-.95
-                            a2 2 0 0 1 2.11-.45
-                            c.907.339 1.85.573 2.81.7
-                            A2 2 0 0 1 22 16.92z" />
-
-                        </svg>
-
-
-                        <a href="tel:5874046064">
-                            587-404-6064
-                        </a>
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                            alt="Sound Advice Hearing Solutions Logo"
+                            class="logo__img"
+                        >
 
                     </div>
 
 
-                    <div class="footer-contact-item">
+                   
 
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2
-                            19.79 19.79 0 0 1-8.63-3.07
-                            A19.5 19.5 0 0 1 4.69 12
-                            19.79 19.79 0 0 1 1.61 3.4
-                            2 2 0 0 1 3.6 1.21h3a2 2 0 0 1
-                            2 1.72c.127.96.361 1.903.7 2.81
-                            a2 2 0 0 1-.45 2.11L7.91 8.85
-                            a16 16 0 0 0 6.29 6.29l.95-.95
-                            a2 2 0 0 1 2.11-.45
-                            c.907.339 1.85.573 2.81.7
-                            A2 2 0 0 1 22 16.92z" />
-
-                        </svg>
+                </div>
 
 
-                        <a href="tel:18664046064">
-                            1-866-404-6064
-                        </a>
-
-                    </div>
-
-
-                    <div class="footer-contact-item">
-
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12
-                            c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6
-                            c0-1.1.9-2 2-2z" />
-
-                            <polyline points="22,6 12,13 2,6" />
-
-                        </svg>
+                <p>
+                    Professional, compassionate hearing care
+                    for communities across Alberta.
+                    Independent and locally owned since 2000.
+                </p>
 
 
-                        <a href="mailto:info@soundadvicehearing.ca">
-                            info@soundadvicehearing.ca
-                        </a>
-
-                    </div>
-
+                <div class="footer-tagline">
+                    Hear Better. Live Better.
                 </div>
 
             </div>
 
 
-            <div class="footer-bottom">
 
-                <span>
-                    &copy; 2026 Sound Advice Hearing Solutions.
-                    All Rights Reserved.
-                </span>
+            <!-- SERVICES -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Services
+                </h4>
+
+                <ul>
+
+                    <li>
+                        <a href="../services/hearing-aid-testing.html">
+                            Hearing Testing
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../services/hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../services/hearing-repair.html">
+                            Hearing Aid Repairs
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="../services/hearing-protection.html">
+                            Hearing Protection
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
 
 
-                <div class="footer-bottom-links">
 
-                    <a href="#">
-                        Privacy Policy
+            <!-- LOCATIONS -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Locations
+                </h4>
+
+                <ul>
+
+                    <li>
+                        Sherwood Park, AB
+                    </li>
+
+                    <li>
+                        St. Paul, AB
+                    </li>
+
+                    <li>
+                        Serving Surrounding Communities
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-col">
+
+                <h4>
+                    Contact Us
+                </h4>
+
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+                    <a href="tel:5874046064">
+                        587-404-6064
                     </a>
 
-                    <a href="#">
-                        Terms of Use
+                </div>
+
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+                    <a href="tel:18664046064">
+                        1-866-404-6064
                     </a>
 
-                    <a href="#">
-                        Accessibility
+                </div>
+
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
+                        <polyline points="22,6 12,13 2,6"/>
+
+                    </svg>
+
+                    <a href="mailto:info@soundadvicehearing.ca">
+                        info@soundadvicehearing.ca
                     </a>
 
                 </div>
@@ -1731,7 +1844,39 @@
 
         </div>
 
-    </footer>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2000 Sound Advice Hearing Solutions.
+                All Rights Reserved.
+            </span>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
     <!-- ============================================================
@@ -1813,6 +1958,25 @@
                 observer.observe(element);
             });
         }
+
+
+        /* ============================================================
+           ACTIVE NAV LINK
+        ============================================================ */
+
+        function initActiveNav() {
+            const current = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (!href) return;
+                const hrefFile = href.split('/').pop();
+                if (hrefFile === current) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        initActiveNav();
     </script>
 
 </body>
