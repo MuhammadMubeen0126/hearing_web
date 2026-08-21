@@ -18,16 +18,16 @@
     <style>
         /* ============================================================
            PAGE-SPECIFIC CSS - HEARING LOSS & DEMENTIA
-           (Header & Footer styles removed - imported from style.css)
         ============================================================ */
 
         /* ---------- CSS Custom Properties ---------- */
         :root {
             --navy: #0B1F3A;
-            --navy-mid: #122a4e;
+            --navy-light: #0d2b52;
+            --hero-dark: #0a3d38;
             --teal: #0F9D8A;
-            --teal-light: #13bfa9;
-            --teal-dim: #0c7d6d;
+            --teal-light: #5ee8d8;
+            --teal-dark: #0c7d6d;
             --slate-bg: #F4F7FA;
             --slate-card: #EEF2F7;
             --text-body: #3d4e63;
@@ -149,109 +149,51 @@
             color: #fff;
         }
 
+
         /* ============================================================
-           RESOURCE HERO
+           PAGE HERO - CLEAN, NO BACKGROUND (Fixed)
         ============================================================ */
 
-        .resource-hero {
-            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
-            color: #fff;
-            padding: 5.5rem 0 4.5rem;
-            position: relative;
-            overflow: hidden;
+        .page-hero {
+            padding: 3.5rem 0 3rem;
+            background: transparent;
+            text-align: center;
+            border-bottom: 3px solid var(--teal);
         }
 
-        .resource-hero::before,
-        .resource-hero::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .resource-hero::before {
-            width: 560px;
-            height: 560px;
-            right: -170px;
-            top: -220px;
-            background: radial-gradient(circle, rgba(15, 157, 138, .22), transparent 70%);
-        }
-
-        .resource-hero::after {
-            width: 380px;
-            height: 380px;
-            left: -170px;
-            bottom: -230px;
-            background: radial-gradient(circle, rgba(15, 157, 138, .12), transparent 70%);
-        }
-
-        .resource-hero .container {
-            position: relative;
-            z-index: 1;
-        }
-
-        .resource-hero-grid {
-            display: grid;
-            grid-template-columns: 1.05fr .95fr;
-            gap: 3.5rem;
+        .page-hero .container {
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
         }
 
-        .resource-hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.4rem);
-            font-weight: 400;
-            line-height: 1.08;
-        }
-
-        .resource-hero h1 em {
-            color: #5ee8d8;
-            font-style: italic;
-        }
-
-        .resource-hero p {
-            max-width: 650px;
-            margin-top: 1.25rem;
-            color: rgba(255, 255, 255, .72);
-            font-size: 1.05rem;
-            line-height: 1.8;
-        }
-
-        .resource-hero-image {
-            width: 100%;
-            height: 390px;
-            object-fit: cover;
-            border-radius: var(--radius-xl);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, .35);
-        }
-
-        .resource-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: .5rem;
-            margin-bottom: 1.25rem;
-            padding: .45rem 1rem;
-            border: 1px solid rgba(255, 255, 255, .15);
-            border-radius: 100px;
-            background: rgba(255, 255, 255, .08);
-            color: #a8f0e8;
-            font-size: .78rem;
+        .page-hero .section-tag {
+            display: inline-block;
+            margin: 0 auto 0.75rem;
+            color: var(--teal, #0f9d8a);
+            font-size: 0.78rem;
             font-weight: 700;
-            letter-spacing: .08em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
         }
 
-        /* ============================================================
-           RESOURCE SECTIONS
-        ============================================================ */
-
-        .resource-section {
-            padding: 5.5rem 0;
-            background: var(--slate-bg);
+        .page-hero .hero__h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--navy, #0b1f3a);
+            margin: 0 auto;
+            text-align: center;
+            max-width: 800px;
         }
 
-        .resource-section.white {
-            background: #fff;
+        .page-hero .hero__h1 em {
+            color: var(--teal);
+            font-style: italic;
         }
+
 
         /* ============================================================
            DEMENTIA FEATURE
@@ -323,6 +265,7 @@
             line-height: 1.75;
         }
 
+
         /* ============================================================
            RESOURCE PROSE
         ============================================================ */
@@ -373,6 +316,7 @@
             color: var(--navy);
         }
 
+
         /* ============================================================
            ARTICLE SECTION
         ============================================================ */
@@ -389,47 +333,14 @@
             background: #fff;
         }
 
-        /* ============================================================
-           RESOURCE NAV
-        ============================================================ */
-
-        .resource-nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: .65rem;
-            margin-top: 2rem;
-        }
-
-        .resource-nav a {
-            padding: .7rem 1rem;
-            border-radius: 100px;
-            background: rgba(255, 255, 255, .08);
-            border: 1px solid rgba(255, 255, 255, .12);
-            color: #fff;
-            font-size: .8rem;
-            font-weight: 700;
-            transition: background var(--transition);
-        }
-
-        .resource-nav a:hover {
-            background: rgba(15, 157, 138, .25);
-            color: #fff;
-        }
 
         /* ============================================================
            RESPONSIVE
         ============================================================ */
 
         @media (max-width: 1024px) {
-            .resource-hero-grid {
-                grid-template-columns: 1fr;
-            }
             .dementia-feature {
                 grid-template-columns: 1fr;
-            }
-            .resource-hero-image {
-                height: 340px;
             }
             .dementia-image {
                 height: 380px;
@@ -437,11 +348,11 @@
         }
 
         @media (max-width: 768px) {
-            .resource-hero {
-                padding: 4.5rem 0 3.5rem;
+            .page-hero {
+                padding: 2.5rem 0 2rem;
             }
-            .resource-hero-image {
-                height: 280px;
+            .page-hero .hero__h1 {
+                font-size: 2.2rem;
             }
             .dementia-image {
                 height: 300px;
@@ -449,17 +360,14 @@
         }
 
         @media (max-width: 480px) {
-            .resource-hero {
-                padding: 3.5rem 0 2.5rem;
+            .page-hero {
+                padding: 2rem 0 1.5rem;
             }
-            .resource-hero h1 {
-                font-size: 2.2rem;
+            .page-hero .hero__h1 {
+                font-size: 1.8rem;
             }
-            .resource-hero p {
-                font-size: .9rem;
-            }
-            .resource-hero-image {
-                height: 220px;
+            .page-hero .section-tag {
+                font-size: .7rem;
             }
             .dementia-image {
                 height: 240px;
@@ -468,18 +376,40 @@
             .container {
                 padding: 0 1rem;
             }
-            .resource-nav {
-                gap: .4rem;
-            }
-            .resource-nav a {
-                font-size: .7rem;
-                padding: .5rem .8rem;
-            }
             .notice {
                 padding: 1rem;
                 font-size: .84rem;
             }
         }
+
+
+        /* ============================================================
+           FOOTER - Teal/Navy Theme
+        ============================================================ */
+
+        .site-footer {
+            background: linear-gradient(135deg, var(--navy), var(--hero-dark));
+            border-top: 3px solid var(--teal);
+            padding-top: 4rem !important;
+        }
+
+        .footer-brand .footer-tagline {
+            color: var(--teal-light);
+        }
+
+        .footer-col a:hover,
+        .footer-contact-item a:hover {
+            color: var(--teal-light) !important;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--teal-light) !important;
+        }
+
+        .footer-contact-item svg {
+            color: var(--teal-light) !important;
+        }
+
 
         /* ============================================================
            ACCESSIBILITY
@@ -490,6 +420,7 @@
             outline: 3px solid var(--teal);
             outline-offset: 3px;
         }
+
 
         /* ============================================================
            REDUCE MOTION
@@ -505,15 +436,6 @@
                 animation-iteration-count: 1 !important;
             }
         }
-
-        /* ============================================================
-   FOOTER SPACING FIX
-============================================================ */
-
-.site-footer {
-    margin-top: 3rem;
-    padding-top: 4rem !important;
-}
     </style>
 
 </head>
@@ -526,7 +448,7 @@
 
     <div class="topbar">
         <div class="container">
-            <div class="topbar-inner">
+            <div class="topbar__inner">
                 <div class="topbar__loc">
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
@@ -544,7 +466,7 @@
     </div>
 
     <!-- ============================================================
-         HEADER / NAVIGATION
+         HEADER / NAVIGATION - WITH MOBILE DROPDOWN SUPPORT
     ============================================================ -->
 
     <header class="site-header" id="site-header">
@@ -560,8 +482,9 @@
                     <a href="../index.html">Home</a>
                     <a href="../about.html">About</a>
 
+                    <!-- Services Dropdown -->
                     <div class="nav-dropdown">
-                        <a href="#" class="nav-dropdown-toggle">
+                        <a href="#" class="nav-dropdown-toggle" onclick="return false;">
                             Services
                             <span>&#9662;</span>
                         </a>
@@ -573,16 +496,17 @@
                         </div>
                     </div>
 
+                    <!-- Hearing Aids Dropdown -->
                     <div class="nav-dropdown">
-                        <a href="#" class="nav-dropdown-toggle">
+                        <a href="#" class="nav-dropdown-toggle" onclick="return false;">
                             Hearing Aids
                             <span>&#9662;</span>
                         </a>
                         <div class="dropdown-menu">
                             <a href="../hearing-Aids/hearing-blogs.html">Hearing Blogs</a>
                             <a href="../hearing-Aids/hearing-fun-facts.html">Hearing Fun Facts</a>
-                            <a href="../hearing-Aids/hearing-loss-dementia.html">Hearing Loss & Dementia</a>
-                            <a href="../hearing-Aids/hearing-myths-facts.html">Hearing Myths & Facts</a>
+                            <a href="../hearing-Aids/hearing-loss-dementia.html">Hearing Loss &amp; Dementia</a>
+                            <a href="../hearing-Aids/hearing-myths-facts.html">Hearing Myths &amp; Facts</a>
                         </div>
                     </div>
 
@@ -591,8 +515,8 @@
                     <a href="../contact.html" class="nav-cta">Book Appointment</a>
                 </nav>
 
-                <!-- MOBILE MENU BUTTON -->
-                <button class="hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false">
+                <!-- MOBILE HAMBURGER -->
+                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -600,33 +524,76 @@
             </div>
         </div>
 
-        <!-- MOBILE DRAWER -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-inner">
-                <button class="mobile-menu-close" id="mobileMenuClose" type="button" aria-label="Close navigation menu">
-                    &times;
+        <!-- MOBILE MENU WITH DROPDOWN SUPPORT -->
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+
+            <a href="../index.html" onclick="closeMenu()">Home</a>
+            <a href="../about.html" onclick="closeMenu()">About</a>
+
+            <!-- Services Dropdown (mobile) -->
+            <div class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                    <span>Services</span>
+                    <span class="arrow">▼</span>
                 </button>
-                <a href="../index.html">Home</a>
-                <a href="../about.html">About</a>
-                <a href="../services/hearing-aid-testing.html">Hearing Assessment</a>
-                <a href="../services/hearing-aid-fitting.html">Hearing Aid Fitting</a>
-                <a href="../services/hearing-repair.html">Hearing Aid Repair</a>
-                <a href="../services/hearing-protection.html">Hearing Protection</a>
-                <a href="../hearing-Aids/hearing-blogs.html">Hearing Blogs</a>
-                <a href="../hearing-Aids/hearing-fun-facts.html">Hearing Fun Facts</a>
-                <a href="../hearing-Aids/hearing-loss-dementia.html">Hearing Loss & Dementia</a>
-                <a href="../testimonials.html">Testimonials</a>
-                <a href="../contact.html">Contact</a>
-                <a href="../contact.html" class="mob-cta">Book Appointment</a>
+                <div class="mobile-dropdown-menu">
+                    <a href="../services/hearing-aid-testing.html" onclick="closeMenu()">Hearing Assessment</a>
+                    <a href="../services/hearing-aid-fitting.html" onclick="closeMenu()">Hearing Aid Fitting</a>
+                    <a href="../services/hearing-repair.html" onclick="closeMenu()">Hearing Aid Repair</a>
+                    <a href="../services/hearing-protection.html" onclick="closeMenu()">Hearing Protection</a>
+                </div>
             </div>
-        </div>
+
+            <!-- Hearing Aids Dropdown (mobile) -->
+            <div class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                    <span>Hearing Aids</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="mobile-dropdown-menu">
+                    <a href="../hearing-Aids/hearing-blogs.html" onclick="closeMenu()">Hearing Blogs</a>
+                    <a href="../hearing-Aids/hearing-fun-facts.html" onclick="closeMenu()">Hearing Fun Facts</a>
+                    <a href="../hearing-Aids/hearing-loss-dementia.html" onclick="closeMenu()">Hearing Loss &amp; Dementia</a>
+                    <a href="../hearing-Aids/hearing-myths-facts.html" onclick="closeMenu()">Hearing Myths &amp; Facts</a>
+                </div>
+            </div>
+
+            <a href="../testimonials.html" onclick="closeMenu()">Testimonials</a>
+            <a href="../contact.html" onclick="closeMenu()">Contact</a>
+
+            <!-- Mobile CTA -->
+            <a href="../contact.html" class="mob-cta" onclick="closeMenu()">Book Appointment</a>
+
+        </nav>
     </header>
 
+
     <!-- ============================================================
-         RESOURCE HERO
+         PAGE HERO - CENTERED
     ============================================================ -->
 
-   
+    <section class="page-hero">
+
+        <div class="container">
+
+            <span class="section-tag">
+                Hearing Loss & Dementia
+            </span>
+
+            <h1 class="hero__h1">
+                Understanding 
+                <em>the connection.</em>
+            </h1>
+
+        </div>
+
+    </section>
+
+
+    <br><br><br>
+
+
+
     <!-- ============================================================
          DEMENTIA FEATURE
     ============================================================ -->
@@ -634,7 +601,7 @@
     <section id="dementia" class="resource-section white">
         <div class="container">
             <div class="dementia-feature">
-                <img class="dementia-image" src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=1000&auto=format&fit=crop" alt="Older adult enjoying a conversation">
+                <img class="dementia-image" src="https://hearingaidstoronto.com/wp-content/uploads/Understanding-the-Prevalence-and-Causes-at-Toronto-Hearing-Centre.png" alt="Older adult enjoying a conversation">
                 <div class="dementia-copy">
                     <span class="section-tag">Hearing &amp; Brain Health</span>
                     <h2>Hearing Loss and Dementia: What We Know</h2>
@@ -654,6 +621,7 @@
         </div>
     </section>
 
+
     <!-- ============================================================
          CTA SECTION
     ============================================================ -->
@@ -668,6 +636,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- ============================================================
          CLOSER LOOK
@@ -686,6 +655,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- ============================================================
          COMMUNICATION TIPS
@@ -709,6 +679,7 @@
         </div>
     </section>
 
+
     <!-- ============================================================
          WHEN TO SEEK HELP
     ============================================================ -->
@@ -724,156 +695,384 @@
         </div>
     </section>
 
+
     <!-- ============================================================
-         FOOTER
+         FOOTER - Teal/Navy Theme
     ============================================================ -->
 
     <footer class="site-footer">
+
         <div class="container footer-main">
+
             <div class="footer-grid">
 
+
                 <!-- BRAND -->
+
                 <div class="footer-brand">
+
                     <div class="logo">
+
                         <div class="logo__mark">
-                            <img src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w" alt="Sound Advice Hearing Solutions Logo" class="logo__img">
+
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                                alt="Sound Advice Hearing Solutions Logo"
+                                class="logo__img"
+                            >
+
                         </div>
+
                     </div>
-                    <p>Professional, compassionate hearing care for communities across Alberta. Independent and locally owned since 2000.</p>
-                    <div class="footer-tagline">Hear Better. Live Better.</div>
+
+
+                    <p>
+                        Professional, compassionate hearing care
+                        for communities across Alberta.
+                        Independent and locally owned since 2000.
+                    </p>
+
+
+                    <div class="footer-tagline">
+                        Hear Better. Live Better.
+                    </div>
+
                 </div>
+
+
 
                 <!-- SERVICES -->
+
                 <div class="footer-col">
-                    <h4>Services</h4>
+
+                    <h4>
+                        Services
+                    </h4>
+
                     <ul>
-                        <li><a href="../services/hearing-aid-testing.html">Hearing Testing</a></li>
-                        <li><a href="../services/hearing-aid-fitting.html">Hearing Aid Fitting</a></li>
-                        <li><a href="../services/hearing-repair.html">Hearing Aid Repairs</a></li>
-                        <li><a href="../services/hearing-protection.html">Hearing Protection</a></li>
+
+                        <li>
+                            <a href="../services/hearing-aid-testing.html">
+                                Hearing Testing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../services/hearing-aid-fitting.html">
+                                Hearing Aid Fitting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../services/hearing-repair.html">
+                                Hearing Aid Repairs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../services/hearing-protection.html">
+                                Hearing Protection
+                            </a>
+                        </li>
+
                     </ul>
+
                 </div>
+
+
 
                 <!-- LOCATIONS -->
+
                 <div class="footer-col">
-                    <h4>Locations</h4>
+
+                    <h4>
+                        Locations
+                    </h4>
+
                     <ul>
-                        <li>Sherwood Park, AB</li>
-                        <li>St. Paul, AB</li>
-                        <li>Serving Surrounding Communities</li>
+
+                        <li>
+                            Sherwood Park, AB
+                        </li>
+
+                        <li>
+                            St. Paul, AB
+                        </li>
+
+                        <li>
+                            Serving Surrounding Communities
+                        </li>
+
                     </ul>
+
                 </div>
+
+
 
                 <!-- CONTACT -->
+
                 <div class="footer-col">
-                    <h4>Contact Us</h4>
+
+                    <h4>
+                        Contact Us
+                    </h4>
+
+
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            width="18"
+                            height="18"
+                        >
+
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
                         </svg>
-                        <a href="tel:5874046064">587-404-6064</a>
+
+                        <a href="tel:5874046064">
+                            587-404-6064
+                        </a>
+
                     </div>
+
+
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            width="18"
+                            height="18"
+                        >
+
                             <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
                         </svg>
-                        <a href="tel:18664046064">1-866-404-6064</a>
+
+                        <a href="tel:18664046064">
+                            1-866-404-6064
+                        </a>
+
                     </div>
+
+
                     <div class="footer-contact-item">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            width="18"
+                            height="18"
+                        >
+
                             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
                             <polyline points="22,6 12,13 2,6"/>
+
                         </svg>
-                        <a href="mailto:info@soundadvicehearing.ca">info@soundadvicehearing.ca</a>
+
+                        <a href="mailto:info@soundadvicehearing.ca">
+                            info@soundadvicehearing.ca
+                        </a>
+
                     </div>
+
                 </div>
+
             </div>
+
+
 
             <!-- FOOTER BOTTOM -->
+
             <div class="footer-bottom">
-                <span>© 2000 Sound Advice Hearing Solutions. All Rights Reserved.</span>
+
+                <span>
+                    © 2000 Sound Advice Hearing Solutions.
+                    All Rights Reserved.
+                </span>
+
+
                 <div class="footer-bottom-links">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Accessibility</a>
+
+                    <a href="../privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="../terms.html">
+                        Terms of Use
+                    </a>
+
+                    <a href="../accessibility.html">
+                        Accessibility
+                    </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </footer>
 
+
     <!-- ============================================================
-         JAVASCRIPT
+         JAVASCRIPT - MOBILE MENU WITH DROPDOWN TOGGLES
     ============================================================ -->
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
 
-            const hamburger = document.getElementById("hamburger");
-            const mobileMenu = document.getElementById("mobileMenu");
-            const mobileMenuClose = document.getElementById("mobileMenuClose");
+        /* =========================================================
+           MOBILE DROPDOWN TOGGLE
+        ========================================================= */
+
+        function toggleMobileDropdown(button) {
+            button.classList.toggle('open');
+            var menu = button.nextElementSibling;
+            if (menu) {
+                menu.classList.toggle('open');
+            }
+        }
+
+        function initMobileDropdownToggles() {
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    toggleMobileDropdown(button);
+                });
+            });
+        }
+
+
+        /* =========================================================
+           MOBILE MENU - OPEN / CLOSE
+        ========================================================= */
+
+        function initMobileMenu() {
+            var hamburger = document.getElementById("hamburger");
+            var mobileMenu = document.getElementById("mobile-menu");
+
+            if (!hamburger || !mobileMenu) {
+                return;
+            }
+
+            function closeAllDropdowns() {
+                document.querySelectorAll('.mobile-dropdown-toggle.open').forEach(function(btn) {
+                    btn.classList.remove('open');
+                    var menu = btn.nextElementSibling;
+                    if (menu) menu.classList.remove('open');
+                });
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove("open");
+                hamburger.classList.remove("open");
+                hamburger.setAttribute("aria-expanded", "false");
+                mobileMenu.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+                closeAllDropdowns();
+            }
 
             function openMenu() {
-                if (!mobileMenu) return;
-                mobileMenu.classList.add("active");
-                if (hamburger) {
-                    hamburger.classList.add("active");
-                    hamburger.setAttribute("aria-expanded", "true");
-                }
+                mobileMenu.classList.add("open");
+                hamburger.classList.add("open");
+                hamburger.setAttribute("aria-expanded", "true");
                 mobileMenu.setAttribute("aria-hidden", "false");
                 document.body.style.overflow = "hidden";
             }
 
-            function closeMenu() {
-                if (!mobileMenu) return;
-                mobileMenu.classList.remove("active");
-                if (hamburger) {
-                    hamburger.classList.remove("active");
-                    hamburger.setAttribute("aria-expanded", "false");
+            hamburger.addEventListener("click", function() {
+                if (mobileMenu.classList.contains("open")) {
+                    closeMenu();
+                } else {
+                    openMenu();
                 }
-                mobileMenu.setAttribute("aria-hidden", "true");
-                document.body.style.overflow = "";
-            }
+            });
 
-            if (hamburger) {
-                hamburger.addEventListener("click", function() {
-                    if (mobileMenu && mobileMenu.classList.contains("active")) {
-                        closeMenu();
-                    } else {
-                        openMenu();
-                    }
+            // Close menu when clicking a link
+            var mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach(function(link) {
+                link.addEventListener("click", function() {
+                    closeMenu();
                 });
-            }
+            });
 
-            if (mobileMenuClose) {
-                mobileMenuClose.addEventListener("click", closeMenu);
-            }
-
-            if (mobileMenu) {
-                mobileMenu.addEventListener("click", function(event) {
-                    if (event.target === mobileMenu) {
-                        closeMenu();
-                    }
-                });
-
-                const mobileLinks = mobileMenu.querySelectorAll("a");
-                mobileLinks.forEach(function(link) {
-                    link.addEventListener("click", closeMenu);
-                });
-            }
-
+            // Close on escape key
             document.addEventListener("keydown", function(event) {
                 if (event.key === "Escape") {
                     closeMenu();
                 }
             });
 
+            // Close on outside click
+            document.addEventListener("click", function(event) {
+                if (mobileMenu.classList.contains("open")) {
+                    if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                        closeMenu();
+                    }
+                }
+            });
+
+            // Close on window resize (if screen becomes desktop)
             window.addEventListener("resize", function() {
                 if (window.innerWidth > 900) {
                     closeMenu();
                 }
             });
 
+            // Expose closeMenu globally for onclick attributes
+            window.closeMenu = closeMenu;
+        }
+
+
+        /* =========================================================
+           HEADER SCROLL
+        ========================================================= */
+
+        window.addEventListener("scroll", function() {
+            var header = document.getElementById("site-header");
+            if (!header) return;
+            header.classList.toggle("scrolled", window.scrollY > 30);
         });
+
+
+        /* =========================================================
+           ACTIVE NAV LINK
+        ========================================================= */
+
+        function initActiveNav() {
+            var current = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href) {
+                    var parts = href.split('/');
+                    var filename = parts[parts.length - 1] || 'index.html';
+                    if (filename === current) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
+
+
+        /* =========================================================
+           INITIALIZE
+        ========================================================= */
+
+        document.addEventListener("DOMContentLoaded", function() {
+            initMobileMenu();
+            initMobileDropdownToggles();
+            initActiveNav();
+        });
+
     </script>
 
 </body>

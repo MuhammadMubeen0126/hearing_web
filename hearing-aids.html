@@ -1394,182 +1394,230 @@
 <!-- =========================================================
      HEADER
 ========================================================= -->
+  <header
+        class="site-header"
+        id="site-header"
+    >
 
-<header
-    class="site-header"
-    id="site-header"
->
+        <div class="container">
 
-    <div class="container">
-
-        <div class="nav-inner">
-
-            <a
-                href="index.html"
-                class="logo"
-                aria-label="Sound Advice Hearing Solutions Home"
-            >
-
-                <div class="logo__mark">
-
-                    <img
-                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-                        alt="Sound Advice Hearing Solutions"
-                        class="logo__img"
-                    >
-
-                </div>
-
-            </a>
+            <div class="nav-inner">
 
 
-            <nav
-                class="nav-links"
-                aria-label="Primary navigation"
-            >
+                <!-- LOGO -->
 
-                <a href="index.html">
-                    Home
-                </a>
+                <a
+                    href="index.html"
+                    class="logo"
+                >
 
-                <a href="about.html">
-                    About
-                </a>
+                    <div class="logo__mark">
 
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="services/hearing-aid-testing.html"
-                        class="nav-dropdown-toggle"
-                    >
-
-                        Services
-
-                        <span>▼</span>
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="services/hearing-aid-testing.html">
-                            Hearing Assessment
-                        </a>
-
-                        <a href="services/hearing-aid-fitting.html">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="services/hearing-repair.html">
-                            Hearing Aid Repair
-                        </a>
-
-                        <a href="services/hearing-protection.html">
-                            Hearing Protection
-                        </a>
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                            alt="Sound Advice Hearing Solutions Logo"
+                            class="logo__img"
+                        >
 
                     </div>
 
-                </div>
-
-
-                <a href="hearing-aids.html">
-                    Hearing Aids
                 </a>
 
 
-                <a href="tinnitus.html">
-                    Tinnitus
-                </a>
 
+                <!-- =================================================
+                     DESKTOP NAVIGATION
+                ================================================== -->
 
-                <a href="testimonials.html">
-                    Testimonials
-                </a>
-
-
-                <a href="contact.html">
-                    Contact
-                </a>
-
-
-                <a
-                    href="contact.html"
-                    class="nav-cta"
+                <nav
+                    class="nav-links"
+                    aria-label="Primary navigation"
                 >
-                    Book Appointment
-                </a>
 
-            </nav>
+                    <a href="index.html">
+                        Home
+                    </a>
 
 
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-                aria-controls="mobile-menu"
-            >
+                    <a href="about.html">
+                        About
+                    </a>
 
-                <span></span>
-                <span></span>
-                <span></span>
 
-            </button>
+                    <!-- SERVICES -->
+
+                    <div class="nav-dropdown">
+
+                        <a
+                            href="#"
+                            class="nav-dropdown-toggle"
+                            onclick="return false;"
+                        >
+
+                            Services
+
+                            <span>
+                                &#9662;
+                            </span>
+
+                        </a>
+
+
+                        <div class="dropdown-menu">
+
+                            <a href="services/hearing-aid-testing.html">
+                                Hearing Assessment
+                            </a>
+
+                            <a href="services/hearing-aid-fitting.html">
+                                Hearing Aid Fitting
+                            </a>
+
+                            <a href="services/hearing-repair.html">
+                                Hearing Aid Repair
+                            </a>
+
+                            <a href="services/hearing-protection.html">
+                                Hearing Protection
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HEARING AIDS -->
+
+                    <div class="nav-dropdown">
+
+                        <a
+                            href="#"
+                            class="nav-dropdown-toggle"
+                            onclick="return false;"
+                        >
+
+                            Hearing Aid
+
+                            <span>
+                                &#9662;
+                            </span>
+
+                        </a>
+
+
+                        <div class="dropdown-menu">
+
+                            <a href="hearing-Aids/hearing-blogs.html">
+                                Hearing Blogs
+                            </a>
+
+                            <a href="hearing-Aids/hearing-fun-facts.html">
+                                Hearing Fun Facts
+                            </a>
+
+                            <a href="hearing-Aids/hearing-loss-dementia.html">
+                                Hearing Loss &amp; Dementia
+                            </a>
+
+                            <a href="hearing-Aids/hearing-myths-facts.html">
+                                Hearing Myths &amp; Facts
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="testimonials.html">
+                        Testimonials
+                    </a>
+
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="nav-cta"
+                    >
+                        Book Appointment
+                    </a>
+
+                </nav>
+
+
+
+                <!-- =================================================
+                     MOBILE HAMBURGER
+                ================================================== -->
+
+                <button
+                    class="hamburger"
+                    id="hamburger"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
 
         </div>
 
+
+
+        <!-- =====================================================
+             MOBILE MENU - WITH CORRECT CLASS NAMES
+        ====================================================== -->
+<!-- MOBILE MENU -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+
+    <!-- SERVICES DROPDOWN -->
+    <div class="mobile-dropdown">
+        <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+            <span>Services</span>
+            <span class="arrow">▼</span>
+        </button>
+        <div class="mobile-dropdown-menu">
+            <a href="services/hearing-aid-testing.html" onclick="closeMenu()">Hearing Assessment</a>
+            <a href="services/hearing-aid-fitting.html" onclick="closeMenu()">Hearing Aid Fitting</a>
+            <a href="services/hearing-repair.html" onclick="closeMenu()">Hearing Aid Repair</a>
+            <a href="services/hearing-protection.html" onclick="closeMenu()">Hearing Protection</a>
+        </div>
     </div>
 
+    <!-- HEARING AID DROPDOWN -->
+    <div class="mobile-dropdown">
+        <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+            <span>Hearing Aid</span>
+            <span class="arrow">▼</span>
+        </button>
+        <div class="mobile-dropdown-menu">
+            <a href="hearing-Aids/hearing-blogs.html" onclick="closeMenu()">Hearing Blogs</a>
+            <a href="hearing-Aids/hearing-fun-facts.html" onclick="closeMenu()">Hearing Fun Facts</a>
+            <a href="hearing-Aids/hearing-loss-dementia.html" onclick="closeMenu()">Hearing Loss &amp; Dementia</a>
+            <a href="hearing-Aids/hearing-myths-facts.html" onclick="closeMenu()">Hearing Myths &amp; Facts</a>
+        </div>
+    </div>
 
-    <!-- MOBILE MENU -->
+    <a href="testimonials.html" onclick="closeMenu()">Testimonials</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
 
-    <nav
-        class="mobile-menu"
-        id="mobile-menu"
-        aria-label="Mobile navigation"
-    >
+    <a href="contact.html" class="mob-cta" onclick="closeMenu()">Book Appointment</a>
+</nav>
 
-        <a href="index.html" onclick="closeMenu()">
-            Home
-        </a>
-
-        <a href="about.html" onclick="closeMenu()">
-            About
-        </a>
-
-        <a href="services/hearing-aid-testing.html" onclick="closeMenu()">
-            Services
-        </a>
-
-        <a href="hearing-aids.html" onclick="closeMenu()">
-            Hearing Aids
-        </a>
-
-        <a href="tinnitus.html" onclick="closeMenu()">
-            Tinnitus
-        </a>
-
-        <a href="testimonials.html" onclick="closeMenu()">
-            Testimonials
-        </a>
-
-        <a href="contact.html" onclick="closeMenu()">
-            Contact / Locations
-        </a>
-
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-            class="mob-cta"
-        >
-            Book Hearing Assessment
-        </a>
-
-    </nav>
-
-</header>
+    </header>
 
 
 <!-- =========================================================
@@ -1722,7 +1770,7 @@
             <div class="benefits-image reveal">
 
                 <img
-                    src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1000&q=85"
+                    src="https://cdn.shopify.com/s/files/1/0736/8500/8693/files/3.24.webp?v=1732685783"
                     alt="Hearing care professional speaking with a patient"
                     loading="lazy"
                 >

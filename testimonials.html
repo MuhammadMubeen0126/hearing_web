@@ -11,16 +11,27 @@
     >
 
     <title>
-        Contact Us | Sound Advice Hearing Solutions
+        Testimonials | Sound Advice Hearing Solutions
     </title>
 
     <meta
         name="description"
-        content="Contact Sound Advice Hearing Solutions or book a hearing assessment at our Sherwood Park or St. Paul, Alberta clinic locations."
+        content="Read patient stories and testimonials from Sound Advice Hearing Solutions in Sherwood Park and St. Paul, Alberta."
     >
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <meta
+        name="theme-color"
+        content="#0b5f66"
+    >
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
 
     <link
         rel="preconnect"
@@ -34,44 +45,66 @@
     >
 
 
+    <!-- =========================================================
+         ALL PAGE CSS
+    ========================================================== -->
+
     <style>
 
-        /* =========================================================
-           ROOT
-        ========================================================== */
+        /* =====================================================
+           ROOT VARIABLES
+        ====================================================== */
 
         :root {
 
-            --primary: #0d7a6c;
-            --primary-dark: #075b51;
+            --primary: #0b5f66;
+            --primary-dark: #074a50;
+            --primary-light: #e8f5f4;
 
-            --accent: #dff3ef;
+            --secondary: #d7a84f;
+            --secondary-light: #f7edd5;
 
-            --ink: #173b38;
-            --text: #50635f;
-            --muted: #78908b;
+            --dark: #173438;
+            --dark-2: #28494d;
+
+            --text: #53686b;
+            --text-light: #718386;
 
             --white: #ffffff;
-            --light: #f5faf9;
+            --off-white: #f7faf9;
+            --cream: #fbfaf6;
 
-            --border: #dce9e6;
+            --border: #dfe9e7;
+
+            --shadow-sm:
+                0 5px 20px rgba(23, 52, 56, 0.06);
 
             --shadow:
-                0 18px 50px rgba(16,72,65,.10);
+                0 15px 45px rgba(23, 52, 56, 0.10);
 
-            --radius: 22px;
+            --shadow-lg:
+                0 25px 70px rgba(23, 52, 56, 0.15);
+
+            --radius-sm: 10px;
+            --radius: 18px;
+            --radius-lg: 28px;
+
+            --container: 1180px;
+
+            --transition:
+                all 0.3s ease;
 
         }
 
 
-        /* =========================================================
+        /* =====================================================
            RESET
-        ========================================================== */
+        ====================================================== */
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
 
@@ -82,27 +115,19 @@
 
         body {
 
-            font-family: "DM Sans", sans-serif;
+            font-family:
+                "DM Sans",
+                Arial,
+                sans-serif;
 
             color: var(--text);
 
-            background: #fff;
+            background: var(--white);
 
             line-height: 1.7;
 
             overflow-x: hidden;
 
-        }
-
-
-        body.menu-open {
-            overflow: hidden;
-        }
-
-
-        a {
-            text-decoration: none;
-            color: inherit;
         }
 
 
@@ -112,38 +137,40 @@
         }
 
 
-        button,
-        input,
-        select,
-        textarea {
-            font: inherit;
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
 
         button {
-            -webkit-tap-highlight-color: transparent;
+            font-family: inherit;
         }
 
 
         .container {
 
-            width: min(1180px, 92%);
+            width: min(
+                calc(100% - 40px),
+                var(--container)
+            );
 
-            margin: auto;
+            margin: 0 auto;
 
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            TOP BAR
-        ========================================================== */
+        ====================================================== */
 
         .topbar {
 
-            background: var(--ink);
+            background:
+                var(--dark);
 
-            color: #dceae7;
+            color:
+                rgba(255,255,255,0.88);
 
             font-size: 13px;
 
@@ -165,54 +192,62 @@
         }
 
 
-        .topbar__loc,
+        .topbar__loc {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            white-space: nowrap;
+
+        }
+
+
+        .topbar__loc svg {
+            flex-shrink: 0;
+            color: var(--secondary);
+        }
+
+
         .topbar__phones {
 
             display: flex;
 
             align-items: center;
 
-            gap: 9px;
+            gap: 12px;
+
+            white-space: nowrap;
 
         }
 
 
-        .topbar svg {
+        .topbar__phones a {
 
-            color: #8ed6cb;
-
-            flex: none;
-
-        }
-
-
-        .topbar a {
-
-            color: #fff;
+            color: white;
 
             font-weight: 600;
 
+            transition: var(--transition);
+
         }
 
 
-        .topbar a:hover {
-
-            color: #9ce1d7;
-
+        .topbar__phones a:hover {
+            color: var(--secondary);
         }
 
 
         .topbar__sep {
-
             opacity: .35;
-
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            HEADER
-        ========================================================== */
+        ====================================================== */
 
         .site-header {
 
@@ -223,17 +258,14 @@
             z-index: 1000;
 
             background:
-                rgba(255,255,255,.96);
-
-            backdrop-filter: blur(14px);
-
-            -webkit-backdrop-filter: blur(14px);
+                rgba(255,255,255,.97);
 
             border-bottom:
-                1px solid transparent;
+                1px solid var(--border);
 
             transition:
-                .3s ease;
+                box-shadow .3s ease,
+                background .3s ease;
 
         }
 
@@ -241,11 +273,10 @@
         .site-header.scrolled {
 
             box-shadow:
-                0 8px 30px
-                rgba(12,64,58,.08);
+                0 8px 30px rgba(23,52,56,.10);
 
-            border-color:
-                var(--border);
+            background:
+                rgba(255,255,255,.99);
 
         }
 
@@ -265,10 +296,9 @@
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            LOGO
-        ========================================================== */
+        ====================================================== */
 
         .logo {
 
@@ -283,14 +313,18 @@
 
         .logo__mark {
 
-            width: 190px;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
 
         }
 
 
         .logo__img {
 
-            width: 100%;
+            width: 190px;
 
             height: auto;
 
@@ -299,10 +333,9 @@
         }
 
 
-
-        /* =========================================================
-           DESKTOP NAVIGATION
-        ========================================================== */
+        /* =====================================================
+           NAVIGATION
+        ====================================================== */
 
         .nav-links {
 
@@ -312,13 +345,7 @@
 
             justify-content: flex-end;
 
-            gap: 24px;
-
-            font-size: 14px;
-
-            font-weight: 600;
-
-            color: var(--ink);
+            gap: 5px;
 
         }
 
@@ -328,9 +355,23 @@
 
             position: relative;
 
-            padding: 10px 0;
+            display: inline-flex;
 
-            white-space: nowrap;
+            align-items: center;
+
+            gap: 6px;
+
+            padding:
+                10px 12px;
+
+            color:
+                var(--dark);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            transition: var(--transition);
 
         }
 
@@ -342,36 +383,71 @@
 
             position: absolute;
 
-            left: 0;
+            left: 12px;
+
+            right: 12px;
 
             bottom: 3px;
 
-            width: 0;
-
             height: 2px;
 
-            background:
+            background: var(--primary);
+
+            transform:
+                scaleX(0);
+
+            transform-origin: center;
+
+            transition: transform .3s ease;
+
+        }
+
+
+        .nav-links > a:not(.nav-cta):hover,
+        .nav-dropdown-toggle:hover {
+
+            color:
                 var(--primary);
 
-            transition:
-                .25s ease;
+        }
+
+
+        .nav-links > a:not(.nav-cta):hover::after,
+        .nav-dropdown-toggle:hover::after {
+
+            transform:
+                scaleX(1);
 
         }
 
 
-        .nav-links > a:hover::after,
-        .nav-dropdown:hover
-        .nav-dropdown-toggle::after {
+        /* =====================================================
+           ACTIVE NAV LINK
+        ====================================================== */
 
-            width: 100%;
+        .nav-links a.active,
+        .mobile-menu a.active {
+
+            color:
+                var(--primary);
+
+            font-weight:
+                700;
 
         }
 
 
+        .nav-links > a.active:not(.nav-cta)::after {
 
-        /* =========================================================
-           DESKTOP DROPDOWNS
-        ========================================================== */
+            transform:
+                scaleX(1);
+
+        }
+
+
+        /* =====================================================
+           DROPDOWN
+        ====================================================== */
 
         .nav-dropdown {
 
@@ -382,9 +458,19 @@
 
         .nav-dropdown-toggle span {
 
-            font-size: 10px;
+            font-size: 11px;
 
-            margin-left: 3px;
+            transition:
+                transform .3s ease;
+
+        }
+
+
+        .nav-dropdown:hover
+        .nav-dropdown-toggle span {
+
+            transform:
+                rotate(180deg);
 
         }
 
@@ -393,40 +479,68 @@
 
             position: absolute;
 
-            top:
-                calc(100% + 14px);
+            top: calc(100% + 10px);
 
             left: 50%;
 
-            transform:
-                translate(-50%, 8px);
+            min-width: 245px;
 
-            width: 225px;
+            padding: 10px;
 
-            background: #fff;
+            background: white;
 
             border:
                 1px solid var(--border);
 
-            border-radius: 15px;
-
-            padding: 9px;
+            border-radius:
+                14px;
 
             box-shadow:
-                var(--shadow);
+                var(--shadow-lg);
 
             opacity: 0;
 
             visibility: hidden;
 
+            transform:
+                translate(-50%, 10px);
+
             transition:
-                .25s ease;
+                all .25s ease;
 
         }
 
 
-        .nav-dropdown:hover
-        .dropdown-menu {
+        .dropdown-menu::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: -6px;
+
+            left: 50%;
+
+            width: 12px;
+
+            height: 12px;
+
+            background: white;
+
+            border-left:
+                1px solid var(--border);
+
+            border-top:
+                1px solid var(--border);
+
+            transform:
+                translateX(-50%)
+                rotate(45deg);
+
+        }
+
+
+        .nav-dropdown:hover .dropdown-menu {
 
             opacity: 1;
 
@@ -443,14 +557,22 @@
             display: block;
 
             padding:
-                10px 12px;
+                11px 14px;
 
-            border-radius: 9px;
+            border-radius:
+                9px;
 
-            font-size: 13px;
+            color:
+                var(--dark);
+
+            font-size:
+                13px;
+
+            font-weight:
+                600;
 
             transition:
-                .2s ease;
+                var(--transition);
 
         }
 
@@ -458,37 +580,39 @@
         .dropdown-menu a:hover {
 
             background:
-                var(--light);
+                var(--primary-light);
 
             color:
                 var(--primary);
 
+            padding-left:
+                19px;
+
         }
 
 
+        /* =====================================================
+           CTA BUTTON
+        ====================================================== */
 
-        /* =========================================================
-           CTA
-        ========================================================== */
+        .nav-cta {
 
-        .nav-cta,
-        .mob-cta {
-
-            background:
-                var(--primary) !important;
-
-            color:
-                #fff !important;
+            margin-left: 7px;
 
             padding:
-                12px 18px !important;
+                12px 19px !important;
+
+            background:
+                var(--primary);
+
+            color:
+                white !important;
 
             border-radius:
-                999px;
+                50px;
 
             box-shadow:
-                0 8px 20px
-                rgba(13,122,108,.18);
+                0 7px 18px rgba(11,95,102,.20);
 
         }
 
@@ -496,22 +620,17 @@
         .nav-cta:hover {
 
             background:
-                var(--primary-dark) !important;
+                var(--primary-dark);
+
+            transform:
+                translateY(-2px);
 
         }
 
 
-        .nav-cta::after {
-
-            display: none !important;
-
-        }
-
-
-
-        /* =========================================================
+        /* =====================================================
            HAMBURGER
-        ========================================================== */
+        ====================================================== */
 
         .hamburger {
 
@@ -521,29 +640,15 @@
 
             height: 46px;
 
-            border: 0;
-
-            outline: none;
-
-            background: transparent;
-
-            cursor: pointer;
-
-            padding: 8px;
+            border: 1px solid var(--border);
 
             border-radius: 10px;
 
-            position: relative;
+            background: white;
 
-            z-index: 1100;
+            cursor: pointer;
 
-        }
-
-
-        .hamburger:hover {
-
-            background:
-                var(--light);
+            padding: 10px;
 
         }
 
@@ -552,412 +657,218 @@
 
             display: block;
 
-            width: 27px;
+            width: 100%;
 
             height: 2px;
 
-            background:
-                var(--ink);
+            background: var(--dark);
 
-            margin:
-                6px auto;
-
-            border-radius: 5px;
+            margin: 5px 0;
 
             transition:
-                all .3s ease;
+                transform .3s ease,
+                opacity .3s ease;
 
         }
 
 
-        /* Hamburger to X */
-
-        .hamburger.open
-        span:nth-child(1) {
+        .hamburger.open span:nth-child(1) {
 
             transform:
-                translateY(8px)
+                translateY(7px)
                 rotate(45deg);
 
         }
 
 
-        .hamburger.open
-        span:nth-child(2) {
-
+        .hamburger.open span:nth-child(2) {
             opacity: 0;
-
-            transform:
-                scaleX(0);
-
         }
 
 
-        .hamburger.open
-        span:nth-child(3) {
+        .hamburger.open span:nth-child(3) {
 
             transform:
-                translateY(-8px)
+                translateY(-7px)
                 rotate(-45deg);
 
         }
 
 
-
-        /* =========================================================
-           MOBILE MENU
-        ========================================================== */
+        /* =====================================================
+           MOBILE MENU - WITH DROPDOWN SUPPORT
+        ====================================================== */
 
         .mobile-menu {
-
             display: none;
-
             position: absolute;
-
-            top: 100%;
-
             left: 0;
-
             right: 0;
-
-            width: 100%;
-
-            background:
-                rgba(255,255,255,.98);
-
-            backdrop-filter:
-                blur(15px);
-
-            -webkit-backdrop-filter:
-                blur(15px);
-
-            border-top:
-                1px solid var(--border);
-
-            box-shadow:
-                0 20px 45px
-                rgba(12,64,58,.12);
-
-            padding:
-                10px 20px 24px;
-
-            max-height:
-                calc(100vh - 72px);
-
+            top: 100%;
+            flex-direction: column;
+            padding: 15px 20px 25px;
+            background: #ffffff;
+            border-top: 1px solid var(--border);
+            box-shadow: 0 20px 35px rgba(0,0,0,.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: opacity .3s ease, visibility .3s ease, transform .3s ease;
+            z-index: 9999;
+            max-height: 80vh;
             overflow-y: auto;
-
         }
-
 
         .mobile-menu.open {
-
-            display: block;
-
-            animation:
-                mobileMenuOpen .25s ease;
-
+            display: flex;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
-
-
-        @keyframes mobileMenuOpen {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(-10px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-            }
-
-        }
-
-
-
-        /* =========================================================
-           MOBILE MAIN LINKS
-        ========================================================== */
 
         .mobile-menu > a {
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            width: 100%;
-
-            padding:
-                15px 5px;
-
-            border-bottom:
-                1px solid #edf3f1;
-
-            color:
-                var(--ink);
-
+            padding: 13px 5px;
+            color: var(--dark);
+            border-bottom: 1px solid var(--border);
             font-size: 15px;
-
             font-weight: 600;
-
-            transition:
-                .2s ease;
-
+            transition: color 0.3s ease;
         }
-
 
         .mobile-menu > a:hover {
-
-            color:
-                var(--primary);
-
-            padding-left:
-                10px;
-
+            color: var(--primary);
         }
-
-
-
-        /* =========================================================
-           MOBILE DROPDOWN
-        ========================================================== */
 
         .mobile-dropdown {
-
-            border-bottom:
-                1px solid #edf3f1;
-
+            border-bottom: 1px solid var(--border);
         }
-
 
         .mobile-dropdown-toggle {
-
-            width: 100%;
-
             display: flex;
-
             align-items: center;
-
             justify-content: space-between;
-
-            padding:
-                15px 5px;
-
-            border: 0;
-
-            background: transparent;
-
-            color:
-                var(--ink);
-
-            font-family:
-                inherit;
-
+            padding: 13px 5px;
+            color: var(--dark);
             font-size: 15px;
-
             font-weight: 600;
-
             cursor: pointer;
-
+            transition: color 0.3s ease;
+            background: none;
+            border: none;
+            width: 100%;
             text-align: left;
-
+            font-family: "DM Sans", Arial, sans-serif;
         }
-
 
         .mobile-dropdown-toggle:hover {
-
-            color:
-                var(--primary);
-
+            color: var(--primary);
         }
 
-
-        .mobile-arrow {
-
-            font-size: 11px;
-
-            transition:
-                transform .25s ease;
-
+        .mobile-dropdown-toggle .arrow {
+            font-size: 12px;
+            transition: transform 0.3s ease;
         }
 
-
-        .mobile-dropdown.open
-        .mobile-arrow {
-
-            transform:
-                rotate(180deg);
-
+        .mobile-dropdown-toggle.open .arrow {
+            transform: rotate(180deg);
         }
 
-
-
-        /* =========================================================
-           MOBILE SUBMENU
-        ========================================================== */
-
-        .mobile-submenu {
-
+        .mobile-dropdown-menu {
             display: none;
-
-            padding:
-                0 0 10px 12px;
-
-            margin-left: 4px;
-
-            border-left:
-                2px solid
-                var(--accent);
-
-        }
-
-
-        .mobile-dropdown.open
-        .mobile-submenu {
-
-            display: block;
-
-            animation:
-                submenuOpen .2s ease;
-
-        }
-
-
-        @keyframes submenuOpen {
-
-            from {
-
-                opacity: 0;
-
-                transform:
-                    translateY(-5px);
-
-            }
-
-            to {
-
-                opacity: 1;
-
-                transform:
-                    translateY(0);
-
-            }
-
-        }
-
-
-        .mobile-submenu a {
-
-            display: block;
-
-            padding:
-                11px 10px;
-
-            color:
-                var(--text);
-
-            font-size: 14px;
-
-            font-weight: 500;
-
+            flex-direction: column;
+            padding-left: 15px;
+            background: #f7faf9;
             border-radius: 8px;
-
-            transition:
-                .2s ease;
-
+            margin-bottom: 5px;
+            overflow: hidden;
         }
 
-
-        .mobile-submenu a:hover {
-
-            color:
-                var(--primary);
-
-            background:
-                var(--light);
-
+        .mobile-dropdown-menu.open {
+            display: flex;
         }
 
+        .mobile-dropdown-menu a {
+            padding: 10px 12px;
+            color: var(--text);
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 1px solid rgba(23, 52, 56, .05);
+            transition: all 0.3s ease;
+        }
 
+        .mobile-dropdown-menu a:last-child {
+            border-bottom: none;
+        }
 
-        /* =========================================================
-           MOBILE CTA
-        ========================================================== */
+        .mobile-dropdown-menu a:hover {
+            color: var(--primary);
+            padding-left: 18px;
+            background: rgba(11, 95, 102, .05);
+        }
 
         .mobile-menu .mob-cta {
+            margin-top: 12px;
+            border: 0;
+            border-radius: 12px;
+            text-align: center;
+            background: var(--primary);
+            color: #fff !important;
+            padding: 13px 20px;
+            font-weight: 700;
+        }
 
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 100%;
-
-            margin-top: 17px;
-
-            padding:
-                15px 20px !important;
-
-            border-radius:
-                12px;
-
-            font-size:
-                15px;
-
-            font-weight:
-                700;
-
+        .mobile-menu .mob-cta:hover {
+            color: #fff !important;
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            HERO
-        ========================================================== */
+        ====================================================== */
 
         .page-hero {
 
+            position: relative;
+
+            overflow: hidden;
+
             padding:
-                88px 0 82px;
+                105px 0 100px;
 
             background:
-
-                radial-gradient(
-                    circle at 80% 30%,
-                    rgba(136,211,199,.30),
-                    transparent 35%
-                ),
-
                 linear-gradient(
                     135deg,
-                    #eaf7f4,
-                    #f8fcfb
+                    #eef8f7 0%,
+                    #f9fcfb 55%,
+                    #f7f1df 100%
                 );
-
-            text-align:
-                center;
-
-            position:
-                relative;
-
-            overflow:
-                hidden;
 
         }
 
 
-        .page-hero:before {
+        .page-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 420px;
+
+            height: 420px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(11,95,102,.08);
+
+            top: -220px;
+
+            right: -100px;
+
+        }
+
+
+        .page-hero::after {
 
             content: "";
 
@@ -970,37 +881,36 @@
             border-radius: 50%;
 
             border:
-                1px solid
-                rgba(13,122,108,.10);
+                1px solid rgba(11,95,102,.12);
 
-            left:
-                -90px;
+            bottom: -150px;
 
-            bottom:
-                -120px;
+            left: 8%;
+
+        }
+
+
+        .page-hero .container {
+
+            position: relative;
+
+            z-index: 2;
+
+            text-align: center;
 
         }
 
 
         .section-tag {
 
-            display:
-                inline-flex;
+            display: inline-flex;
 
-            align-items:
-                center;
+            align-items: center;
 
-            gap:
-                8px;
+            gap: 8px;
 
             color:
                 var(--primary);
-
-            text-transform:
-                uppercase;
-
-            letter-spacing:
-                2px;
 
             font-size:
                 12px;
@@ -1008,85 +918,155 @@
             font-weight:
                 700;
 
-            margin-bottom:
-                13px;
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1.8px;
 
         }
 
 
-        .section-tag:before {
+        .section-tag::before {
 
             content: "";
 
-            width:
-                24px;
+            width: 26px;
 
-            height:
-                2px;
+            height: 2px;
 
             background:
-                var(--primary);
+                var(--secondary);
 
         }
 
 
         .hero__h1 {
 
-            font-family:
-                "DM Serif Display",
-                serif;
+            max-width: 760px;
+
+            margin:
+                16px auto 0;
 
             color:
-                var(--ink);
+                var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2.4rem, 5vw, 4.3rem) !important;
+
+            line-height:
+                1.08;
 
             font-weight:
                 400;
 
-            font-size:
-                clamp(2.3rem,5vw,4rem);
-
-            line-height:
-                1.1;
-
         }
 
 
+        /* =====================================================
+           TESTIMONIAL SECTION
+        ====================================================== */
 
-        /* =========================================================
-           CONTACT
-        ========================================================== */
-
-        .contact-section {
+        .testimonial-section {
 
             padding:
-                90px 0 105px;
+                105px 0 115px;
+
+            background:
+                var(--white);
 
         }
 
 
-        .contact-grid {
+        .section-header {
+
+            max-width:
+                720px;
+
+            margin:
+                0 auto 55px;
+
+            text-align:
+                center;
+
+        }
+
+
+        .section-header h2 {
+
+            margin-top:
+                12px;
+
+            color:
+                var(--dark);
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2.1rem, 4vw, 3.2rem);
+
+            line-height:
+                1.15;
+
+            font-weight:
+                400;
+
+        }
+
+
+        .section-header p {
+
+            margin-top:
+                15px;
+
+            color:
+                var(--text-light);
+
+            font-size:
+                16px;
+
+        }
+
+
+        /* =====================================================
+           TESTIMONIAL GRID
+        ====================================================== */
+
+        .testimonials-grid {
 
             display:
                 grid;
 
             grid-template-columns:
-                minmax(0,1.02fr)
-                minmax(0,.98fr);
+                repeat(3, 1fr);
 
             gap:
-                45px;
-
-            align-items:
-                start;
+                25px;
 
         }
 
 
-        .contact-form-wrap,
-        .locations-wrap {
+        /* =====================================================
+           TESTIMONIAL CARD
+        ====================================================== */
+
+        .testimonial-card {
+
+            position: relative;
+
+            padding:
+                35px 32px 30px;
 
             background:
-                #fff;
+                white;
 
             border:
                 1px solid var(--border);
@@ -1094,8 +1074,53 @@
             border-radius:
                 var(--radius);
 
-            padding:
-                38px;
+            box-shadow:
+                var(--shadow-sm);
+
+            transition:
+                transform .35s ease,
+                box-shadow .35s ease,
+                border-color .35s ease;
+
+        }
+
+
+        .testimonial-card::before {
+
+            content: "“";
+
+            position: absolute;
+
+            top: 14px;
+
+            right: 24px;
+
+            color:
+                var(--primary-light);
+
+            font-family:
+                Georgia,
+                serif;
+
+            font-size:
+                90px;
+
+            line-height:
+                1;
+
+            pointer-events:
+                none;
+
+        }
+
+
+        .testimonial-card:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(11,95,102,.20);
 
             box-shadow:
                 var(--shadow);
@@ -1103,54 +1128,139 @@
         }
 
 
-        .contact-form-wrap h2,
-        .locations-wrap h2 {
+        /* =====================================================
+           STARS
+        ====================================================== */
+
+        .testimonial-card__stars {
+
+            display:
+                flex;
+
+            gap:
+                3px;
+
+            margin-bottom:
+                20px;
+
+        }
+
+
+        .star {
+
+            color:
+                #e0a82f;
+
+            font-size:
+                19px;
+
+            line-height:
+                1;
+
+        }
+
+
+        /* =====================================================
+           QUOTE
+        ====================================================== */
+
+        .testimonial-card__quote {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+            color:
+                var(--dark-2);
 
             font-family:
                 "DM Serif Display",
+                Georgia,
                 serif;
 
-            color:
-                var(--ink);
-
             font-size:
-                34px;
-
-            font-weight:
-                400;
-
-            line-height:
-                1.2;
-
-            margin-bottom:
-                27px;
-
-        }
-
-
-
-        /* =========================================================
-           FORM
-        ========================================================== */
-
-        .form-group {
-
-            margin-bottom:
                 18px;
 
+            line-height:
+                1.65;
+
+            min-height:
+                185px;
+
         }
 
 
-        label {
+        /* =====================================================
+           AUTHOR
+        ====================================================== */
+
+        .testimonial-card__author {
 
             display:
-                block;
+                flex;
 
-            margin-bottom:
-                7px;
+            align-items:
+                center;
+
+            gap:
+                13px;
+
+            margin-top:
+                25px;
+
+            padding-top:
+                20px;
+
+            border-top:
+                1px solid var(--border);
+
+        }
+
+
+        .author-avatar {
+
+            width:
+                48px;
+
+            height:
+                48px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            flex-shrink:
+                0;
+
+            border-radius:
+                50%;
+
+            background:
+                var(--primary-light);
 
             color:
-                var(--ink);
+                var(--primary);
+
+            font-size:
+                13px;
+
+            font-weight:
+                700;
+
+        }
+
+
+        .author-name {
+
+            color:
+                var(--dark);
 
             font-size:
                 14px;
@@ -1161,73 +1271,255 @@
         }
 
 
-        .form-control {
+        .author-loc {
 
-            width:
-                100%;
+            margin-top:
+                2px;
+
+            color:
+                var(--text-light);
+
+            font-size:
+                12px;
+
+        }
+
+
+        /* =====================================================
+           TRUST STRIP
+        ====================================================== */
+
+        .trust-section {
+
+            padding:
+                0 0 105px;
+
+            background:
+                var(--white);
+
+        }
+
+
+        .trust-box {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
 
             border:
                 1px solid var(--border);
 
-            background:
-                #fbfdfd;
-
-            color:
-                var(--ink);
-
             border-radius:
-                12px;
+                var(--radius);
+
+            overflow:
+                hidden;
+
+            background:
+                var(--off-white);
+
+        }
+
+
+        .trust-item {
 
             padding:
-                13px 15px;
+                28px 20px;
 
-            outline:
-                none;
+            text-align:
+                center;
 
-            transition:
-                .2s;
+            border-right:
+                1px solid var(--border);
 
         }
 
 
-        .form-control:focus {
+        .trust-item:last-child {
+            border-right: 0;
+        }
 
-            border-color:
+
+        .trust-number {
+
+            display:
+                block;
+
+            color:
                 var(--primary);
 
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size:
+                30px;
+
+        }
+
+
+        .trust-label {
+
+            display:
+                block;
+
+            margin-top:
+                4px;
+
+            color:
+                var(--text-light);
+
+            font-size:
+                12px;
+
+            font-weight:
+                600;
+
+        }
+
+
+        /* =====================================================
+           CTA
+        ====================================================== */
+
+        .testimonial-cta {
+
+            position:
+                relative;
+
+            overflow:
+                hidden;
+
+            margin-bottom:
+                105px;
+
+            padding:
+                65px 55px;
+
+            border-radius:
+                var(--radius-lg);
+
             background:
-                #fff;
+                linear-gradient(
+                    135deg,
+                    var(--primary),
+                    var(--primary-dark)
+                );
+
+            text-align:
+                center;
 
             box-shadow:
-                0 0 0 4px
-                rgba(13,122,108,.08);
+                var(--shadow-lg);
 
         }
 
 
-        textarea.form-control {
+        .testimonial-cta::before {
 
-            min-height:
-                135px;
+            content: "";
 
-            resize:
-                vertical;
+            position: absolute;
+
+            width:
+                300px;
+
+            height:
+                300px;
+
+            border-radius:
+                50%;
+
+            border:
+                1px solid rgba(255,255,255,.12);
+
+            top:
+                -170px;
+
+            right:
+                -60px;
 
         }
 
 
-        select.form-control {
+        .testimonial-cta::after {
 
-            cursor:
-                pointer;
+            content: "";
+
+            position: absolute;
+
+            width:
+                220px;
+
+            height:
+                220px;
+
+            border-radius:
+                50%;
+
+            background:
+                rgba(255,255,255,.04);
+
+            bottom:
+                -130px;
+
+            left:
+                -60px;
+
+        }
+
+
+        .testimonial-cta > * {
+
+            position:
+                relative;
+
+            z-index:
+                2;
+
+        }
+
+
+        .testimonial-cta h2 {
+
+            color:
+                white;
+
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
+
+            font-size:
+                clamp(2rem, 4vw, 3rem);
+
+            line-height:
+                1.15;
+
+        }
+
+
+        .testimonial-cta p {
+
+            max-width:
+                650px;
+
+            margin:
+                14px auto 27px;
+
+            color:
+                rgba(255,255,255,.78);
+
+            font-size:
+                15px;
 
         }
 
 
         .btn-primary {
-
-            border:
-                0;
 
             display:
                 inline-flex;
@@ -1238,111 +1530,91 @@
             justify-content:
                 center;
 
-            gap:
-                8px;
-
-            cursor:
-                pointer;
-
-            background:
-                var(--primary);
-
-            color:
-                #fff;
+            min-height:
+                50px;
 
             padding:
-                14px 23px;
+                13px 24px;
+
+            background:
+                var(--secondary);
+
+            color:
+                var(--dark);
 
             border-radius:
-                999px;
+                50px;
+
+            font-size:
+                14px;
 
             font-weight:
                 700;
 
-            transition:
-                .25s;
-
             box-shadow:
-                0 10px 24px
-                rgba(13,122,108,.18);
+                0 8px 20px rgba(0,0,0,.12);
+
+            transition:
+                var(--transition);
 
         }
 
 
         .btn-primary:hover {
 
+            transform:
+                translateY(-3px);
+
             background:
-                var(--primary-dark);
+                #e4b65f;
 
-            transform:
-                translateY(-2px);
-
-        }
-
-
-        .btn-primary:disabled {
-
-            opacity:
-                .7;
-
-            cursor:
-                not-allowed;
-
-            transform:
-                none;
+            box-shadow:
+                0 12px 28px rgba(0,0,0,.18);
 
         }
 
 
+        /* =====================================================
+           FOOTER
+        ====================================================== */
 
-        /* =========================================================
-           LOCATIONS
-        ========================================================== */
+        .site-footer {
 
-        .locations-grid {
+            background:
+                #102d31;
+
+            color:
+                rgba(255,255,255,.72);
+
+        }
+
+
+        .footer-main {
+
+            padding-top:
+                75px;
+
+        }
+
+
+        .footer-grid {
 
             display:
                 grid;
 
+            grid-template-columns:
+                1.7fr 1fr 1fr 1.3fr;
+
             gap:
-                18px;
+                50px;
+
+            padding-bottom:
+                55px;
 
         }
 
 
-        .location-card {
-
-            padding:
-                24px;
-
-            background:
-                var(--light);
-
-            border:
-                1px solid var(--border);
-
-            border-radius:
-                17px;
-
-            transition:
-                .25s;
-
-        }
-
-
-        .location-card:hover {
-
-            transform:
-                translateY(-3px);
-
-            box-shadow:
-                0 12px 25px
-                rgba(12,72,65,.08);
-
-        }
-
-
-        .location-card__header {
+        .footer-brand .logo {
 
             display:
                 flex;
@@ -1354,192 +1626,62 @@
                 12px;
 
             margin-bottom:
-                12px;
-
-        }
-
-
-        .location-icon {
-
-            width:
-                40px;
-
-            height:
-                40px;
-
-            display:
-                grid;
-
-            place-items:
-                center;
-
-            background:
-                var(--accent);
-
-            border-radius:
-                12px;
-
-            font-size:
-                19px;
-
-            flex-shrink:
-                0;
-
-        }
-
-
-        .location-card h3 {
-
-            color:
-                var(--ink);
-
-            font-size:
                 20px;
 
         }
 
 
-        .location-card__addr {
-
-            margin-bottom:
-                15px;
-
-            color:
-                var(--text);
-
-        }
-
-
-        .location-info {
-
-            border-top:
-                1px solid var(--border);
-
-            border-bottom:
-                1px solid var(--border);
-
-            padding:
-                12px 0;
-
-            margin-bottom:
-                14px;
-
-        }
-
-
-        .location-info p {
-
-            font-size:
-                14px;
-
-            margin:
-                4px 0;
-
-        }
-
-
-        .location-info a {
-
-            color:
-                var(--primary);
-
-            font-weight:
-                600;
-
-        }
-
-
-        .hours h4 {
-
-            color:
-                var(--ink);
-
-            font-size:
-                15px;
-
-            margin-bottom:
-                5px;
-
-        }
-
-
-        .hours p {
-
-            font-size:
-                14px;
-
-            margin:
-                2px 0;
-
-        }
-
-
-        .hours strong {
-
-            color:
-                var(--primary);
-
-            font-size:
-                14px;
-
-        }
-
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================== */
-
-        .site-footer {
-
-            background:
-                #102f2c;
-
-            color:
-                #bcd0cc;
-
-            padding:
-                70px 0 0;
-
-        }
-
-
-        .footer-grid {
-
-            display:
-                grid;
-
-            grid-template-columns:
-                1.6fr 1fr 1fr 1.2fr;
-
-            gap:
-                45px;
-
-            padding-bottom:
-                50px;
-
-        }
-
-
-        .footer-brand
-        .logo__mark {
+        .footer-brand .logo__img {
 
             width:
-                190px;
+                145px;
+
+            filter:
+                brightness(0) invert(1);
 
         }
 
 
-        .footer-brand > p {
+        .logo__text-primary {
 
-            max-width:
-                340px;
+            color:
+                white;
 
-            margin-top:
-                18px;
+            font-family:
+                "DM Serif Display",
+                Georgia,
+                serif;
 
             font-size:
-                14px;
+                21px;
+
+        }
+
+
+        .logo__text-sub {
+
+            color:
+                var(--secondary);
+
+            font-size:
+                11px;
+
+            letter-spacing:
+                1px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        .footer-brand p {
+
+            max-width:
+                360px;
+
+            font-size:
+                13px;
 
             line-height:
                 1.8;
@@ -1547,33 +1689,22 @@
         }
 
 
-        .footer-tagline {
+        .footer-col h4 {
 
-            margin-top:
-                15px;
+            margin-bottom:
+                18px;
 
             color:
-                #83d0c4;
+                white;
 
             font-size:
                 14px;
 
-            font-weight:
-                700;
+            text-transform:
+                uppercase;
 
-        }
-
-
-        .footer-col h4 {
-
-            color:
-                #fff;
-
-            font-size:
-                15px;
-
-            margin-bottom:
-                15px;
+            letter-spacing:
+                1px;
 
         }
 
@@ -1588,11 +1719,19 @@
 
         .footer-col li {
 
-            margin:
-                8px 0;
+            margin-bottom:
+                10px;
 
             font-size:
-                14px;
+                13px;
+
+        }
+
+
+        .footer-col a {
+
+            transition:
+                var(--transition);
 
         }
 
@@ -1600,7 +1739,7 @@
         .footer-col a:hover {
 
             color:
-                #fff;
+                var(--secondary);
 
         }
 
@@ -1610,17 +1749,17 @@
             display:
                 flex;
 
+            align-items:
+                flex-start;
+
             gap:
                 10px;
 
-            align-items:
-                center;
-
-            margin:
-                12px 0;
+            margin-bottom:
+                15px;
 
             font-size:
-                14px;
+                13px;
 
         }
 
@@ -1633,11 +1772,14 @@
             height:
                 17px;
 
-            flex:
-                none;
+            flex-shrink:
+                0;
 
             color:
-                #83d0c4;
+                var(--secondary);
+
+            margin-top:
+                3px;
 
         }
 
@@ -1645,22 +1787,18 @@
         .footer-contact-item a:hover {
 
             color:
-                #fff;
+                white;
 
         }
 
 
         .footer-bottom {
 
-            border-top:
-                1px solid
-                rgba(255,255,255,.1);
-
-            padding:
-                22px 0;
-
             display:
                 flex;
+
+            align-items:
+                center;
 
             justify-content:
                 space-between;
@@ -1668,11 +1806,14 @@
             gap:
                 20px;
 
-            flex-wrap:
-                wrap;
+            padding:
+                20px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,.10);
 
             font-size:
-                12px;
+                11px;
 
         }
 
@@ -1688,18 +1829,17 @@
         }
 
 
-        .footer-bottom a:hover {
+        .footer-bottom-links a:hover {
 
             color:
-                #fff;
+                white;
 
         }
 
 
-
-        /* =========================================================
-           REVEAL
-        ========================================================== */
+        /* =====================================================
+           REVEAL ANIMATIONS
+        ====================================================== */
 
         .reveal {
 
@@ -1710,7 +1850,8 @@
                 translateY(25px);
 
             transition:
-                .7s ease;
+                opacity .7s ease,
+                transform .7s ease;
 
         }
 
@@ -1721,212 +1862,143 @@
                 1;
 
             transform:
-                none;
+                translateY(0);
 
         }
 
 
+        .stagger-children
+        .testimonial-card {
 
-        /* =========================================================
-           FORM STATUS
-        ========================================================== */
+            opacity:
+                0;
 
-        .form-status {
-
-            display:
-                none;
-
-            margin-bottom:
-                20px;
-
-            padding:
-                13px 15px;
-
-            border-radius:
-                11px;
-
-            font-size:
-                14px;
-
-            font-weight:
-                600;
+            transform:
+                translateY(25px);
 
         }
 
 
-        .form-status.error {
+        .stagger-children.visible
+        .testimonial-card {
 
-            display:
-                block;
+            opacity:
+                1;
 
-            background:
-                #fff0f0;
+            transform:
+                translateY(0);
 
-            color:
-                #a33;
-
-            border:
-                1px solid #f2caca;
-
-        }
-
-
-        .form-status.success {
-
-            display:
-                block;
-
-            background:
-                #eaf8f4;
-
-            color:
-                #096b5e;
-
-            border:
-                1px solid #bfe5dd;
+            transition:
+                opacity .65s ease,
+                transform .65s ease;
 
         }
 
 
+        .stagger-children.visible
+        .testimonial-card:nth-child(1) {
+            transition-delay: .05s;
+        }
 
-        /* =========================================================
+
+        .stagger-children.visible
+        .testimonial-card:nth-child(2) {
+            transition-delay: .15s;
+        }
+
+
+        .stagger-children.visible
+        .testimonial-card:nth-child(3) {
+            transition-delay: .25s;
+        }
+
+
+        /* =====================================================
            TABLET
-        ========================================================== */
+        ====================================================== */
 
-        @media (max-width: 1100px) {
-
-            .nav-inner {
-
-                gap:
-                    18px;
-
-            }
-
-
-            .logo__mark {
-
-                width:
-                    165px;
-
-            }
-
+        @media (max-width: 1050px) {
 
             .nav-links {
-
-                gap:
-                    14px;
-
-                font-size:
-                    13px;
-
+                gap: 0;
             }
 
+            .nav-links > a,
+            .nav-dropdown-toggle {
+                padding-left: 8px;
+                padding-right: 8px;
+                font-size: 13px;
+            }
 
             .nav-cta {
-
-                padding:
-                    11px 14px !important;
-
+                padding-left: 15px !important;
+                padding-right: 15px !important;
             }
 
-
-            .footer-grid {
-
+            .testimonials-grid {
                 grid-template-columns:
-                    1.5fr 1fr 1fr;
-
+                    repeat(2, 1fr);
             }
 
-        }
-
-
-
-        /* =========================================================
-           MOBILE / TABLET NAVIGATION
-        ========================================================== */
-
-        @media (max-width: 900px) {
-
-            .nav-links {
-
-                display:
-                    none;
-
-            }
-
-
-            .hamburger {
-
-                display:
-                    block;
-
-            }
-
-
-            .contact-grid {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .footer-grid {
-
-                grid-template-columns:
-                    1fr 1fr;
-
-            }
-
-        }
-
-
-
-        /* =========================================================
-           MOBILE
-        ========================================================== */
-
-        @media (max-width: 600px) {
-
-            .container {
-
-                width:
-                    calc(100% - 32px);
+            .testimonials-grid
+            .testimonial-card:last-child {
+                grid-column:
+                    1 / -1;
 
                 max-width:
+                    600px;
+
+                width:
                     100%;
 
+                margin:
+                    0 auto;
             }
 
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
 
-            /* TOP BAR */
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ====================================================== */
+
+        @media (max-width: 800px) {
+
+            .container {
+                width:
+                    min(
+                        calc(100% - 30px),
+                        var(--container)
+                    );
+            }
 
             .topbar__inner {
 
                 min-height:
-                    40px;
-
-                justify-content:
-                    center;
+                    auto;
 
                 padding:
-                    7px 0;
+                    9px 0;
+
+                flex-direction:
+                    column;
+
+                gap:
+                    5px;
+
+                text-align:
+                    center;
 
             }
-
 
             .topbar__loc {
-
-                display:
-                    none;
-
-            }
-
-
-            .topbar__phones {
-
-                width:
-                    100%;
+                white-space:
+                    normal;
 
                 justify-content:
                     center;
@@ -1934,151 +2006,141 @@
                 font-size:
                     11px;
 
-                gap:
-                    7px;
-
             }
 
+            .topbar__phones {
+                font-size:
+                    12px;
 
-            /* HEADER */
+            }
 
             .nav-inner {
 
                 min-height:
-                    72px;
+                    76px;
 
             }
 
-
-            .logo__mark {
+            .logo__img {
 
                 width:
-                    145px;
+                    155px;
 
             }
 
+            .nav-links {
+                display:
+                    none;
+            }
 
             .hamburger {
-
-                width:
-                    44px;
-
-                height:
-                    44px;
-
+                display:
+                    block;
             }
-
-
-            /* MOBILE MENU */
-
-            .mobile-menu {
-
-                padding:
-                    10px 16px 22px;
-
-                max-height:
-                    calc(100vh - 72px);
-
-            }
-
-
-            /* HERO */
 
             .page-hero {
 
                 padding:
-                    58px 0 55px;
+                    75px 0 70px;
 
             }
 
+            .testimonial-section {
 
-            .hero__h1 {
+                padding:
+                    75px 0 80px;
+
+            }
+
+            .section-header {
+
+                margin-bottom:
+                    40px;
+
+            }
+
+            .testimonials-grid {
+
+                grid-template-columns:
+                    1fr;
+
+            }
+
+            .testimonials-grid
+            .testimonial-card:last-child {
+
+                grid-column:
+                    auto;
+
+                max-width:
+                    none;
+
+            }
+
+            .testimonial-card {
+
+                padding:
+                    30px 25px;
+
+            }
+
+            .testimonial-card__quote {
+
+                min-height:
+                    auto;
 
                 font-size:
-                    2.25rem;
+                    17px;
 
             }
 
+            .trust-section {
 
-            /* CONTACT */
-
-            .contact-section {
-
-                padding:
-                    50px 0 65px;
+                padding-bottom:
+                    80px;
 
             }
 
+            .trust-box {
 
-            .contact-form-wrap,
-            .locations-wrap {
+                grid-template-columns:
+                    repeat(2, 1fr);
+
+            }
+
+            .trust-item:nth-child(2) {
+
+                border-right:
+                    0;
+
+            }
+
+            .trust-item:nth-child(-n+2) {
+
+                border-bottom:
+                    1px solid var(--border);
+
+            }
+
+            .testimonial-cta {
+
+                margin-bottom:
+                    80px;
 
                 padding:
-                    24px 18px;
+                    50px 25px;
 
                 border-radius:
-                    18px;
-
-            }
-
-
-            .contact-form-wrap h2,
-            .locations-wrap h2 {
-
-                font-size:
-                    28px;
-
-            }
-
-
-            /* LOCATION */
-
-            .location-card {
-
-                padding:
                     20px;
 
             }
 
-
-            .location-card__header {
-
-                align-items:
-                    flex-start;
-
-            }
-
-
-            .location-card h3 {
-
-                font-size:
-                    18px;
-
-            }
-
-
-            /* BUTTON */
-
-            .btn-primary {
-
-                width:
-                    100%;
-
-                min-height:
-                    50px;
-
-            }
-
-
-            /* FOOTER */
-
-            .site-footer {
+            .footer-main {
 
                 padding-top:
-                    55px;
+                    60px;
 
             }
-
 
             .footer-grid {
 
@@ -2086,112 +2148,120 @@
                     1fr;
 
                 gap:
-                    32px;
+                    35px;
 
             }
-
-
-            .footer-brand
-            .logo__mark {
-
-                width:
-                    160px;
-
-            }
-
 
             .footer-bottom {
 
                 flex-direction:
                     column;
 
-                align-items:
-                    flex-start;
-
-                gap:
-                    12px;
+                text-align:
+                    center;
 
             }
-
 
             .footer-bottom-links {
 
                 flex-wrap:
                     wrap;
 
-                gap:
-                    10px 18px;
+                justify-content:
+                    center;
 
             }
 
         }
 
 
+        /* =====================================================
+           SMALL MOBILE
+        ====================================================== */
 
-        /* =========================================================
-           SMALL PHONES
-        ========================================================== */
-
-        @media (max-width: 380px) {
+        @media (max-width: 480px) {
 
             .container {
-
                 width:
                     calc(100% - 24px);
-
             }
-
 
             .topbar__phones {
 
-                font-size:
-                    10px;
+                flex-wrap:
+                    wrap;
+
+                justify-content:
+                    center;
 
             }
 
-
-            .logo__mark {
-
+            .logo__img {
                 width:
-                    130px;
-
+                    140px;
             }
-
-
-            .mobile-menu {
-
-                padding-left:
-                    14px;
-
-                padding-right:
-                    14px;
-
-            }
-
 
             .hero__h1 {
-
                 font-size:
-                    2rem;
+                    2.3rem !important;
+            }
+
+            .testimonial-section {
+                padding:
+                    60px 0 65px;
+            }
+
+            .testimonial-card {
+                padding:
+                    26px 21px;
+            }
+
+            .testimonial-card__quote {
+                font-size:
+                    16px;
+            }
+
+            .trust-box {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .trust-item,
+            .trust-item:nth-child(2) {
+
+                border-right:
+                    0;
+
+                border-bottom:
+                    1px solid var(--border);
 
             }
 
+            .trust-item:last-child {
+                border-bottom:
+                    0;
+            }
 
-            .contact-form-wrap,
-            .locations-wrap {
+            .btn-primary {
+                width:
+                    100%;
 
+                max-width:
+                    330px;
+
+            }
+
+            .testimonial-cta {
                 padding:
-                    20px 15px;
-
+                    45px 20px;
             }
 
         }
 
 
-
-        /* =========================================================
+        /* =====================================================
            REDUCED MOTION
-        ========================================================== */
+        ====================================================== */
 
         @media (prefers-reduced-motion: reduce) {
 
@@ -2202,22 +2272,11 @@
                 scroll-behavior:
                     auto !important;
 
-                animation:
-                    none !important;
-
                 transition:
                     none !important;
 
-            }
-
-
-            .reveal {
-
-                opacity:
-                    1;
-
-                transform:
-                    none;
+                animation:
+                    none !important;
 
             }
 
@@ -2231,58 +2290,223 @@
 <body>
 
 
-    <!-- =========================================================
-         TOP BAR
-    ========================================================== -->
+<!-- =========================================================
+     TOP BAR
+========================================================== -->
 
-    <div class="topbar">
+<div class="topbar">
 
-        <div class="topbar__inner container">
+    <div class="topbar__inner container">
 
-            <div class="topbar__loc">
+        <div class="topbar__loc">
 
-                <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
+            <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
+
+                <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                />
+
+                <circle
+                    cx="12"
+                    cy="10"
+                    r="3"
+                />
+
+            </svg>
+
+            Independent Hearing Clinic Serving
+            Sherwood Park &amp; St. Paul, Alberta
+
+        </div>
+
+
+        <div class="topbar__phones">
+
+            <a href="tel:5874046064">
+                587-404-6064
+            </a>
+
+            <span class="topbar__sep">|</span>
+
+            <a href="tel:18664046064">
+                1-866-404-6064
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     HEADER / NAVIGATION - WITH MOBILE DROPDOWN SUPPORT
+========================================================== -->
+
+<header
+    class="site-header"
+    id="site-header"
+>
+
+    <div class="container">
+
+        <div class="nav-inner">
+
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+
+                <div class="logo__mark">
+
+                    <img
+                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                        alt="Sound Advice Hearing Solutions Logo"
+                        class="logo__img"
+                    >
+
+                </div>
+
+            </a>
+
+
+
+            <nav
+                class="nav-links"
+                aria-label="Primary navigation"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#"
+                        class="nav-dropdown-toggle"
+                        onclick="return false;"
+                    >
+
+                        Services
+
+                        <span>
+                            &#9662;
+                        </span>
+
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="services/hearing-aid-testing.html">
+                            Hearing Assessment
+                        </a>
+
+                        <a href="services/hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+
+                        <a href="services/hearing-repair.html">
+                            Hearing Aid Repair
+                        </a>
+
+                        <a href="services/hearing-protection.html">
+                            Hearing Protection
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="nav-dropdown">
+
+                    <a
+                        href="#"
+                        class="nav-dropdown-toggle"
+                        onclick="return false;"
+                    >
+
+                        Hearing Aid
+
+                        <span>
+                            &#9662;
+                        </span>
+
+                    </a>
+
+
+                    <div class="dropdown-menu">
+
+                        <a href="hearing-Aids/hearing-blogs.html">
+                            Hearing Blogs
+                        </a>
+
+                        <a href="hearing-Aids/hearing-fun-facts.html">
+                            Hearing Fun Facts
+                        </a>
+
+                        <a href="hearing-Aids/hearing-loss-dementia.html">
+                            Hearing Loss &amp; Dementia
+                        </a>
+
+                        <a href="hearing-Aids/hearing-myths-facts.html">
+                            Hearing Myths &amp; Facts
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <a href="testimonials.html">
+                    Testimonials
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+                <a
+                    href="contact.html"
+                    class="nav-cta"
                 >
-
-                    <path
-                        d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"
-                    />
-
-                    <circle
-                        cx="12"
-                        cy="10"
-                        r="3"
-                    />
-
-                </svg>
-
-                Independent Hearing Clinic Serving
-                Sherwood Park &amp; St. Paul Alberta
-
-            </div>
-
-
-            <div class="topbar__phones">
-
-                <a href="tel:5874046064">
-                    587-404-6064
+                    Book Appointment
                 </a>
 
-                <span class="topbar__sep">
-                    |
-                </span>
+            </nav>
 
-                <a href="tel:18664046064">
-                    1-866-404-6064
-                </a>
 
-            </div>
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button
+                class="hamburger"
+                id="hamburger"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
 
         </div>
 
@@ -2290,26 +2514,423 @@
 
 
 
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
+    <!-- MOBILE DRAWER - WITH DROPDOWN SUPPORT -->
 
-    <header
-        class="site-header"
-        id="site-header"
+    <nav
+        class="mobile-menu"
+        id="mobile-menu"
+        aria-label="Mobile navigation"
     >
 
-        <div class="container">
+        <a
+            href="index.html"
+            onclick="closeMenu()"
+        >
+            Home
+        </a>
 
-            <div class="nav-inner">
+        <a
+            href="about.html"
+            onclick="closeMenu()"
+        >
+            About
+        </a>
+
+        <!-- SERVICES DROPDOWN (mobile) -->
+        <div class="mobile-dropdown">
+            <button
+                type="button"
+                class="mobile-dropdown-toggle"
+                aria-expanded="false"
+            >
+                <span>Services</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="mobile-dropdown-menu">
+                <a href="services/hearing-aid-testing.html" onclick="closeMenu()">Hearing Assessment</a>
+                <a href="services/hearing-aid-fitting.html" onclick="closeMenu()">Hearing Aid Fitting</a>
+                <a href="services/hearing-repair.html" onclick="closeMenu()">Hearing Aid Repair</a>
+                <a href="services/hearing-protection.html" onclick="closeMenu()">Hearing Protection</a>
+            </div>
+        </div>
+
+        <!-- HEARING AID DROPDOWN (mobile) -->
+        <div class="mobile-dropdown">
+            <button
+                type="button"
+                class="mobile-dropdown-toggle"
+                aria-expanded="false"
+            >
+                <span>Hearing Aid</span>
+                <span class="arrow">▼</span>
+            </button>
+            <div class="mobile-dropdown-menu">
+                <a href="hearing-Aids/hearing-blogs.html" onclick="closeMenu()">Hearing Blogs</a>
+                <a href="hearing-Aids/hearing-fun-facts.html" onclick="closeMenu()">Hearing Fun Facts</a>
+                <a href="hearing-Aids/hearing-loss-dementia.html" onclick="closeMenu()">Hearing Loss &amp; Dementia</a>
+                <a href="hearing-Aids/hearing-myths-facts.html" onclick="closeMenu()">Hearing Myths &amp; Facts</a>
+            </div>
+        </div>
+
+        <a
+            href="testimonials.html"
+            onclick="closeMenu()"
+        >
+            Testimonials
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+        >
+            Contact
+        </a>
+
+        <a
+            href="contact.html"
+            onclick="closeMenu()"
+            class="mob-cta"
+        >
+            Book Hearing Assessment
+        </a>
+
+    </nav>
+
+</header>
 
 
-                <!-- LOGO -->
+<!-- =========================================================
+     PAGE HERO
+========================================================== -->
 
-                <a
-                    href="index.html"
-                    class="logo"
+<section class="page-hero">
+
+    <div class="container">
+
+        <span class="section-tag">
+            Patient Stories
+        </span>
+
+        <h1 class="hero__h1">
+            What Our Patients Say
+        </h1>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTIMONIALS
+========================================================== -->
+
+<section class="testimonial-section">
+
+    <div class="container">
+
+
+        <div class="section-header reveal">
+
+            <span class="section-tag">
+                Patient Experiences
+            </span>
+
+            <h2>
+                Hearing Better.
+                Living Better.
+            </h2>
+
+            <p>
+                Discover how personalized hearing care can make a
+                meaningful difference in everyday conversations,
+                relationships, and quality of life.
+            </p>
+
+        </div>
+
+
+        <div
+            class="testimonials-grid stagger-children"
+        >
+
+
+            <!-- TESTIMONIAL 1 -->
+
+            <article class="testimonial-card">
+
+                <div
+                    class="testimonial-card__stars"
+                    aria-label="5 out of 5 stars"
                 >
+
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+
+                </div>
+
+
+                <p class="testimonial-card__quote">
+
+                    "The team at Sound Advice took the time
+                    to truly understand my hearing challenges.
+                    I can now hear my grandchildren clearly —
+                    that means the world to me."
+
+                </p>
+
+
+                <div class="testimonial-card__author">
+
+                    <div class="author-avatar">
+                        MR
+                    </div>
+
+                    <div>
+
+                        <div class="author-name">
+                            Margaret R.
+                        </div>
+
+                        <div class="author-loc">
+                            Sherwood Park, AB
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TESTIMONIAL 2 -->
+
+            <article class="testimonial-card">
+
+                <div
+                    class="testimonial-card__stars"
+                    aria-label="5 out of 5 stars"
+                >
+
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+
+                </div>
+
+
+                <p class="testimonial-card__quote">
+
+                    "No pressure, honest advice, and excellent
+                    follow-up care. My hearing aids were
+                    perfectly fitted and adjusted. I highly
+                    recommend Sound Advice to anyone in the area."
+
+                </p>
+
+
+                <div class="testimonial-card__author">
+
+                    <div class="author-avatar">
+                        DT
+                    </div>
+
+                    <div>
+
+                        <div class="author-name">
+                            David T.
+                        </div>
+
+                        <div class="author-loc">
+                            St. Paul, AB
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TESTIMONIAL 3 -->
+
+            <article class="testimonial-card">
+
+                <div
+                    class="testimonial-card__stars"
+                    aria-label="5 out of 5 stars"
+                >
+
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+                    <span class="star">&#9733;</span>
+
+                </div>
+
+
+                <p class="testimonial-card__quote">
+
+                    "After years of struggling with tinnitus,
+                    the personalized support and treatment
+                    plan made a huge difference. I feel more
+                    confident and comfortable in everyday life."
+
+                </p>
+
+
+                <div class="testimonial-card__author">
+
+                    <div class="author-avatar">
+                        LK
+                    </div>
+
+                    <div>
+
+                        <div class="author-name">
+                            Linda K.
+                        </div>
+
+                        <div class="author-loc">
+                            Sherwood Park, AB
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TRUST / STATS
+========================================================== -->
+
+<section class="trust-section">
+
+    <div class="container">
+
+        <div class="trust-box">
+
+
+            <div class="trust-item">
+
+                <span class="trust-number">
+                    20+
+                </span>
+
+                <span class="trust-label">
+                    Years of Experience
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <span class="trust-number">
+                    2
+                </span>
+
+                <span class="trust-label">
+                    Alberta Locations
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <span class="trust-number">
+                    1:1
+                </span>
+
+                <span class="trust-label">
+                    Personalized Care
+                </span>
+
+            </div>
+
+
+            <div class="trust-item">
+
+                <span class="trust-number">
+                    5★
+                </span>
+
+                <span class="trust-label">
+                    Patient-Focused Service
+                </span>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================== -->
+
+<section class="container">
+
+    <div class="testimonial-cta">
+
+        <h2>
+            Ready to Hear More Clearly?
+        </h2>
+
+        <p>
+            Take the next step toward better hearing.
+            Our team is here to answer your questions,
+            assess your hearing needs, and help you find
+            a solution that fits your lifestyle.
+        </p>
+
+        <a
+            href="contact.html"
+            class="btn-primary"
+        >
+            Book Your Hearing Assessment
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================== -->
+
+<footer class="site-footer">
+
+    <div class="container footer-main">
+
+        <div class="footer-grid">
+
+
+            <!-- BRAND -->
+
+            <div class="footer-brand">
+
+                <div class="logo">
 
                     <div class="logo__mark">
 
@@ -2321,1044 +2942,158 @@
 
                     </div>
 
-                </a>
+                </div>
 
 
-
-                <!-- =====================================================
-                     DESKTOP NAV
-                ====================================================== -->
-
-                <nav
-                    class="nav-links"
-                    aria-label="Primary navigation"
-                >
-
-                    <a href="index.html">
-                        Home
-                    </a>
+                <p>
+                    Professional, compassionate hearing care
+                    for communities across Alberta.
+                    Independent and locally owned since 2000.
+                </p>
 
 
-                    <a href="about.html">
-                        About
-                    </a>
-
-
-                    <!-- SERVICES -->
-
-                    <div class="nav-dropdown">
-
-                        <a
-                            href="#"
-                            class="nav-dropdown-toggle"
-                            onclick="return false;"
-                        >
-
-                            Services
-
-                            <span>
-                                &#9662;
-                            </span>
-
-                        </a>
-
-
-                        <div class="dropdown-menu">
-
-                            <a href="services/hearing-aid-testing.html">
-                                Hearing Assessment
-                            </a>
-
-                            <a href="services/hearing-aid-fitting.html">
-                                Hearing Aid Fitting
-                            </a>
-
-                            <a href="services/hearing-repair.html">
-                                Hearing Aid Repair
-                            </a>
-
-                            <a href="services/hearing-protection.html">
-                                Hearing Protection
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-
-                    <!-- HEARING AID -->
-
-                    <div class="nav-dropdown">
-
-                        <a
-                            href="#"
-                            class="nav-dropdown-toggle"
-                            onclick="return false;"
-                        >
-
-                            Hearing Aid
-
-                            <span>
-                                &#9662;
-                            </span>
-
-                        </a>
-
-
-                        <div class="dropdown-menu">
-
-                            <a href="hearing-Aids/hearing-blogs.html">
-                                Hearing blogs
-                            </a>
-
-                            <a href="hearing-Aids/hearing-fun-facts.html">
-                                Hearing Fun Fact
-                            </a>
-
-                            <a href="hearing-Aids/hearing-loss-dementia.html">
-                                Hearing loss dementia
-                            </a>
-
-                            <a href="hearing-Aids/hearing-myths-facts.html">
-                                Hearing myths facts
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <a href="testimonials.html">
-                        Testimonials
-                    </a>
-
-
-                    <a href="contact.html">
-                        Contact
-                    </a>
-
-
-                    <a
-                        href="contact.html"
-                        class="nav-cta"
-                    >
-                        Book Appointment
-                    </a>
-
-                </nav>
-
-
-
-                <!-- =====================================================
-                     HAMBURGER
-                ====================================================== -->
-
-                <button
-                    class="hamburger"
-                    id="hamburger"
-                    type="button"
-                    aria-label="Toggle navigation"
-                    aria-expanded="false"
-                    aria-controls="mobile-menu"
-                >
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </button>
+                <div class="footer-tagline">
+                    Hear Better. Live Better.
+                </div>
 
             </div>
-
-        </div>
-
-
-
-        <!-- =========================================================
-             MOBILE NAVIGATION
-        ========================================================== -->
-
-        <nav
-            class="mobile-menu"
-            id="mobile-menu"
-            aria-label="Mobile navigation"
-        >
-
-
-            <!-- HOME -->
-
-            <a
-                href="index.html"
-                onclick="closeMenu()"
-            >
-                Home
-            </a>
-
-
-            <!-- ABOUT -->
-
-            <a
-                href="about.html"
-                onclick="closeMenu()"
-            >
-                About
-            </a>
 
 
 
             <!-- SERVICES -->
 
-            <div class="mobile-dropdown">
+            <div class="footer-col">
 
-                <button
-                    type="button"
-                    class="mobile-dropdown-toggle"
-                    aria-expanded="false"
-                    onclick="toggleDropdown(this)"
-                >
+                <h4>
+                    Services
+                </h4>
 
-                    <span>
-                        Services
-                    </span>
+                <ul>
 
-                    <span class="mobile-arrow">
-                        ▼
-                    </span>
+                    <li>
+                        <a href="services/hearing-aid-testing.html">
+                            Hearing Testing
+                        </a>
+                    </li>
 
-                </button>
+                    <li>
+                        <a href="services/hearing-aid-fitting.html">
+                            Hearing Aid Fitting
+                        </a>
+                    </li>
 
+                    <li>
+                        <a href="services/hearing-repair.html">
+                            Hearing Aid Repairs
+                        </a>
+                    </li>
 
-                <div class="mobile-submenu">
+                    <li>
+                        <a href="services/hearing-protection.html">
+                            Hearing Protection
+                        </a>
+                    </li>
 
-                    <a
-                        href="services/hearing-aid-testing.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing Assessment
-                    </a>
-
-                    <a
-                        href="services/hearing-aid-fitting.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing Aid Fitting
-                    </a>
-
-                    <a
-                        href="services/hearing-repair.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing Aid Repair
-                    </a>
-
-                    <a
-                        href="services/hearing-protection.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing Protection
-                    </a>
-
-                </div>
+                </ul>
 
             </div>
 
 
 
-            <!-- HEARING AID -->
+            <!-- LOCATIONS -->
 
-            <div class="mobile-dropdown">
+            <div class="footer-col">
 
-                <button
-                    type="button"
-                    class="mobile-dropdown-toggle"
-                    aria-expanded="false"
-                    onclick="toggleDropdown(this)"
-                >
+                <h4>
+                    Locations
+                </h4>
 
-                    <span>
-                        Hearing Aid
-                    </span>
+                <ul>
 
-                    <span class="mobile-arrow">
-                        ▼
-                    </span>
+                    <li>
+                        Sherwood Park, AB
+                    </li>
 
-                </button>
+                    <li>
+                        St. Paul, AB
+                    </li>
 
+                    <li>
+                        Serving Surrounding Communities
+                    </li>
 
-                <div class="mobile-submenu">
-
-                    <a
-                        href="hearing-Aids/hearing-blogs.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing blogs
-                    </a>
-
-                    <a
-                        href="hearing-Aids/hearing-fun-facts.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing Fun Fact
-                    </a>
-
-                    <a
-                        href="hearing-Aids/hearing-loss-dementia.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing loss dementia
-                    </a>
-
-                    <a
-                        href="hearing-Aids/hearing-myths-facts.html"
-                        onclick="closeMenu()"
-                    >
-                        Hearing myths facts
-                    </a>
-
-                </div>
+                </ul>
 
             </div>
 
-
-
-            <!-- TESTIMONIALS -->
-
-            <a
-                href="testimonials.html"
-                onclick="closeMenu()"
-            >
-                Testimonials
-            </a>
 
 
             <!-- CONTACT -->
 
-            <a
-                href="contact.html"
-                onclick="closeMenu()"
-            >
-                Contact / Locations
-            </a>
+            <div class="footer-col">
+
+                <h4>
+                    Contact Us
+                </h4>
 
 
-            <!-- CTA -->
+                <div class="footer-contact-item">
 
-            <a
-                href="contact.html"
-                class="mob-cta"
-                onclick="closeMenu()"
-            >
-                Book Hearing Assessment
-            </a>
-
-        </nav>
-
-    </header>
-
-
-
-    <!-- =========================================================
-         HERO
-    ========================================================== -->
-
-    <section class="page-hero">
-
-        <div class="container">
-
-            <span class="section-tag">
-                Get In Touch
-            </span>
-
-            <h1 class="hero__h1">
-                Book Your Hearing Assessment
-            </h1>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         CONTACT SECTION
-    ========================================================== -->
-
-    <section
-        id="contact"
-        class="contact-section"
-    >
-
-        <div class="container">
-
-            <div class="contact-grid">
-
-
-                <!-- CONTACT FORM -->
-
-                <div class="contact-form-wrap reveal">
-
-                    <h2>
-                        Let's Talk About Your Hearing
-                    </h2>
-
-
-                    <div
-                        id="form-status"
-                        class="form-status"
-                        role="alert"
-                    ></div>
-
-
-                    <form
-                        id="appointment-form"
-                        action="send-mail.php"
-                        method="POST"
-                        novalidate
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
                     >
 
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
 
-                        <!-- Honeypot -->
+                    </svg>
 
-                        <div
-                            style="
-                                position:absolute;
-                                left:-9999px;
-                                width:1px;
-                                height:1px;
-                                overflow:hidden;
-                            "
-                            aria-hidden="true"
-                        >
-
-                            <label for="website">
-                                Website
-                            </label>
-
-                            <input
-                                type="text"
-                                id="website"
-                                name="website"
-                                tabindex="-1"
-                                autocomplete="off"
-                            >
-
-                        </div>
-
-
-
-                        <!-- NAME -->
-
-                        <div class="form-group">
-
-                            <label for="name">
-                                Full Name *
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                class="form-control"
-                                placeholder="Jane Smith"
-                                autocomplete="name"
-                                required
-                            >
-
-                        </div>
-
-
-
-                        <!-- PHONE -->
-
-                        <div class="form-group">
-
-                            <label for="phone">
-                                Phone Number *
-                            </label>
-
-                            <input
-                                type="tel"
-                                id="phone"
-                                name="phone"
-                                class="form-control"
-                                placeholder="587-XXX-XXXX"
-                                autocomplete="tel"
-                                required
-                            >
-
-                        </div>
-
-
-
-                        <!-- EMAIL -->
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Email Address *
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                class="form-control"
-                                placeholder="jane@example.com"
-                                autocomplete="email"
-                                required
-                            >
-
-                        </div>
-
-
-
-                        <!-- LOCATION -->
-
-                        <div class="form-group">
-
-                            <label for="location">
-                                Preferred Location *
-                            </label>
-
-                            <select
-                                id="location"
-                                name="location"
-                                class="form-control"
-                                required
-                            >
-
-                                <option value="">
-                                    -- Select a Clinic --
-                                </option>
-
-                                <option value="Sherwood Park">
-                                    Sherwood Park
-                                </option>
-
-                                <option value="St. Paul">
-                                    St. Paul
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
-
-                        <!-- MESSAGE -->
-
-                        <div class="form-group">
-
-                            <label for="message">
-                                How Can We Help?
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                class="form-control"
-                                placeholder="Tell us about your hearing concerns..."
-                            ></textarea>
-
-                        </div>
-
-
-
-                        <!-- SUBMIT -->
-
-                        <button
-                            id="submit-button"
-                            type="submit"
-                            class="btn-primary"
-                            style="width:100%;"
-                        >
-                            Request Appointment
-                        </button>
-
-                    </form>
-
-                </div>
-
-
-
-                <!-- LOCATIONS -->
-
-                <div class="locations-wrap reveal">
-
-                    <h2>
-                        Our Locations
-                    </h2>
-
-
-                    <div class="locations-grid">
-
-
-                        <!-- SHERWOOD PARK -->
-
-                        <div class="location-card">
-
-                            <div class="location-card__header">
-
-                                <div class="location-icon">
-                                    📍
-                                </div>
-
-                                <h3>
-                                    Sherwood Park, AB
-                                </h3>
-
-                            </div>
-
-
-                            <p class="location-card__addr">
-
-                                134-80 Chippewa Road
-                                <br>
-
-                                Sherwood Park, AB T8A 4W6
-
-                            </p>
-
-
-                            <div class="location-info">
-
-                                <p>
-
-                                    <strong>
-                                        ☎ Call:
-                                    </strong>
-
-                                    <a href="tel:5874046064">
-                                        587-404-6064
-                                    </a>
-
-                                </p>
-
-
-                                <p>
-
-                                    <strong>
-                                        ☎ Toll Free:
-                                    </strong>
-
-                                    <a href="tel:18664046064">
-                                        1-866-404-6064
-                                    </a>
-
-                                </p>
-
-
-                                <p>
-
-                                    <strong>
-                                        Fax:
-                                    </strong>
-
-                                    587-404-6063
-
-                                </p>
-
-                            </div>
-
-
-                            <div class="hours">
-
-                                <h4>
-                                    Hours
-                                </h4>
-
-                                <p>
-                                    Monday, Wednesday,
-                                    Thursday &amp; Friday
-                                </p>
-
-                                <strong>
-                                    9:00 AM – 4:30 PM
-                                </strong>
-
-
-                                <p style="margin-top:12px;">
-                                    Tuesday
-                                </p>
-
-                                <strong>
-                                    9:00 AM – 3:00 PM
-                                </strong>
-
-                            </div>
-
-                        </div>
-
-
-
-                        <!-- ST PAUL -->
-
-                        <div class="location-card">
-
-                            <div class="location-card__header">
-
-                                <div class="location-icon">
-                                    📍
-                                </div>
-
-                                <h3>
-                                    St. Paul, AB
-                                </h3>
-
-                            </div>
-
-
-                            <p class="location-card__addr">
-
-                                Unit #223, 5102-50th Ave
-                                <br>
-
-                                St. Paul, AB T0A 3A4
-
-                            </p>
-
-
-                            <div class="location-info">
-
-                                <p>
-
-                                    <strong>
-                                        ☎ Call:
-                                    </strong>
-
-                                    <a href="tel:5874046064">
-                                        587-404-6064
-                                    </a>
-
-                                </p>
-
-
-                                <p>
-
-                                    <strong>
-                                        ☎ Toll Free:
-                                    </strong>
-
-                                    <a href="tel:18664046064">
-                                        1-866-404-6064
-                                    </a>
-
-                                </p>
-
-
-                                <p>
-
-                                    <strong>
-                                        Fax:
-                                    </strong>
-
-                                    587-404-6063
-
-                                </p>
-
-                            </div>
-
-
-                            <div class="hours">
-
-                                <h4>
-                                    Hours
-                                </h4>
-
-                                <p>
-                                    Tuesday
-                                </p>
-
-                                <strong>
-                                    10:00 AM – 3:00 PM
-                                </strong>
-
-
-                                <p style="margin-top:12px;">
-
-                                    <strong>
-                                        By Appointment Only
-                                    </strong>
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer class="site-footer">
-
-        <div class="container footer-main">
-
-            <div class="footer-grid">
-
-
-                <!-- BRAND -->
-
-                <div class="footer-brand">
-
-                    <div class="logo">
-
-                        <div class="logo__mark">
-
-                            <img
-                                src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-                                alt="Sound Advice Hearing Solutions Logo"
-                                class="logo__img"
-                            >
-
-                        </div>
-
-                    </div>
-
-
-                    <p>
-
-                        Professional, compassionate hearing care
-                        for communities across Alberta.
-                        Independent and locally owned since 2000.
-
-                    </p>
-
-
-                    <div class="footer-tagline">
-
-                        Hear Better. Live Better.
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- SERVICES -->
-
-                <div class="footer-col">
-
-                    <h4>
-                        Services
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            <a href="services/hearing-aid-testing.html">
-                                Hearing Testing
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="services/hearing-aid-fitting.html">
-                                Hearing Aid Fitting
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="services/hearing-repair.html">
-                                Hearing Aid Repairs
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="services/hearing-protection.html">
-                                Hearing Protection
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-
-                <!-- LOCATIONS -->
-
-                <div class="footer-col">
-
-                    <h4>
-                        Locations
-                    </h4>
-
-                    <ul>
-
-                        <li>
-                            Sherwood Park, AB
-                        </li>
-
-                        <li>
-                            St. Paul, AB
-                        </li>
-
-                        <li>
-                            Serving Surrounding Communities
-                        </li>
-
-                    </ul>
-
-                </div>
-
-
-
-                <!-- CONTACT -->
-
-                <div class="footer-col">
-
-                    <h4>
-                        Contact Us
-                    </h4>
-
-
-                    <!-- PHONE -->
-
-                    <div class="footer-contact-item">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2
-                                19.79 19.79 0 0 1-8.63-3.07
-                                A19.5 19.5 0 0 1 4.69 12
-                                19.79 19.79 0 0 1 1.61 3.4
-                                2 2 0 0 1 3.6 1.21h3
-                                a2 2 0 0 1 2 1.72
-                                c.127.96.361 1.903.7 2.81
-                                a2 2 0 0 1-.45 2.11L7.91 8.85
-                                a16 16 0 0 0 6.29 6.29
-                                l.95-.95a2 2 0 0 1 2.11-.45
-                                c.907.339 1.85.573 2.81.7
-                                A2 2 0 0 1 22 16.92z"
-                            />
-
-                        </svg>
-
-
-                        <a href="tel:5874046064">
-                            587-404-6064
-                        </a>
-
-                    </div>
-
-
-
-                    <!-- TOLL FREE -->
-
-                    <div class="footer-contact-item">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path
-                                d="M22 16.92v3a2 2 0 0 1-2.18 2
-                                19.79 19.79 0 0 1-8.63-3.07
-                                A19.5 19.5 0 0 1 4.69 12
-                                19.79 19.79 0 0 1 1.61 3.4
-                                2 2 0 0 1 3.6 1.21h3
-                                a2 2 0 0 1 2 1.72
-                                c.127.96.361 1.903.7 2.81
-                                a2 2 0 0 1-.45 2.11L7.91 8.85
-                                a16 16 0 0 0 6.29 6.29
-                                l.95-.95a2 2 0 0 1 2.11-.45
-                                c.907.339 1.85.573 2.81.7
-                                A2 2 0 0 1 22 16.92z"
-                            />
-
-                        </svg>
-
-
-                        <a href="tel:18664046064">
-                            1-866-404-6064
-                        </a>
-
-                    </div>
-
-
-
-                    <!-- EMAIL -->
-
-                    <div class="footer-contact-item">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path
-                                d="M4 4h16c1.1 0 2 .9 2 2v12
-                                c0 1.1-.9 2-2 2H4
-                                c-1.1 0-2-.9-2-2V6
-                                c0-1.1.9-2 2-2z"
-                            />
-
-                            <polyline
-                                points="22,6 12,13 2,6"
-                            />
-
-                        </svg>
-
-
-                        <a href="mailto:info@soundadvicehearing.ca">
-                            info@soundadvicehearing.ca
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- FOOTER BOTTOM -->
-
-            <div class="footer-bottom">
-
-                <span>
-                    © 2000 Sound Advice Hearing Solutions.
-                    All Rights Reserved.
-                </span>
-
-
-                <div class="footer-bottom-links">
-
-                    <a href="#">
-                        Privacy Policy
+                    <a href="tel:5874046064">
+                        587-404-6064
                     </a>
 
-                    <a href="#">
-                        Terms of Use
+                </div>
+
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                    </svg>
+
+                    <a href="tel:18664046064">
+                        1-866-404-6064
                     </a>
 
-                    <a href="#">
-                        Accessibility
+                </div>
+
+
+                <div class="footer-contact-item">
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
+                        <polyline points="22,6 12,13 2,6"/>
+
+                    </svg>
+
+                    <a href="mailto:info@soundadvicehearing.ca">
+                        info@soundadvicehearing.ca
                     </a>
 
                 </div>
@@ -3367,521 +3102,206 @@
 
         </div>
 
-    </footer>
+
+
+        <!-- FOOTER BOTTOM -->
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2000 Sound Advice Hearing Solutions.
+                All Rights Reserved.
+            </span>
+
+
+            <div class="footer-bottom-links">
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+
+                <a href="#">
+                    Terms of Use
+                </a>
+
+                <a href="#">
+                    Accessibility
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
 
 
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
+<!-- =========================================================
+     JAVASCRIPT - MOBILE MENU WITH DROPDOWN TOGGLES
+========================================================== -->
 
-    <script>
+<script>
 
-        /* =========================================================
-           ELEMENTS
-        ========================================================== */
+    /* =========================================================
+       MOBILE DROPDOWN TOGGLE
+    ========================================================= */
 
-        const hamburger =
-            document.getElementById("hamburger");
-
-        const mobileMenu =
-            document.getElementById("mobile-menu");
-
-        const form =
-            document.getElementById("appointment-form");
-
-        const statusBox =
-            document.getElementById("form-status");
-
-        const submitButton =
-            document.getElementById("submit-button");
-
-        const siteHeader =
-            document.getElementById("site-header");
-
-
-
-        /* =========================================================
-           OPEN MOBILE MENU
-        ========================================================== */
-
-        function openMenu() {
-
-            if (!hamburger || !mobileMenu) {
-                return;
-            }
-
-            mobileMenu.classList.add("open");
-
-            hamburger.classList.add("open");
-
-            hamburger.setAttribute(
-                "aria-expanded",
-                "true"
-            );
-
-            document.body.classList.add(
-                "menu-open"
-            );
-
+    function toggleMobileDropdown(button) {
+        button.classList.toggle('open');
+        var menu = button.nextElementSibling;
+        if (menu) {
+            menu.classList.toggle('open');
         }
+    }
+
+    function initMobileDropdownToggles() {
+        document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                event.preventDefault();
+                toggleMobileDropdown(button);
+            });
+        });
+    }
 
 
+    /* =========================================================
+       MOBILE MENU - OPEN / CLOSE
+    ========================================================= */
 
-        /* =========================================================
-           CLOSE MOBILE MENU
-        ========================================================== */
+    function closeMenu() {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-        function closeMenu() {
+        if (!hamburger || !mobileMenu) return;
 
-            if (!hamburger || !mobileMenu) {
-                return;
+        mobileMenu.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+
+        // Close all dropdowns inside mobile menu
+        document.querySelectorAll('.mobile-dropdown-toggle.open').forEach(function(btn) {
+            btn.classList.remove('open');
+            var menu = btn.nextElementSibling;
+            if (menu) menu.classList.remove('open');
+        });
+    }
+
+    function initMobileMenu() {
+        const hamburger = document.getElementById("hamburger");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (!hamburger || !mobileMenu) return;
+
+        hamburger.addEventListener("click", function () {
+            const isOpen = mobileMenu.classList.toggle("open");
+            hamburger.classList.toggle("open", isOpen);
+            hamburger.setAttribute("aria-expanded", String(isOpen));
+            document.body.style.overflow = isOpen ? "hidden" : "";
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                closeMenu();
             }
+        });
 
-            mobileMenu.classList.remove("open");
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "Escape") {
+                closeMenu();
+            }
+        });
 
-            hamburger.classList.remove("open");
+        window.addEventListener("resize", function () {
+            if (window.innerWidth > 800) {
+                closeMenu();
+            }
+        });
 
-            hamburger.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            document.body.classList.remove(
-                "menu-open"
-            );
+        // Expose closeMenu globally for onclick attributes
+        window.closeMenu = closeMenu;
+    }
 
 
-            /* Close all dropdowns */
+    /* =========================================================
+       HEADER SCROLL
+    ========================================================= */
 
-            document
-                .querySelectorAll(
-                    ".mobile-dropdown"
-                )
-                .forEach(function(dropdown) {
+    const header = document.getElementById("site-header");
 
-                    dropdown.classList.remove(
-                        "open"
-                    );
+    function updateHeader() {
+        if (!header) return;
+        header.classList.toggle("scrolled", window.scrollY > 30);
+    }
 
-                    const button =
-                        dropdown.querySelector(
-                            ".mobile-dropdown-toggle"
-                        );
+    window.addEventListener("scroll", updateHeader, { passive: true });
+    updateHeader();
 
-                    if (button) {
 
-                        button.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
+    /* =========================================================
+       ACTIVE NAV LINK
+    ========================================================= */
 
+    function initActiveNav() {
+        const current = location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link) {
+            const href = link.getAttribute('href');
+            if (href) {
+                const parts = href.split('/');
+                const filename = parts[parts.length - 1] || 'index.html';
+                if (filename === current) {
+                    link.classList.add('active');
+                }
+            }
+        });
+    }
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements = document.querySelectorAll(".reveal, .stagger-children");
+
+    if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+            function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
                     }
-
                 });
-
-        }
-
-
-
-        /* =========================================================
-           HAMBURGER CLICK
-        ========================================================== */
-
-        if (hamburger) {
-
-            hamburger.addEventListener(
-                "click",
-                function(event) {
-
-                    event.stopPropagation();
-
-                    const isOpen =
-                        mobileMenu.classList.contains(
-                            "open"
-                        );
-
-                    if (isOpen) {
-
-                        closeMenu();
-
-                    } else {
-
-                        openMenu();
-
-                    }
-
-                }
-            );
-
-        }
-
-
-
-        /* =========================================================
-           MOBILE DROPDOWN
-        ========================================================== */
-
-        function toggleDropdown(button) {
-
-            const dropdown =
-                button.closest(
-                    ".mobile-dropdown"
-                );
-
-            if (!dropdown) {
-                return;
-            }
-
-
-            const isOpen =
-                dropdown.classList.contains(
-                    "open"
-                );
-
-
-            /* Close other dropdowns */
-
-            document
-                .querySelectorAll(
-                    ".mobile-dropdown"
-                )
-                .forEach(function(item) {
-
-                    item.classList.remove(
-                        "open"
-                    );
-
-                    const otherButton =
-                        item.querySelector(
-                            ".mobile-dropdown-toggle"
-                        );
-
-                    if (otherButton) {
-
-                        otherButton.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
-
-                    }
-
-                });
-
-
-            /* Open clicked dropdown */
-
-            if (!isOpen) {
-
-                dropdown.classList.add(
-                    "open"
-                );
-
-                button.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
-
-            }
-
-        }
-
-
-
-        /* =========================================================
-           ESCAPE KEY
-        ========================================================== */
-
-        document.addEventListener(
-            "keydown",
-            function(event) {
-
-                if (
-                    event.key === "Escape" ||
-                    event.key === "Esc"
-                ) {
-
-                    closeMenu();
-
-                }
-
+            },
+            {
+                threshold: 0.12,
+                rootMargin: "0px 0px -40px 0px"
             }
         );
 
-
-
-        /* =========================================================
-           CLICK OUTSIDE
-        ========================================================== */
-
-        document.addEventListener(
-            "click",
-            function(event) {
-
-                if (
-                    mobileMenu &&
-                    hamburger &&
-                    mobileMenu.classList.contains(
-                        "open"
-                    ) &&
-                    !mobileMenu.contains(
-                        event.target
-                    ) &&
-                    !hamburger.contains(
-                        event.target
-                    )
-                ) {
-
-                    closeMenu();
-
-                }
-
-            }
-        );
-
-
-
-        /* =========================================================
-           RESIZE
-        ========================================================== */
-
-        window.addEventListener(
-            "resize",
-            function() {
-
-                if (
-                    window.innerWidth > 900 &&
-                    mobileMenu &&
-                    mobileMenu.classList.contains(
-                        "open"
-                    )
-                ) {
-
-                    closeMenu();
-
-                }
-
-            }
-        );
-
-
-
-        /* =========================================================
-           HEADER SCROLL
-        ========================================================== */
-
-        window.addEventListener(
-            "scroll",
-            function() {
-
-                if (!siteHeader) {
-                    return;
-                }
-
-                siteHeader.classList.toggle(
-                    "scrolled",
-                    window.scrollY > 30
-                );
-
-            }
-        );
-
-
-
-        /* =========================================================
-           REVEAL ANIMATION
-        ========================================================== */
-
-        const reveals =
-            document.querySelectorAll(
-                ".reveal"
-            );
-
-
-        if (
-            "IntersectionObserver"
-            in window
-        ) {
-
-            const observer =
-                new IntersectionObserver(
-                    function(entries) {
-
-                        entries.forEach(
-                            function(entry) {
-
-                                if (
-                                    entry.isIntersecting
-                                ) {
-
-                                    entry.target.classList.add(
-                                        "visible"
-                                    );
-
-                                    observer.unobserve(
-                                        entry.target
-                                    );
-
-                                }
-
-                            }
-                        );
-
-                    },
-                    {
-                        threshold: 0.12
-                    }
-                );
-
-
-            reveals.forEach(
-                function(element) {
-
-                    observer.observe(
-                        element
-                    );
-
-                }
-            );
-
-        } else {
-
-            reveals.forEach(
-                function(element) {
-
-                    element.classList.add(
-                        "visible"
-                    );
-
-                }
-            );
-
-        }
-
-
-
-        /* =========================================================
-           FORM VALIDATION
-        ========================================================== */
-
-        if (form) {
-
-            form.addEventListener(
-                "submit",
-                function(event) {
-
-                    const name =
-                        document
-                            .getElementById("name")
-                            .value
-                            .trim();
-
-                    const phone =
-                        document
-                            .getElementById("phone")
-                            .value
-                            .trim();
-
-                    const email =
-                        document
-                            .getElementById("email")
-                            .value
-                            .trim();
-
-                    const location =
-                        document
-                            .getElementById("location")
-                            .value;
-
-
-                    if (
-                        !name ||
-                        !phone ||
-                        !email ||
-                        !location
-                    ) {
-
-                        event.preventDefault();
-
-                        statusBox.className =
-                            "form-status error";
-
-                        statusBox.textContent =
-                            "Please complete all required fields before submitting.";
-
-                        statusBox.scrollIntoView({
-                            behavior: "smooth",
-                            block: "center"
-                        });
-
-                        return;
-
-                    }
-
-
-                    submitButton.disabled =
-                        true;
-
-                    submitButton.textContent =
-                        "Sending Request...";
-
-                }
-            );
-
-        }
-
-
-
-        /* =========================================================
-           PHP RESPONSE
-        ========================================================== */
-
-        const params =
-            new URLSearchParams(
-                window.location.search
-            );
-
-
-        if (
-            params.get("status") ===
-            "success"
-        ) {
-
-            statusBox.className =
-                "form-status success";
-
-            statusBox.textContent =
-                "Thank you! Your appointment request has been sent successfully.";
-
-            history.replaceState(
-                {},
-                document.title,
-                window.location.pathname
-            );
-
-        }
-
-
-        else if (
-            params.get("status") ===
-            "error"
-        ) {
-
-            statusBox.className =
-                "form-status error";
-
-            statusBox.textContent =
-                "Sorry, your request could not be sent. Please call us directly at 587-404-6064.";
-
-            history.replaceState(
-                {},
-                document.title,
-                window.location.pathname
-            );
-
-        }
-
-    </script>
+        revealElements.forEach(function (element) {
+            observer.observe(element);
+        });
+    } else {
+        revealElements.forEach(function (element) {
+            element.classList.add("visible");
+        });
+    }
+
+
+    /* =========================================================
+       INITIALIZE
+    ========================================================= */
+
+    document.addEventListener("DOMContentLoaded", function () {
+        initMobileMenu();
+        initMobileDropdownToggles();
+        initActiveNav();
+    });
+
+</script>
 
 
 </body>
