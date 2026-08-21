@@ -19,30 +19,33 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
     <!-- Main Website CSS (contains header & footer styles) -->
     <link
         rel="stylesheet"
         href="../style.css"
     >
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
-
     <style>
         /* ============================================================
            PAGE-SPECIFIC CSS - HEARING PROTECTION PAGE
-           (Header & Footer styles removed - imported from style.css)
         ============================================================ */
 
         /* ============================================================
-           ROOT VARIABLES
+           ROOT VARIABLES - Consistent Teal/Navy Theme
         ============================================================ */
 
         :root {
             --navy: #0b1f3a;
+            --navy-light: #0d2b52;
+            --hero-dark: #0a3d38;
             --teal: #0f9d8a;
+            --teal-dark: #0d8a7a;
+            --teal-light: #5ee8d8;
             --slate-bg: #f5f8fa;
             --text-muted: #4a5b6e;
             --radius-sm: 8px;
@@ -55,6 +58,47 @@
             --transition: .25s ease;
         }
 
+
+        /* ============================================================
+           PAGE HERO - CENTERED
+        ============================================================ */
+
+        .page-hero {
+            padding: 4rem 0 3rem;
+            background: var(--slate-bg, #f5f8fa);
+            text-align: center;
+            border-bottom: 3px solid var(--teal);
+        }
+
+        .page-hero .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .page-hero .section-tag {
+            display: inline-block;
+            margin: 0 auto 0.75rem;
+            color: var(--teal, #0f9d8a);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .page-hero .hero__h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--navy, #0b1f3a);
+            margin: 0 auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+
         /* ============================================================
            CONTAINER
         ============================================================ */
@@ -65,8 +109,9 @@
             padding: 0 2rem;
         }
 
+
         /* ============================================================
-           BUTTONS
+           BUTTONS - Teal Theme
         ============================================================ */
 
         .btn-primary {
@@ -88,7 +133,7 @@
         .btn-primary:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 30px rgba(15, 157, 138, .3);
-            background: #0d8a7a;
+            background: var(--teal-dark);
             color: #fff;
         }
 
@@ -118,8 +163,9 @@
             font-size: 1.1rem;
         }
 
+
         /* ============================================================
-           SECTION TAGS
+           SECTION TAGS - Teal Theme
         ============================================================ */
 
         .section-tag {
@@ -153,12 +199,13 @@
             line-height: 1.8;
         }
 
+
         /* ============================================================
-           PROTECTION HERO
+           PROTECTION HERO - With #0a3d38 gradient
         ============================================================ */
 
         .protection-hero {
-            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
+            background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 55%, var(--hero-dark) 100%);
             color: #fff;
             padding: 5.5rem 0;
             position: relative;
@@ -208,9 +255,9 @@
         .protection-badge span {
             width: 7px;
             height: 7px;
-            background: #5ee8d8;
+            background: var(--teal-light);
             border-radius: 50%;
-            box-shadow: 0 0 10px #5ee8d8;
+            box-shadow: 0 0 10px var(--teal-light);
             flex-shrink: 0;
         }
 
@@ -223,7 +270,7 @@
         }
 
         .protection-hero-content h1 em {
-            color: #5ee8d8;
+            color: var(--teal-light);
             font-style: italic;
         }
 
@@ -241,6 +288,7 @@
             gap: 1rem;
             margin-top: 2rem;
         }
+
 
         /* ============================================================
            PROTECTION VISUAL
@@ -331,6 +379,7 @@
             flex-shrink: 0;
         }
 
+
         /* ============================================================
            RISK SECTION
         ============================================================ */
@@ -378,6 +427,7 @@
             line-height: 1.7;
             margin: 0;
         }
+
 
         /* ============================================================
            WORK SECTION
@@ -444,6 +494,7 @@
             font-size: .82rem;
         }
 
+
         /* ============================================================
            OPTIONS SECTION
         ============================================================ */
@@ -492,6 +543,7 @@
             color: var(--text-muted);
             margin-top: .5rem;
         }
+
 
         /* ============================================================
            TIPS SECTION
@@ -551,13 +603,14 @@
             max-width: 60%;
         }
 
+
         /* ============================================================
-           CTA SECTION
+           CTA SECTION - With #0a3d38 gradient
         ============================================================ */
 
         .protection-cta {
             padding: 5.5rem 0;
-            background: linear-gradient(145deg, var(--navy) 0%, #0d2b52 55%, #0a3d38 100%);
+            background: linear-gradient(145deg, var(--navy) 0%, var(--navy-light) 55%, var(--hero-dark) 100%);
             color: #fff;
             text-align: center;
             position: relative;
@@ -602,54 +655,68 @@
             margin-top: 1.5rem;
         }
 
+
         /* ============================================================
            DETAIL CTA
         ============================================================ */
 
-/* ============================================================
-   DETAIL CTA - FIXED SPACING
-============================================================ */
+        .detail-cta {
+            padding: 5.5rem 0 6rem 0;
+            background: var(--slate-bg);
+        }
 
-.detail-cta {
-    padding: 5.5rem 0 6rem 0;  /* Increased bottom padding */
-    background: var(--slate-bg);
-}
+        .detail-cta .container {
+            text-align: center;
+            max-width: 800px;
+        }
 
-.detail-cta .container {
-    text-align: center;
-    max-width: 800px;
-}
+        .detail-cta h2 {
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            color: var(--navy);
+            font-family: 'DM Serif Display', serif;
+            font-weight: 400;
+            line-height: 1.15;
+            margin: .5rem 0 1rem;
+        }
 
-.detail-cta h2 {
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    color: var(--navy);
-    font-family: 'DM Serif Display', serif;
-    font-weight: 400;
-    line-height: 1.15;
-    margin: .5rem 0 1rem;
-}
-
-.detail-cta p {
-    color: var(--text-muted);
-    font-size: .95rem;
-    line-height: 1.8;
-}
-
-.detail-cta .btn-primary {
-    margin-top: 1.5rem;
-}
-
-/* ============================================================
-   FOOTER SPACING FIX
-=========================================================== */
-
-.site-footer {
-    padding-top: 4rem;  /* Add space at top of footer */
-}
+        .detail-cta p {
+            color: var(--text-muted);
+            font-size: .95rem;
+            line-height: 1.8;
+        }
 
         .detail-cta .btn-primary {
             margin-top: 1.5rem;
         }
+
+
+        /* ============================================================
+           FOOTER - Teal/Navy Theme with #0a3d38
+        ============================================================ */
+
+        .site-footer {
+            background: linear-gradient(135deg, var(--navy), var(--hero-dark));
+            border-top: 3px solid var(--teal);
+            padding-top: 4rem;
+        }
+
+        .footer-brand .footer-tagline {
+            color: var(--teal-light);
+        }
+
+        .footer-col a:hover,
+        .footer-contact-item a:hover {
+            color: var(--teal-light) !important;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--teal-light) !important;
+        }
+
+        .footer-contact-item svg {
+            color: var(--teal-light) !important;
+        }
+
 
         /* ============================================================
            RESPONSIVE - 1024px
@@ -694,6 +761,7 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
 
         /* ============================================================
            RESPONSIVE - 768px
@@ -760,7 +828,12 @@
             .container {
                 padding: 0 1.5rem;
             }
+
+            .page-hero .hero__h1 {
+                font-size: 2.2rem;
+            }
         }
+
 
         /* ============================================================
            RESPONSIVE - 600px
@@ -784,7 +857,12 @@
             .protection-hero {
                 padding: 3.5rem 0;
             }
+
+            .page-hero .hero__h1 {
+                font-size: 2rem;
+            }
         }
+
 
         /* ============================================================
            RESPONSIVE - 480px
@@ -859,7 +937,12 @@
             .container {
                 padding: 0 1rem;
             }
+
+            .page-hero .hero__h1 {
+                font-size: 1.8rem;
+            }
         }
+
 
         /* ============================================================
            ACCESSIBILITY
@@ -867,9 +950,10 @@
 
         a:focus-visible,
         button:focus-visible {
-            outline: 3px solid #5ee8d8;
+            outline: 3px solid var(--teal-light);
             outline-offset: 3px;
         }
+
 
         /* ============================================================
            REDUCE MOTION
@@ -893,1109 +977,52 @@
 <body>
 
 
+    <!-- ============================================================
+         TOP BAR
+    ============================================================ -->
 
-<!-- ============================================================
-     TOP BAR
-============================================================ -->
+    <div class="topbar">
 
-<div class="topbar">
+        <div class="container">
 
-    <div class="container">
+            <div class="topbar__inner">
 
-        <div class="topbar-inner">
-
-            <div class="topbar__loc">
-
-                <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                >
-                    <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
-                    <circle cx="12" cy="10" r="3"/>
-                </svg>
-
-                <span>
-                    Professional Hearing Care
-                </span>
-
-            </div>
-
-
-            <div class="topbar__phones">
-
-                <a href="tel:5874046064">
-                    587-404-6064
-                </a>
-
-                <span class="topbar__sep">
-                    |
-                </span>
-
-                <span>
-                    Appointments Available
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- ============================================================
-     MAIN HEADER
-============================================================ -->
-
-<header
-    class="site-header"
-    id="site-header"
->
-
-    <div class="container">
-
-        <div class="nav-inner">
-
-
-            <a
-                href="../index.html"
-                class="logo"
-            >
-
-                <div class="logo__mark">
-
-                    <img
-                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-                        alt="Sound Advice Hearing Solutions Logo"
-                        class="logo__img"
-                    >
-
-                </div>
-
-            </a>
-
-
-
-            <nav
-                class="nav-links"
-                aria-label="Primary navigation"
-            >
-
-                <a href="../index.html">
-                    Home
-                </a>
-
-                <a href="../about.html">
-                    About
-                </a>
-
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="#"
-                        class="nav-dropdown-toggle"
-                    >
-
-                        Services
-
-                        <span>
-                            &#9662;
-                        </span>
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="../services/hearing-aid-testing.html">
-                            Hearing Assessment
-                        </a>
-
-                        <a href="../services/hearing-aid-fitting.html">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="../services/hearing-repair.html">
-                            Hearing Aid Repair
-                        </a>
-
-                        <a href="../services/hearing-protection.html">
-                            Hearing Protection
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href="#"
-                        class="nav-dropdown-toggle"
-                    >
-
-                        Hearing Aids
-
-                        <span>
-                            &#9662;
-                        </span>
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="../hearing-Aids/hearing-blogs.html">
-                            Hearing Blogs
-                        </a>
-
-                        <a href="../hearing-Aids/hearing-fun-facts.html">
-                            Hearing Fun Facts
-                        </a>
-
-                        <a href="../hearing-Aids/hearing-loss-dementia.html">
-                            Hearing Loss & Dementia
-                        </a>
-
-                        <a href="../hearing-Aids/hearing-myths-facts.html">
-                            Hearing Myths & Facts
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <a href="../testimonials.html">
-                    Testimonials
-                </a>
-
-                <a href="../contact.html">
-                    Contact
-                </a>
-
-                <a
-                    href="../contact.html"
-                    class="nav-cta"
-                >
-                    Book Appointment
-                </a>
-
-            </nav>
-
-
-
-            <!-- MOBILE MENU BUTTON -->
-
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-            >
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
-        </div>
-
-    </div>
-
-
-
-    <!-- MOBILE DRAWER -->
-
-    <div
-        class="mobile-menu"
-        id="mobileMenu"
-    >
-
-        <div class="mobile-menu-inner">
-
-            <button
-                class="mobile-menu-close"
-                id="mobileMenuClose"
-                type="button"
-                aria-label="Close navigation menu"
-            >
-                &times;
-            </button>
-
-            <a href="../index.html">
-                Home
-            </a>
-
-            <a href="../about.html">
-                About
-            </a>
-
-            <a href="../services/hearing-aid-testing.html">
-                Hearing Assessment
-            </a>
-
-            <a href="../services/hearing-aid-fitting.html">
-                Hearing Aid Fitting
-            </a>
-
-            <a href="../services/hearing-repair.html">
-                Hearing Aid Repair
-            </a>
-
-            <a href="../services/hearing-protection.html">
-                Hearing Protection
-            </a>
-
-            <a href="../hearing-Aids/hearing-blogs.html">
-                Hearing Blogs
-            </a>
-
-            <a href="../hearing-Aids/hearing-fun-facts.html">
-                Hearing Fun Facts
-            </a>
-
-            <a href="../testimonials.html">
-                Testimonials
-            </a>
-
-            <a href="../contact.html">
-                Contact
-            </a>
-
-            <a
-                href="../contact.html"
-                class="mob-cta"
-            >
-                Book Appointment
-            </a>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ============================================================
-     HERO SECTION - HEARING PROTECTION
-============================================================ -->
-
-<section class="protection-hero">
-
-    <div class="container protection-hero-grid">
-
-
-        <div class="protection-hero-content">
-
-            <div class="protection-badge">
-
-                <span></span>
-
-                Professional Hearing Protection
-
-            </div>
-
-
-            <h1>
-
-                
-                <em>Protect Your Hearing, For Life.</em>
-
-            </h1>
-
-
-            <p class="protection-hero-text">
-
-                Your hearing is irreplaceable. Our professional
-                hearing protection services provide custom solutions
-                for work, sports, concerts, and everyday life —
-                helping you preserve your hearing for years to come.
-
-            </p>
-
-
-            <div class="protection-hero-actions">
-
-                <a
-                    href="../contact.html"
-                    class="btn-primary"
-                >
-                    Get Hearing Protection
-                </a>
-
-
-                <a
-                    href="#protection-types"
-                    class="btn-ghost"
-                >
-                    Explore Options
-                    <span>↓</span>
-                </a>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- Hero Image -->
-
-        <div class="protection-visual">
-
-            <div class="protection-visual-card">
-
-                <img
-                    src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=900&q=85"
-                    alt="Professional hearing protection solutions"
-                >
-
-
-                <div class="protection-visual-icon">
+                <div class="topbar__loc">
 
                     <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.7"
-                    >
-
-                        <circle cx="12" cy="12" r="10"/>
-                        <path d="M8 12h8"/>
-                        <path d="M12 8v8"/>
-
-                    </svg>
-
-                </div>
-
-
-                <h3>
-                    Custom hearing protection solutions
-                </h3>
-
-
-                <p>
-
-                    From custom-moulded earplugs to specialised
-                    hearing protection for musicians and industrial
-                    use, we create personalised solutions for your
-                    specific needs.
-
-                </p>
-
-
-                <div class="protection-mini-list">
-
-                    <div class="protection-mini-item">
-
-                        <span>✓</span>
-
-                        Custom-moulded earplugs
-
-                    </div>
-
-
-                    <div class="protection-mini-item">
-
-                        <span>✓</span>
-
-                        Musician hearing protection
-
-                    </div>
-
-
-                    <div class="protection-mini-item">
-
-                        <span>✓</span>
-
-                        Industrial noise protection
-
-                    </div>
-
-
-                    <div class="protection-mini-item">
-
-                        <span>✓</span>
-
-                        Swim and water protection
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     RISK SECTION
-============================================================ -->
-
-<section class="protection-risk">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Know Your Exposure
-            </span>
-
-            <h2>
-                Where does loud sound show up?
-            </h2>
-
-            <p>
-                Hearing protection starts with recognizing the
-                environments where your ears are doing too much work.
-            </p>
-
-        </div>
-
-
-        <div class="protection-risk-grid">
-
-            <div class="protection-risk-card">
-
-                <div class="risk-number">
-                    01
-                </div>
-
-                <h3>
-                    At work
-                </h3>
-
-                <p>
-                    Machinery, tools and industrial environments can
-                    create sustained noise exposure that calls for
-                    appropriate workplace protection.
-                </p>
-
-            </div>
-
-
-            <div class="protection-risk-card">
-
-                <div class="risk-number">
-                    02
-                </div>
-
-                <h3>
-                    At events
-                </h3>
-
-                <p>
-                    Concerts, sporting events and entertainment venues
-                    can create intense sound levels, especially when
-                    you are close to speakers.
-                </p>
-
-            </div>
-
-
-            <div class="protection-risk-card">
-
-                <div class="risk-number">
-                    03
-                </div>
-
-                <h3>
-                    At play
-                </h3>
-
-                <p>
-                    Power tools, recreational equipment and other
-                    hobbies can produce loud or sudden sounds that
-                    deserve attention.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     WORK SECTION
-============================================================ -->
-
-<section class="protection-work">
-
-    <div class="container protection-work-grid">
-
-        <div>
-
-            <img
-                class="protection-work-img"
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85"
-                alt="Workplace noise environment"
-            >
-
-        </div>
-
-        <div>
-
-            <span class="section-tag">
-                Everyday Protection
-            </span>
-
-            <h2>
-                Protection should fit the activity.
-            </h2>
-
-            <p>
-                The best approach depends on the environment, the
-                intensity of the sound and how long you are exposed.
-                In some situations, you also need to hear speech,
-                alarms or other important sounds.
-            </p>
-
-
-            <div class="protection-activities">
-
-                <div class="protection-activity">
-
-                    <strong>
-                        Workshops
-                    </strong>
-
-                    <span>
-                        Reduce exposure around tools and machinery.
-                    </span>
-
-                </div>
-
-                <div class="protection-activity">
-
-                    <strong>
-                        Live music
-                    </strong>
-
-                    <span>
-                        Plan ahead for high-volume events.
-                    </span>
-
-                </div>
-
-                <div class="protection-activity">
-
-                    <strong>
-                        Recreation
-                    </strong>
-
-                    <span>
-                        Consider protection around loud equipment.
-                    </span>
-
-                </div>
-
-                <div class="protection-activity">
-
-                    <strong>
-                        Daily habits
-                    </strong>
-
-                    <span>
-                        Lower volume and take breaks when possible.
-                    </span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     OPTIONS SECTION
-============================================================ -->
-
-<section class="protection-options" id="protection-types">
-
-    <div class="container">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Protection Options
-            </span>
-
-            <h2>
-                Think beyond simply blocking sound.
-            </h2>
-
-            <p>
-                Comfort, fit and communication needs can all influence                which protection approach is practical for you.
-            </p>
-
-        </div>
-
-
-        <div class="protection-options-grid">
-
-            <div class="protection-option">
-
-                <h3>
-                    Everyday noise
-                </h3>
-
-                <p>
-                    For situations where sound is elevated and you
-                    want a practical way to reduce exposure while
-                    remaining comfortable.
-                </p>
-
-                <span>
-                    Practical • Comfortable • Repeatable
-                </span>
-
-            </div>
-
-
-            <div class="protection-option">
-
-                <h3>
-                    High-noise activities
-                </h3>
-
-                <p>
-                    For environments where sound can become intense,
-                    planning protection before exposure is especially
-                    important.
-                </p>
-
-                <span>
-                    Work • Events • Recreation
-                </span>
-
-            </div>
-
-
-            <div class="protection-option">
-
-                <h3>
-                    Communication matters
-                </h3>
-
-                <p>
-                    In some settings you need to hear speech and
-                    important environmental sounds. Discuss your
-                    environment before choosing protection.
-                </p>
-
-                <span>
-                    Fit • Awareness • Function
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     TIPS SECTION
-============================================================ -->
-
-<section class="protection-tips">
-
-    <div class="container protection-tips-grid">
-
-        <div>
-
-            <span class="section-tag">
-                Safe Listening Habits
-            </span>
-
-            <h2>
-                Small choices can reduce exposure.
-            </h2>
-
-            <p>
-                Hearing protection is one part of healthy hearing
-                habits. When possible, combine protection with lower
-                volume, shorter exposure and greater distance from
-                loud sources.
-            </p>
-
-        </div>
-
-
-        <div class="protection-tip-list">
-
-            <div class="protection-tip">
-
-                <strong>
-                    Turn it down
-                </strong>
-
-                <span>
-                    Lower volume when you control the sound.
-                </span>
-
-            </div>
-
-            <div class="protection-tip">
-
-                <strong>
-                    Take breaks
-                </strong>
-
-                <span>
-                    Give your ears time away from loud environments.
-                </span>
-
-            </div>
-
-            <div class="protection-tip">
-
-                <strong>
-                    Move away
-                </strong>
-
-                <span>
-                    Distance from a loud source can reduce exposure.
-                </span>
-
-            </div>
-
-            <div class="protection-tip">
-
-                <strong>
-                    Plan ahead
-                </strong>
-
-                <span>
-                    Bring suitable protection before entering a noisy
-                    environment.
-                </span>
-
-            </div>
-
-            <div class="protection-tip">
-
-                <strong>
-                    Protect consistently
-                </strong>
-
-                <span>
-                    Protection is most useful when used correctly
-                    whenever it is needed.
-                </span>
-
-            </div>
-
-            <div class="protection-tip">
-
-                <strong>
-                    Ask questions
-                </strong>
-
-                <span>
-                    Discuss your specific environment if you are
-                    unsure what approach is suitable.
-                </span>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     CTA SECTION
-============================================================ -->
-
-<section class="protection-cta">
-
-    <div class="container">
-
-        <span class="section-tag" style="color:#5ee8d8;">
-            Personalized Advice
-        </span>
-
-        <h2>
-            Not sure what protection you need?
-        </h2>
-
-        <p>
-            Tell us about your workplace, hobby or environment and
-            we can help you understand your hearing-protection options.
-        </p>
-
-        <a href="../contact.html" class="btn-primary">
-            Talk to Sound Advice
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     DETAIL CTA
-============================================================ -->
-
-<section class="detail-cta">
-
-    <div class="container">
-
-        <h2>
-            Let's Talk About Your Hearing
-        </h2>
-
-        <p>
-            Whether you need an assessment, fitting, repair help,
-            or hearing protection, Sound Advice Hearing Solutions
-            is here to help you understand your options.
-        </p>
-
-        <a href="../contact.html" class="btn-primary">
-            Book an Assessment
-        </a>
-
-    </div>
-
-</section>
-
-
-<!-- ============================================================
-     FOOTER
-============================================================ -->
-
-<footer class="site-footer">
-
-    <div class="container footer-main">
-
-        <div class="footer-grid">
-
-
-            <!-- BRAND -->
-
-            <div class="footer-brand">
-
-                <div class="logo">
-
-                    <div class="logo__mark">
-
-                        <img
-                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-                            alt="Sound Advice Hearing Solutions Logo"
-                            class="logo__img"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <p>
-                    Professional, compassionate hearing care
-                    for communities across Alberta.
-                    Independent and locally owned since 2000.
-                </p>
-
-
-                <div class="footer-tagline">
-                    Hear Better. Live Better.
-                </div>
-
-            </div>
-
-
-
-            <!-- SERVICES -->
-
-            <div class="footer-col">
-
-                <h4>
-                    Services
-                </h4>
-
-                <ul>
-
-                    <li>
-                        <a href="../services/hearing-aid-testing.html">
-                            Hearing Testing
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../services/hearing-aid-fitting.html">
-                            Hearing Aid Fitting
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../services/hearing-repair.html">
-                            Hearing Aid Repairs
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="../services/hearing-protection.html">
-                            Hearing Protection
-                        </a>
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- LOCATIONS -->
-
-            <div class="footer-col">
-
-                <h4>
-                    Locations
-                </h4>
-
-                <ul>
-
-                    <li>
-                        Sherwood Park, AB
-                    </li>
-
-                    <li>
-                        St. Paul, AB
-                    </li>
-
-                    <li>
-                        Serving Surrounding Communities
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-
-            <!-- CONTACT -->
-
-            <div class="footer-col">
-
-                <h4>
-                    Contact Us
-                </h4>
-
-
-                <div class="footer-contact-item">
-
-                    <svg
+                        width="15"
+                        height="15"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         stroke-width="2"
                     >
-
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-
+                        <path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 1 1 16 0Z"/>
+                        <circle cx="12" cy="10" r="3"/>
                     </svg>
+
+                    <span>
+                        Professional Hearing Care
+                    </span>
+
+                </div>
+
+
+                <div class="topbar__phones">
 
                     <a href="tel:5874046064">
                         587-404-6064
                     </a>
 
-                </div>
+                    <span class="topbar__sep">
+                        |
+                    </span>
 
-
-                <div class="footer-contact-item">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-
-                    </svg>
-
-                    <a href="tel:18664046064">
-                        1-866-404-6064
-                    </a>
+                    <span>
+                        Appointments Available
+                    </span>
 
                 </div>
-
-
-                <div class="footer-contact-item">
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-
-                        <polyline points="22,6 12,13 2,6"/>
-
-                    </svg>
-
-                    <a href="mailto:info@soundadvicehearing.ca">
-                        info@soundadvicehearing.ca
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-        <!-- FOOTER BOTTOM -->
-
-        <div class="footer-bottom">
-
-            <span>
-                © 2000 Sound Advice Hearing Solutions.
-                All Rights Reserved.
-            </span>
-
-
-            <div class="footer-bottom-links">
-
-                <a href="#">
-                    Privacy Policy
-                </a>
-
-                <a href="#">
-                    Terms of Use
-                </a>
-
-                <a href="#">
-                    Accessibility
-                </a>
 
             </div>
 
@@ -2003,186 +1030,978 @@
 
     </div>
 
-</footer>
+
+    <!-- ============================================================
+         HEADER / NAVIGATION - WITH MOBILE DROPDOWN SUPPORT
+    ============================================================ -->
+
+    <header class="site-header" id="site-header">
+
+        <div class="container">
+
+            <div class="nav-inner">
+
+                <!-- LOGO -->
+                <a href="../index.html" class="logo">
+                    <div class="logo__mark">
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                            alt="Sound Advice Hearing Solutions Logo"
+                            class="logo__img"
+                        >
+                    </div>
+                </a>
+
+                <!-- DESKTOP NAVIGATION -->
+                <nav class="nav-links" aria-label="Primary navigation">
+
+                    <a href="../index.html">Home</a>
+                    <a href="../about.html">About</a>
+
+                    <!-- Services Dropdown -->
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle" onclick="return false;">
+                            Services
+                            <span>&#9662;</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../services/hearing-aid-testing.html">Hearing Assessment</a>
+                            <a href="../services/hearing-aid-fitting.html">Hearing Aid Fitting</a>
+                            <a href="../services/hearing-repair.html">Hearing Aid Repair</a>
+                            <a href="../services/hearing-protection.html">Hearing Protection</a>
+                        </div>
+                    </div>
+
+                    <!-- Hearing Aids Dropdown -->
+                    <div class="nav-dropdown">
+                        <a href="#" class="nav-dropdown-toggle" onclick="return false;">
+                            Hearing Aids
+                            <span>&#9662;</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <a href="../hearing-Aids/hearing-blogs.html">Hearing Blogs</a>
+                            <a href="../hearing-Aids/hearing-fun-facts.html">Hearing Fun Facts</a>
+                            <a href="../hearing-Aids/hearing-loss-dementia.html">Hearing Loss &amp; Dementia</a>
+                            <a href="../hearing-Aids/hearing-myths-facts.html">Hearing Myths &amp; Facts</a>
+                        </div>
+                    </div>
+
+                    <a href="../testimonials.html">Testimonials</a>
+                    <a href="../contact.html">Contact</a>
+                    <a href="../contact.html" class="nav-cta">Book Appointment</a>
+
+                </nav>
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- MOBILE MENU WITH DROPDOWN SUPPORT -->
+        <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+
+            <a href="../index.html" onclick="closeMenu()">Home</a>
+            <a href="../about.html" onclick="closeMenu()">About</a>
+
+            <!-- Services Dropdown (mobile) -->
+            <div class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                    <span>Services</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="mobile-dropdown-menu">
+                    <a href="../services/hearing-aid-testing.html" onclick="closeMenu()">Hearing Assessment</a>
+                    <a href="../services/hearing-aid-fitting.html" onclick="closeMenu()">Hearing Aid Fitting</a>
+                    <a href="../services/hearing-repair.html" onclick="closeMenu()">Hearing Aid Repair</a>
+                    <a href="../services/hearing-protection.html" onclick="closeMenu()">Hearing Protection</a>
+                </div>
+            </div>
+
+            <!-- Hearing Aids Dropdown (mobile) -->
+            <div class="mobile-dropdown">
+                <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                    <span>Hearing Aids</span>
+                    <span class="arrow">▼</span>
+                </button>
+                <div class="mobile-dropdown-menu">
+                    <a href="../hearing-Aids/hearing-blogs.html" onclick="closeMenu()">Hearing Blogs</a>
+                    <a href="../hearing-Aids/hearing-fun-facts.html" onclick="closeMenu()">Hearing Fun Facts</a>
+                    <a href="../hearing-Aids/hearing-loss-dementia.html" onclick="closeMenu()">Hearing Loss &amp; Dementia</a>
+                    <a href="../hearing-Aids/hearing-myths-facts.html" onclick="closeMenu()">Hearing Myths &amp; Facts</a>
+                </div>
+            </div>
+
+            <a href="../testimonials.html" onclick="closeMenu()">Testimonials</a>
+            <a href="../contact.html" onclick="closeMenu()">Contact</a>
+
+            <!-- Mobile CTA -->
+            <a href="../contact.html" class="mob-cta" onclick="closeMenu()">Book Appointment</a>
+
+        </nav>
+
+    </header>
 
 
-<!-- ============================================================
-     JAVASCRIPT
-============================================================ -->
+    <!-- ============================================================
+         MAIN
+    ============================================================ -->
 
-<script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-        const hamburger =
-            document.getElementById("hamburger");
-
-        const mobileMenu =
-            document.getElementById("mobileMenu");
-
-        const mobileMenuClose =
-            document.getElementById("mobileMenuClose");
+    <main>
 
 
-        function openMenu() {
+        <!-- ========================================================
+             PAGE HERO - NOW PROPERLY CENTERED
+        ========================================================= -->
 
-            if (!mobileMenu) {
+        <section class="page-hero">
+
+            <div class="container">
+
+                <span class="section-tag">
+                    Professional Hearing Protection
+                </span>
+
+                <h1 class="hero__h1">
+                    Protect Your Hearing, For Life.
+                </h1>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             RISK SECTION
+        ========================================================= -->
+
+        <section class="protection-risk">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Know Your Exposure
+                    </span>
+
+                    <h2>
+                        Where does loud sound show up?
+                    </h2>
+
+                    <p>
+                        Hearing protection starts with recognizing the
+                        environments where your ears are doing too much work.
+                    </p>
+
+                </div>
+
+
+                <div class="protection-risk-grid">
+
+                    <div class="protection-risk-card">
+
+                        <div class="risk-number">
+                            01
+                        </div>
+
+                        <h3>
+                            At work
+                        </h3>
+
+                        <p>
+                            Machinery, tools and industrial environments can
+                            create sustained noise exposure that calls for
+                            appropriate workplace protection.
+                        </p>
+
+                    </div>
+
+
+                    <div class="protection-risk-card">
+
+                        <div class="risk-number">
+                            02
+                        </div>
+
+                        <h3>
+                            At events
+                        </h3>
+
+                        <p>
+                            Concerts, sporting events and entertainment venues
+                            can create intense sound levels, especially when
+                            you are close to speakers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="protection-risk-card">
+
+                        <div class="risk-number">
+                            03
+                        </div>
+
+                        <h3>
+                            At play
+                        </h3>
+
+                        <p>
+                            Power tools, recreational equipment and other
+                            hobbies can produce loud or sudden sounds that
+                            deserve attention.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             WORK SECTION
+        ========================================================= -->
+
+        <section class="protection-work">
+
+            <div class="container protection-work-grid">
+
+                <div>
+
+                    <img
+                        class="protection-work-img"
+                        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1100&q=85"
+                        alt="Workplace noise environment"
+                    >
+
+                </div>
+
+                <div>
+
+                    <span class="section-tag">
+                        Everyday Protection
+                    </span>
+
+                    <h2>
+                        Protection should fit the activity.
+                    </h2>
+
+                    <p>
+                        The best approach depends on the environment, the
+                        intensity of the sound and how long you are exposed.
+                        In some situations, you also need to hear speech,
+                        alarms or other important sounds.
+                    </p>
+
+
+                    <div class="protection-activities">
+
+                        <div class="protection-activity">
+
+                            <strong>
+                                Workshops
+                            </strong>
+
+                            <span>
+                                Reduce exposure around tools and machinery.
+                            </span>
+
+                        </div>
+
+                        <div class="protection-activity">
+
+                            <strong>
+                                Live music
+                            </strong>
+
+                            <span>
+                                Plan ahead for high-volume events.
+                            </span>
+
+                        </div>
+
+                        <div class="protection-activity">
+
+                            <strong>
+                                Recreation
+                            </strong>
+
+                            <span>
+                                Consider protection around loud equipment.
+                            </span>
+
+                        </div>
+
+                        <div class="protection-activity">
+
+                            <strong>
+                                Daily habits
+                            </strong>
+
+                            <span>
+                                Lower volume and take breaks when possible.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             OPTIONS SECTION
+        ========================================================= -->
+
+        <section class="protection-options" id="protection-types">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Protection Options
+                    </span>
+
+                    <h2>
+                        Think beyond simply blocking sound.
+                    </h2>
+
+                    <p>
+                        Comfort, fit and communication needs can all influence
+                        which protection approach is practical for you.
+                    </p>
+
+                </div>
+
+
+                <div class="protection-options-grid">
+
+                    <div class="protection-option">
+
+                        <h3>
+                            Everyday noise
+                        </h3>
+
+                        <p>
+                            For situations where sound is elevated and you
+                            want a practical way to reduce exposure while
+                            remaining comfortable.
+                        </p>
+
+                        <span>
+                            Practical • Comfortable • Repeatable
+                        </span>
+
+                    </div>
+
+
+                    <div class="protection-option">
+
+                        <h3>
+                            High-noise activities
+                        </h3>
+
+                        <p>
+                            For environments where sound can become intense,
+                            planning protection before exposure is especially
+                            important.
+                        </p>
+
+                        <span>
+                            Work • Events • Recreation
+                        </span>
+
+                    </div>
+
+
+                    <div class="protection-option">
+
+                        <h3>
+                            Communication matters
+                        </h3>
+
+                        <p>
+                            In some settings you need to hear speech and
+                            important environmental sounds. Discuss your
+                            environment before choosing protection.
+                        </p>
+
+                        <span>
+                            Fit • Awareness • Function
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             TIPS SECTION
+        ========================================================= -->
+
+        <section class="protection-tips">
+
+            <div class="container protection-tips-grid">
+
+                <div>
+
+                    <span class="section-tag">
+                        Safe Listening Habits
+                    </span>
+
+                    <h2>
+                        Small choices can reduce exposure.
+                    </h2>
+
+                    <p>
+                        Hearing protection is one part of healthy hearing
+                        habits. When possible, combine protection with lower
+                        volume, shorter exposure and greater distance from
+                        loud sources.
+                    </p>
+
+                </div>
+
+
+                <div class="protection-tip-list">
+
+                    <div class="protection-tip">
+
+                        <strong>
+                            Turn it down
+                        </strong>
+
+                        <span>
+                            Lower volume when you control the sound.
+                        </span>
+
+                    </div>
+
+                    <div class="protection-tip">
+
+                        <strong>
+                            Take breaks
+                        </strong>
+
+                        <span>
+                            Give your ears time away from loud environments.
+                        </span>
+
+                    </div>
+
+                    <div class="protection-tip">
+
+                        <strong>
+                            Move away
+                        </strong>
+
+                        <span>
+                            Distance from a loud source can reduce exposure.
+                        </span>
+
+                    </div>
+
+                    <div class="protection-tip">
+
+                        <strong>
+                            Plan ahead
+                        </strong>
+
+                        <span>
+                            Bring suitable protection before entering a noisy
+                            environment.
+                        </span>
+
+                    </div>
+
+                    <div class="protection-tip">
+
+                        <strong>
+                            Protect consistently
+                        </strong>
+
+                        <span>
+                            Protection is most useful when used correctly
+                            whenever it is needed.
+                        </span>
+
+                    </div>
+
+                    <div class="protection-tip">
+
+                        <strong>
+                            Ask questions
+                        </strong>
+
+                        <span>
+                            Discuss your specific environment if you are
+                            unsure what approach is suitable.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             CTA SECTION
+        ========================================================= -->
+
+        <section class="protection-cta">
+
+            <div class="container">
+
+                <span class="section-tag" style="color:var(--teal-light);">
+                    Personalized Advice
+                </span>
+
+                <h2>
+                    Not sure what protection you need?
+                </h2>
+
+                <p>
+                    Tell us about your workplace, hobby or environment and
+                    we can help you understand your hearing-protection options.
+                </p>
+
+                <a href="../contact.html" class="btn-primary">
+                    Talk to Sound Advice
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             DETAIL CTA
+        ========================================================= -->
+
+        <section class="detail-cta">
+
+            <div class="container">
+
+                <h2>
+                    Let's Talk About Your Hearing
+                </h2>
+
+                <p>
+                    Whether you need an assessment, fitting, repair help,
+                    or hearing protection, Sound Advice Hearing Solutions
+                    is here to help you understand your options.
+                </p>
+
+                <a href="../contact.html" class="btn-primary">
+                    Book an Assessment
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ============================================================
+         FOOTER - Teal/Navy Theme with #0a3d38
+    ============================================================ -->
+
+    <footer class="site-footer">
+
+        <div class="container footer-main">
+
+            <div class="footer-grid">
+
+
+                <!-- BRAND -->
+
+                <div class="footer-brand">
+
+                    <div class="logo">
+
+                        <div class="logo__mark">
+
+                            <img
+                                src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                                alt="Sound Advice Hearing Solutions Logo"
+                                class="logo__img"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        Professional, compassionate hearing care
+                        for communities across Alberta.
+                        Independent and locally owned since 2000.
+                    </p>
+
+
+                    <div class="footer-tagline">
+                        Hear Better. Live Better.
+                    </div>
+
+                </div>
+
+
+
+                <!-- SERVICES -->
+
+                <div class="footer-col">
+
+                    <h4>
+                        Services
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            <a href="../services/hearing-aid-testing.html">
+                                Hearing Testing
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../services/hearing-aid-fitting.html">
+                                Hearing Aid Fitting
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../services/hearing-repair.html">
+                                Hearing Aid Repairs
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="../services/hearing-protection.html">
+                                Hearing Protection
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- LOCATIONS -->
+
+                <div class="footer-col">
+
+                    <h4>
+                        Locations
+                    </h4>
+
+                    <ul>
+
+                        <li>
+                            Sherwood Park, AB
+                        </li>
+
+                        <li>
+                            St. Paul, AB
+                        </li>
+
+                        <li>
+                            Serving Surrounding Communities
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <!-- CONTACT -->
+
+                <div class="footer-col">
+
+                    <h4>
+                        Contact Us
+                    </h4>
+
+
+                    <div class="footer-contact-item">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            width="18"
+                            height="18"
+                        >
+
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                        </svg>
+
+                        <a href="tel:5874046064">
+                            587-404-6064
+                        </a>
+
+                    </div>
+
+
+                    <div class="footer-contact-item">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            width="18"
+                            height="18"
+                        >
+
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.85a16 16 0 0 0 6.29 6.29l.95-.95a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+
+                        </svg>
+
+                        <a href="tel:18664046064">
+                            1-866-404-6064
+                        </a>
+
+                    </div>
+
+
+                    <div class="footer-contact-item">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            width="18"
+                            height="18"
+                        >
+
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+
+                            <polyline points="22,6 12,13 2,6"/>
+
+                        </svg>
+
+                        <a href="mailto:info@soundadvicehearing.ca">
+                            info@soundadvicehearing.ca
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FOOTER BOTTOM -->
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2000 Sound Advice Hearing Solutions.
+                    All Rights Reserved.
+                </span>
+
+
+                <div class="footer-bottom-links">
+
+                    <a href="../privacy.html">
+                        Privacy Policy
+                    </a>
+
+                    <a href="../terms.html">
+                        Terms of Use
+                    </a>
+
+                    <a href="../accessibility.html">
+                        Accessibility
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- ============================================================
+         JAVASCRIPT - MOBILE MENU WITH DROPDOWN TOGGLES
+    ============================================================ -->
+
+    <script>
+
+        /* =========================================================
+           MOBILE DROPDOWN TOGGLE
+        ========================================================= */
+
+        function toggleMobileDropdown(button) {
+            button.classList.toggle('open');
+            var menu = button.nextElementSibling;
+            if (menu) {
+                menu.classList.toggle('open');
+            }
+        }
+
+        function initMobileDropdownToggles() {
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    toggleMobileDropdown(button);
+                });
+            });
+        }
+
+
+        /* =========================================================
+           MOBILE MENU - OPEN / CLOSE
+        ========================================================= */
+
+        function initMobileMenu() {
+            var hamburger = document.getElementById("hamburger");
+            var mobileMenu = document.getElementById("mobile-menu");
+
+            if (!hamburger || !mobileMenu) {
                 return;
             }
 
-            mobileMenu.classList.add("active");
-
-            if (hamburger) {
-                hamburger.classList.add("active");
-
-                hamburger.setAttribute(
-                    "aria-expanded",
-                    "true"
-                );
+            function closeAllDropdowns() {
+                document.querySelectorAll('.mobile-dropdown-toggle.open').forEach(function(btn) {
+                    btn.classList.remove('open');
+                    var menu = btn.nextElementSibling;
+                    if (menu) menu.classList.remove('open');
+                });
             }
 
-            mobileMenu.setAttribute(
-                "aria-hidden",
-                "false"
-            );
-
-            document.body.style.overflow = "hidden";
-        }
-
-
-        function closeMenu() {
-
-            if (!mobileMenu) {
-                return;
+            function closeMenu() {
+                mobileMenu.classList.remove("open");
+                hamburger.classList.remove("open");
+                hamburger.setAttribute("aria-expanded", "false");
+                mobileMenu.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+                closeAllDropdowns();
             }
 
-            mobileMenu.classList.remove("active");
-
-            if (hamburger) {
-                hamburger.classList.remove("active");
-
-                hamburger.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+            function openMenu() {
+                mobileMenu.classList.add("open");
+                hamburger.classList.add("open");
+                hamburger.setAttribute("aria-expanded", "true");
+                mobileMenu.setAttribute("aria-hidden", "false");
+                document.body.style.overflow = "hidden";
             }
 
-            mobileMenu.setAttribute(
-                "aria-hidden",
-                "true"
-            );
-
-            document.body.style.overflow = "";
-        }
-
-
-        if (hamburger) {
-
-            hamburger.addEventListener(
-                "click",
-                function () {
-
-                    if (
-                        mobileMenu &&
-                        mobileMenu.classList.contains("active")
-                    ) {
-
-                        closeMenu();
-
-                    } else {
-
-                        openMenu();
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        if (mobileMenuClose) {
-
-            mobileMenuClose.addEventListener(
-                "click",
-                closeMenu
-            );
-
-        }
-
-
-        if (mobileMenu) {
-
-            mobileMenu.addEventListener(
-                "click",
-                function (event) {
-
-                    if (
-                        event.target === mobileMenu
-                    ) {
-
-                        closeMenu();
-
-                    }
-
-                }
-            );
-
-
-            const mobileLinks =
-                mobileMenu.querySelectorAll(
-                    "a"
-                );
-
-
-            mobileLinks.forEach(
-                function (link) {
-
-                    link.addEventListener(
-                        "click",
-                        closeMenu
-                    );
-
-                }
-            );
-
-        }
-
-
-        document.addEventListener(
-            "keydown",
-            function (event) {
-
-                if (
-                    event.key === "Escape"
-                ) {
-
+            hamburger.addEventListener("click", function() {
+                if (mobileMenu.classList.contains("open")) {
                     closeMenu();
-
+                } else {
+                    openMenu();
                 }
+            });
 
-            }
-        );
-
-
-        window.addEventListener(
-            "resize",
-            function () {
-
-                if (
-                    window.innerWidth > 900
-                ) {
-
+            // Close menu when clicking a link
+            var mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach(function(link) {
+                link.addEventListener("click", function() {
                     closeMenu();
+                });
+            });
 
+            // Close on escape key
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+                    closeMenu();
                 }
+            });
 
-            }
-        );
+            // Close on outside click
+            document.addEventListener("click", function(event) {
+                if (mobileMenu.classList.contains("open")) {
+                    if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                        closeMenu();
+                    }
+                }
+            });
 
-    });
+            // Close on window resize (if screen becomes desktop)
+            window.addEventListener("resize", function() {
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+            });
 
-</script>
+            // Expose closeMenu globally for onclick attributes
+            window.closeMenu = closeMenu;
+        }
+
+
+        /* =========================================================
+           HEADER SCROLL
+        ========================================================= */
+
+        window.addEventListener("scroll", function() {
+            var header = document.getElementById("site-header");
+            if (!header) return;
+            header.classList.toggle("scrolled", window.scrollY > 30);
+        });
+
+
+        /* =========================================================
+           ACTIVE NAV LINK
+        ========================================================= */
+
+        function initActiveNav() {
+            var current = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href) {
+                    var parts = href.split('/');
+                    var filename = parts[parts.length - 1] || 'index.html';
+                    if (filename === current) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
+
+
+        /* =========================================================
+           INITIALIZE
+        ========================================================= */
+
+        document.addEventListener("DOMContentLoaded", function() {
+            initMobileMenu();
+            initMobileDropdownToggles();
+            initActiveNav();
+        });
+
+    </script>
 
 
 </body>

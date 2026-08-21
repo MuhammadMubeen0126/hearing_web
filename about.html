@@ -10,20 +10,15 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <title>
-        About Us | Sound Advice Hearing Solutions
-    </title>
-
     <meta
         name="description"
         content="Learn about Sound Advice Hearing Solutions, an independent, locally owned hearing clinic serving Sherwood Park and St. Paul, Alberta since 2000."
     >
 
+    <title>About Us | Sound Advice Hearing Solutions</title>
+
     <!-- Google Fonts -->
-    <link
-        rel="preconnect"
-        href="https://fonts.googleapis.com"
-    >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <link
         rel="preconnect"
@@ -36,11 +31,6 @@
         rel="stylesheet"
     >
 
-
-    <!-- =========================================================
-         COMPLETE PAGE CSS
-    ========================================================== -->
-
     <style>
 
         /* =========================================================
@@ -48,7 +38,6 @@
         ========================================================== */
 
         :root {
-
             --primary: #0b7068;
             --primary-dark: #07544f;
             --primary-light: #e9f6f4;
@@ -89,7 +78,9 @@
            RESET
         ========================================================== */
 
-        * {
+        *,
+        *::before,
+        *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -100,7 +91,6 @@
         }
 
         body {
-
             margin: 0;
 
             font-family:
@@ -115,6 +105,10 @@
             line-height: 1.7;
 
             overflow-x: hidden;
+        }
+
+        body.menu-open {
+            overflow: hidden;
         }
 
         img {
@@ -143,12 +137,10 @@
         ========================================================== */
 
         .container {
-
-            width:
-                min(
-                    calc(100% - 40px),
-                    var(--container)
-                );
+            width: min(
+                calc(100% - 40px),
+                var(--container)
+            );
 
             margin-left: auto;
             margin-right: auto;
@@ -160,20 +152,18 @@
         ========================================================== */
 
         .topbar {
-
             position: relative;
 
-            z-index: 1001;
+            z-index: 1100;
 
             background: var(--dark);
 
-            color: rgba(255,255,255,0.94);
+            color: rgba(255,255,255,.94);
 
             font-size: 13px;
         }
 
         .topbar__inner {
-
             min-height: 43px;
 
             display: flex;
@@ -186,7 +176,6 @@
         }
 
         .topbar__loc {
-
             display: flex;
 
             align-items: center;
@@ -197,14 +186,12 @@
         }
 
         .topbar__loc svg {
-
             flex-shrink: 0;
 
             color: var(--gold);
         }
 
         .topbar__phones {
-
             display: flex;
 
             align-items: center;
@@ -215,18 +202,14 @@
         }
 
         .topbar__phones a {
-
-            transition:
-                color var(--transition);
+            transition: color var(--transition);
         }
 
         .topbar__phones a:hover {
-
             color: var(--gold);
         }
 
         .topbar__sep {
-
             opacity: .35;
         }
 
@@ -236,18 +219,15 @@
         ========================================================== */
 
         .site-header {
-
             position: sticky;
 
             top: 0;
 
             z-index: 1000;
 
-            background:
-                rgba(255,255,255,.97);
+            background: rgba(255,255,255,.97);
 
-            border-bottom:
-                1px solid transparent;
+            border-bottom: 1px solid transparent;
 
             transition:
                 box-shadow var(--transition),
@@ -256,9 +236,7 @@
         }
 
         .site-header.scrolled {
-
-            background:
-                rgba(255,255,255,.99);
+            background: rgba(255,255,255,.99);
 
             border-color: var(--border);
 
@@ -266,13 +244,7 @@
                 0 8px 30px rgba(20,63,60,.08);
         }
 
-
-        /* =========================================================
-           NAVIGATION
-        ========================================================== */
-
         .nav-inner {
-
             min-height: 88px;
 
             display: flex;
@@ -281,7 +253,7 @@
 
             justify-content: space-between;
 
-            gap: 30px;
+            gap: 25px;
         }
 
 
@@ -290,7 +262,6 @@
         ========================================================== */
 
         .logo {
-
             display: inline-flex;
 
             align-items: center;
@@ -299,7 +270,6 @@
         }
 
         .logo__mark {
-
             display: flex;
 
             align-items: center;
@@ -308,7 +278,6 @@
         }
 
         .logo__img {
-
             width: 178px;
 
             height: auto;
@@ -320,46 +289,15 @@
         }
 
         .logo:hover .logo__img {
-
             transform: scale(1.02);
         }
 
 
-        .logo__text-primary {
-
-            color: var(--dark);
-
-            font-family:
-                "DM Serif Display",
-                serif;
-
-            font-size: 25px;
-
-            line-height: 1;
-        }
-
-        .logo__text-sub {
-
-            margin-top: 4px;
-
-            color: var(--primary);
-
-            font-size: 10px;
-
-            font-weight: 700;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-        }
-
-
         /* =========================================================
-           DESKTOP NAV
+           DESKTOP NAVIGATION
         ========================================================== */
 
         .nav-links {
-
             display: flex;
 
             align-items: center;
@@ -371,15 +309,13 @@
 
         .nav-links > a,
         .nav-dropdown-toggle {
-
             display: flex;
 
             align-items: center;
 
             gap: 7px;
 
-            padding:
-                10px 12px;
+            padding: 10px 12px;
 
             color: var(--dark);
 
@@ -396,25 +332,21 @@
 
         .nav-links > a:hover,
         .nav-dropdown-toggle:hover {
-
             color: var(--primary);
 
-            background:
-                var(--primary-light);
+            background: var(--primary-light);
         }
 
 
         /* =========================================================
-           DROPDOWN
+           DESKTOP DROPDOWN
         ========================================================== */
 
         .nav-dropdown {
-
             position: relative;
         }
 
         .nav-dropdown-toggle span {
-
             font-size: 10px;
 
             transition:
@@ -423,13 +355,10 @@
 
         .nav-dropdown:hover
         .nav-dropdown-toggle span {
-
-            transform:
-                rotate(180deg);
+            transform: rotate(180deg);
         }
 
         .dropdown-menu {
-
             position: absolute;
 
             top: calc(100% + 8px);
@@ -442,21 +371,17 @@
 
             background: var(--white);
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                13px;
+            border-radius: 13px;
 
-            box-shadow:
-                var(--shadow-md);
+            box-shadow: var(--shadow-md);
 
             opacity: 0;
 
             visibility: hidden;
 
-            transform:
-                translateY(8px);
+            transform: translateY(8px);
 
             transition:
                 opacity var(--transition),
@@ -464,23 +389,18 @@
                 transform var(--transition);
         }
 
-        .nav-dropdown:hover
-        .dropdown-menu {
-
+        .nav-dropdown:hover .dropdown-menu {
             opacity: 1;
 
             visibility: visible;
 
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
         .dropdown-menu a {
-
             display: block;
 
-            padding:
-                11px 14px;
+            padding: 11px 14px;
 
             color: var(--text);
 
@@ -497,11 +417,9 @@
         }
 
         .dropdown-menu a:hover {
-
             color: var(--primary);
 
-            background:
-                var(--primary-light);
+            background: var(--primary-light);
 
             padding-left: 19px;
         }
@@ -512,16 +430,13 @@
         ========================================================== */
 
         .nav-links .nav-cta {
-
             margin-left: 7px;
 
-            padding:
-                12px 18px;
+            padding: 12px 18px;
 
             color: var(--white);
 
-            background:
-                var(--primary);
+            background: var(--primary);
 
             border-radius: 8px;
 
@@ -534,14 +449,11 @@
         }
 
         .nav-links .nav-cta:hover {
-
             color: var(--white);
 
-            background:
-                var(--primary-dark);
+            background: var(--primary-dark);
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
         }
 
 
@@ -550,12 +462,13 @@
         ========================================================== */
 
         .hamburger {
-
             display: none;
 
             width: 46px;
 
             height: 46px;
+
+            flex: 0 0 46px;
 
             align-items: center;
 
@@ -567,25 +480,25 @@
 
             cursor: pointer;
 
-            background:
-                var(--white);
+            background: var(--white);
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
             border-radius: 9px;
+
+            appearance: none;
+
+            -webkit-tap-highlight-color: transparent;
         }
 
         .hamburger span {
-
             display: block;
 
             width: 21px;
 
             height: 2px;
 
-            background:
-                var(--dark);
+            background: var(--dark);
 
             border-radius: 10px;
 
@@ -595,19 +508,16 @@
         }
 
         .hamburger.open span:nth-child(1) {
-
             transform:
                 translateY(7px)
                 rotate(45deg);
         }
 
         .hamburger.open span:nth-child(2) {
-
             opacity: 0;
         }
 
         .hamburger.open span:nth-child(3) {
-
             transform:
                 translateY(-7px)
                 rotate(-45deg);
@@ -619,7 +529,6 @@
         ========================================================== */
 
         .mobile-menu {
-
             display: none;
 
             position: absolute;
@@ -630,69 +539,23 @@
 
             top: 100%;
 
-            padding:
-                15px 20px 22px;
+            max-height: calc(100vh - 80px);
 
-            background:
-                rgba(255,255,255,.99);
+            overflow-y: auto;
 
-            border-top:
-                1px solid var(--border);
+            padding: 12px 16px 24px;
+
+            background: rgba(255,255,255,.99);
+
+            border-top: 1px solid var(--border);
 
             box-shadow:
                 0 18px 35px rgba(0,0,0,.10);
-        }
 
-        .mobile-menu a {
-
-            display: block;
-
-            padding:
-                13px 14px;
-
-            color: var(--dark);
-
-            font-size: 15px;
-
-            font-weight: 600;
-
-            border-radius: 8px;
-
-            transition:
-                background var(--transition),
-                color var(--transition);
-        }
-
-        .mobile-menu a:hover {
-
-            color: var(--primary);
-
-            background:
-                var(--primary-light);
-        }
-
-        .mobile-menu .mob-cta {
-
-            margin-top: 10px;
-
-            color: var(--white);
-
-            text-align: center;
-
-            background:
-                var(--primary);
-        }
-
-        .mobile-menu .mob-cta:hover {
-
-            color: var(--white);
-
-            background:
-                var(--primary-dark);
+            overscroll-behavior: contain;
         }
 
         .mobile-menu.open {
-
             display: block;
 
             animation:
@@ -700,16 +563,220 @@
         }
 
         @keyframes mobileMenu {
-
             from {
                 opacity: 0;
+
                 transform: translateY(-8px);
             }
 
             to {
                 opacity: 1;
+
                 transform: translateY(0);
             }
+        }
+
+
+        /* =========================================================
+           MOBILE NORMAL LINKS
+        ========================================================== */
+
+        .mobile-menu > a {
+            display: flex;
+
+            align-items: center;
+
+            min-height: 48px;
+
+            padding: 12px 14px;
+
+            color: var(--dark);
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            border-radius: 9px;
+
+            transition:
+                background var(--transition),
+                color var(--transition);
+        }
+
+        .mobile-menu > a:hover,
+        .mobile-menu > a:active {
+            color: var(--primary);
+
+            background: var(--primary-light);
+        }
+
+
+        /* =========================================================
+           MOBILE DROPDOWN
+        ========================================================== */
+
+        .mobile-dropdown {
+            border-radius: 9px;
+
+            margin-bottom: 2px;
+        }
+
+        .mobile-dropdown-toggle {
+            width: 100%;
+
+            min-height: 48px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+
+            padding: 12px 14px;
+
+            color: var(--dark);
+
+            background: transparent;
+
+            border: 0;
+
+            border-radius: 9px;
+
+            font-size: 15px;
+
+            font-weight: 600;
+
+            text-align: left;
+
+            cursor: pointer;
+        }
+
+        .mobile-dropdown-toggle:hover {
+            color: var(--primary);
+
+            background: var(--primary-light);
+        }
+
+        .mobile-dropdown-arrow {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 28px;
+
+            height: 28px;
+
+            flex: 0 0 28px;
+
+            color: var(--primary);
+
+            background: var(--primary-light);
+
+            border-radius: 50%;
+
+            font-size: 12px;
+
+            transition:
+                transform .3s ease,
+                background .3s ease;
+        }
+
+        .mobile-dropdown.active
+        .mobile-dropdown-arrow {
+            transform: rotate(180deg);
+
+            background: var(--gold-light);
+        }
+
+        .mobile-submenu {
+            display: grid;
+
+            grid-template-rows: 0fr;
+
+            transition:
+                grid-template-rows .3s ease;
+        }
+
+        .mobile-submenu-inner {
+            overflow: hidden;
+        }
+
+        .mobile-dropdown.active
+        .mobile-submenu {
+            grid-template-rows: 1fr;
+        }
+
+        .mobile-submenu a {
+            display: flex;
+
+            align-items: center;
+
+            min-height: 44px;
+
+            margin-left: 14px;
+
+            padding: 9px 14px 9px 18px;
+
+            color: var(--text);
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            border-left:
+                2px solid var(--border);
+
+            border-radius: 0 7px 7px 0;
+
+            transition:
+                color var(--transition),
+                background var(--transition),
+                border-color var(--transition);
+        }
+
+        .mobile-submenu a:hover,
+        .mobile-submenu a:active {
+            color: var(--primary);
+
+            background: var(--primary-light);
+
+            border-left-color: var(--primary);
+        }
+
+
+        /* =========================================================
+           MOBILE CTA
+        ========================================================== */
+
+        .mobile-menu .mob-cta {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            min-height: 50px;
+
+            margin-top: 12px;
+
+            color: var(--white);
+
+            text-align: center;
+
+            background: var(--primary);
+
+            box-shadow:
+                0 8px 22px rgba(11,111,104,.18);
+        }
+
+        .mobile-menu .mob-cta:hover {
+            color: var(--white);
+
+            background: var(--primary-dark);
         }
 
 
@@ -718,7 +785,6 @@
         ========================================================== */
 
         .page-hero {
-
             position: relative;
 
             min-height: 285px;
@@ -727,8 +793,7 @@
 
             align-items: center;
 
-            padding:
-                70px 0;
+            padding: 70px 0;
 
             overflow: hidden;
 
@@ -747,7 +812,6 @@
         }
 
         .page-hero::before {
-
             content: "";
 
             position: absolute;
@@ -767,7 +831,6 @@
         }
 
         .page-hero::after {
-
             content: "";
 
             position: absolute;
@@ -787,7 +850,6 @@
         }
 
         .page-hero .container {
-
             position: relative;
 
             z-index: 2;
@@ -799,7 +861,6 @@
         ========================================================== */
 
         .section-tag {
-
             display: inline-flex;
 
             align-items: center;
@@ -820,21 +881,18 @@
         }
 
         .section-tag::before {
-
             content: "";
 
             width: 27px;
 
             height: 2px;
 
-            background:
-                var(--gold);
+            background: var(--gold);
 
             border-radius: 10px;
         }
 
         .section-subtitle {
-
             display: block;
 
             margin-bottom: 12px;
@@ -856,7 +914,6 @@
         ========================================================== */
 
         .hero__h1 {
-
             position: relative;
 
             margin: 0;
@@ -881,16 +938,12 @@
         ========================================================== */
 
         .team-section {
+            padding: 100px 0;
 
-            padding:
-                100px 0;
-
-            background:
-                var(--white);
+            background: var(--white);
         }
 
         .team-section .container {
-
             display: grid;
 
             grid-template-columns:
@@ -902,19 +955,12 @@
             gap: 80px;
         }
 
-
-        /* =========================================================
-           TEAM IMAGE
-        ========================================================== */
-
         .team-image {
-
             position: relative;
 
             padding: 13px;
 
-            border-radius:
-                var(--radius-lg);
+            border-radius: var(--radius-lg);
 
             background:
                 linear-gradient(
@@ -923,12 +969,10 @@
                     #f8f2e4
                 );
 
-            box-shadow:
-                var(--shadow-md);
+            box-shadow: var(--shadow-md);
         }
 
         .team-image::before {
-
             content: "";
 
             position: absolute;
@@ -943,11 +987,9 @@
 
             border-radius: 50%;
 
-            border:
-                8px solid var(--white);
+            border: 8px solid var(--white);
 
-            background:
-                var(--gold);
+            background: var(--gold);
 
             opacity: .85;
 
@@ -955,7 +997,6 @@
         }
 
         .team-image img {
-
             position: relative;
 
             z-index: 1;
@@ -972,18 +1013,11 @@
                 calc(var(--radius-lg) - 8px);
         }
 
-
-        /* =========================================================
-           TEAM CONTENT
-        ========================================================== */
-
         .team-content {
-
             position: relative;
         }
 
         .team-content h2 {
-
             margin-bottom: 24px;
 
             color: var(--dark);
@@ -1002,7 +1036,6 @@
         }
 
         .team-content p {
-
             margin-bottom: 18px;
 
             color: var(--text);
@@ -1013,19 +1046,12 @@
         }
 
         .team-content strong {
-
             color: var(--dark);
 
             font-weight: 700;
         }
 
-
-        /* =========================================================
-           BLOCKQUOTE
-        ========================================================== */
-
         .team-content blockquote {
-
             position: relative;
 
             margin-top: 30px;
@@ -1046,8 +1072,7 @@
 
             line-height: 1.5;
 
-            background:
-                var(--primary-light);
+            background: var(--primary-light);
 
             border-left:
                 4px solid var(--gold);
@@ -1062,20 +1087,16 @@
         ========================================================== */
 
         .about-section {
-
             position: relative;
 
-            padding:
-                105px 0;
+            padding: 105px 0;
 
-            background:
-                var(--off-white);
+            background: var(--off-white);
 
             overflow: hidden;
         }
 
         .about-section::before {
-
             content: "";
 
             position: absolute;
@@ -1095,7 +1116,6 @@
         }
 
         .about-grid {
-
             position: relative;
 
             z-index: 1;
@@ -1111,32 +1131,21 @@
             gap: 85px;
         }
 
-
-        /* =========================================================
-           ABOUT IMAGE
-        ========================================================== */
-
         .about-img-wrap {
-
             position: relative;
 
             padding: 12px;
 
-            background:
-                var(--white);
+            background: var(--white);
 
-            border:
-                1px solid var(--border);
+            border: 1px solid var(--border);
 
-            border-radius:
-                var(--radius-lg);
+            border-radius: var(--radius-lg);
 
-            box-shadow:
-                var(--shadow-md);
+            box-shadow: var(--shadow-md);
         }
 
         .about-img {
-
             width: 100%;
 
             height: 480px;
@@ -1145,17 +1154,10 @@
 
             object-position: center;
 
-            border-radius:
-                19px;
+            border-radius: 19px;
         }
 
-
-        /* =========================================================
-           YEARS BADGE
-        ========================================================== */
-
         .about-badge {
-
             position: absolute;
 
             right: -28px;
@@ -1180,20 +1182,16 @@
 
             text-align: center;
 
-            background:
-                var(--primary);
+            background: var(--primary);
 
-            border:
-                7px solid var(--white);
+            border: 7px solid var(--white);
 
             border-radius: 50%;
 
-            box-shadow:
-                var(--shadow-md);
+            box-shadow: var(--shadow-md);
         }
 
         .about-badge__num {
-
             font-family:
                 "DM Serif Display",
                 Georgia,
@@ -1205,7 +1203,6 @@
         }
 
         .about-badge__label {
-
             margin-top: 6px;
 
             font-size: 10px;
@@ -1219,13 +1216,7 @@
             line-height: 1.3;
         }
 
-
-        /* =========================================================
-           ABOUT CONTENT
-        ========================================================== */
-
         .about-content h2 {
-
             max-width: 650px;
 
             margin-bottom: 24px;
@@ -1246,7 +1237,6 @@
         }
 
         .about-content p {
-
             max-width: 680px;
 
             margin-bottom: 18px;
@@ -1264,20 +1254,17 @@
         ========================================================== */
 
         .check-list {
-
             display: grid;
 
             grid-template-columns:
                 repeat(2, minmax(0, 1fr));
 
-            gap:
-                17px 25px;
+            gap: 17px 25px;
 
             margin-top: 28px;
         }
 
         .check-item {
-
             display: flex;
 
             align-items: flex-start;
@@ -1294,7 +1281,6 @@
         }
 
         .check-icon {
-
             flex:
                 0 0 24px;
 
@@ -1310,14 +1296,12 @@
 
             color: var(--primary);
 
-            background:
-                var(--primary-light);
+            background: var(--primary-light);
 
             border-radius: 50%;
         }
 
         .check-icon svg {
-
             width: 13px;
 
             height: 13px;
@@ -1329,7 +1313,6 @@
         ========================================================== */
 
         .hero__actions {
-
             display: flex;
 
             align-items: center;
@@ -1340,7 +1323,6 @@
         }
 
         .btn-primary {
-
             display: inline-flex;
 
             align-items: center;
@@ -1349,13 +1331,11 @@
 
             min-height: 50px;
 
-            padding:
-                13px 23px;
+            padding: 13px 23px;
 
             color: var(--white);
 
-            background:
-                var(--primary);
+            background: var(--primary);
 
             border-radius: 8px;
 
@@ -1373,14 +1353,11 @@
         }
 
         .btn-primary:hover {
-
             color: var(--white);
 
-            background:
-                var(--primary-dark);
+            background: var(--primary-dark);
 
-            transform:
-                translateY(-2px);
+            transform: translateY(-2px);
 
             box-shadow:
                 0 12px 30px rgba(11,111,104,.25);
@@ -1392,22 +1369,16 @@
         ========================================================== */
 
         .site-footer {
+            color: rgba(255,255,255,.76);
 
-            color:
-                rgba(255,255,255,.76);
-
-            background:
-                #123534;
+            background: #123534;
         }
 
         .footer-main {
-
-            padding:
-                75px 0 0;
+            padding: 75px 0 0;
         }
 
         .footer-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -1418,27 +1389,18 @@
 
             gap: 55px;
 
-            padding-bottom:
-                55px;
+            padding-bottom: 55px;
         }
 
-
-        /* =========================================================
-           FOOTER BRAND
-        ========================================================== */
-
         .footer-brand .logo {
-
             margin-bottom: 22px;
         }
 
         .footer-brand .logo__img {
-
             width: 165px;
         }
 
         .footer-brand p {
-
             max-width: 350px;
 
             color:
@@ -1449,13 +1411,19 @@
             line-height: 1.8;
         }
 
+        .footer-tagline {
+            margin-top: 18px;
 
-        /* =========================================================
-           FOOTER COLUMNS
-        ========================================================== */
+            color: var(--gold);
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            letter-spacing: .5px;
+        }
 
         .footer-col h4 {
-
             margin-bottom: 21px;
 
             color: var(--white);
@@ -1466,14 +1434,12 @@
         }
 
         .footer-col ul {
-
             display: grid;
 
             gap: 11px;
         }
 
         .footer-col li {
-
             color:
                 rgba(255,255,255,.58);
 
@@ -1483,24 +1449,15 @@
         }
 
         .footer-col a {
-
             transition:
                 color var(--transition);
         }
 
         .footer-col a:hover {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
-
-        /* =========================================================
-           FOOTER CONTACT
-        ========================================================== */
-
         .footer-contact-item {
-
             display: flex;
 
             align-items: flex-start;
@@ -1516,7 +1473,6 @@
         }
 
         .footer-contact-item svg {
-
             width: 18px;
 
             height: 18px;
@@ -1529,7 +1485,6 @@
         }
 
         .footer-contact-item a {
-
             word-break: break-word;
 
             transition:
@@ -1537,18 +1492,10 @@
         }
 
         .footer-contact-item a:hover {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
-
-        /* =========================================================
-           FOOTER BOTTOM
-        ========================================================== */
-
         .footer-bottom {
-
             min-height: 75px;
 
             display: flex;
@@ -1569,7 +1516,6 @@
         }
 
         .footer-bottom-links {
-
             display: flex;
 
             align-items: center;
@@ -1580,28 +1526,23 @@
         }
 
         .footer-bottom-links a {
-
             transition:
                 color var(--transition);
         }
 
         .footer-bottom-links a:hover {
-
-            color:
-                var(--gold);
+            color: var(--gold);
         }
 
 
         /* =========================================================
-           REVEAL ANIMATION
+           REVEAL
         ========================================================== */
 
         .reveal {
-
             opacity: 0;
 
-            transform:
-                translateY(25px);
+            transform: translateY(25px);
 
             transition:
                 opacity .7s ease,
@@ -1609,11 +1550,9 @@
         }
 
         .reveal.visible {
-
             opacity: 1;
 
-            transform:
-                translateY(0);
+            transform: translateY(0);
         }
 
 
@@ -1622,53 +1561,199 @@
         ========================================================== */
 
         :focus-visible {
-
             outline:
                 3px solid rgba(11,111,104,.35);
 
-            outline-offset:
-                3px;
+            outline-offset: 3px;
         }
 
 
         /* =========================================================
-           TABLET
+           TABLET / SMALL LAPTOP
         ========================================================== */
 
         @media (max-width: 1100px) {
 
+            .container {
+                width:
+                    min(
+                        calc(100% - 32px),
+                        var(--container)
+                    );
+            }
+
             .nav-links > a,
             .nav-dropdown-toggle {
-
                 padding:
-                    9px 8px;
+                    9px 7px;
 
-                font-size: 13px;
+                font-size: 12.5px;
             }
 
             .nav-links .nav-cta {
-
                 padding:
-                    11px 14px;
+                    11px 12px;
+
+                margin-left: 4px;
             }
 
             .logo__img {
-
-                width: 155px;
+                width: 150px;
             }
 
             .team-section .container,
             .about-grid {
-
-                gap: 55px;
+                gap: 50px;
             }
 
             .footer-grid {
-
                 grid-template-columns:
                     repeat(2, 1fr);
 
                 gap: 45px;
+            }
+        }
+
+
+        /* =========================================================
+           MOBILE NAVIGATION
+        ========================================================== */
+
+        @media (max-width: 900px) {
+
+            .container {
+                width:
+                    calc(100% - 32px);
+            }
+
+            /* TOP BAR */
+
+            .topbar__inner {
+                min-height: 40px;
+            }
+
+            .topbar__loc {
+                font-size: 11px;
+            }
+
+            .topbar__phones {
+                font-size: 11px;
+
+                gap: 7px;
+            }
+
+
+            /* HEADER */
+
+            .site-header {
+                position: sticky;
+
+                top: 0;
+            }
+
+            .nav-inner {
+                min-height: 76px;
+
+                gap: 15px;
+            }
+
+            .logo {
+                max-width: calc(100% - 65px);
+            }
+
+            .logo__img {
+                width: 150px;
+
+                max-width: 100%;
+
+                height: auto;
+            }
+
+
+            /* HIDE DESKTOP NAV */
+
+            .nav-links {
+                display: none;
+            }
+
+
+            /* SHOW HAMBURGER */
+
+            .hamburger {
+                display: flex;
+            }
+
+
+            /* PAGE HERO */
+
+            .page-hero {
+                min-height: 235px;
+
+                padding: 55px 0;
+            }
+
+
+            /* TEAM */
+
+            .team-section {
+                padding: 70px 0;
+            }
+
+            .team-section .container {
+                grid-template-columns: 1fr;
+
+                gap: 45px;
+            }
+
+            .team-image {
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: 0 auto;
+            }
+
+            .team-image img {
+                height: 500px;
+            }
+
+
+            /* ABOUT */
+
+            .about-section {
+                padding: 75px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+
+                gap: 55px;
+            }
+
+            .about-img-wrap {
+                max-width: 600px;
+
+                width: 100%;
+
+                margin: 0 auto;
+            }
+
+            .about-img {
+                height: 470px;
+            }
+
+            .about-content {
+                max-width: 700px;
+
+                margin: 0 auto;
+            }
+
+
+            /* FOOTER */
+
+            .footer-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
             }
         }
 
@@ -1677,147 +1762,19 @@
            MOBILE
         ========================================================== */
 
-        @media (max-width: 900px) {
-
-            .container {
-
-                width:
-                    min(
-                        calc(100% - 32px),
-                        var(--container)
-                    );
-            }
-
-            .topbar__inner {
-
-                min-height: 40px;
-            }
-
-            .topbar__loc {
-
-                font-size: 11px;
-            }
-
-            .topbar__phones {
-
-                font-size: 11px;
-
-                gap: 7px;
-            }
-
-            .nav-links {
-
-                display: none;
-            }
-
-            .hamburger {
-
-                display: flex;
-            }
-
-            .nav-inner {
-
-                min-height: 78px;
-            }
-
-            .page-hero {
-
-                min-height: 235px;
-
-                padding:
-                    55px 0;
-            }
-
-            .team-section {
-
-                padding:
-                    70px 0;
-            }
-
-            .team-section .container {
-
-                grid-template-columns: 1fr;
-
-                gap: 45px;
-            }
-
-            .team-image {
-
-                max-width: 600px;
-
-                width: 100%;
-
-                margin:
-                    0 auto;
-            }
-
-            .team-image img {
-
-                height: 500px;
-            }
-
-            .about-section {
-
-                padding:
-                    75px 0;
-            }
-
-            .about-grid {
-
-                grid-template-columns: 1fr;
-
-                gap: 55px;
-            }
-
-            .about-img-wrap {
-
-                max-width: 600px;
-
-                width: 100%;
-
-                margin:
-                    0 auto;
-            }
-
-            .about-img {
-
-                height: 470px;
-            }
-
-            .about-content {
-
-                max-width: 700px;
-
-                margin:
-                    0 auto;
-            }
-
-            .footer-grid {
-
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-        }
-
-
-        /* =========================================================
-           SMALL MOBILE
-        ========================================================== */
-
         @media (max-width: 600px) {
 
             .container {
-
-                width:
-                    calc(100% - 28px);
+                width: calc(100% - 28px);
             }
 
-            .topbar__inner {
 
+            /* TOP BAR */
+
+            .topbar__inner {
                 min-height: auto;
 
-                padding:
-                    9px 0;
+                padding: 9px 0;
 
                 flex-direction: column;
 
@@ -1827,88 +1784,112 @@
             }
 
             .topbar__loc {
-
                 width: 100%;
 
                 line-height: 1.4;
             }
 
             .topbar__phones {
-
                 width: 100%;
 
                 justify-content: flex-start;
 
                 font-size: 12px;
+
+                flex-wrap: wrap;
             }
 
-            .nav-inner {
 
-                min-height: 72px;
+            /* HEADER */
+
+            .nav-inner {
+                min-height: 70px;
+
+                gap: 10px;
+            }
+
+            .logo {
+                max-width: calc(100% - 58px);
             }
 
             .logo__img {
+                width: 140px;
 
-                width: 145px;
+                max-width: 100%;
             }
 
             .hamburger {
-
                 width: 43px;
 
                 height: 43px;
+
+                flex-basis: 43px;
             }
 
-            .page-hero {
 
-                min-height: 205px;
+            /* MOBILE MENU */
+
+            .mobile-menu {
+                max-height:
+                    calc(100vh - 70px);
 
                 padding:
-                    45px 0;
+                    10px 14px 22px;
+            }
+
+            .mobile-menu > a,
+            .mobile-dropdown-toggle {
+                min-height: 50px;
+
+                font-size: 15px;
+            }
+
+
+            /* HERO */
+
+            .page-hero {
+                min-height: 205px;
+
+                padding: 45px 0;
             }
 
             .hero__h1 {
-
                 font-size:
                     2rem !important;
+
+                line-height: 1.15;
             }
 
             .section-tag {
-
                 font-size: 11px;
 
                 letter-spacing: 1.3px;
             }
 
-            .team-section {
 
-                padding:
-                    60px 0;
+            /* TEAM */
+
+            .team-section {
+                padding: 60px 0;
             }
 
             .team-section .container {
-
                 gap: 38px;
             }
 
             .team-image {
-
                 padding: 8px;
 
-                border-radius:
-                    20px;
+                border-radius: 20px;
             }
 
             .team-image img {
-
                 height: 390px;
 
-                border-radius:
-                    15px;
+                border-radius: 15px;
             }
 
             .team-image::before {
-
                 width: 55px;
 
                 height: 55px;
@@ -1921,20 +1902,16 @@
             }
 
             .team-content h2 {
-
-                font-size:
-                    2rem;
+                font-size: 2rem;
             }
 
             .team-content p {
-
                 font-size: 15px;
 
                 line-height: 1.75;
             }
 
             .team-content blockquote {
-
                 margin-top: 25px;
 
                 padding:
@@ -1943,35 +1920,30 @@
                 font-size: 18px;
             }
 
-            .about-section {
 
-                padding:
-                    65px 0;
+            /* ABOUT */
+
+            .about-section {
+                padding: 65px 0;
             }
 
             .about-grid {
-
                 gap: 45px;
             }
 
             .about-img-wrap {
-
                 padding: 8px;
 
-                border-radius:
-                    20px;
+                border-radius: 20px;
             }
 
             .about-img {
-
                 height: 380px;
 
-                border-radius:
-                    15px;
+                border-radius: 15px;
             }
 
             .about-badge {
-
                 right: -7px;
 
                 bottom: 20px;
@@ -1984,30 +1956,27 @@
             }
 
             .about-badge__num {
-
                 font-size: 28px;
             }
 
             .about-badge__label {
-
                 font-size: 8px;
             }
 
             .about-content h2 {
-
-                font-size:
-                    2rem;
+                font-size: 2rem;
             }
 
             .about-content p {
-
                 font-size: 15px;
 
                 line-height: 1.75;
             }
 
-            .check-list {
 
+            /* CHECK LIST */
+
+            .check-list {
                 grid-template-columns: 1fr;
 
                 gap: 14px;
@@ -2016,49 +1985,43 @@
             }
 
             .check-item {
-
                 font-size: 14px;
             }
 
-            .hero__actions {
 
+            /* BUTTON */
+
+            .hero__actions {
                 width: 100%;
             }
 
             .btn-primary {
-
                 width: 100%;
 
                 text-align: center;
             }
 
-            .footer-main {
 
-                padding-top:
-                    55px;
+            /* FOOTER */
+
+            .footer-main {
+                padding-top: 55px;
             }
 
             .footer-grid {
-
-                grid-template-columns:
-                    1fr;
+                grid-template-columns: 1fr;
 
                 gap: 35px;
 
-                padding-bottom:
-                    40px;
+                padding-bottom: 40px;
             }
 
             .footer-brand p {
-
-                max-width:
-                    100%;
+                max-width: 100%;
             }
 
             .footer-bottom {
-
-                padding:
-                    20px 0;
+                padding: 20px 0;
 
                 flex-direction: column;
 
@@ -2068,40 +2031,46 @@
             }
 
             .footer-bottom-links {
-
                 gap: 15px;
             }
         }
 
 
         /* =========================================================
-           EXTRA SMALL
+           VERY SMALL PHONES
         ========================================================== */
 
         @media (max-width: 380px) {
 
-            .logo__img {
+            .container {
+                width: calc(100% - 24px);
+            }
 
-                width: 130px;
+            .logo__img {
+                width: 128px;
+            }
+
+            .hamburger {
+                width: 41px;
+
+                height: 41px;
+
+                flex-basis: 41px;
             }
 
             .topbar__phones {
-
                 flex-wrap: wrap;
             }
 
             .team-image img {
-
                 height: 340px;
             }
 
             .about-img {
-
                 height: 330px;
             }
 
             .footer-bottom-links {
-
                 flex-direction: column;
 
                 align-items: flex-start;
@@ -2124,7 +2093,6 @@
             *,
             *::before,
             *::after {
-
                 animation-duration: .01ms !important;
 
                 animation-iteration-count: 1 !important;
@@ -2133,7 +2101,6 @@
             }
 
             .reveal {
-
                 opacity: 1;
 
                 transform: none;
@@ -2148,72 +2115,67 @@
 <body>
 
 
-    <!-- =========================================================
-         TOP BAR
-    ========================================================== -->
+<!-- =========================================================
+     TOP BAR
+========================================================== -->
 
-    <div class="topbar">
+<div class="topbar">
 
-        <div class="topbar__inner container">
+    <div class="topbar__inner container">
 
-            <div class="topbar__loc">
+        <div class="topbar__loc">
 
-                <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                >
+            <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+            >
 
-                    <path
-                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
-                    />
+                <path
+                    d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                />
 
-                    <circle
-                        cx="12"
-                        cy="10"
-                        r="3"
-                    />
+                <circle
+                    cx="12"
+                    cy="10"
+                    r="3"
+                />
 
-                </svg>
+            </svg>
 
-                Independent Hearing Clinic Serving
-                Sherwood Park &amp; St. Paul Alberta
+            Independent Hearing Clinic Serving
+            Sherwood Park &amp; St. Paul Alberta
 
-            </div>
+        </div>
 
 
-            <div class="topbar__phones">
+        <div class="topbar__phones">
 
-                <a href="tel:5874046064">
-                    587-404-6064
-                </a>
+            <a href="tel:5874046064">
+                587-404-6064
+            </a>
 
-                <span class="topbar__sep">
-                    |
-                </span>
+            <span class="topbar__sep">|</span>
 
-                <a href="tel:18664046064">
-                    1-866-404-6064
-                </a>
-
-            </div>
+            <a href="tel:18664046064">
+                1-866-404-6064
+            </a>
 
         </div>
 
     </div>
 
+</div>
 
 
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
+
 <!-- =========================================================
-     HEADER / NAVIGATION
+     HEADER
 ========================================================== -->
 
 <header
@@ -2225,6 +2187,8 @@
 
         <div class="nav-inner">
 
+
+            <!-- LOGO -->
 
             <a
                 href="index.html"
@@ -2245,6 +2209,8 @@
 
 
 
+            <!-- DESKTOP NAV -->
+
             <nav
                 class="nav-links"
                 aria-label="Primary navigation"
@@ -2259,21 +2225,21 @@
                 </a>
 
 
+                <!-- SERVICES -->
+
                 <div class="nav-dropdown">
 
                     <a
-                        href=""
+                        href="#"
                         class="nav-dropdown-toggle"
+                        aria-haspopup="true"
                     >
 
                         Services
 
-                        <span>
-                            &#9662;
-                        </span>
+                        <span>▼</span>
 
                     </a>
-
 
                     <div class="dropdown-menu">
 
@@ -2298,43 +2264,44 @@
                 </div>
 
 
-             <div class="nav-dropdown">
+                <!-- HEARING AIDS -->
+
+                <div class="nav-dropdown">
 
                     <a
-                        href=""
+                        href="#"
                         class="nav-dropdown-toggle"
+                        aria-haspopup="true"
                     >
 
                         Hearing Aid
 
-                        <span>
-                            &#9662;
-                        </span>
+                        <span>▼</span>
 
                     </a>
-
 
                     <div class="dropdown-menu">
 
                         <a href="hearing-Aids/hearing-blogs.html">
-                            Hearing blogs
+                            Hearing Blogs
                         </a>
 
                         <a href="hearing-Aids/hearing-fun-facts.html">
-                            Hearing Fun Fact
+                            Hearing Fun Facts
                         </a>
 
                         <a href="hearing-Aids/hearing-loss-dementia.html">
-                            Hearing loss dementia
+                            Hearing Loss &amp; Dementia
                         </a>
 
                         <a href="hearing-Aids/hearing-myths-facts.html">
-                            Hearing myths facts
+                            Hearing Myths &amp; Facts
                         </a>
 
                     </div>
 
                 </div>
+
 
                 <a href="testimonials.html">
                     Testimonials
@@ -2355,13 +2322,15 @@
 
 
 
-            <!-- MOBILE MENU BUTTON -->
+            <!-- HAMBURGER -->
 
             <button
                 class="hamburger"
                 id="hamburger"
-                aria-label="Toggle navigation"
+                type="button"
+                aria-label="Open navigation menu"
                 aria-expanded="false"
+                aria-controls="mobile-menu"
             >
 
                 <span></span>
@@ -2376,7 +2345,9 @@
 
 
 
-    <!-- MOBILE DRAWER -->
+    <!-- =====================================================
+         MOBILE MENU
+    ====================================================== -->
 
     <nav
         class="mobile-menu"
@@ -2384,52 +2355,173 @@
         aria-label="Mobile navigation"
     >
 
+
+        <!-- HOME -->
+
         <a
             href="index.html"
-            onclick="closeMenu()"
+            data-menu-link
         >
             Home
         </a>
 
+
+        <!-- ABOUT -->
+
         <a
             href="about.html"
-            onclick="closeMenu()"
+            data-menu-link
         >
             About
         </a>
 
-        <a
-            href=""
-            onclick="closeMenu()"
-        >
-            Services
-        </a>
 
-        <a
-            href=""
-            onclick="closeMenu()"
-        >
-            Hearing Aids
-        </a>
+        <!-- SERVICES -->
+
+        <div class="mobile-dropdown">
+
+            <button
+                type="button"
+                class="mobile-dropdown-toggle"
+                aria-expanded="false"
+            >
+
+                <span>
+                    Services
+                </span>
+
+                <span class="mobile-dropdown-arrow">
+                    ▼
+                </span>
+
+            </button>
+
+
+            <div class="mobile-submenu">
+
+                <div class="mobile-submenu-inner">
+
+                    <a
+                        href="services/hearing-aid-testing.html"
+                        data-menu-link
+                    >
+                        Hearing Assessment
+                    </a>
+
+                    <a
+                        href="services/hearing-aid-fitting.html"
+                        data-menu-link
+                    >
+                        Hearing Aid Fitting
+                    </a>
+
+                    <a
+                        href="services/hearing-repair.html"
+                        data-menu-link
+                    >
+                        Hearing Aid Repair
+                    </a>
+
+                    <a
+                        href="services/hearing-protection.html"
+                        data-menu-link
+                    >
+                        Hearing Protection
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- HEARING AIDS -->
+
+        <div class="mobile-dropdown">
+
+            <button
+                type="button"
+                class="mobile-dropdown-toggle"
+                aria-expanded="false"
+            >
+
+                <span>
+                    Hearing Aids
+                </span>
+
+                <span class="mobile-dropdown-arrow">
+                    ▼
+                </span>
+
+            </button>
+
+
+            <div class="mobile-submenu">
+
+                <div class="mobile-submenu-inner">
+
+                    <a
+                        href="hearing-Aids/hearing-blogs.html"
+                        data-menu-link
+                    >
+                        Hearing Blogs
+                    </a>
+
+                    <a
+                        href="hearing-Aids/hearing-fun-facts.html"
+                        data-menu-link
+                    >
+                        Hearing Fun Facts
+                    </a>
+
+                    <a
+                        href="hearing-Aids/hearing-loss-dementia.html"
+                        data-menu-link
+                    >
+                        Hearing Loss &amp; Dementia
+                    </a>
+
+                    <a
+                        href="hearing-Aids/hearing-myths-facts.html"
+                        data-menu-link
+                    >
+                        Hearing Myths &amp; Facts
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TESTIMONIALS -->
 
         <a
             href="testimonials.html"
-            onclick="closeMenu()"
+            data-menu-link
         >
             Testimonials
         </a>
 
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-        >
-            Contact / Locations
-        </a>
+
+        <!-- CONTACT -->
 
         <a
             href="contact.html"
-            onclick="closeMenu()"
+            data-menu-link
+        >
+            Contact
+        </a>
+
+
+        <!-- CTA -->
+
+        <a
+            href="contact.html"
             class="mob-cta"
+            data-menu-link
         >
             Book Hearing Assessment
         </a>
@@ -2440,319 +2532,282 @@
 
 
 
-    <!-- =========================================================
-         PAGE HERO
-    ========================================================== -->
+<!-- =========================================================
+     PAGE HERO
+========================================================== -->
 
-    <section class="page-hero">
+<section class="page-hero">
 
-        <div class="container">
+    <div class="container">
 
-            <span class="section-tag">
-                About Us
-            </span>
+        <span class="section-tag">
+            About Us
+        </span>
 
-            <h1
-                class="hero__h1"
-                style="font-size:2.4rem;"
+        <h1
+            class="hero__h1"
+            style="font-size:2.4rem;"
+        >
+            About Sound Advice Hearing Solutions
+        </h1>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     TEAM
+========================================================== -->
+
+<section class="team-section">
+
+    <div class="container">
+
+
+        <div class="team-image reveal">
+
+            <img
+                src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/d215d4eb-8916-4a2b-b604-0221e75a6996/IMG_6712.jpeg?format=500w"
+                alt="Patty Larouche, RHAP, BC-HIS"
+                loading="lazy"
             >
-                About Sound Advice Hearing Solutions
-            </h1>
 
         </div>
 
-    </section>
+
+        <div class="team-content reveal">
+
+            <span class="section-subtitle">
+                Meet Our Hearing Professional
+            </span>
+
+            <h2>
+                Patty Larouche, RHAP, BC-HIS
+            </h2>
+
+
+            <p>
+                Patty graduated from the Hearing Aid Practitioners
+                program at
+                <strong>MacEwan University</strong>
+                in 2000. She also completed her Audiometric Technician
+                course, allowing her to perform hearing screenings for
+                government employees.
+            </p>
+
+
+            <p>
+                Patty first entered the hearing care industry after
+                witnessing the struggles her grandmother experienced
+                with hearing loss. Seeing how hearing difficulties
+                affected her grandmother inspired Patty to dedicate
+                her career to helping others reconnect with the people
+                and sounds that matter most.
+            </p>
+
+
+            <p>
+                She understands firsthand how hearing loss can lead
+                to frustration and isolation. Her passion is helping
+                individuals manage their hearing loss through
+                compassionate care and personalized hearing solutions.
+            </p>
+
+
+            <blockquote>
+                "Helping people capture the moments and hear the voices
+                they may have been missing."
+            </blockquote>
+
+        </div>
+
+    </div>
+
+</section>
 
 
 
-    <!-- =========================================================
-         TEAM / PATTY SECTION
-    ========================================================== -->
+<!-- =========================================================
+     ABOUT
+========================================================== -->
 
-    <section class="team-section">
+<section
+    id="about"
+    class="about-section"
+>
 
-        <div class="container">
+    <div class="container">
+
+        <div class="about-grid">
 
 
-            <div class="team-image reveal">
+            <div class="about-img-wrap reveal">
 
                 <img
-                    src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/d215d4eb-8916-4a2b-b604-0221e75a6996/IMG_6712.jpeg?format=500w"
-                    alt="Patty Larouche, RHAP, BC-HIS"
+                    src="https://tse1.mm.bing.net/th/id/OIP.-6TkGHMpMnjgsk9XkB1TFgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
+                    alt="Hearing care professional"
+                    class="about-img"
                     loading="lazy"
                 >
+
+                <div class="about-badge">
+
+                    <div class="about-badge__num">
+                        20+
+                    </div>
+
+                    <div class="about-badge__label">
+                        Years of Care
+                    </div>
+
+                </div>
 
             </div>
 
 
-            <div class="team-content reveal">
 
-                <span class="section-subtitle">
-                    Meet Our Hearing Professional
+            <div class="about-content reveal">
+
+                <span class="section-tag">
+                    About Sound Advice
                 </span>
 
+
                 <h2>
-                    Patty Larouche, RHAP, BC-HIS
+                    Compassionate Hearing Care From Experienced Professionals
                 </h2>
 
 
                 <p>
-
-                    Patty graduated from the Hearing Aid Practitioners
-                    program at
-                    <strong>MacEwan University</strong>
-                    in 2000. She also completed her Audiometric Technician
-                    course, allowing her to perform hearing screenings for
-                    government employees.
-
+                    At Sound Advice Hearing Solutions, we believe
+                    hearing care is about more than technology —
+                    it is about helping people reconnect with family,
+                    friends, and everyday conversations.
                 </p>
 
 
                 <p>
-
-                    Patty first entered the hearing care industry after
-                    witnessing the struggles her grandmother experienced
-                    with hearing loss. Seeing how hearing difficulties
-                    affected her grandmother inspired Patty to dedicate
-                    her career to helping others reconnect with the people
-                    and sounds that matter most.
-
+                    Our team provides personalized assessments,
+                    hearing aid solutions, tinnitus support, and
+                    ongoing care designed around each patient's
+                    individual lifestyle and communication goals.
                 </p>
 
 
-                <p>
-
-                    She understands firsthand how hearing loss can lead
-                    to frustration and isolation. Her passion is helping
-                    individuals manage their hearing loss through
-                    compassionate care and personalized hearing solutions.
-
-                </p>
+                <div class="check-list">
 
 
-                <blockquote>
+                    <div class="check-item">
 
-                    "Helping people capture the moments and hear the voices
-                    they may have been missing."
+                        <div class="check-icon">
 
-                </blockquote>
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
 
-            </div>
+                                <polyline points="20 6 9 17 4 12"/>
 
-        </div>
+                            </svg>
 
-    </section>
-
-
-
-    <!-- =========================================================
-         ABOUT SECTION
-    ========================================================== -->
-
-    <section
-        id="about"
-        class="about-section"
-    >
-
-        <div class="container">
-
-            <div class="about-grid">
-
-
-                <!-- IMAGE -->
-
-                <div class="about-img-wrap reveal">
-
-                    <img
-                        src="https://tse1.mm.bing.net/th/id/OIP.-6TkGHMpMnjgsk9XkB1TFgHaHa?r=0&rs=1&pid=ImgDetMain&o=7&rm=3"
-                        alt="Hearing care professional"
-                        class="about-img"
-                        loading="lazy"
-                    >
-
-
-                    <div class="about-badge">
-
-                        <div class="about-badge__num">
-                            20+
                         </div>
 
-                        <div class="about-badge__label">
-                            Years of Care
+                        Independent locally owned hearing clinic
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <div class="check-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+
+                                <polyline points="20 6 9 17 4 12"/>
+
+                            </svg>
+
                         </div>
+
+                        Personalized recommendations without sales pressure
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <div class="check-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+
+                                <polyline points="20 6 9 17 4 12"/>
+
+                            </svg>
+
+                        </div>
+
+                        Long-term patient support and follow-up care
+
+                    </div>
+
+
+                    <div class="check-item">
+
+                        <div class="check-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="3"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+
+                                <polyline points="20 6 9 17 4 12"/>
+
+                            </svg>
+
+                        </div>
+
+                        RHAP registered and BC-HIS certified practitioners
 
                     </div>
 
                 </div>
 
 
+                <div
+                    class="hero__actions"
+                    style="margin-top:24px;"
+                >
 
-                <!-- CONTENT -->
-
-                <div class="about-content reveal">
-
-                    <span class="section-tag">
-                        About Sound Advice
-                    </span>
-
-
-                    <h2>
-                        Compassionate Hearing Care From Experienced Professionals
-                    </h2>
-
-
-                    <p>
-
-                        At Sound Advice Hearing Solutions, we believe
-                        hearing care is about more than technology —
-                        it is about helping people reconnect with family,
-                        friends, and everyday conversations.
-
-                    </p>
-
-
-                    <p>
-
-                        Our team provides personalized assessments,
-                        hearing aid solutions, tinnitus support, and
-                        ongoing care designed around each patient's
-                        individual lifestyle and communication goals.
-
-                    </p>
-
-
-
-                    <!-- CHECK LIST -->
-
-                    <div class="check-list">
-
-
-                        <div class="check-item">
-
-                            <div class="check-icon">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-
-                                    <polyline
-                                        points="20 6 9 17 4 12"
-                                    />
-
-                                </svg>
-
-                            </div>
-
-                            Independent locally owned hearing clinic
-
-                        </div>
-
-
-
-                        <div class="check-item">
-
-                            <div class="check-icon">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-
-                                    <polyline
-                                        points="20 6 9 17 4 12"
-                                    />
-
-                                </svg>
-
-                            </div>
-
-                            Personalized recommendations without sales pressure
-
-                        </div>
-
-
-
-                        <div class="check-item">
-
-                            <div class="check-icon">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-
-                                    <polyline
-                                        points="20 6 9 17 4 12"
-                                    />
-
-                                </svg>
-
-                            </div>
-
-                            Long-term patient support and follow-up care
-
-                        </div>
-
-
-
-                        <div class="check-item">
-
-                            <div class="check-icon">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="3"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                >
-
-                                    <polyline
-                                        points="20 6 9 17 4 12"
-                                    />
-
-                                </svg>
-
-                            </div>
-
-                            RHAP registered and BC-HIS certified practitioners
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <!-- BUTTON -->
-
-                    <div
-                        class="hero__actions"
-                        style="margin-top:24px;"
+                    <a
+                        href="contact.html"
+                        class="btn-primary"
                     >
-
-                        <a
-                            href="contact.html"
-                            class="btn-primary"
-                        >
-                            Schedule Hearing Assessment
-                        </a>
-
-                    </div>
+                        Schedule Hearing Assessment
+                    </a>
 
                 </div>
 
@@ -2760,23 +2815,22 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
 
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
+<!-- =========================================================
+     FOOTER
+========================================================== -->
 
- 
 <footer class="site-footer">
 
     <div class="container footer-main">
 
         <div class="footer-grid">
 
-
-            <!-- BRAND -->
 
             <div class="footer-brand">
 
@@ -2791,9 +2845,6 @@
                         >
 
                     </div>
-
-
-                   
 
                 </div>
 
@@ -2813,13 +2864,9 @@
 
 
 
-            <!-- SERVICES -->
-
             <div class="footer-col">
 
-                <h4>
-                    Services
-                </h4>
+                <h4>Services</h4>
 
                 <ul>
 
@@ -2853,27 +2900,17 @@
 
 
 
-            <!-- LOCATIONS -->
-
             <div class="footer-col">
 
-                <h4>
-                    Locations
-                </h4>
+                <h4>Locations</h4>
 
                 <ul>
 
-                    <li>
-                        Sherwood Park, AB
-                    </li>
+                    <li>Sherwood Park, AB</li>
 
-                    <li>
-                        St. Paul, AB
-                    </li>
+                    <li>St. Paul, AB</li>
 
-                    <li>
-                        Serving Surrounding Communities
-                    </li>
+                    <li>Serving Surrounding Communities</li>
 
                 </ul>
 
@@ -2881,13 +2918,9 @@
 
 
 
-            <!-- CONTACT -->
-
             <div class="footer-col">
 
-                <h4>
-                    Contact Us
-                </h4>
+                <h4>Contact Us</h4>
 
 
                 <div class="footer-contact-item">
@@ -2957,15 +2990,12 @@
 
 
 
-        <!-- FOOTER BOTTOM -->
-
         <div class="footer-bottom">
 
             <span>
                 © 2000 Sound Advice Hearing Solutions.
                 All Rights Reserved.
             </span>
-
 
             <div class="footer-bottom-links">
 
@@ -2991,23 +3021,40 @@
 
 
 
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
+<!-- =========================================================
+     JAVASCRIPT
+========================================================== -->
 
-    <script>
+<script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+        /* =====================================================
+           ELEMENTS
+        ====================================================== */
+
+        const hamburger =
+            document.getElementById("hamburger");
+
+        const mobileMenu =
+            document.getElementById("mobile-menu");
+
+        const header =
+            document.getElementById("site-header");
+
+        const mobileDropdowns =
+            document.querySelectorAll(".mobile-dropdown");
+
+        const mobileLinks =
+            document.querySelectorAll("[data-menu-link]");
+
 
         /* =====================================================
            CLOSE MOBILE MENU
         ====================================================== */
 
         function closeMenu() {
-
-            const hamburger =
-                document.getElementById("hamburger");
-
-            const mobileMenu =
-                document.getElementById("mobile-menu");
 
             if (!hamburger || !mobileMenu) {
                 return;
@@ -3021,58 +3068,44 @@
                 "aria-expanded",
                 "false"
             );
+
+            hamburger.setAttribute(
+                "aria-label",
+                "Open navigation menu"
+            );
+
+            document.body.classList.remove(
+                "menu-open"
+            );
+
+            closeDropdowns();
         }
 
 
-
         /* =====================================================
-           MOBILE MENU
+           CLOSE MOBILE DROPDOWNS
         ====================================================== */
 
-        function initMobileMenu() {
+        function closeDropdowns() {
 
-            const hamburger =
-                document.getElementById("hamburger");
+            mobileDropdowns.forEach(
+                function (dropdown) {
 
-            const mobileMenu =
-                document.getElementById("mobile-menu");
-
-            if (!hamburger || !mobileMenu) {
-                return;
-            }
-
-
-            hamburger.addEventListener(
-                "click",
-                function () {
-
-                    const isOpen =
-                        mobileMenu.classList.toggle("open");
-
-                    hamburger.classList.toggle(
-                        "open",
-                        isOpen
+                    dropdown.classList.remove(
+                        "active"
                     );
 
-                    hamburger.setAttribute(
-                        "aria-expanded",
-                        String(isOpen)
-                    );
+                    const button =
+                        dropdown.querySelector(
+                            ".mobile-dropdown-toggle"
+                        );
 
-                }
-            );
+                    if (button) {
 
-
-            document.addEventListener(
-                "click",
-                function (event) {
-
-                    if (
-                        !mobileMenu.contains(event.target) &&
-                        !hamburger.contains(event.target)
-                    ) {
-
-                        closeMenu();
+                        button.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
 
                     }
 
@@ -3081,73 +3114,247 @@
 
         }
 
+
+        /* =====================================================
+           HAMBURGER TOGGLE
+        ====================================================== */
+
+        if (hamburger && mobileMenu) {
+
+            hamburger.addEventListener(
+                "click",
+                function (event) {
+
+                    event.stopPropagation();
+
+                    const isOpen =
+                        mobileMenu.classList.contains(
+                            "open"
+                        );
+
+                    if (isOpen) {
+
+                        closeMenu();
+
+                    } else {
+
+                        mobileMenu.classList.add(
+                            "open"
+                        );
+
+                        hamburger.classList.add(
+                            "open"
+                        );
+
+                        hamburger.setAttribute(
+                            "aria-expanded",
+                            "true"
+                        );
+
+                        hamburger.setAttribute(
+                            "aria-label",
+                            "Close navigation menu"
+                        );
+
+                        document.body.classList.add(
+                            "menu-open"
+                        );
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        /* =====================================================
+           MOBILE DROPDOWN TOGGLE
+        ====================================================== */
+
+        mobileDropdowns.forEach(
+            function (dropdown) {
+
+                const button =
+                    dropdown.querySelector(
+                        ".mobile-dropdown-toggle"
+                    );
+
+                if (!button) {
+                    return;
+                }
+
+                button.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+
+                        const isActive =
+                            dropdown.classList.contains(
+                                "active"
+                            );
+
+
+                        /* Close other dropdowns */
+
+                        mobileDropdowns.forEach(
+                            function (otherDropdown) {
+
+                                if (
+                                    otherDropdown !==
+                                    dropdown
+                                ) {
+
+                                    otherDropdown.classList.remove(
+                                        "active"
+                                    );
+
+                                    const otherButton =
+                                        otherDropdown.querySelector(
+                                            ".mobile-dropdown-toggle"
+                                        );
+
+                                    if (otherButton) {
+
+                                        otherButton.setAttribute(
+                                            "aria-expanded",
+                                            "false"
+                                        );
+
+                                    }
+
+                                }
+
+                            }
+                        );
+
+
+                        /* Toggle current dropdown */
+
+                        dropdown.classList.toggle(
+                            "active",
+                            !isActive
+                        );
+
+                        button.setAttribute(
+                            "aria-expanded",
+                            String(!isActive)
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CLOSE WHEN LINK IS CLICKED
+        ====================================================== */
+
+        mobileLinks.forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        closeMenu();
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           CLICK OUTSIDE
+        ====================================================== */
+
+        document.addEventListener(
+            "click",
+            function (event) {
+
+                if (
+                    mobileMenu &&
+                    mobileMenu.classList.contains("open") &&
+                    !mobileMenu.contains(event.target) &&
+                    !hamburger.contains(event.target)
+                ) {
+
+                    closeMenu();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           ESC KEY
+        ====================================================== */
+
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (
+                    event.key === "Escape" &&
+                    mobileMenu &&
+                    mobileMenu.classList.contains("open")
+                ) {
+
+                    closeMenu();
+
+                    hamburger.focus();
+
+                }
+
+            }
+        );
 
 
         /* =====================================================
            HEADER SCROLL
         ====================================================== */
 
-        function initHeaderScroll() {
-
-            const header =
-                document.getElementById("site-header");
+        function updateHeader() {
 
             if (!header) {
                 return;
             }
 
-
-            function updateHeader() {
-
-                header.classList.toggle(
-                    "scrolled",
-                    window.scrollY > 40
-                );
-
-            }
-
-
-            updateHeader();
-
-            window.addEventListener(
-                "scroll",
-                updateHeader,
-                {
-                    passive: true
-                }
+            header.classList.toggle(
+                "scrolled",
+                window.scrollY > 40
             );
 
         }
 
+        updateHeader();
+
+        window.addEventListener(
+            "scroll",
+            updateHeader,
+            {
+                passive: true
+            }
+        );
 
 
         /* =====================================================
            SCROLL REVEAL
         ====================================================== */
 
-        function initScrollReveal() {
-
-            const revealEls =
-                document.querySelectorAll(
-                    ".reveal"
-                );
+        const revealEls =
+            document.querySelectorAll(".reveal");
 
 
-            if (!("IntersectionObserver" in window)) {
-
-                revealEls.forEach(
-                    function (element) {
-
-                        element.classList.add(
-                            "visible"
-                        );
-
-                    }
-                );
-
-                return;
-            }
-
+        if (
+            "IntersectionObserver" in window
+        ) {
 
             const observer =
                 new IntersectionObserver(
@@ -3191,28 +3398,44 @@
                 }
             );
 
+        } else {
+
+            revealEls.forEach(
+                function (element) {
+
+                    element.classList.add(
+                        "visible"
+                    );
+
+                }
+            );
+
         }
 
 
-
         /* =====================================================
-           INITIALIZE
+           CLOSE MENU WHEN RESIZING TO DESKTOP
         ====================================================== */
 
-        document.addEventListener(
-            "DOMContentLoaded",
+        window.addEventListener(
+            "resize",
             function () {
 
-                initMobileMenu();
+                if (
+                    window.innerWidth > 900
+                ) {
 
-                initHeaderScroll();
+                    closeMenu();
 
-                initScrollReveal();
+                }
 
             }
         );
 
-    </script>
+    });
+
+</script>
+
 
 </body>
 

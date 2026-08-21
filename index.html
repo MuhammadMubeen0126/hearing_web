@@ -57,19 +57,6 @@
         href="style.css"
     >
 
-    <!--
-        Additive only: a rule for the .active class that initActiveNav()
-        applies at runtime. Doesn't touch/override anything in style.css.
-        If you already have an .active rule in style.css, delete this block.
-    -->
-    <style>
-        .nav-links a.active,
-        .mobile-menu a.active {
-            color: #0F9D8A;
-            font-weight: 600;
-        }
-    </style>
-
 </head>
 
 
@@ -136,230 +123,234 @@
 
 
 <!-- =========================================================
-     HEADER / NAVIGATION
+     HEADER / NAVIGATION - WITH MOBILE DROPDOWN
 ========================================================== -->
 
-<header
-    class="site-header"
-    id="site-header"
->
+    <header
+        class="site-header"
+        id="site-header"
+    >
 
-    <div class="container">
+        <div class="container">
 
-        <div class="nav-inner">
-
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-
-                <div class="logo__mark">
-
-                    <img
-                        src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
-                        alt="Sound Advice Hearing Solutions Logo"
-                        class="logo__img"
-                    >
-
-                </div>
-
-            </a>
+            <div class="nav-inner">
 
 
-
-            <nav
-                class="nav-links"
-                aria-label="Primary navigation"
-            >
-
-                <a href="index.html">
-                    Home
-                </a>
-
-                <a href="about.html">
-                    About
-                </a>
-
-
-                <div class="nav-dropdown">
-
-                    <a
-                        href=""
-                        class="nav-dropdown-toggle"
-                    >
-
-                        Services
-
-                        <span>
-                            &#9662;
-                        </span>
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="services/hearing-aid-testing.html">
-                            Hearing Assessment
-                        </a>
-
-                        <a href="services/hearing-aid-fitting.html">
-                            Hearing Aid Fitting
-                        </a>
-
-                        <a href="services/hearing-repair.html">
-                            Hearing Aid Repair
-                        </a>
-
-                        <a href="services/hearing-protection.html">
-                            Hearing Protection
-                        </a>
-
-                    </div>
-
-                </div>
-
-
-             <div class="nav-dropdown">
-
-                    <a
-                        href=""
-                        class="nav-dropdown-toggle"
-                    >
-
-                        Hearing Aid
-
-                        <span>
-                            &#9662;
-                        </span>
-
-                    </a>
-
-
-                    <div class="dropdown-menu">
-
-                        <a href="hearing-Aids/hearing-blogs.html">
-                            Hearing blogs
-                        </a>
-
-                        <a href="hearing-Aids/hearing-fun-facts.html">
-                            Hearing Fun Fact
-                        </a>
-
-                        <a href="hearing-Aids/hearing-loss-dementia.html">
-                            Hearing loss dementia
-                        </a>
-
-                        <a href="hearing-Aids/hearing-myths-facts.html">
-                            Hearing myths facts
-                        </a>
-
-                    </div>
-
-                </div>
-
-                <a href="testimonials.html">
-                    Testimonials
-                </a>
-
-                <a href="contact.html">
-                    Contact
-                </a>
+                <!-- LOGO -->
 
                 <a
-                    href="contact.html"
-                    class="nav-cta"
+                    href="index.html"
+                    class="logo"
                 >
-                    Book Appointment
+
+                    <div class="logo__mark">
+
+                        <img
+                            src="https://images.squarespace-cdn.com/content/v1/6982506ac376d1209ac50f67/ad0957e5-0a28-4e01-a5be-f097bc7406b2/SAHA+logo+%282%29.png?format=1500w"
+                            alt="Sound Advice Hearing Solutions Logo"
+                            class="logo__img"
+                        >
+
+                    </div>
+
                 </a>
 
-            </nav>
+
+
+                <!-- =================================================
+                     DESKTOP NAVIGATION
+                ================================================== -->
+
+                <nav
+                    class="nav-links"
+                    aria-label="Primary navigation"
+                >
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+
+                    <a href="about.html">
+                        About
+                    </a>
+
+
+                    <!-- SERVICES -->
+
+                    <div class="nav-dropdown">
+
+                        <a
+                            href="#"
+                            class="nav-dropdown-toggle"
+                            onclick="return false;"
+                        >
+
+                            Services
+
+                            <span>
+                                &#9662;
+                            </span>
+
+                        </a>
+
+
+                        <div class="dropdown-menu">
+
+                            <a href="services/hearing-aid-testing.html">
+                                Hearing Assessment
+                            </a>
+
+                            <a href="services/hearing-aid-fitting.html">
+                                Hearing Aid Fitting
+                            </a>
+
+                            <a href="services/hearing-repair.html">
+                                Hearing Aid Repair
+                            </a>
+
+                            <a href="services/hearing-protection.html">
+                                Hearing Protection
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- HEARING AIDS -->
+
+                    <div class="nav-dropdown">
+
+                        <a
+                            href="#"
+                            class="nav-dropdown-toggle"
+                            onclick="return false;"
+                        >
+
+                            Hearing Aid
+
+                            <span>
+                                &#9662;
+                            </span>
+
+                        </a>
+
+
+                        <div class="dropdown-menu">
+
+                            <a href="hearing-Aids/hearing-blogs.html">
+                                Hearing Blogs
+                            </a>
+
+                            <a href="hearing-Aids/hearing-fun-facts.html">
+                                Hearing Fun Facts
+                            </a>
+
+                            <a href="hearing-Aids/hearing-loss-dementia.html">
+                                Hearing Loss &amp; Dementia
+                            </a>
+
+                            <a href="hearing-Aids/hearing-myths-facts.html">
+                                Hearing Myths &amp; Facts
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <a href="testimonials.html">
+                        Testimonials
+                    </a>
+
+
+                    <a href="contact.html">
+                        Contact
+                    </a>
+
+
+                    <a
+                        href="contact.html"
+                        class="nav-cta"
+                    >
+                        Book Appointment
+                    </a>
+
+                </nav>
 
 
 
-            <!-- MOBILE MENU BUTTON -->
+                <!-- =================================================
+                     MOBILE HAMBURGER
+                ================================================== -->
 
-            <button
-                class="hamburger"
-                id="hamburger"
-                aria-label="Toggle navigation"
-                aria-expanded="false"
-            >
+                <button
+                    class="hamburger"
+                    id="hamburger"
+                    type="button"
+                    aria-label="Toggle navigation"
+                    aria-expanded="false"
+                    aria-controls="mobile-menu"
+                >
 
-                <span></span>
-                <span></span>
-                <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
 
-            </button>
+                </button>
+
+            </div>
 
         </div>
 
+
+
+        <!-- =====================================================
+             MOBILE MENU - WITH CORRECT CLASS NAMES
+        ====================================================== -->
+<!-- MOBILE MENU -->
+<nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation">
+
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+
+    <!-- SERVICES DROPDOWN -->
+    <div class="mobile-dropdown">
+        <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+            <span>Services</span>
+            <span class="arrow">▼</span>
+        </button>
+        <div class="mobile-dropdown-menu">
+            <a href="services/hearing-aid-testing.html" onclick="closeMenu()">Hearing Assessment</a>
+            <a href="services/hearing-aid-fitting.html" onclick="closeMenu()">Hearing Aid Fitting</a>
+            <a href="services/hearing-repair.html" onclick="closeMenu()">Hearing Aid Repair</a>
+            <a href="services/hearing-protection.html" onclick="closeMenu()">Hearing Protection</a>
+        </div>
     </div>
 
+    <!-- HEARING AID DROPDOWN -->
+    <div class="mobile-dropdown">
+        <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+            <span>Hearing Aid</span>
+            <span class="arrow">▼</span>
+        </button>
+        <div class="mobile-dropdown-menu">
+            <a href="hearing-Aids/hearing-blogs.html" onclick="closeMenu()">Hearing Blogs</a>
+            <a href="hearing-Aids/hearing-fun-facts.html" onclick="closeMenu()">Hearing Fun Facts</a>
+            <a href="hearing-Aids/hearing-loss-dementia.html" onclick="closeMenu()">Hearing Loss &amp; Dementia</a>
+            <a href="hearing-Aids/hearing-myths-facts.html" onclick="closeMenu()">Hearing Myths &amp; Facts</a>
+        </div>
+    </div>
 
+    <a href="testimonials.html" onclick="closeMenu()">Testimonials</a>
+    <a href="contact.html" onclick="closeMenu()">Contact</a>
 
-    <!-- MOBILE DRAWER -->
+    <a href="contact.html" class="mob-cta" onclick="closeMenu()">Book Appointment</a>
+</nav>
 
-    <nav
-        class="mobile-menu"
-        id="mobile-menu"
-        aria-label="Mobile navigation"
-    >
+    </header>
 
-        <a
-            href="index.html"
-            onclick="closeMenu()"
-        >
-            Home
-        </a>
-
-        <a
-            href="about.html"
-            onclick="closeMenu()"
-        >
-            About
-        </a>
-
-        <a
-            href=""
-            onclick="closeMenu()"
-        >
-            Services
-        </a>
-
-        <a
-            href=""
-            onclick="closeMenu()"
-        >
-            Hearing Aids
-        </a>
-
-        <a
-            href="testimonials.html"
-            onclick="closeMenu()"
-        >
-            Testimonials
-        </a>
-
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-        >
-            Contact / Locations
-        </a>
-
-        <a
-            href="contact.html"
-            onclick="closeMenu()"
-            class="mob-cta"
-        >
-            Book Hearing Assessment
-        </a>
-
-    </nav>
-
-</header>
 
 
 
@@ -1888,9 +1879,6 @@
 
                     </div>
 
-
-                   
-
                 </div>
 
 
@@ -2093,7 +2081,6 @@
 
 <script>
 
-
 function initActiveNav() {
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
@@ -2105,105 +2092,138 @@ function initActiveNav() {
 }
 
 
+
+
 /* =========================================================
-   MOBILE MENU
+   MOBILE DROPDOWN TOGGLE
+   (bound here via addEventListener rather than an inline
+   onclick= attribute in the HTML, since some CMS platforms —
+   e.g. Squarespace code blocks — strip inline event-handler
+   attributes for security when the page renders, which would
+   silently make the buttons do nothing on click)
 ========================================================= */
 
-function closeMenu() {
-
-    const hamburger =
-        document.getElementById("hamburger");
-
-    const mobileMenu =
-        document.getElementById("mobile-menu");
-
-
-    if (!hamburger || !mobileMenu) {
-        return;
+function toggleMobileDropdown(button) {
+    button.classList.toggle('open');
+    const menu = button.nextElementSibling;
+    if (menu) {
+        menu.classList.toggle('open');
     }
+}
 
-
-    mobileMenu.classList.remove("open");
-
-    hamburger.classList.remove("open");
-
-    hamburger.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
+function initMobileDropdownToggles() {
+    document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+            toggleMobileDropdown(button);
+        });
+    });
 }
 
 
+/* =========================================================
+   MOBILE MENU - WITH DROPDOWN SUPPORT
+========================================================= */
 
 function initMobileMenu() {
-
-    const hamburger =
-        document.getElementById("hamburger");
-
-    const mobileMenu =
-        document.getElementById("mobile-menu");
-
+    const hamburger = document.getElementById("hamburger");
+    const mobileMenu = document.getElementById("mobile-menu");
 
     if (!hamburger || !mobileMenu) {
         return;
     }
 
-
-    hamburger.addEventListener(
-        "click",
-        () => {
-
-            const isOpen =
-                mobileMenu.classList.toggle("open");
-
-
-            hamburger.classList.toggle(
-                "open",
-                isOpen
-            );
-
-
-            hamburger.setAttribute(
-                "aria-expanded",
-                isOpen
-            );
-
-        }
-    );
-
-}
-
-
-
-/* =========================================================
-   HEADER SCROLL
-========================================================= */
-
-function initHeaderScroll() {
-
-    const header =
-        document.getElementById("site-header");
-
-
-    if (!header) {
-        return;
+    function closeAllDropdowns() {
+        document.querySelectorAll('.mobile-dropdown-toggle.open').forEach(function(btn) {
+            btn.classList.remove('open');
+            const menu = btn.nextElementSibling;
+            if (menu) menu.classList.remove('open');
+        });
     }
 
+    function closeMenu() {
+        mobileMenu.classList.remove("open");
+        hamburger.classList.remove("open");
+        hamburger.setAttribute("aria-expanded", "false");
+        mobileMenu.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+        closeAllDropdowns();
+    }
 
-    window.addEventListener(
-        "scroll",
-        () => {
+    function openMenu() {
+        mobileMenu.classList.add("open");
+        hamburger.classList.add("open");
+        hamburger.setAttribute("aria-expanded", "true");
+        mobileMenu.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+    }
 
-            header.classList.toggle(
-                "scrolled",
-                window.scrollY > 40
-            );
-
+    hamburger.addEventListener("click", function() {
+        if (mobileMenu.classList.contains("open")) {
+            closeMenu();
+        } else {
+            openMenu();
         }
-    );
+    });
 
+    // Close menu when clicking a link
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+    mobileLinks.forEach(function(link) {
+        link.addEventListener("click", function() {
+            closeMenu();
+        });
+    });
+
+    // Close on escape key
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeMenu();
+        }
+    });
+
+    // Close on outside click
+    document.addEventListener("click", function(event) {
+        if (mobileMenu.classList.contains("open")) {
+            if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
+                closeMenu();
+            }
+        }
+    });
+
+    // Close on window resize (if screen becomes desktop)
+    window.addEventListener("resize", function() {
+        if (window.innerWidth > 900) {
+            closeMenu();
+        }
+    });
 }
+
+
+      /* =====================================================
+           HEADER SCROLL
+        ====================================================== */
+
+        window.addEventListener(
+            "scroll",
+            function() {
+
+                const header =
+                    document.getElementById(
+                        "site-header"
+                    );
+
+                if (!header) {
+                    return;
+                }
+
+                header.classList.toggle(
+                    "scrolled",
+                    window.scrollY > 30
+                );
+
+            }
+        );
+
 
 
 
@@ -2415,7 +2435,9 @@ document.addEventListener(
 
         initMobileMenu();
 
-        initHeaderScroll();
+        initMobileDropdownToggles();
+
+        // initHeaderScroll();  // REMOVED – the scroll handler is already attached directly above
 
         initScrollReveal();
 

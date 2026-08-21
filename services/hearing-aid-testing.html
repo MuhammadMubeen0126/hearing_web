@@ -108,6 +108,38 @@
 
 
         /* ============================================================
+           PAGE HERO - CENTERED
+        ============================================================ */
+
+        .page-hero {
+            padding: 4rem 0 3rem;
+            background: var(--testing-slate);
+            text-align: center;
+        }
+
+        .page-hero .section-tag {
+            display: inline-block;
+            margin-bottom: 0.75rem;
+            color: var(--testing-teal);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .page-hero .hero__h1 {
+            font-family: "DM Serif Display", serif;
+            font-size: clamp(2.5rem, 5vw, 3.8rem);
+            font-weight: 400;
+            line-height: 1.1;
+            color: var(--testing-navy);
+            margin: 0 auto;
+            text-align: center;
+            max-width: 800px;
+        }
+
+
+        /* ============================================================
            HERO
         ============================================================ */
 
@@ -811,6 +843,15 @@
             }
 
 
+            .page-hero {
+                padding: 3rem 0 2rem;
+            }
+
+            .page-hero .hero__h1 {
+                font-size: clamp(2rem, 8vw, 2.8rem);
+            }
+
+
             .testing-hero {
                 padding: 4rem 0;
             }
@@ -864,6 +905,15 @@
 
         @media (max-width: 600px) {
 
+            .page-hero {
+                padding: 2.5rem 0 1.5rem;
+            }
+
+            .page-hero .hero__h1 {
+                font-size: 1.8rem;
+            }
+
+
             .testing-hero {
                 padding: 3.5rem 0;
             }
@@ -913,6 +963,15 @@
         ============================================================ */
 
         @media (max-width: 480px) {
+
+            .page-hero {
+                padding: 2rem 0 1rem;
+            }
+
+            .page-hero .hero__h1 {
+                font-size: 1.6rem;
+            }
+
 
             .testing-hero {
                 padding: 3rem 0;
@@ -1005,7 +1064,7 @@
 
         <div class="container">
 
-            <div class="topbar-inner">
+            <div class="topbar__inner">
 
                 <div class="topbar__loc">
 
@@ -1059,7 +1118,7 @@
 
 
     <!-- ============================================================
-         HEADER
+         HEADER / NAVIGATION - WITH MOBILE DROPDOWN SUPPORT
     ============================================================ -->
 
     <header
@@ -1211,15 +1270,15 @@
                 </nav>
 
 
-                <!-- MOBILE BUTTON -->
+                <!-- MOBILE HAMBURGER -->
 
                 <button
                     class="hamburger"
                     id="hamburger"
                     type="button"
-                    aria-label="Open navigation menu"
+                    aria-label="Toggle navigation"
                     aria-expanded="false"
-                    aria-controls="mobileMenu"
+                    aria-controls="mobile-menu"
                 >
 
                     <span></span>
@@ -1233,86 +1292,176 @@
         </div>
 
 
-        <!-- MOBILE MENU -->
+        <!-- =========================================================
+             MOBILE MENU - WITH DROPDOWN SUPPORT
+             (matches the main site's structure exactly)
+        ========================================================= -->
 
-        <div
+        <nav
             class="mobile-menu"
-            id="mobileMenu"
-            aria-hidden="true"
+            id="mobile-menu"
+            aria-label="Mobile navigation"
         >
 
-            <div class="mobile-menu-inner">
+
+            <a
+                href="../index.html"
+                onclick="closeMenu()"
+            >
+                Home
+            </a>
+
+
+            <a
+                href="../about.html"
+                onclick="closeMenu()"
+            >
+                About
+            </a>
+
+
+
+            <!-- SERVICES DROPDOWN (mobile) -->
+
+            <div class="mobile-dropdown">
 
                 <button
-                    class="mobile-menu-close"
-                    id="mobileMenuClose"
                     type="button"
-                    aria-label="Close navigation menu"
+                    class="mobile-dropdown-toggle"
+                    aria-expanded="false"
                 >
-                    &times;
+
+                    <span>
+                        Services
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
                 </button>
 
 
-                <a href="../index.html">
-                    Home
-                </a>
+                <div class="mobile-dropdown-menu">
 
+                    <a
+                        href="../services/hearing-aid-testing.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Assessment
+                    </a>
 
-                <a href="../about.html">
-                    About
-                </a>
+                    <a
+                        href="../services/hearing-aid-fitting.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Aid Fitting
+                    </a>
 
+                    <a
+                        href="../services/hearing-repair.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Aid Repair
+                    </a>
 
-                <a href="../services/hearing-aid-testing.html">
-                    Hearing Assessment
-                </a>
+                    <a
+                        href="../services/hearing-protection.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Protection
+                    </a>
 
-
-                <a href="../services/hearing-aid-fitting.html">
-                    Hearing Aid Fitting
-                </a>
-
-
-                <a href="../services/hearing-repair.html">
-                    Hearing Aid Repair
-                </a>
-
-
-                <a href="../services/hearing-protection.html">
-                    Hearing Protection
-                </a>
-
-
-                <a href="../hearing-Aids/hearing-blogs.html">
-                    Hearing Blogs
-                </a>
-
-
-                <a href="../hearing-Aids/hearing-fun-facts.html">
-                    Hearing Fun Facts
-                </a>
-
-
-                <a href="../testimonials.html">
-                    Testimonials
-                </a>
-
-
-                <a href="../contact.html">
-                    Contact
-                </a>
-
-
-                <a
-                    href="../contact.html"
-                    class="mob-cta"
-                >
-                    Book Appointment
-                </a>
+                </div>
 
             </div>
 
-        </div>
+
+
+            <!-- HEARING AIDS DROPDOWN (mobile) -->
+
+            <div class="mobile-dropdown">
+
+                <button
+                    type="button"
+                    class="mobile-dropdown-toggle"
+                    aria-expanded="false"
+                >
+
+                    <span>
+                        Hearing Aids
+                    </span>
+
+                    <span class="arrow">
+                        ▼
+                    </span>
+
+                </button>
+
+
+                <div class="mobile-dropdown-menu">
+
+                    <a
+                        href="../hearing-Aids/hearing-blogs.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Blogs
+                    </a>
+
+                    <a
+                        href="../hearing-Aids/hearing-fun-facts.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Fun Facts
+                    </a>
+
+                    <a
+                        href="../hearing-Aids/hearing-loss-dementia.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Loss &amp; Dementia
+                    </a>
+
+                    <a
+                        href="../hearing-Aids/hearing-myths-facts.html"
+                        onclick="closeMenu()"
+                    >
+                        Hearing Myths &amp; Facts
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <a
+                href="../testimonials.html"
+                onclick="closeMenu()"
+            >
+                Testimonials
+            </a>
+
+
+            <a
+                href="../contact.html"
+                onclick="closeMenu()"
+            >
+                Contact
+            </a>
+
+
+            <!-- MOBILE CTA -->
+
+            <a
+                href="../contact.html"
+                class="mob-cta"
+                onclick="closeMenu()"
+            >
+                Book Appointment
+            </a>
+
+        </nav>
 
     </header>
 
@@ -1325,95 +1474,20 @@
 
 
         <!-- ========================================================
-             HERO
+             PAGE HERO - CENTERED
         ========================================================= -->
 
-        <section class="testing-hero">
+        <section class="page-hero">
 
-            <div class="container testing-hero-grid">
+            <div class="container">
 
+                <span class="section-tag">
+                   Hearing Care
+                </span>
 
-                <div>
-
-                    <span class="section-tag">
-                        Start With Answers
-                    </span>
-
-
-                    <h1>
-                        
-                        <em>Hearing Aid Testing</em>
-                    </h1>
-
-
-                    <p class="testing-lead">
-                        A hearing assessment gives you a clearer picture
-                        of what you hear, where you struggle, and what
-                        support may make everyday communication easier.
-                    </p>
-
-
-                    <a
-                        class="btn-primary"
-                        href="../contact.html"
-                    >
-                        Book a Hearing Assessment
-                    </a>
-
-
-                    <div class="testing-statbar">
-
-
-                        <div class="testing-stat">
-
-                            <strong>
-                                01
-                            </strong>
-
-                            <span>
-                                Discuss your concerns
-                            </span>
-
-                        </div>
-
-
-                        <div class="testing-stat">
-
-                            <strong>
-                                02
-                            </strong>
-
-                            <span>
-                                Complete appropriate testing
-                            </span>
-
-                        </div>
-
-
-                        <div class="testing-stat">
-
-                            <strong>
-                                03
-                            </strong>
-
-                            <span>
-                                Understand your results
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-
-                <img
-                    class="testing-photo"
-                    src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1100&q=85"
-                    alt="Professional hearing assessment consultation"
-                    loading="eager"
-                >
+                <h1 class="hero__h1">
+                  Professional Hearing Testing
+                </h1>
 
             </div>
 
@@ -2021,179 +2095,152 @@
 
 
     <!-- ============================================================
-         JAVASCRIPT
+         JAVASCRIPT - MOBILE MENU WITH DROPDOWN TOGGLES
     ============================================================ -->
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
+        /* =========================================================
+           MOBILE DROPDOWN TOGGLE
+        ========================================================= */
 
-            const hamburger =
-                document.getElementById("hamburger");
+        function toggleMobileDropdown(button) {
+            button.classList.toggle('open');
+            var menu = button.nextElementSibling;
+            if (menu) {
+                menu.classList.toggle('open');
+            }
+        }
 
-            const mobileMenu =
-                document.getElementById("mobileMenu");
+        function initMobileDropdownToggles() {
+            document.querySelectorAll('.mobile-dropdown-toggle').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    toggleMobileDropdown(button);
+                });
+            });
+        }
 
-            const mobileMenuClose =
-                document.getElementById("mobileMenuClose");
 
+        /* =========================================================
+           MOBILE MENU - OPEN / CLOSE
+        ========================================================= */
+
+        function initMobileMenu() {
+            var hamburger = document.getElementById("hamburger");
+            var mobileMenu = document.getElementById("mobile-menu");
+
+            if (!hamburger || !mobileMenu) {
+                return;
+            }
+
+            function closeAllDropdowns() {
+                document.querySelectorAll('.mobile-dropdown-toggle.open').forEach(function(btn) {
+                    btn.classList.remove('open');
+                    var menu = btn.nextElementSibling;
+                    if (menu) menu.classList.remove('open');
+                });
+            }
+
+            function closeMenu() {
+                mobileMenu.classList.remove("open");
+                hamburger.classList.remove("open");
+                hamburger.setAttribute("aria-expanded", "false");
+                mobileMenu.setAttribute("aria-hidden", "true");
+                document.body.style.overflow = "";
+                closeAllDropdowns();
+            }
 
             function openMenu() {
-
-                if (!mobileMenu) {
-                    return;
-                }
-
-                mobileMenu.classList.add("active");
-
-                if (hamburger) {
-                    hamburger.classList.add("active");
-
-                    hamburger.setAttribute(
-                        "aria-expanded",
-                        "true"
-                    );
-                }
-
-                mobileMenu.setAttribute(
-                    "aria-hidden",
-                    "false"
-                );
-
+                mobileMenu.classList.add("open");
+                hamburger.classList.add("open");
+                hamburger.setAttribute("aria-expanded", "true");
+                mobileMenu.setAttribute("aria-hidden", "false");
                 document.body.style.overflow = "hidden";
             }
 
-
-            function closeMenu() {
-
-                if (!mobileMenu) {
-                    return;
+            hamburger.addEventListener("click", function() {
+                if (mobileMenu.classList.contains("open")) {
+                    closeMenu();
+                } else {
+                    openMenu();
                 }
+            });
 
-                mobileMenu.classList.remove("active");
+            // Close menu when clicking a link
+            var mobileLinks = mobileMenu.querySelectorAll("a");
+            mobileLinks.forEach(function(link) {
+                link.addEventListener("click", function() {
+                    closeMenu();
+                });
+            });
 
-                if (hamburger) {
-                    hamburger.classList.remove("active");
-
-                    hamburger.setAttribute(
-                        "aria-expanded",
-                        "false"
-                    );
+            // Close on escape key
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Escape") {
+                    closeMenu();
                 }
+            });
 
-                mobileMenu.setAttribute(
-                    "aria-hidden",
-                    "true"
-                );
-
-                document.body.style.overflow = "";
-            }
-
-
-            if (hamburger) {
-
-                hamburger.addEventListener(
-                    "click",
-                    function () {
-
-                        if (
-                            mobileMenu &&
-                            mobileMenu.classList.contains("active")
-                        ) {
-
-                            closeMenu();
-
-                        } else {
-
-                            openMenu();
-
-                        }
-
-                    }
-                );
-
-            }
-
-
-            if (mobileMenuClose) {
-
-                mobileMenuClose.addEventListener(
-                    "click",
-                    closeMenu
-                );
-
-            }
-
-
-            if (mobileMenu) {
-
-                mobileMenu.addEventListener(
-                    "click",
-                    function (event) {
-
-                        if (
-                            event.target === mobileMenu
-                        ) {
-
-                            closeMenu();
-
-                        }
-
-                    }
-                );
-
-
-                const mobileLinks =
-                    mobileMenu.querySelectorAll(
-                        "a"
-                    );
-
-
-                mobileLinks.forEach(
-                    function (link) {
-
-                        link.addEventListener(
-                            "click",
-                            closeMenu
-                        );
-
-                    }
-                );
-
-            }
-
-
-            document.addEventListener(
-                "keydown",
-                function (event) {
-
-                    if (
-                        event.key === "Escape"
-                    ) {
-
+            // Close on outside click
+            document.addEventListener("click", function(event) {
+                if (mobileMenu.classList.contains("open")) {
+                    if (!mobileMenu.contains(event.target) && !hamburger.contains(event.target)) {
                         closeMenu();
-
                     }
-
                 }
-            );
+            });
+
+            // Close on window resize (if screen becomes desktop)
+            window.addEventListener("resize", function() {
+                if (window.innerWidth > 900) {
+                    closeMenu();
+                }
+            });
+
+            // Expose closeMenu globally for onclick attributes
+            window.closeMenu = closeMenu;
+        }
 
 
-            window.addEventListener(
-                "resize",
-                function () {
+        /* =========================================================
+           HEADER SCROLL
+        ========================================================= */
 
-                    if (
-                        window.innerWidth > 900
-                    ) {
+        window.addEventListener("scroll", function() {
+            var header = document.getElementById("site-header");
+            if (!header) return;
+            header.classList.toggle("scrolled", window.scrollY > 30);
+        });
 
-                        closeMenu();
 
+        /* =========================================================
+           ACTIVE NAV LINK
+        ========================================================= */
+
+        function initActiveNav() {
+            var current = location.pathname.split('/').pop() || 'index.html';
+            document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(function(link) {
+                var href = link.getAttribute('href');
+                if (href) {
+                    var parts = href.split('/');
+                    var filename = parts[parts.length - 1] || 'index.html';
+                    if (filename === current) {
+                        link.classList.add('active');
                     }
-
                 }
-            );
+            });
+        }
 
+
+        /* =========================================================
+           INITIALIZE
+        ========================================================= */
+
+        document.addEventListener("DOMContentLoaded", function() {
+            initMobileMenu();
+            initMobileDropdownToggles();
+            initActiveNav();
         });
 
     </script>
